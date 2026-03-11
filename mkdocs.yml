@@ -1,0 +1,105 @@
+site_name: 누리메이트 전략 문서
+site_description: 누리메이트 제품 전략, 시장 리서치, 기능 스펙
+site_url: https://sweetginger.github.io/nurymate-docs/
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  language: ko
+  palette:
+    primary: indigo
+    accent: indigo
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - navigation.top
+    - navigation.sections
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+
+plugins:
+  - search:
+      lang:
+        - ko
+        - ja
+
+markdown_extensions:
+  - tables
+  - toc:
+      permalink: true
+  - admonition
+  - pymdownx.details
+
+nav:
+  - 개요: index.md
+  - 전략:
+    - 제품 기획: strategy/product-plan.md
+    - 비즈니스 로드맵: strategy/business-roadmap.md
+    - 전략 분석: strategy/strategic-analysis.md
+    - 수익 구조: strategy/pricing-model.md
+    - 초기 고객 확보: strategy/early-customer-acquisition.md
+    - 신규 창업자 확보: strategy/new-seller-acquisition.md
+    - 자연 유입 전략: strategy/organic-growth.md
+    - 글로벌 확장 로드맵: strategy/global-expansion-roadmap.md
+    - 버티컬 확장: strategy/vertical-expansion.md
+    - 일본 GTM: strategy/japan-gtm.md
+    - API 정책: strategy/api-policy.md
+  - 리서치:
+    - 일본·한국 이커머스 문화 비교: research/japan-korea-ecommerce.md
+    - Shopify 일본 결제 불편 UX: research/shopify-jp-payment-ux.md
+    - Shopify 일본 약점 분석: research/shopify-japan-weaknesses.md
+    - Shopify 일본 결제: research/shopify-japan-payment.md
+    - Shopify 수익 구조: research/shopify-pricing-revenue.md
+    - Stripe·PG 지원 조사: research/pg-stripe-support.md
+    - Stripe Connect 국가: research/stripe-connect-countries.md
+    - PG 라이선스: research/pg-licensing.md
+    - 현지 PG 계약 난이도: research/local-pg-contracts.md
+    - Paymentwall 분석: research/paymentwall-analysis.md
+    - Payoneer 분석: research/payoneer-analysis.md
+    - 한국 이커머스 경쟁 지형: research/korea-ecommerce-platforms.md
+    - 일본 D2C EC SaaS 비교: research/japan-ec-saas-comparison.md
+    - 글로벌 시장 개요: research/global-market-overview.md
+    - 배송·3PL 전략: research/logistics-strategy.md
+    - SNS 리뷰 법적 검토: research/sns-review-legal.md
+    - 카페24 분석: research/cafe24-pro-analysis.md
+    - 카페24 앱 디자인: research/cafe24-app-design.md
+    - 카페24 Analytics: research/cafe24-analytics.md
+    - 패션 이커머스 기능: research/fashion-ecommerce-features.md
+    - 플랫폼 비교: research/platform-comparison.md
+    - 플랫폼 전략: research/platform-strategy.md
+    - 라쿠텐·아마존 API: research/rakuten-amazon-api.md
+    - SNS 연동: research/sns-integration.md
+    - 리뷰 플랫폼 연동: research/review-platform-integration.md
+    - 일본 편의점 픽업: research/japan-conveni-pickup.md
+    - 한일 신뢰 사례: research/korea-japan-trust-cases.md
+    - 클로즈드 앱 마켓플레이스: research/closed-app-marketplace.md
+    - Shopify 마케팅 기능: research/shopify-marketing-features.md
+    - Shopify GraphQL 리포트: research/shopify-queryql-report.md
+    - 최신 통계 2025~2026: research/latest-stats-2025-2026.md
+  - Spec:
+    - Spec 우선순위: spec/spec-priority.md
+    - "[P0] 셀러 스토어 생성 UX": spec/seller-store-creation-ux.md
+    - "[P0] 멀티테넌시 도메인 구조": spec/domain-architecture.md
+    - "[P0] 일본 결제 네이티브": spec/jp-payment-native.md
+    - "[P0] 국가별 단위 현지화": spec/unit-localization.md
+    - "[P0] 마이그레이션": spec/migration.md
+    - "[P0] 운영자 어드민": spec/operator-admin.md
+    - "[P0] 모듈 기능 정의": spec/module-definition.md
+    - "[P1] 통합 결제 대시보드": spec/unified-payment-dashboard.md
+    - "[P1] 첫 매출 견인 도구": spec/first-sale-engine.md
+    - "[P1] 통계·분석": spec/analytics-spec.md
+    - "[P1] SNS 마케팅 연동": spec/sns-marketing.md
+    - "[P1] SNS 리뷰 수집": spec/sns-review-collection.md
+    - "[P1] 어필리에이트 트래킹": spec/affiliate-tracking.md
+    - "[P1] 국가별 설정 프리셋": spec/country-preset.md
+    - "[P1] 글로벌 진출 지원": spec/global-launch.md
+    - "[P1] 배송 연동": spec/shipping-integration.md
+    - "[P2] 인플루언서 매칭": spec/influencer-matching.md
+    - "[P2] 벤치마크 리포트": spec/benchmark-report.md
+    - "[P2] AI 운영 어시스턴트": spec/ai-assistant.md
+    - "[P2] AI 채팅 설정": spec/ai-chat-setting.md
+    - "[P2] 글로벌 통합 대시보드": spec/global-dashboard.md
+    - "셀익스 연동": spec/sellex-integration.md
