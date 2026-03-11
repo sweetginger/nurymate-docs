@@ -137,44 +137,75 @@
 
 ## 4. Lean Canvas
 
-```
-┌──────────────────────────────────────────────────────────────────────────────┐
-│                         누리메이트 Lean Canvas                                │
-├──────────────┬───────────────────────────────┬──────────────────────────────┤
-│   문제       │         해결책                  │      핵심 가치 제안           │
-│              │                               │                              │
-│ 1. 카페24는  │ 1. 한국 결제 네이티브 +        │  "카페24도 Shopify도 아닌    │
-│    글로벌    │    글로벌 크로스보더 통합       │   제3의 선택"                │
-│    진출 어려 │ 2. 일본 로컬라이제이션 내장     │                              │
-│             │    (콘비니·PayPay·인보이스)     │ - 한국에서 시작해 일본·동남아 │
-│ 2. Shopify는 │ 3. 통합 정산 대시보드          │   까지 하나의 플랫폼으로      │
-│    일본 현지 │ 4. AI 30분 온보딩              │ - 월 500만원까지 수수료 0%   │
-│    화 미흡   │ 5. 슬라이딩 수수료 (0~2%)     │ - 글로벌 결제 기본 탑재      │
-│             │                               │                              │
-│ 3. 크로스보  │                               │                              │
-│    더 정산이 ├───────────────────────────────┤                              │
-│    복잡함   │      불공정한 이점              │                              │
-│             │                               │                              │
-│             │ - 아시아 결제 도메인 지식       │                              │
-│             │ - StoreX 기존 고객 기반        │                              │
-│             │ - 셀메이트의 일본 이커머스 네트워크 │                              │
-├──────────────┼───────────────────────────────┼──────────────────────────────┤
-│   고객 세그먼트              │       채널                 │   수익 흐름        │
-│                             │                           │                   │
-│ 1. 카페24 불만 판매자        │ 1. 직접 아웃리치           │ 1. 거래 수수료    │
-│    (글로벌 진출 준비)        │    (커뮤니티, DM)          │    (0~2% 슬라이딩) │
-│ 2. 일본 라쿠텐·아마존        │ 2. GMO-PG·에이전시        │ 2. 프리미엄 구독  │
-│    자사몰 전환 희망 셀러     │    파트너십                │    (AI·통계 등)   │
-│ 3. K-뷰티·K-패션 일본        │ 3. 이커머스 커뮤니티       │ 3. 마이그레이션   │
-│    직출 브랜드               │ 4. 웨비나·세미나            │    서비스         │
-├──────────────────────────────┴───────────────────────────┴───────────────────┤
-│   비용 구조                                                                   │
-│   - 클라우드 인프라 (추정 월 500만 원)                                         │
-│   - 인건비 (9인 팀 추정 월 6,000~8,000만 원)                                    │
-│   - PG 연동 개발·유지 비용                                                     │
-│   BEP: 활성 판매자 약 56명, 월 GMV 약 16.7억 원                                │
-└──────────────────────────────────────────────────────────────────────────────┘
-```
+<div style="overflow-x:auto;">
+<table style="width:100%;border-collapse:collapse;font-size:0.875em;min-width:680px;">
+  <tr>
+    <td rowspan="2" style="border:2px solid #5c6bc0;padding:14px 12px;vertical-align:top;width:20%;background:#fafafa;">
+      <strong style="color:#c62828;">🔴 문제</strong><br><br>
+      1. 카페24는 글로벌 진출 어려움<br><br>
+      2. Shopify는 일본 현지화 미흡<br><br>
+      3. 크로스보더 정산이 복잡함
+    </td>
+    <td style="border:2px solid #5c6bc0;padding:14px 12px;vertical-align:top;width:20%;background:#fafafa;">
+      <strong style="color:#2e7d32;">✅ 해결책</strong><br><br>
+      1. 한국 결제 네이티브 + 글로벌 크로스보더 통합<br><br>
+      2. 일본 로컬라이제이션 내장<br>(콘비니·PayPay·인보이스)<br><br>
+      3. 통합 정산 대시보드<br><br>
+      4. AI 30분 온보딩<br><br>
+      5. 슬라이딩 수수료 (0~2%)
+    </td>
+    <td rowspan="2" style="border:2px solid #5c6bc0;padding:14px 12px;vertical-align:top;width:20%;background:#e8eaf6;">
+      <strong style="color:#3949ab;">⭐ 핵심 가치 제안</strong><br><br>
+      <em>"카페24도 Shopify도<br>아닌 제3의 선택"</em><br><br>
+      · 한국에서 시작해 일본·동남아까지 하나의 플랫폼으로<br><br>
+      · 월 500만 원까지 수수료 0%<br><br>
+      · 글로벌 결제 기본 탑재
+    </td>
+    <td style="border:2px solid #5c6bc0;padding:14px 12px;vertical-align:top;width:20%;background:#fafafa;">
+      <strong style="color:#e65100;">🏆 불공정한 이점</strong><br><br>
+      · 아시아 결제 도메인 지식<br><br>
+      · StoreX 기존 고객 기반<br><br>
+      · 셀메이트의 일본 이커머스 네트워크
+    </td>
+    <td rowspan="2" style="border:2px solid #5c6bc0;padding:14px 12px;vertical-align:top;width:20%;background:#fafafa;">
+      <strong style="color:#5c6bc0;">👥 고객 세그먼트</strong><br><br>
+      1. 카페24 불만 판매자<br>(글로벌 진출 준비)<br><br>
+      2. 일본 라쿠텐·아마존<br>자사몰 전환 희망 셀러<br><br>
+      3. K-뷰티·K-패션<br>일본 직출 브랜드
+    </td>
+  </tr>
+  <tr>
+    <td style="border:2px solid #5c6bc0;padding:14px 12px;vertical-align:top;background:#fafafa;">
+      <strong style="color:#5c6bc0;">📊 핵심 지표</strong><br><br>
+      · 활성 판매자 수<br><br>
+      · 월 총 GMV<br><br>
+      · 판매자 이탈율
+    </td>
+    <td style="border:2px solid #5c6bc0;padding:14px 12px;vertical-align:top;background:#fafafa;">
+      <strong style="color:#5c6bc0;">📣 채널</strong><br><br>
+      1. 직접 아웃리치<br>(커뮤니티, DM)<br><br>
+      2. GMO-PG·에이전시 파트너십<br><br>
+      3. 이커머스 커뮤니티<br><br>
+      4. 웨비나·세미나
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style="border:2px solid #5c6bc0;padding:14px 12px;vertical-align:top;background:#fafafa;">
+      <strong style="color:#5c6bc0;">💸 비용 구조</strong><br><br>
+      · 클라우드 인프라 (월 ~103만 원)<br>
+      · 인건비 9인 × 550만 원 = 월 ~4,950만 원<br>
+      · PG 연동 개발·유지 비용<br><br>
+      <strong>BEP: 활성 판매자 약 56명 / 월 GMV 약 16.7억 원</strong>
+    </td>
+    <td colspan="3" style="border:2px solid #5c6bc0;padding:14px 12px;vertical-align:top;background:#fafafa;">
+      <strong style="color:#5c6bc0;">💰 수익 흐름</strong><br><br>
+      1. 거래 수수료 (0~2% 슬라이딩)<br>
+      2. 프리미엄 구독 (AI·통계 등)<br>
+      3. 마이그레이션 서비스
+    </td>
+  </tr>
+</table>
+</div>
 
 ---
 
@@ -199,14 +230,57 @@
 
 ### 5.2 Competitor (경쟁사)
 
-```
-카페24                 Shopify                 누리메이트 (목표 위치)
-────────────────────────────────────────────────────────────────
-강점:  한국 최적화      강점: 글로벌 생태계       강점: 한국+일본+글로벌 통합
-약점:  글로벌 확장 제한  약점: 일본 현지화 미흡    차별: 슬라이딩 수수료
-       AI 기능 부재            복잡한 로컬 결제           통합 정산 대시보드
-       데이터 분석 약함         이중 수수료 구조           AI 온보딩
-```
+<div style="overflow-x:auto;">
+<table style="width:100%;border-collapse:collapse;font-size:0.9em;min-width:540px;">
+  <thead>
+    <tr>
+      <th style="padding:10px 14px;background:#5c6bc0;color:#fff;text-align:center;border:1px solid #5c6bc0;width:33%;">카페24</th>
+      <th style="padding:10px 14px;background:#5c6bc0;color:#fff;text-align:center;border:1px solid #5c6bc0;width:33%;">Shopify</th>
+      <th style="padding:10px 14px;background:#3949ab;color:#fff;text-align:center;border:1px solid #3949ab;width:33%;">누리메이트 (목표)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding:12px 14px;border:1px solid #c5cae9;vertical-align:top;background:#fafafa;">
+        <strong style="color:#2e7d32;">강점</strong><br>
+        · 한국 최적화<br>
+        · 200만 스토어 레퍼런스
+      </td>
+      <td style="padding:12px 14px;border:1px solid #c5cae9;vertical-align:top;background:#fafafa;">
+        <strong style="color:#2e7d32;">강점</strong><br>
+        · 글로벌 앱 생태계<br>
+        · 브랜드 신뢰도
+      </td>
+      <td style="padding:12px 14px;border:1px solid #c5cae9;vertical-align:top;background:#e8eaf6;">
+        <strong style="color:#2e7d32;">강점</strong><br>
+        · 한국+일본+글로벌 통합<br>
+        · 슬라이딩 수수료<br>
+        · 통합 정산 대시보드<br>
+        · AI 온보딩
+      </td>
+    </tr>
+    <tr>
+      <td style="padding:12px 14px;border:1px solid #c5cae9;vertical-align:top;background:#fafafa;">
+        <strong style="color:#c62828;">약점</strong><br>
+        · 글로벌 확장 제한<br>
+        · AI 기능 부재<br>
+        · 데이터 분석 약함
+      </td>
+      <td style="padding:12px 14px;border:1px solid #c5cae9;vertical-align:top;background:#fafafa;">
+        <strong style="color:#c62828;">약점</strong><br>
+        · 일본 현지화 미흡<br>
+        · 복잡한 로컬 결제<br>
+        · 이중 수수료 구조
+      </td>
+      <td style="padding:12px 14px;border:1px solid #c5cae9;vertical-align:top;background:#e8eaf6;">
+        <strong style="color:#c62828;">약점 (현재)</strong><br>
+        · 브랜드 인지도 제로<br>
+        · 앱 생태계 부재
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 **경쟁 포지션 요약**:
 - 카페24 vs 누리메이트: "더 좋은 카페24"가 아니라 "카페24의 다음 단계"
@@ -230,37 +304,39 @@
 
 ### 6.1 축 1: 한국·아시아 최적화 vs 글로벌 범용성
 
-```
-               ┌─────────────────────────────────┐
-글로벌         │                                 │
-범용성   높음  │    Shopify ●                    │
-               │                                 │
-               │                   ● 누리메이트  │
-               │                   (목표 위치)   │
-               │    카페24 ●                     │
-               │                                 │
-               │          BASE ●  STORES ●       │
-         낮음  └─────────────────────────────────┘
-               낮음   한국·아시아 최적화    높음
+```mermaid
+quadrantChart
+    title 글로벌 범용성 vs 아시아 최적화
+    x-axis 아시아 최적화 낮음 --> 아시아 최적화 높음
+    y-axis 글로벌 범용성 낮음 --> 글로벌 범용성 높음
+    quadrant-1 목표 포지션
+    quadrant-2 글로벌 범용 강자
+    quadrant-3 로컬 약자
+    quadrant-4 아시아 로컬 강자
+    Shopify: [0.25, 0.90]
+    카페24: [0.58, 0.38]
+    BASE: [0.38, 0.18]
+    STORES: [0.50, 0.14]
+    누리메이트(목표): [0.88, 0.85]
 ```
 
 **해석**: 누리메이트는 Shopify 수준의 글로벌 범용성 + 카페24 이상의 아시아 최적화를 동시에 달성하는 위치를 목표로 한다. 현재 이 위치를 차지한 플랫폼이 없다.
 
 ### 6.2 축 2: 초기 비용 부담 vs 성장 시 수수료
 
-```
-               ┌─────────────────────────────────┐
-성장 시        │                                 │
-수수료   높음  │    Shopify ●                    │
-               │    (월 $39 + 2.9%)              │
-               │                                 │
-               │         카페24 ●                │
-               │         (실질 4~6%)             │
-               │                  ● 누리메이트   │
-               │                  (0~2% 슬라이딩)│
-         낮음  │    BASE ● (0% + 6.6%)           │
-               └─────────────────────────────────┘
-               높음  초기 비용 부담   낮음
+```mermaid
+quadrantChart
+    title 초기 비용 부담 vs 성장 시 수수료
+    x-axis 초기 비용 부담 높음 --> 초기 비용 부담 낮음
+    y-axis 성장 시 수수료 낮음 --> 성장 시 수수료 높음
+    quadrant-1 초기·성장 모두 부담
+    quadrant-2 초기는 저렴, 성장하면 부담
+    quadrant-3 초기·성장 모두 유리
+    quadrant-4 초기 비용 크고 성장도 부담
+    Shopify(월$39+2.9%): [0.18, 0.82]
+    카페24(실질4~6%): [0.42, 0.68]
+    BASE(0%+6.6%): [0.80, 0.72]
+    누리메이트(0~2%): [0.78, 0.25]
 ```
 
 **해석**: BASE는 초기 비용은 없으나 성장 시 수수료가 높다. Shopify는 초기 고정비 부담이 크다. 누리메이트는 두 약점을 동시에 해결한다.
@@ -269,31 +345,27 @@
 
 ## 7. 수익 구조 다이어그램
 
-```
-판매자 GMV 흐름
-────────────────────────────────────────────────────────────
-구매자 결제
-   │
-   ▼
-[PG사 처리]  ────────── PG 수수료 (2~3%) ──────── PG사 수익
-   │
-   ▼
-[누리메이트 정산 집계]
-   │
-   ├──── 플랫폼 수수료 (0~2% 슬라이딩) ──────── 누리메이트 수익
-   │
-   └──── 판매자 실수령액 ────────────────────── 판매자 수익
+```mermaid
+flowchart TD
+    A([🛒 구매자 결제]) --> B[PG사 처리]
+    B --> C([💳 PG 수수료 2~3%\nPG사 수익])
+    B --> D[누리메이트 정산 집계]
+    D --> E([📊 플랫폼 수수료 0~2%\n누리메이트 수익])
+    D --> F([💰 판매자 실수령액\n판매자 수익])
 
-────────────────────────────────────────────────────────────
-누리메이트 수익원 (다각화 로드맵)
-
-Phase 1 (런칭~)    Phase 2 (2026 Q4)    Phase 3 (2027+)
-───────────────    ─────────────────    ──────────────────
-거래 수수료         프리미엄 구독         인플루언서 중개
-(0~2%)             AI 마케팅 패키지      앱 마켓 수수료
-                   고급 분석             광고 노출료
-                   API 접근권            금융(할부·대출)
+    style A fill:#e3f2fd,stroke:#1565c0
+    style C fill:#fce4ec,stroke:#c62828
+    style E fill:#e8eaf6,stroke:#3949ab
+    style F fill:#e8f5e9,stroke:#2e7d32
 ```
+
+**수익원 다각화 로드맵**
+
+| Phase | 시기 | 수익원 |
+|-------|------|--------|
+| **Phase 1** | 런칭~ | 거래 수수료 (0~2%) |
+| **Phase 2** | 2026 Q4 | 프리미엄 구독 · AI 마케팅 패키지 · 고급 분석 · API 접근권 |
+| **Phase 3** | 2027+ | 인플루언서 중개 · 앱 마켓 수수료 · 광고 노출료 · 금융(할부·대출) |
 
 ---
 
