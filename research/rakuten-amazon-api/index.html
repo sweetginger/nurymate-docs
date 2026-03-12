@@ -1,0 +1,3586 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="누리메이트 제품 전략, 시장 리서치, 기능 스펙">
+      
+      
+      
+        <link rel="canonical" href="https://sweetginger.github.io/nurymate-docs/research/rakuten-amazon-api/">
+      
+      
+        <link rel="prev" href="../platform-strategy/">
+      
+      
+        <link rel="next" href="../sns-integration/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>라쿠텐·아마존 API - 누리메이트 전략 문서</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#jp-api-4-15" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../.." title="누리메이트 전략 문서" class="md-header__button md-logo" aria-label="누리메이트 전략 문서" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            누리메이트 전략 문서
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              라쿠텐·아마존 API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  개요
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../strategy/product-plan/" class="md-tabs__link">
+          
+  
+  
+  전략
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../japan-korea-ecommerce/" class="md-tabs__link">
+          
+  
+  
+  리서치
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../spec/spec-priority/" class="md-tabs__link">
+          
+  
+  
+  Spec
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="누리메이트 전략 문서" class="md-nav__button md-logo" aria-label="누리메이트 전략 문서" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    누리메이트 전략 문서
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    전략
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    전략
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/product-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    제품 기획
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/business-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    비즈니스 로드맵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/strategic-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    전략 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/pricing-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    수익 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/early-customer-acquisition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    초기 고객 확보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/new-seller-acquisition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    신규 창업자 확보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/organic-growth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    자연 유입 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/global-expansion-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글로벌 확장 로드맵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/vertical-expansion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    버티컬 확장
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/japan-gtm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 GTM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/api-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 정책
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    리서치
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    리서치
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../japan-korea-ecommerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본·한국 이커머스 문화 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-jp-payment-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 결제 불편 UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-japan-weaknesses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 약점 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-japan-payment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 결제
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-pricing-revenue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 수익 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pg-stripe-support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stripe·PG 지원 조사
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stripe-connect-countries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stripe Connect 국가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pg-licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PG 라이선스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../local-pg-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    현지 PG 계약 난이도
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paymentwall-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paymentwall 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../payoneer-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payoneer 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../korea-ecommerce-platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    한국 이커머스 경쟁 지형
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../japan-ec-saas-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 D2C EC SaaS 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global-market-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글로벌 시장 개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logistics-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    배송·3PL 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sns-review-legal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SNS 리뷰 법적 검토
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cafe24-pro-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cafe24-app-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 앱 디자인
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cafe24-analytics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fashion-ecommerce-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    패션 이커머스 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../platform-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플랫폼 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../platform-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플랫폼 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    라쿠텐·아마존 API
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    라쿠텐·아마존 API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 개요
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 개요">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        핵심 요약
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-rmsrakuten-merchant-server-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 라쿠텐 RMS(Rakuten Merchant Server) API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 라쿠텐 RMS(Rakuten Merchant Server) API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1-rms-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1. RMS API 개요
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-2. 상품 데이터 Export 가능 여부
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-3. 접근 주체: 셀러 vs 플랫폼 사업자
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-4-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-4. API 신청 절차
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-5. 비용
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-jp-sp-api-selling-partner-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 아마존 JP SP-API (Selling Partner API)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 아마존 JP SP-API (Selling Partner API)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-1-sp-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-1. SP-API 개요
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-2. 상품 데이터 제공 범위
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3-oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-3. 접근 주체: OAuth 판매자 위임 방식
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-4. 비용 구조
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-5-jp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-5. 아마존 JP 특이사항
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 두 플랫폼 OAuth 위임 방식 지원 비교
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 상품 데이터 항목별 마이그레이션 가능 범위
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 마이그레이션 자동화 구현 시 기술적 제약 및 정책상 허용 범위
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 마이그레이션 자동화 구현 시 기술적 제약 및 정책상 허용 범위">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6-1. 라쿠텐 정책상 제약
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6-2. 아마존 정책상 제약
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6-3. 공통 기술적 제약
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 누리메이트 플랫폼 마이그레이션 도구 설계 시사점
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 누리메이트 플랫폼 마이그레이션 도구 설계 시사점">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#7-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7-1. 권장 아키텍처
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7-2. 마이그레이션 단계 설계
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7-3. 비용 고려사항
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-4-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7-4. MVP 우선순위 제언
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        참고 자료
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sns-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SNS 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../review-platform-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    리뷰 플랫폼 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../japan-conveni-pickup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 편의점 픽업
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../korea-japan-trust-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    한일 신뢰 사례
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../closed-app-marketplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    클로즈드 앱 마켓플레이스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-marketing-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 마케팅 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-queryql-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify GraphQL 리포트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../latest-stats-2025-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    최신 통계 2025~2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Spec
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/spec-priority/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec 우선순위
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/seller-store-creation-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 셀러 스토어 생성 UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/domain-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 멀티테넌시 도메인 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/jp-payment-native/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 일본 결제 네이티브
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/unit-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 국가별 단위 현지화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 마이그레이션
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/operator-admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 운영자 어드민
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/module-definition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 모듈 기능 정의
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/unified-payment-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 통합 결제 대시보드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/first-sale-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 첫 매출 견인 도구
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/analytics-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 통계·분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/sns-marketing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] SNS 마케팅 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/sns-review-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] SNS 리뷰 수집
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/affiliate-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 어필리에이트 트래킹
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/country-preset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 국가별 설정 프리셋
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/global-launch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 글로벌 진출 지원
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/shipping-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 배송 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/influencer-matching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 인플루언서 매칭
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/benchmark-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 벤치마크 리포트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] AI 운영 어시스턴트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/ai-chat-setting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] AI 채팅 설정
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/global-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 글로벌 통합 대시보드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/sellex-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    셀익스 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 개요
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 개요">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        핵심 요약
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-rmsrakuten-merchant-server-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 라쿠텐 RMS(Rakuten Merchant Server) API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 라쿠텐 RMS(Rakuten Merchant Server) API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1-rms-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1. RMS API 개요
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-2. 상품 데이터 Export 가능 여부
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-3. 접근 주체: 셀러 vs 플랫폼 사업자
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-4-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-4. API 신청 절차
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-5. 비용
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-jp-sp-api-selling-partner-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 아마존 JP SP-API (Selling Partner API)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 아마존 JP SP-API (Selling Partner API)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-1-sp-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-1. SP-API 개요
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-2. 상품 데이터 제공 범위
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-3-oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-3. 접근 주체: OAuth 판매자 위임 방식
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-4. 비용 구조
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-5-jp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-5. 아마존 JP 특이사항
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 두 플랫폼 OAuth 위임 방식 지원 비교
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 상품 데이터 항목별 마이그레이션 가능 범위
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 마이그레이션 자동화 구현 시 기술적 제약 및 정책상 허용 범위
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 마이그레이션 자동화 구현 시 기술적 제약 및 정책상 허용 범위">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6-1. 라쿠텐 정책상 제약
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6-2. 아마존 정책상 제약
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6-3. 공통 기술적 제약
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 누리메이트 플랫폼 마이그레이션 도구 설계 시사점
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 누리메이트 플랫폼 마이그레이션 도구 설계 시사점">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#7-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7-1. 권장 아키텍처
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7-2. 마이그레이션 단계 설계
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7-3. 비용 고려사항
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-4-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7-4. MVP 우선순위 제언
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        참고 자료
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="jp-api-4-15">라쿠텐·아마존 JP 상품 데이터 API 조사 [4-15]<a class="headerlink" href="#jp-api-4-15" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>조사일: 2026-03-10 | 목적: 누리메이트 일본 플랫폼 마이그레이션 도구 설계</p>
+</blockquote>
+<hr />
+<h2 id="1">1. 개요<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>라쿠텐 시장(楽天市場)과 아마존 JP는 일본 EC 시장의 양대 마켓플레이스로, 많은 일본 셀러들이 이 두 플랫폼에 상품을 등록·운영하고 있다. 누리메이트가 마이그레이션 도구를 제공하려면 두 플랫폼의 상품 데이터 API 구조와 접근 권한 체계를 정확히 이해해야 한다.</p>
+<h3 id="_1">핵심 요약<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>라쿠텐 RMS API</th>
+<th>아마존 SP-API</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>접근 주체</td>
+<td>셀러 본인 또는 위임받은 시스템 개발사</td>
+<td>셀러가 OAuth로 권한 위임한 앱</td>
+</tr>
+<tr>
+<td>상품 데이터 export</td>
+<td>가능 (상품 API)</td>
+<td>가능 (Listings Items API)</td>
+</tr>
+<tr>
+<td>OAuth 위임</td>
+<td>셀러가 시스템 개발사에 API 키 발급 방식</td>
+<td>OAuth 2.0 + Login with Amazon(LwA)</td>
+</tr>
+<tr>
+<td>이용 비용</td>
+<td>무료 (특정 기능 계약 필요)</td>
+<td>2026.01.31부터 연간 $1,400 (개발자 등록비)</td>
+</tr>
+<tr>
+<td>정책상 제약</td>
+<td>서비스 이용 목적 제한, 제3자 재배포 금지</td>
+<td>개인정보·데이터 사용 정책 엄격</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-rmsrakuten-merchant-server-api">2. 라쿠텐 RMS(Rakuten Merchant Server) API<a class="headerlink" href="#2-rmsrakuten-merchant-server-api" title="Permanent link">&para;</a></h2>
+<h3 id="2-1-rms-api">2-1. RMS API 개요<a class="headerlink" href="#2-1-rms-api" title="Permanent link">&para;</a></h3>
+<p>라쿠텐 RMS는 라쿠텐 시장 출점 셀러가 상품 등록·주문 관리·재고 관리 등을 수행하는 관리 시스템이다. RMS API는 이 관리 기능을 프로그래밍 방식으로 접근할 수 있도록 제공하는 인터페이스다.</p>
+<p><strong>API 접근 주소:</strong> <code>https://api.rms.rakuten.co.jp/</code></p>
+<h3 id="2-2-export">2-2. 상품 데이터 Export 가능 여부<a class="headerlink" href="#2-2-export" title="Permanent link">&para;</a></h3>
+<p>라쿠텐 RMS API를 통해 다음 상품 데이터를 조회·export할 수 있다:</p>
+<table>
+<thead>
+<tr>
+<th>데이터 항목</th>
+<th>API 지원</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>상품명 (商品名)</td>
+<td>○</td>
+<td></td>
+</tr>
+<tr>
+<td>상품 설명·캐치카피</td>
+<td>○</td>
+<td></td>
+</tr>
+<tr>
+<td>가격 (税込·税抜)</td>
+<td>○</td>
+<td></td>
+</tr>
+<tr>
+<td>상품 이미지 URL</td>
+<td>○</td>
+<td>이미지 직접 export는 URL 제공 방식</td>
+</tr>
+<tr>
+<td>재고 수량</td>
+<td>○</td>
+<td>InventoryAPI 2.0 (SKU 이행 대응)</td>
+</tr>
+<tr>
+<td>상품 카테고리</td>
+<td>○</td>
+<td>라쿠텐 독자 카테고리 코드</td>
+</tr>
+<tr>
+<td>SKU 정보</td>
+<td>○</td>
+<td>2023년 SKU 이행 이후 InventoryAPI 2.0 사용</td>
+</tr>
+<tr>
+<td>리뷰 데이터</td>
+<td>△</td>
+<td>공개 리뷰만 가능, API 직접 export는 제한</td>
+</tr>
+<tr>
+<td>주문 데이터</td>
+<td>○</td>
+<td>Order API</td>
+</tr>
+<tr>
+<td>CSV 다운로드</td>
+<td>○</td>
+<td>RMS 관리 화면에서 직접 CSV export 가능</td>
+</tr>
+</tbody>
+</table>
+<p><strong>상품 CSV 다운로드 방법 (API 외 대안):</strong>
+RMS 관리 화면 → 점포 설정 → 상품 관리 → CSV 다운로드 → 대상 상품 조건 지정 → 원하는 항목 선택 후 다운로드. 대량 상품의 경우 CSV 방식이 가장 현실적인 export 방법이다.</p>
+<h3 id="2-3-vs">2-3. 접근 주체: 셀러 vs 플랫폼 사업자<a class="headerlink" href="#2-3-vs" title="Permanent link">&para;</a></h3>
+<p>라쿠텐 RMS API의 접근 방식은 <strong>두 가지 경로</strong>가 있다:</p>
+<p><strong>경로 1: 셀러 직접 접근</strong>
+- 셀러 본인이 RMS에서 API 라이선스 키 발급
+- 인증 방식: <code>serviceSecret:licenseKey</code>를 Base64 인코딩한 Bearer 토큰
+- 2025년 6월 12일부터 "RMS 서비스 스퀘어 라이선스 키" 방식으로 인증 방법 변경 의무화</p>
+<p><strong>경로 2: 시스템 개발사(누리메이트 같은 사업자) 경유</strong>
+- 셀러가 시스템 개발사에 API 사용을 승인(API 承認)하는 절차 필요
+- 셀러가 RMS에서 "시스템 개발사로부터의 API 승인 신청"을 수락
+- 이후 해당 라이선스 키를 사용해 개발사가 API 호출 가능</p>
+<p><strong>중요:</strong> 라쿠텐은 아마존처럼 OAuth 표준 위임 플로우를 제공하지 않으며, <strong>셀러가 직접 RMS 화면에서 개발사에 권한을 부여</strong>하는 수동 프로세스다. 이는 UX 마찰을 유발하므로 마이그레이션 도구 설계 시 셀러 온보딩 가이드가 중요하다.</p>
+<h3 id="2-4-api">2-4. API 신청 절차<a class="headerlink" href="#2-4-api" title="Permanent link">&para;</a></h3>
+<ol>
+<li>시스템 개발사(누리메이트): 라쿠텐 파트너 포털에 개발사 등록</li>
+<li>API 이용 서비스 신청 (RMS WEB API 서비스 이용 약관 동의)</li>
+<li>개발사가 셀러에게 "API 승인 요청" 발송</li>
+<li>셀러가 RMS 관리 화면에서 개발사 API 사용 승인</li>
+<li>라이선스 키 발급 완료 → API 호출 가능</li>
+</ol>
+<p><strong>2025년 인증 방식 변경 (중요):</strong>
+2025년 6월 12일부터 기존 "WEB SERVICE의 라이선스 키" 방식이 폐지되고 "RMS 서비스 스퀘어 라이선스 키" 방식으로 의무 전환. 기존 연동 시스템은 반드시 새 인증 방식으로 업데이트 필요.</p>
+<h3 id="2-5">2-5. 비용<a class="headerlink" href="#2-5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>RMS API 이용 자체: <strong>무료</strong></li>
+<li>단, 특정 기능 사용을 위해 라쿠텐과 옵션 계약이 필요한 경우 있음</li>
+<li>예: 상품 API를 통한 대량 상품 관리를 위해서는 "CSV 대량 상품 편집" 계약 필요</li>
+<li>라쿠텐 시장 출점 자체의 월정액 비용은 별도 (약 50,000~100,000엔/월 수준)</li>
+</ul>
+<hr />
+<h2 id="3-jp-sp-api-selling-partner-api">3. 아마존 JP SP-API (Selling Partner API)<a class="headerlink" href="#3-jp-sp-api-selling-partner-api" title="Permanent link">&para;</a></h2>
+<h3 id="3-1-sp-api">3-1. SP-API 개요<a class="headerlink" href="#3-1-sp-api" title="Permanent link">&para;</a></h3>
+<p>아마존 SP-API는 아마존의 기존 MWS(Marketplace Web Service) API를 대체하는 현대적 REST API 체계다. 판매자, 공급업체, 물류 제공업체 등이 아마존의 리스팅·주문·재고·보고서 데이터에 프로그래밍 방식으로 접근할 수 있다.</p>
+<p><strong>공식 문서:</strong> <code>https://developer-docs.amazon.com/sp-api</code></p>
+<h3 id="3-2">3-2. 상품 데이터 제공 범위<a class="headerlink" href="#3-2" title="Permanent link">&para;</a></h3>
+<p>SP-API를 통해 접근 가능한 상품 관련 데이터:</p>
+<table>
+<thead>
+<tr>
+<th>API 명</th>
+<th>제공 데이터</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Listings Items API</strong></td>
+<td>상품명, 가격, 이미지, 카테고리, 속성값, ASIN/SKU</td>
+<td>셀러 본인 리스팅 데이터</td>
+</tr>
+<tr>
+<td><strong>Catalog Items API</strong></td>
+<td>아마존 카탈로그 상품 정보 (공개 데이터)</td>
+<td>ASIN 기반 조회</td>
+</tr>
+<tr>
+<td><strong>Reports API</strong></td>
+<td>재고 보고서, 주문 보고서, 리스팅 보고서 (CSV)</td>
+<td>대용량 데이터 export에 최적</td>
+</tr>
+<tr>
+<td><strong>Inventory API</strong></td>
+<td>재고 수량, FBA 재고 현황</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Orders API</strong></td>
+<td>주문 데이터</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Product Pricing API</strong></td>
+<td>가격 정보</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>리뷰 데이터:</strong> SP-API는 셀러의 자사 상품 리뷰 데이터를 직접 export하는 API를 제공하지 않는다. 아마존은 리뷰를 플랫폼 자산으로 간주하므로 직접 이전은 정책상 불허.</p>
+<p><strong>이미지 데이터:</strong> 이미지는 아마존 CDN URL로 제공되며, 직접 다운로드 후 누리메이트 스토리지로 재업로드하는 방식으로 마이그레이션 가능. 단, 이미지 저작권은 셀러 소유이므로 법적 문제 없음.</p>
+<h3 id="3-3-oauth">3-3. 접근 주체: OAuth 판매자 위임 방식<a class="headerlink" href="#3-3-oauth" title="Permanent link">&para;</a></h3>
+<p>SP-API는 <strong>OAuth 2.0 + Login with Amazon(LwA)</strong> 방식으로 판매자 인증 위임을 공식 지원한다.</p>
+<p><strong>위임 플로우:</strong></p>
+<div class="highlight"><pre><span></span><code>누리메이트 (SP-API 앱 개발자 등록)
+  │
+  ├─ 1. 아마존 개발자 포털에서 앱 등록 (Client ID/Secret 발급)
+  │
+  └─ 셀러 온보딩 시
+       ├─ 2. 누리메이트가 아마존 OAuth 인증 URL로 셀러 리다이렉트
+       ├─ 3. 셀러가 아마존에서 로그인 및 권한 허용
+       ├─ 4. 아마존이 Authorization Code 반환
+       ├─ 5. 누리메이트가 Access Token + Refresh Token 교환
+       └─ 6. 이후 Refresh Token으로 셀러 데이터 API 호출 가능
+</code></pre></div>
+<p>이는 표준 OAuth 2.0 플로우이므로, 셀러는 ID/Password를 공유하지 않아도 되며 권한 철회도 아마존 설정에서 언제든 가능하다. <strong>라쿠텐의 수동 승인 방식보다 현저히 우수한 UX</strong>다.</p>
+<p><strong>앱 유형:</strong>
+- <strong>Public Application:</strong> 여러 셀러가 사용하는 앱 (누리메이트 같은 SaaS에 적합)
+- <strong>Private Application:</strong> 단일 판매자 자체 사용 앱</p>
+<h3 id="3-4">3-4. 비용 구조<a class="headerlink" href="#3-4" title="Permanent link">&para;</a></h3>
+<p><strong>개발자 등록 및 앱 사용:</strong>
+- 현재 (2026년 1월 31일 이전): 무료
+- <strong>2026년 1월 31일부터: 연간 $1,400 USD 구독 요금 부과</strong> (신규 및 기존 개발자 모두 적용)
+  - 이는 SP-API를 사용하는 모든 제3자 개발자에게 적용
+  - 누리메이트가 SP-API 연동을 설계한다면, 이 비용을 사업 계획에 반영 필요</p>
+<p><strong>API 호출 비용:</strong>
+- API 호출 자체는 별도 과금 없음 (Rate Limit 내에서)
+- Rate Limit 초과 시 일시적 차단 (비용 아님)</p>
+<h3 id="3-5-jp">3-5. 아마존 JP 특이사항<a class="headerlink" href="#3-5-jp" title="Permanent link">&para;</a></h3>
+<ul>
+<li>아마존 JP는 <strong>글로벌 SP-API와 동일한 API 사용</strong> (별도 JP 전용 API 없음)</li>
+<li>리전 엔드포인트: <code>https://sellingpartnerapi-fe.amazon.com</code> (Far East — JP, AU, SG 포함)</li>
+<li>멀티 마켓플레이스 지원: 셀러가 JP와 US 등 복수 마켓에 출점 시 단일 앱으로 관리 가능</li>
+</ul>
+<hr />
+<h2 id="4-oauth">4. 두 플랫폼 OAuth 위임 방식 지원 비교<a class="headerlink" href="#4-oauth" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>라쿠텐 RMS</th>
+<th>아마존 SP-API</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>표준 OAuth 2.0</td>
+<td>✕ (자체 방식)</td>
+<td>○ (OAuth 2.0 + LwA)</td>
+</tr>
+<tr>
+<td>셀러 권한 위임 방식</td>
+<td>수동 (RMS 화면에서 개발사 승인)</td>
+<td>자동 (OAuth 인증 URL 리다이렉트)</td>
+</tr>
+<tr>
+<td>토큰 발급</td>
+<td>API 키 방식 (라이선스 키)</td>
+<td>Access Token + Refresh Token</td>
+</tr>
+<tr>
+<td>권한 범위 제어 (Scope)</td>
+<td>없음 (전체 또는 특정 API만 부여)</td>
+<td>세분화된 권한 범위 설정 가능</td>
+</tr>
+<tr>
+<td>권한 철회</td>
+<td>셀러 또는 개발사가 RMS에서 직접</td>
+<td>아마존 계정 설정에서 셀러 직접 철회 가능</td>
+</tr>
+<tr>
+<td>온보딩 UX</td>
+<td>낮음 (셀러가 RMS 직접 조작 필요)</td>
+<td>높음 (단순 로그인 + 승인 클릭)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5">5. 상품 데이터 항목별 마이그레이션 가능 범위<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>데이터 항목</th>
+<th>라쿠텐 RMS</th>
+<th>아마존 SP-API</th>
+<th>누리메이트 마이그레이션 가능 여부</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>상품명</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+</tr>
+<tr>
+<td>상품 설명</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+</tr>
+<tr>
+<td>가격</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+</tr>
+<tr>
+<td>상품 이미지</td>
+<td>○ (URL)</td>
+<td>○ (URL)</td>
+<td>○ (URL 다운로드 후 재업로드)</td>
+</tr>
+<tr>
+<td>재고 수량</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+</tr>
+<tr>
+<td>카테고리</td>
+<td>○ (라쿠텐 카테고리 코드)</td>
+<td>○ (아마존 카테고리)</td>
+<td>△ (카테고리 매핑 로직 필요)</td>
+</tr>
+<tr>
+<td>SKU / 품번</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+</tr>
+<tr>
+<td>상품 속성/옵션</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+</tr>
+<tr>
+<td>리뷰 (별점·텍스트)</td>
+<td>△ (공개 데이터만)</td>
+<td>✕ (API 미제공)</td>
+<td>✕ (정책상 이전 불가)</td>
+</tr>
+<tr>
+<td>판매 실적 데이터</td>
+<td>○ (보고서 API)</td>
+<td>○ (Reports API)</td>
+<td>참고용만 가능</td>
+</tr>
+<tr>
+<td>고객 개인정보</td>
+<td>✕ (별도 동의 필요)</td>
+<td>✕ (GDPR/개인정보 보호)</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>쿠폰·프로모션 설정</td>
+<td>△</td>
+<td>△</td>
+<td>△ (재생성 필요)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6">6. 마이그레이션 자동화 구현 시 기술적 제약 및 정책상 허용 범위<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h3 id="6-1">6-1. 라쿠텐 정책상 제약<a class="headerlink" href="#6-1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>데이터 재배포 금지:</strong> 라쿠텐 RMS API를 통해 취득한 데이터를 제3자에게 재판매하거나 공개하는 것은 서비스 이용 약관상 금지. 마이그레이션은 해당 셀러의 자사 데이터 이전이므로 허용 범위.</p>
+</li>
+<li>
+<p><strong>API 호출 레이트 리밋:</strong> 과도한 API 호출은 제한될 수 있으며, 대량 상품(수천 개 이상)의 경우 CSV export 방식이 더 효율적.</p>
+</li>
+<li>
+<p><strong>인증 방식 변경 리스크:</strong> 2025년 6월 인증 방식 의무 변경처럼 라쿠텐은 API 사양을 비교적 자주 변경. 장기 유지보수 비용 고려 필요.</p>
+</li>
+<li>
+<p><strong>계약 필요 기능:</strong> 상품 대량 편집 API 사용을 위해 "CSV 대량 상품 편집" 서비스 계약이 별도 필요할 수 있음.</p>
+</li>
+</ol>
+<h3 id="6-2">6-2. 아마존 정책상 제약<a class="headerlink" href="#6-2" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>데이터 사용 목적 제한:</strong> SP-API 개발자 정책에 따라 취득한 데이터는 허용된 사용 사례(Acceptable Use Policy) 내에서만 사용 가능. 셀러 자신의 데이터를 다른 플랫폼으로 이전하는 것은 허용됨.</p>
+</li>
+<li>
+<p><strong>리뷰 데이터 이전 불가:</strong> 아마존 리뷰는 아마존의 재산으로 간주되어 API 제공 자체가 없으며, 외부 스크래핑도 ToS 위반.</p>
+</li>
+<li>
+<p><strong>ASIN 종속성:</strong> 아마존의 상품 식별자 ASIN은 아마존 플랫폼 전용이므로, 누리메이트 내부에서는 새로운 상품 식별자 체계를 사용해야 함.</p>
+</li>
+<li>
+<p><strong>이미지 저작권:</strong> 상품 이미지는 셀러 소유이므로 이전 가능. 단, 아마존이 생성한 이미지(A+ 콘텐츠 등)는 아마존 소유일 수 있어 확인 필요.</p>
+</li>
+<li>
+<p><strong>Throttling (스로틀링):</strong> API 호출에 Rate Limit이 있으며, 대량 상품 마이그레이션 시 Reports API(비동기 방식)를 활용하는 것이 효율적.</p>
+</li>
+</ol>
+<h3 id="6-3">6-3. 공통 기술적 제약<a class="headerlink" href="#6-3" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>카테고리 매핑:</strong> 라쿠텐/아마존의 독자 카테고리 체계를 누리메이트 카테고리로 변환하는 매핑 테이블 구축 필요</li>
+<li><strong>이미지 재호스팅:</strong> CDN URL에서 이미지를 다운로드 후 누리메이트 S3 스토리지에 재업로드하는 파이프라인 구축 필요</li>
+<li><strong>HTML 파싱:</strong> 상품 설명이 HTML 형식인 경우 파싱 및 정제 로직 필요</li>
+<li><strong>SKU 충돌 처리:</strong> 복수 플랫폼에서 동일 셀러의 SKU가 중복될 경우 처리 로직 필요</li>
+</ul>
+<hr />
+<h2 id="7">7. 누리메이트 플랫폼 마이그레이션 도구 설계 시사점<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<h3 id="7-1">7-1. 권장 아키텍처<a class="headerlink" href="#7-1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>셀러 온보딩 화면
+├─ 라쿠텐 연동
+│   └─ 셀러: RMS에서 누리메이트에 API 키 발급 (가이드 제공)
+│       └─ 누리메이트: API 키 저장 후 상품 API 호출
+│           └─ 대안: CSV export 가이드 제공 후 업로드
+│
+└─ 아마존 JP 연동
+    └─ OAuth 인증 플로우 (1클릭 연동)
+        └─ Access Token으로 Listings Items API + Reports API 호출
+</code></pre></div>
+<h3 id="7-2">7-2. 마이그레이션 단계 설계<a class="headerlink" href="#7-2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>작업</th>
+<th>기술 스택</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 인증</td>
+<td>셀러 OAuth/API 키 수집</td>
+<td>OAuth 2.0, 안전한 키 저장 (Vault)</td>
+</tr>
+<tr>
+<td>2. 상품 목록 조회</td>
+<td>API 호출 또는 CSV 파싱</td>
+<td>Background Job (Celery/ARQ)</td>
+</tr>
+<tr>
+<td>3. 이미지 재호스팅</td>
+<td>이미지 다운로드 → S3 업로드</td>
+<td>비동기 파이프라인</td>
+</tr>
+<tr>
+<td>4. 카테고리 매핑</td>
+<td>규칙 기반 + AI 보조 매핑</td>
+<td>ML 분류 또는 규칙 테이블</td>
+</tr>
+<tr>
+<td>5. 셀러 검토</td>
+<td>마이그레이션 미리보기</td>
+<td>프론트엔드 UI</td>
+</tr>
+<tr>
+<td>6. 최종 게시</td>
+<td>누리메이트 상품 DB에 저장</td>
+<td>트랜잭션 처리</td>
+</tr>
+</tbody>
+</table>
+<h3 id="7-3">7-3. 비용 고려사항<a class="headerlink" href="#7-3" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>아마존 SP-API 연간 $1,400:</strong> 2026.01.31부터 의무 부과. 초기 사업 계획에 반영 필요.</li>
+<li><strong>라쿠텐 RMS API:</strong> 무료이나 셀러별 온보딩 지원 비용(CS) 발생 가능</li>
+<li><strong>이미지 스토리지:</strong> 대량 이미지 재호스팅 시 S3 비용 발생</li>
+<li><strong>개발 공수:</strong> 라쿠텐 + 아마존 양사 연동 초기 개발에 약 6~10주 예상</li>
+</ul>
+<h3 id="7-4-mvp">7-4. MVP 우선순위 제언<a class="headerlink" href="#7-4-mvp" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>아마존 SP-API 먼저 구현</strong> — OAuth 표준 지원으로 셀러 온보딩 UX 우수, API 안정성 높음</li>
+<li><strong>라쿠텐은 CSV 방식으로 먼저 지원</strong> — API 연동보다 CSV 업로드 가이드가 셀러에게 더 친숙할 수 있음</li>
+<li><strong>라쿠텐 API 연동은 2차 단계</strong> — 2025년 6월 인증 방식 변경 안정화 후 구현</li>
+</ol>
+<hr />
+<h2 id="_2">참고 자료<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://developer-docs.amazon.com/sp-api">아마존 SP-API 공식 문서</a></li>
+<li><a href="https://developer-docs.amazon.com/sp-api/docs/authorizing-selling-partner-api-applications">SP-API 인증 및 승인 가이드</a></li>
+<li><a href="https://developer-docs.amazon.com/sp-api/docs/sp-api-registration-overview">SP-API 개발자 등록 개요</a></li>
+<li><a href="https://developer-docs.amazon.com/sp-api/docs/amazon-seller-data-access">아마존 판매자 데이터 접근 정책</a></li>
+<li><a href="https://webservice.faq.rakuten.net/hc/en-us/articles/37599235125913-I-would-like-to-know-about-the-API-related-to-RMS">라쿠텐 RMS API 관련 FAQ (영문)</a></li>
+<li><a href="https://goqsystem.com/manual/158184/">GoQSystem: 라쿠텐 시스템 개발사 API 승인 방법</a></li>
+<li><a href="https://goqsystem.com/blog/15827">GoQSystem: 라쿠텐 인증 방식 변경 안내 (2025)</a></li>
+<li><a href="https://github.com/JakeJP/Rakuten.RMS.Api">GitHub: Rakuten.RMS.Api .NET 클라이언트 라이브러리</a></li>
+<li><a href="https://primenumber.com/blog/use-case-rakuten-rms-api">TROCCO: 라쿠텐 RMS API 주문 데이터 취득 구현 가이드</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.top", "navigation.sections", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

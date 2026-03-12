@@ -1,0 +1,3448 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="누리메이트 제품 전략, 시장 리서치, 기능 스펙">
+      
+      
+      
+        <link rel="canonical" href="https://sweetginger.github.io/nurymate-docs/research/pg-stripe-support/">
+      
+      
+        <link rel="prev" href="../shopify-pricing-revenue/">
+      
+      
+        <link rel="next" href="../stripe-connect-countries/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>Stripe·PG 지원 조사 - 누리메이트 전략 문서</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#stripe-pg" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../.." title="누리메이트 전략 문서" class="md-header__button md-logo" aria-label="누리메이트 전략 문서" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            누리메이트 전략 문서
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Stripe·PG 지원 조사
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  개요
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../strategy/product-plan/" class="md-tabs__link">
+          
+  
+  
+  전략
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../japan-korea-ecommerce/" class="md-tabs__link">
+          
+  
+  
+  리서치
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../spec/spec-priority/" class="md-tabs__link">
+          
+  
+  
+  Spec
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="누리메이트 전략 문서" class="md-nav__button md-logo" aria-label="누리메이트 전략 문서" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    누리메이트 전략 문서
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    전략
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    전략
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/product-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    제품 기획
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/business-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    비즈니스 로드맵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/strategic-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    전략 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/pricing-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    수익 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/early-customer-acquisition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    초기 고객 확보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/new-seller-acquisition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    신규 창업자 확보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/organic-growth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    자연 유입 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/global-expansion-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글로벌 확장 로드맵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/vertical-expansion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    버티컬 확장
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/japan-gtm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 GTM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/api-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 정책
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    리서치
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    리서치
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../japan-korea-ecommerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본·한국 이커머스 문화 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-jp-payment-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 결제 불편 UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-japan-weaknesses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 약점 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-japan-payment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 결제
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-pricing-revenue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 수익 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stripe·PG 지원 조사
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stripe·PG 지원 조사
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        조사 목적
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-stripe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Stripe 한국 국내결제 지원 현황
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Stripe 한국 국내결제 지원 현황">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-1. 지원 시작 시점 및 배경
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-2. 지원되는 결제수단
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-3. 중요 제약사항
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-stripe-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Stripe Connect 크로스보더 정산 구조
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Stripe Connect 크로스보더 정산 구조">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1. 기본 구조
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-2. 한국 판매자 정산 지원 현황
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-3. 정산 관련 비용
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-pg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 한국 PG사 대안 목록 (이원화 구조)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 이원화 구조 실현 가능성 평가
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 이원화 구조 실현 가능성 평가">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-1. 기술적 실현 가능성: 가능
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-2. 운영적 복잡도: 높음
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-3. 누리메이트 적용 시 고려사항
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-stripe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 일본 결제수단 Stripe 지원 여부
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 일본 결제수단 Stripe 지원 여부">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-1. 지원되는 일본 결제수단
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-2. 미지원 일본 결제수단
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-3-stripe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-3. Stripe 일본 법인 및 계정 개설 조건
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 결론 및 누리메이트 적용 방향
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 결론 및 누리메이트 적용 방향">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6-1-stripe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6-1. Stripe 활용 가능 영역
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6-2. 누리메이트 권장 아키텍처
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6-3. 핵심 결론
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        참고 출처
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stripe-connect-countries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stripe Connect 국가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pg-licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PG 라이선스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../local-pg-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    현지 PG 계약 난이도
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paymentwall-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paymentwall 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../payoneer-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payoneer 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../korea-ecommerce-platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    한국 이커머스 경쟁 지형
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../japan-ec-saas-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 D2C EC SaaS 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global-market-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글로벌 시장 개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logistics-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    배송·3PL 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sns-review-legal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SNS 리뷰 법적 검토
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cafe24-pro-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cafe24-app-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 앱 디자인
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cafe24-analytics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fashion-ecommerce-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    패션 이커머스 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../platform-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플랫폼 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../platform-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플랫폼 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rakuten-amazon-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    라쿠텐·아마존 API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sns-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SNS 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../review-platform-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    리뷰 플랫폼 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../japan-conveni-pickup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 편의점 픽업
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../korea-japan-trust-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    한일 신뢰 사례
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../closed-app-marketplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    클로즈드 앱 마켓플레이스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-marketing-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 마케팅 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-queryql-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify GraphQL 리포트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../latest-stats-2025-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    최신 통계 2025~2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Spec
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/spec-priority/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec 우선순위
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/seller-store-creation-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 셀러 스토어 생성 UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/domain-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 멀티테넌시 도메인 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/jp-payment-native/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 일본 결제 네이티브
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/unit-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 국가별 단위 현지화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 마이그레이션
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/operator-admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 운영자 어드민
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/module-definition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 모듈 기능 정의
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/unified-payment-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 통합 결제 대시보드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/first-sale-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 첫 매출 견인 도구
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/analytics-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 통계·분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/sns-marketing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] SNS 마케팅 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/sns-review-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] SNS 리뷰 수집
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/affiliate-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 어필리에이트 트래킹
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/country-preset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 국가별 설정 프리셋
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/global-launch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 글로벌 진출 지원
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/shipping-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 배송 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/influencer-matching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 인플루언서 매칭
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/benchmark-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 벤치마크 리포트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] AI 운영 어시스턴트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/ai-chat-setting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] AI 채팅 설정
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/global-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 글로벌 통합 대시보드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/sellex-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    셀익스 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        조사 목적
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-stripe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Stripe 한국 국내결제 지원 현황
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Stripe 한국 국내결제 지원 현황">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-1. 지원 시작 시점 및 배경
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-2. 지원되는 결제수단
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-3. 중요 제약사항
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-stripe-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Stripe Connect 크로스보더 정산 구조
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Stripe Connect 크로스보더 정산 구조">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1. 기본 구조
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-2. 한국 판매자 정산 지원 현황
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-3. 정산 관련 비용
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-pg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 한국 PG사 대안 목록 (이원화 구조)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 이원화 구조 실현 가능성 평가
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 이원화 구조 실현 가능성 평가">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-1. 기술적 실현 가능성: 가능
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-2. 운영적 복잡도: 높음
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-3. 누리메이트 적용 시 고려사항
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-stripe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 일본 결제수단 Stripe 지원 여부
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 일본 결제수단 Stripe 지원 여부">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-1. 지원되는 일본 결제수단
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-2. 미지원 일본 결제수단
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-3-stripe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-3. Stripe 일본 법인 및 계정 개설 조건
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 결론 및 누리메이트 적용 방향
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 결론 및 누리메이트 적용 방향">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6-1-stripe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6-1. Stripe 활용 가능 영역
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6-2. 누리메이트 권장 아키텍처
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6-3. 핵심 결론
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        참고 출처
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="stripe-pg">Stripe PG 지원 현황 — 한국·일본 결제 조사<a class="headerlink" href="#stripe-pg" title="Permanent link">&para;</a></h1>
+<h2 id="_1">조사 목적<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>누리메이트가 국내결제(한국 PG)와 크로스보더 결제(Stripe)를 이원화하는 구조를 채택할 경우의 실현 가능성을 검토한다. 구체적으로는 Stripe의 한국 국내결제 지원 범위, 일본 결제수단 지원 현황, Stripe Connect 크로스보더 정산 구조, 그리고 이원화 구조 운영의 복잡도를 분석한다.</p>
+<hr />
+<h2 id="1-stripe">1. Stripe 한국 국내결제 지원 현황<a class="headerlink" href="#1-stripe" title="Permanent link">&para;</a></h2>
+<h3 id="1-1">1-1. 지원 시작 시점 및 배경<a class="headerlink" href="#1-1" title="Permanent link">&para;</a></h3>
+<p>Stripe는 2024년 8월 싱가포르 Stripe Tour에서 NICEPay와의 파트너십을 공식 발표하며 한국 로컬 결제 지원을 시작했다. 이를 통해 <strong>해외 법인을 보유한 사업자</strong>가 한국 법인 없이도 한국 소비자의 원화 결제를 수취할 수 있게 되었다.</p>
+<h3 id="1-2">1-2. 지원되는 결제수단<a class="headerlink" href="#1-2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>결제수단</th>
+<th>지원 여부</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>한국 신용·체크카드</td>
+<td><strong>지원</strong></td>
+<td>20개 이상 국내 카드 브랜드 (현대, 삼성, KB국민 등)</td>
+</tr>
+<tr>
+<td>카카오페이 (KakaoPay)</td>
+<td><strong>지원</strong></td>
+<td>공식 Stripe 결제수단 (<code>docs.stripe.com/payments/kakao-pay</code>)</td>
+</tr>
+<tr>
+<td>네이버페이 (Naver Pay)</td>
+<td><strong>지원</strong></td>
+<td>공식 Stripe 결제수단 (<code>docs.stripe.com/payments/naver-pay</code>)</td>
+</tr>
+<tr>
+<td>삼성페이 (Samsung Pay)</td>
+<td><strong>지원</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>PAYCO</td>
+<td><strong>지원</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>원화(KRW) 결제</td>
+<td><strong>지원</strong></td>
+<td>가격 표시를 KRW로 설정해야 함</td>
+</tr>
+<tr>
+<td>KRW 정기결제(구독)</td>
+<td><strong>지원</strong></td>
+<td><code>docs.stripe.com/billing/subscriptions/kr-card</code></td>
+</tr>
+</tbody>
+</table>
+<p>NICEPay가 중간 현지 파트너 역할을 하여 종단간 정산·리포팅을 제공한다. Stripe Checkout 및 Elements 모두에서 사용 가능하다.</p>
+<h3 id="1-3">1-3. 중요 제약사항<a class="headerlink" href="#1-3" title="Permanent link">&para;</a></h3>
+<p><strong>한국 법인·사업자는 Stripe 계정을 직접 개설할 수 없다.</strong> 한국은 현재 Stripe의 공식 Merchant Country(가맹 국가)가 아니며, 한국 사업자등록증 기반으로 Stripe 계정을 만드는 것은 2026년 3월 기준 불가능하다. 이 기능은 Stripe 계정을 이미 보유한 <strong>해외 법인(미국, 싱가포르, 일본 등)</strong> 이 한국 고객을 수취하는 구조에서만 동작한다.</p>
+<p>추가로 DCC(동적 통화 변환) 문제가 보고되고 있다. 카드 발급사에 따라 DCC가 자동 적용되어 소비자 실제 부담 금액이 달라질 수 있으며, 이는 Stripe 자체 문제가 아닌 카드사 정책에 따른 것이나 고객 불만으로 이어질 수 있다.</p>
+<hr />
+<h2 id="2-stripe-connect">2. Stripe Connect 크로스보더 정산 구조<a class="headerlink" href="#2-stripe-connect" title="Permanent link">&para;</a></h2>
+<h3 id="2-1">2-1. 기본 구조<a class="headerlink" href="#2-1" title="Permanent link">&para;</a></h3>
+<p>Stripe Connect는 플랫폼이 연결된 계정(Connected Account)에 결제를 라우팅하는 방식으로, 마켓플레이스·플랫폼 비즈니스에 적합하다.</p>
+<div class="highlight"><pre><span></span><code>해외 구매자 (일본, 미국 등)
+    ↓ 자국 카드·페이로 결제
+Stripe (현지 통화로 수취)
+    ↓ 환율 적용 + 환전 수수료(약 1~2%)
+한국 판매자 계좌 (KRW 또는 USD 정산)
+</code></pre></div>
+<h3 id="2-2">2-2. 한국 판매자 정산 지원 현황<a class="headerlink" href="#2-2" title="Permanent link">&para;</a></h3>
+<p>Stripe의 자체 Cross-Border Payouts(Connect를 통한 크로스보더 정산)는 현재 <strong>미국, 영국, EEA, 캐나다, 스위스</strong> 소재 플랫폼에서만 자동 지원된다. 한국 소재 법인은 이 셀프서브 크로스보더 정산 프로그램에 포함되지 않는다.</p>
+<p>그러나 2025년 12월 기준 Stripe의 Global Payouts 프로그램은 50개국 이상으로 확대되었으며, 한국 포함 여부는 별도 Enterprise 계약을 통해 확인이 필요하다. 일본→한국 크로스보더 이커머스에 대한 Stripe 전용 가이드(<code>stripe.com/resources/more/cross-border-ecommerce-in-south-korea-from-japan</code>)가 존재하는 점은 긍정적 신호다.</p>
+<h3 id="2-3">2-3. 정산 관련 비용<a class="headerlink" href="#2-3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>환율 전환 수수료: 약 1~2% (Stripe 정책에 따라 상이)</li>
+<li>외환거래법 준수를 위해 현지 파트너 은행을 통해 자금을 라우팅하므로 정산 속도가 일반 도메스틱 정산 대비 느릴 수 있음</li>
+<li>KRW→외화 또는 외화→KRW 환전 시 환율 리스크 발생</li>
+</ul>
+<hr />
+<h2 id="3-pg">3. 한국 PG사 대안 목록 (이원화 구조)<a class="headerlink" href="#3-pg" title="Permanent link">&para;</a></h2>
+<p>Stripe가 지원하지 않는 주요 한국 결제수단과 대안 PG사는 다음과 같다.</p>
+<table>
+<thead>
+<tr>
+<th>결제수단</th>
+<th>Stripe 지원</th>
+<th>대안 PG사</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>무통장입금(가상계좌)</td>
+<td>미지원</td>
+<td>KG이니시스, 토스페이먼츠, NHN KCP</td>
+<td>한국 소비자 선호도 높음</td>
+</tr>
+<tr>
+<td>휴대폰 소액결제</td>
+<td>미지원</td>
+<td>KG이니시스, 토스페이먼츠</td>
+<td>청소년·소액 결제에 필수</td>
+</tr>
+<tr>
+<td>계좌이체(실시간)</td>
+<td>미지원</td>
+<td>KG이니시스, 토스페이먼츠</td>
+<td></td>
+</tr>
+<tr>
+<td>에스크로 결제</td>
+<td>미지원</td>
+<td>KG이니시스, 토스페이먼츠</td>
+<td>전자상거래법상 특정 품목 의무</td>
+</tr>
+<tr>
+<td>상품권·포인트 결제</td>
+<td>미지원</td>
+<td>별도 구축 필요</td>
+<td></td>
+</tr>
+<tr>
+<td>해외 카드(Visa/MC)</td>
+<td><strong>지원</strong></td>
+<td>—</td>
+<td>Stripe가 더 유리</td>
+</tr>
+<tr>
+<td>카카오페이, 네이버페이</td>
+<td><strong>지원</strong></td>
+<td>KG이니시스, 토스페이먼츠도 지원</td>
+<td>이중 지원</td>
+</tr>
+</tbody>
+</table>
+<p><strong>주요 국내 PG사 특성 비교:</strong></p>
+<table>
+<thead>
+<tr>
+<th>PG사</th>
+<th>강점</th>
+<th>약점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KG이니시스</td>
+<td>국내 PG 시장 1위, 모든 국내 결제수단 지원, 일본 결제 서비스 신규 출시</td>
+<td>해외 발급 카드 미지원, 한국 법인 필수</td>
+</tr>
+<tr>
+<td>토스페이먼츠</td>
+<td>UX 우수, 개발자 친화적 API, 구독/정기결제 지원</td>
+<td>해외 카드 미지원, 한국 법인 필수</td>
+</tr>
+<tr>
+<td>NHN KCP</td>
+<td>대용량 트랜잭션 처리 강점</td>
+<td>API 레거시, 개발자 UX 낮음</td>
+</tr>
+<tr>
+<td>포트원(PortOne)</td>
+<td>다중 PG 통합 미들웨어 (이니시스+Stripe 동시 연동 가능)</td>
+<td>추가 수수료 발생</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4">4. 이원화 구조 실현 가능성 평가<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h3 id="4-1">4-1. 기술적 실현 가능성: 가능<a class="headerlink" href="#4-1" title="Permanent link">&para;</a></h3>
+<p>국내 구매자는 국내 PG(KG이니시스/토스페이먼츠)로, 해외 구매자는 Stripe로 처리하는 이원화 구조는 기술적으로 가능하며 실제로 한국 이커머스 플랫폼들에서 사용되는 방식이다.</p>
+<p><strong>구현 패턴:</strong>
+- IP/언어 감지 → 국내 PG 또는 Stripe 자동 라우팅
+- 포트원(PortOne) 같은 PG 통합 미들웨어를 사용하면 단일 API로 양쪽 연동 가능
+- 누리메이트가 직접 PG 연동을 구현할 경우 각 PG별 별도 SDK/API 연동 필요</p>
+<h3 id="4-2">4-2. 운영적 복잡도: 높음<a class="headerlink" href="#4-2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>단일 PG</th>
+<th>이원화 구조</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>계약 수</td>
+<td>1개</td>
+<td>2개 이상</td>
+</tr>
+<tr>
+<td>정산 채널</td>
+<td>1개</td>
+<td>2개 (정산 주기·통화 상이)</td>
+</tr>
+<tr>
+<td>회계 처리</td>
+<td>단순</td>
+<td>복잡 (외화 환산, 채널별 대조)</td>
+</tr>
+<tr>
+<td>개발 공수</td>
+<td>기준</td>
+<td>약 2배</td>
+</tr>
+<tr>
+<td>수수료 비용</td>
+<td>단일</td>
+<td>채널별 상이, 환전 수수료 추가</td>
+</tr>
+<tr>
+<td>환불 처리</td>
+<td>단일 흐름</td>
+<td>PG별 상이한 환불 정책</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-3">4-3. 누리메이트 적용 시 고려사항<a class="headerlink" href="#4-3" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>필수 조건</strong>: 누리메이트 플랫폼이 해외 법인(일본 또는 싱가포르 등) 명의로 Stripe 계정을 개설해야 한다. 한국 법인만으로는 Stripe 계정 개설 불가.</li>
+<li><strong>권장 접근</strong>: 초기에는 포트원(PortOne) 같은 PG 통합 미들웨어를 활용해 KG이니시스+Stripe 이원화를 단일 통합으로 구현하는 것이 개발 공수를 줄이는 방법이다.</li>
+<li><strong>판매자 입장</strong>: 플랫폼이 정산을 통합 관리해준다면 판매자는 단일 정산 리포트를 받을 수 있으나, 누리메이트 백오피스에서 이중 정산을 통합·집계하는 로직 구현이 필요하다.</li>
+</ul>
+<hr />
+<h2 id="5-stripe">5. 일본 결제수단 Stripe 지원 여부<a class="headerlink" href="#5-stripe" title="Permanent link">&para;</a></h2>
+<p>Stripe는 2025년 일본 현지 결제수단 지원을 대폭 확대하며 일본 시장에 적극 투자했다.</p>
+<h3 id="5-1">5-1. 지원되는 일본 결제수단<a class="headerlink" href="#5-1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>결제수단</th>
+<th>Stripe 지원 여부</th>
+<th>출시 시점</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>콘비니 결제 (Konbini)</td>
+<td><strong>지원</strong></td>
+<td>기존 + 2025년 Connect 추가 (2025-11-17)</td>
+<td>FamilyMart, Lawson, Ministop, Seicomart 4대 체인</td>
+</tr>
+<tr>
+<td>PayPay</td>
+<td><strong>지원</strong></td>
+<td>2025년 9월 Public Preview → 11월 Connect 지원</td>
+<td>일본 사용자 6,800만 명 이상</td>
+</tr>
+<tr>
+<td>Furikomi (후리코미, 은행 이체)</td>
+<td><strong>지원</strong></td>
+<td>2025년</td>
+<td>일본 특화 기능으로 발표</td>
+</tr>
+<tr>
+<td>신용카드 (Visa/MC/JCB/AMEX)</td>
+<td><strong>지원</strong></td>
+<td>기존</td>
+<td>3DS 의무화(2025년 3월) 대응 완료</td>
+</tr>
+<tr>
+<td>Apple Pay / Google Pay</td>
+<td><strong>지원</strong></td>
+<td>기존</td>
+<td></td>
+</tr>
+<tr>
+<td>WeChat Pay</td>
+<td><strong>지원</strong></td>
+<td>Stripe Terminal(인스토어)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-2">5-2. 미지원 일본 결제수단<a class="headerlink" href="#5-2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>결제수단</th>
+<th>Stripe 지원 여부</th>
+<th>대안</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LINE Pay</td>
+<td><strong>미지원</strong> (직접 통합 없음)</td>
+<td>KOMOJU, GMO PG 연동</td>
+</tr>
+<tr>
+<td>Paidy (후불결제, BNPL)</td>
+<td><strong>미지원</strong></td>
+<td>Paidy 자체 플러그인 별도 연동</td>
+</tr>
+<tr>
+<td>口座振替 (자동이체, 구독)</td>
+<td><strong>미지원</strong></td>
+<td>일본 로컬 PG 필요</td>
+</tr>
+<tr>
+<td>着払い (착불 결제)</td>
+<td><strong>미지원</strong></td>
+<td>물류 연동 필요, 디지털 결제 불가 구조</td>
+</tr>
+<tr>
+<td>Rakuten Pay</td>
+<td><strong>미지원</strong></td>
+<td>KOMOJU 경유</td>
+</tr>
+<tr>
+<td>au PAY, d payment</td>
+<td><strong>미지원</strong></td>
+<td>KOMOJU 경유</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-3-stripe">5-3. Stripe 일본 법인 및 계정 개설 조건<a class="headerlink" href="#5-3-stripe" title="Permanent link">&para;</a></h3>
+<p>Stripe는 일본에 현지 법인을 두고 있다(<strong>Stripe Japan K.K.</strong>). 일본 Stripe 계정 개설을 위한 요건은 다음과 같다.</p>
+<ul>
+<li><strong>일본 법인 등록</strong>: 법인 등록증(登記簿謄本) 및 세금 식별 번호 필요</li>
+<li><strong>일본 내 실물 주소</strong>: 사무소 주소가 있어야 함</li>
+<li><strong>대표자 본인인증</strong>: KYC 절차 (여권 또는 마이넘버 카드)</li>
+<li><strong>은행 계좌</strong>: 일본 현지 은행 계좌 (정산 수취용)</li>
+<li><strong>추가 심사 항목</strong>: PayPay 등 일부 스마트폰 결제는 Stripe 심사 외에 해당 결제수단 제공사의 별도 심사(약 3~4주) 필요</li>
+</ul>
+<p><strong>중요</strong>: 한국 법인이 일본 사업자 등록 없이 Stripe Japan 계정을 개설하는 것은 불가하다. 일본 진출을 위해서는 일본 현지 법인 설립 또는 파트너사를 통한 간접 구조가 필요하다.</p>
+<hr />
+<h2 id="6">6. 결론 및 누리메이트 적용 방향<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h3 id="6-1-stripe">6-1. Stripe 활용 가능 영역<a class="headerlink" href="#6-1-stripe" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>시나리오</th>
+<th>Stripe 활용 가능 여부</th>
+<th>조건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>한국 소비자 → 해외 플랫폼 결제 수취</td>
+<td>가능</td>
+<td>해외 법인 보유 시</td>
+</tr>
+<tr>
+<td>일본 소비자 결제 수취 (콘비니·PayPay 포함)</td>
+<td>가능</td>
+<td>일본 법인 or 파트너 구조</td>
+</tr>
+<tr>
+<td>해외 소비자 → Stripe 크로스보더</td>
+<td>가능</td>
+<td>미국·싱가포르 등 법인 기준</td>
+</tr>
+<tr>
+<td>한국 법인이 직접 Stripe 계정 개설</td>
+<td><strong>불가</strong></td>
+<td>2026년 3월 기준</td>
+</tr>
+</tbody>
+</table>
+<h3 id="6-2">6-2. 누리메이트 권장 아키텍처<a class="headerlink" href="#6-2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>[국내 결제 레이어]          [크로스보더 레이어]
+KG이니시스 or              Stripe (해외 법인 기준)
+토스페이먼츠                ├── 일본: Konbini, PayPay
+├── 한국 카드               ├── 글로벌: Visa/MC/AMEX
+├── 가상계좌                └── 한국 소비자: KRW Local Cards
+├── 휴대폰 결제                 (NICEPay 경유)
+└── 에스크로
+
+          ↓ 통합
+    포트원(PortOne) 미들웨어
+          ↓
+    누리메이트 정산 대시보드
+</code></pre></div>
+<h3 id="6-3">6-3. 핵심 결론<a class="headerlink" href="#6-3" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Stripe 단독으로 한국 국내 결제를 완전 대체하는 것은 불가능하다.</strong> 가상계좌, 휴대폰 소액결제, 에스크로 등 핵심 국내 결제수단을 지원하지 않는다.</li>
+<li><strong>이원화 구조(국내 PG + Stripe)는 기술적으로 실현 가능</strong>하나, 운영 복잡도와 개발 공수가 약 2배 증가한다. 포트원 같은 통합 미들웨어 도입을 강력 권장한다.</li>
+<li><strong>일본 시장에서 Stripe는 2025년 이후 빠르게 성장</strong>하며 콘비니, PayPay를 지원하기 시작했으나, LINE Pay·Paidy·口座振替 등 일부 수단은 여전히 미지원이다. KOMOJU 병행이 필요한 상황은 단기적으로 지속될 전망이다.</li>
+<li><strong>법인 구조가 핵심 제약</strong>: 누리메이트가 Stripe를 활용하려면 해외 법인(일본 또는 싱가포르 등) 보유가 전제 조건이다.</li>
+</ol>
+<hr />
+<h2 id="_2">참고 출처<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://docs.stripe.com/payments/countries/korea">South Korean payment methods - Stripe Documentation</a></li>
+<li><a href="https://docs.stripe.com/payments/kr-card/accept-a-payment">Accept a payment using local cards in South Korea - Stripe</a></li>
+<li><a href="https://stripe.com/resources/more/payments-in-south-korea">How to accept payments in South Korea - Stripe</a></li>
+<li><a href="https://docs.stripe.com/payments/kakao-pay/accept-a-payment">Accept a payment using Kakao Pay - Stripe Documentation</a></li>
+<li><a href="https://docs.stripe.com/payments/naver-pay/accept-a-payment">Accept a payment using Naver Pay - Stripe Documentation</a></li>
+<li><a href="https://stripe.com/resources/more/cross-border-ecommerce-in-south-korea-from-japan">Cross-border ecommerce from Japan to South Korea - Stripe</a></li>
+<li><a href="https://docs.stripe.com/connect/cross-border-payouts">Cross-border payouts - Stripe Documentation</a></li>
+<li><a href="https://docs.stripe.com/changelog/clover/2025-12-15/cross-border-payouts-new-countries">Global Payouts adds support for 13 new countries - Stripe Changelog</a></li>
+<li><a href="https://blog.popekim.com/en/2025/11/02/stripe-krw-local-payment-dcc.html">Stripe KRW Local Payments and DCC Problem - PPMC Blog</a></li>
+<li><a href="https://stripe.com/newsroom/news/tour-singapore-2024">Stripe boosts cross-border commerce in Asia - Stripe Newsroom</a></li>
+<li><a href="https://stripe.com/newsroom/news/japan-payments-moment-2025">Stripe launches new features for businesses in Japan, including PayPay - Stripe Newsroom</a></li>
+<li><a href="https://docs.stripe.com/payments/konbini/accept-a-payment">Konbini payments - Stripe Documentation</a></li>
+<li><a href="https://docs.stripe.com/changelog/clover/2025-11-17/accounts-v2-konbini-payments">Adds support for Konbini payments in Accounts v2 - Stripe Changelog</a></li>
+<li><a href="https://stripe.com/newsroom/news/japan-local-payments">Stripe launches Konbini and Furikomi - Stripe Newsroom</a></li>
+<li><a href="https://stripe.com/newsroom/news/tour-tokyo-2025">Stripe expands services in Japan, Terminal launch - Stripe Newsroom</a></li>
+<li><a href="https://www.doola.com/stripe-guide/how-to-open-a-stripe-account-in-japan/">How to open a Stripe account in Japan - doola</a></li>
+<li><a href="https://docs.stripe.com/changelog/acacia/2024-10-28/south-korean-payment-methods">Adds support for new South Korean payment methods - Stripe Changelog</a></li>
+<li><a href="https://www.threads.com/@dalgom.bami/post/DPRAWfBEnZT/">Stripe 10월 부터 한국결제 가능 설명 - Threads</a></li>
+<li><a href="https://premiatnc.com/kr/인사이트/블로그/싱가포르/스트라이프-싱가포르-법인-활용-blogging/">국내 법인으로 스트라이프 결제가 안 되는 이유 - Premia TNC</a></li>
+<li><a href="https://blog.portone.io/opi_globalpayment-krpg/">해외결제 페이팔 아니면 스트라이프만 정답일까 - PortOne Blog</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.top", "navigation.sections", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

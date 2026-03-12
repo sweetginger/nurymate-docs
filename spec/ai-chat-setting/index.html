@@ -1,0 +1,4141 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="누리메이트 제품 전략, 시장 리서치, 기능 스펙">
+      
+      
+      
+        <link rel="canonical" href="https://sweetginger.github.io/nurymate-docs/spec/ai-chat-setting/">
+      
+      
+        <link rel="prev" href="../ai-assistant/">
+      
+      
+        <link rel="next" href="../global-dashboard/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>[P2] AI 채팅 설정 - 누리메이트 전략 문서</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ai" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../.." title="누리메이트 전략 문서" class="md-header__button md-logo" aria-label="누리메이트 전략 문서" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            누리메이트 전략 문서
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              [P2] AI 채팅 설정
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  개요
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../strategy/product-plan/" class="md-tabs__link">
+          
+  
+  
+  전략
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../research/japan-korea-ecommerce/" class="md-tabs__link">
+          
+  
+  
+  리서치
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../spec-priority/" class="md-tabs__link">
+          
+  
+  
+  Spec
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="누리메이트 전략 문서" class="md-nav__button md-logo" aria-label="누리메이트 전략 문서" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    누리메이트 전략 문서
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    전략
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    전략
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/product-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    제품 기획
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/business-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    비즈니스 로드맵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/strategic-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    전략 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/pricing-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    수익 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/early-customer-acquisition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    초기 고객 확보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/new-seller-acquisition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    신규 창업자 확보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/organic-growth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    자연 유입 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/global-expansion-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글로벌 확장 로드맵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/vertical-expansion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    버티컬 확장
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/japan-gtm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 GTM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/api-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 정책
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    리서치
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    리서치
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/japan-korea-ecommerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본·한국 이커머스 문화 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-jp-payment-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 결제 불편 UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-japan-weaknesses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 약점 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-japan-payment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 결제
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-pricing-revenue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 수익 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/pg-stripe-support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stripe·PG 지원 조사
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/stripe-connect-countries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stripe Connect 국가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/pg-licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PG 라이선스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/local-pg-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    현지 PG 계약 난이도
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/paymentwall-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paymentwall 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/payoneer-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payoneer 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/korea-ecommerce-platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    한국 이커머스 경쟁 지형
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/japan-ec-saas-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 D2C EC SaaS 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/global-market-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글로벌 시장 개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/logistics-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    배송·3PL 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/sns-review-legal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SNS 리뷰 법적 검토
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/cafe24-pro-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/cafe24-app-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 앱 디자인
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/cafe24-analytics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/fashion-ecommerce-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    패션 이커머스 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/platform-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플랫폼 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/platform-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플랫폼 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/rakuten-amazon-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    라쿠텐·아마존 API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/sns-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SNS 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/review-platform-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    리뷰 플랫폼 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/japan-conveni-pickup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 편의점 픽업
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/korea-japan-trust-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    한일 신뢰 사례
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/closed-app-marketplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    클로즈드 앱 마켓플레이스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-marketing-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 마케팅 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-queryql-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify GraphQL 리포트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/latest-stats-2025-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    최신 통계 2025~2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Spec
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spec-priority/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec 우선순위
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../seller-store-creation-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 셀러 스토어 생성 UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../domain-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 멀티테넌시 도메인 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jp-payment-native/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 일본 결제 네이티브
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 국가별 단위 현지화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 마이그레이션
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operator-admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 운영자 어드민
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module-definition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 모듈 기능 정의
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unified-payment-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 통합 결제 대시보드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../first-sale-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 첫 매출 견인 도구
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analytics-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 통계·분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sns-marketing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] SNS 마케팅 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sns-review-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] SNS 리뷰 수집
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../affiliate-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 어필리에이트 트래킹
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../country-preset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 국가별 설정 프리셋
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global-launch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 글로벌 진출 지원
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shipping-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 배송 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../influencer-matching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 인플루언서 매칭
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmark-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 벤치마크 리포트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] AI 운영 어시스턴트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] AI 채팅 설정
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] AI 채팅 설정
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 개요 및 목표
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 개요 및 목표">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 배경
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 벤치마크 사례
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 목표
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 핵심 사용 시나리오
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 핵심 사용 시나리오">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 시나리오 예시 (대화 흐름)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 시나리오 예시 (대화 흐름)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        시나리오 A: 배송비 정책 변경
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        시나리오 B: 상품 일괄 가격 수정
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        시나리오 C: 마케팅 자동화 설정
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        시나리오 D: 모호한 요청 처리
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 설정 가능 범위 (Phase별)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 기능 세분화 (현재 기획 기능 전수 목록)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 기능 세분화 (현재 기획 기능 전수 목록)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 스토어 기본 설정
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 상품 관리
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 주문/배송
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 결제 설정
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 고객/마케팅
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 통계/리포트
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. AI 처리 구조
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. AI 처리 구조">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 자연어 → 인텐트 파싱
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 확인 → 실행 플로우
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 에러 처리 및 롤백
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. UX 설계 원칙
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. UX 설계 원칙">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 채팅 인터페이스 배치
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 응답 UI 패턴
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 메시지 설계 원칙
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-mvp-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 구현 우선순위 (MVP vs 고도화)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 구현 우선순위 (MVP vs 고도화)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mvp-phase-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MVP (출시 필수, Phase 1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 고도화
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 고도화
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 기술 요건
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 기술 요건">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 LLM 선택
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 아키텍처 요건
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 비기능 요건
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 보안/권한
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 글로벌 통합 대시보드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sellex-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    셀익스 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 개요 및 목표
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 개요 및 목표">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 배경
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 벤치마크 사례
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 목표
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 핵심 사용 시나리오
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 핵심 사용 시나리오">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 시나리오 예시 (대화 흐름)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 시나리오 예시 (대화 흐름)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        시나리오 A: 배송비 정책 변경
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        시나리오 B: 상품 일괄 가격 수정
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        시나리오 C: 마케팅 자동화 설정
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        시나리오 D: 모호한 요청 처리
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 설정 가능 범위 (Phase별)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 기능 세분화 (현재 기획 기능 전수 목록)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 기능 세분화 (현재 기획 기능 전수 목록)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 스토어 기본 설정
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 상품 관리
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 주문/배송
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 결제 설정
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 고객/마케팅
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 통계/리포트
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. AI 처리 구조
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. AI 처리 구조">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 자연어 → 인텐트 파싱
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 확인 → 실행 플로우
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 에러 처리 및 롤백
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. UX 설계 원칙
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. UX 설계 원칙">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 채팅 인터페이스 배치
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 응답 UI 패턴
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 메시지 설계 원칙
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-mvp-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 구현 우선순위 (MVP vs 고도화)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 구현 우선순위 (MVP vs 고도화)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mvp-phase-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MVP (출시 필수, Phase 1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 고도화
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 고도화
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 기술 요건
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 기술 요건">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 LLM 선택
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 아키텍처 요건
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 비기능 요건
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 보안/권한
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ai">AI 채팅 인터페이스 기반 설정 기능 기획서<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>작성일: 2026-03-06
+관련 태스크: [6-1] AI 채팅으로 어드민 설정 변경, [6-2] 기능 전수 목록화
+버전: v0.1 (초안)</p>
+</blockquote>
+<hr />
+<h2 id="1">1. 개요 및 목표<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1 배경<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<p>카페24의 최대 약점 중 하나는 복잡한 어드민 UI다. 배송 정책 하나를 바꾸려면 5단계 메뉴를 거쳐야 하고, 처음 쓰는 판매자는 어디서 무엇을 바꿔야 할지 조차 찾기 어렵다. 누리메이트는 이 문제를 AI 채팅 인터페이스로 해결한다.</p>
+<p>자연어로 명령하면 AI가 인텐트를 파악하고, 확인 후 설정을 변경한다. 판매자는 메뉴 구조를 외울 필요가 없다.</p>
+<h3 id="12">1.2 벤치마크 사례<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>서비스</th>
+<th>방식</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Shopify Sidekick</strong></td>
+<td>자연어 → 설정 변경 실행</td>
+<td>Shopify Flow 자동화 생성, 다국어 지원 20개 언어, 권한 기반 접근 제어</td>
+</tr>
+<tr>
+<td><strong>Notion AI</strong></td>
+<td>콘텐츠 Q&amp;A + 커넥터</td>
+<td>워크스페이스 내 자연어 검색·편집, 출처 인용</td>
+</tr>
+<tr>
+<td><strong>Linear AI</strong></td>
+<td>이슈 자동 생성·분류</td>
+<td>자연어 → Jira 티켓, 우선순위 자동 설정</td>
+</tr>
+<tr>
+<td><strong>Intercom Fin</strong></td>
+<td>AI 1차 대응 + 에스컬레이션</td>
+<td>외부 시스템(CRM, 재고) 연동 후 액션 실행</td>
+</tr>
+<tr>
+<td><strong>Microsoft 365 Copilot</strong></td>
+<td>GUI+CUI 융합</td>
+<td>플로팅 채팅 레이어가 기존 UI 위에 오버레이</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 교훈</strong>: Shopify Sidekick이 가장 직접적인 경쟁/레퍼런스. 자연어 → Shopify Flow 워크플로 생성이 킬러 기능. 누리메이트는 "확인 → 실행" 패턴과 롤백을 더 강화해 신뢰도를 높인다.</p>
+<h3 id="13">1.3 목표<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>판매자 목표</strong>: 메뉴 탐색 없이 채팅으로 모든 설정 변경 가능</li>
+<li><strong>제품 목표</strong>: AI 설정 채팅을 통한 어드민 DAU 30% 증가, 설정 완료율 50% 향상</li>
+<li><strong>차별화 목표</strong>: "카페24보다 10배 쉬운 어드민" 포지셔닝</li>
+</ul>
+<hr />
+<h2 id="2">2. 핵심 사용 시나리오<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="21">2.1 시나리오 예시 (대화 흐름)<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<h4 id="a">시나리오 A: 배송비 정책 변경<a class="headerlink" href="#a" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>판매자: 5만원 이상 무료배송으로 바꿔줘
+
+AI: 현재 설정을 확인했어요.
+    - 현재: 무료배송 조건 없음 (항상 3,000원)
+    - 변경 후: 5만원 이상 구매 시 무료배송, 미만 시 3,000원
+
+    이대로 변경할까요? [변경하기] [취소]
+
+판매자: 변경하기
+
+AI: 완료했어요. 배송비 정책이 업데이트됐습니다.
+    - 적용 범위: 국내 배송 전체
+    - 적용 시점: 즉시 (현재 진행 중인 주문 제외)
+    변경 내역 보기 | 되돌리기 (24시간 이내)
+</code></pre></div>
+<h4 id="b">시나리오 B: 상품 일괄 가격 수정<a class="headerlink" href="#b" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>판매자: 티셔츠 카테고리 상품 전부 10% 할인 적용해줘
+
+AI: 티셔츠 카테고리 상품 23개를 찾았어요.
+    - 현재 가격 범위: 29,000원 ~ 89,000원
+    - 변경 후 가격 범위: 26,100원 ~ 80,100원 (10% 할인가)
+
+    할인 방식을 선택해주세요:
+    [정가 10% 할인] [할인가 별도 설정] [세일 배너 자동 추가]
+
+판매자: 정가 10% 할인, 세일 배너도 붙여줘
+
+AI: 알겠어요. 다음 작업을 함께 처리할게요:
+    1. 티셔츠 23개 상품가 10% 인하
+    2. 각 상품 상단에 &quot;SALE 10% OFF&quot; 배너 적용
+
+    진행할까요? [확인] [취소]
+</code></pre></div>
+<h4 id="c">시나리오 C: 마케팅 자동화 설정<a class="headerlink" href="#c" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>판매자: 장바구니 담고 구매 안 한 사람한테 1시간 후에 카카오 알림 보내줘
+
+AI: 장바구니 이탈 자동화를 설정할게요.
+    - 조건: 장바구니 담기 후 1시간 내 미결제
+    - 액션: 카카오 알림톡 발송
+    - 메시지 초안: &quot;안녕하세요! 장바구니에 담아두신 상품이 아직 기다리고 있어요.&quot;
+
+    카카오 알림톡이 연동되어 있지 않아요.
+    연동 먼저 진행할까요? [카카오 연동하기] [나중에]
+</code></pre></div>
+<h4 id="d">시나리오 D: 모호한 요청 처리<a class="headerlink" href="#d" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>판매자: 스토어 좀 예쁘게 해줘
+
+AI: 조금 더 구체적으로 알려주시면 도와드릴 수 있어요.
+    다음 중 어떤 것이 필요하신가요?
+
+    [테마 색상 변경] [폰트 바꾸기]
+    [메인 배너 수정] [상품 진열 방식 변경]
+
+    또는 원하시는 것을 자유롭게 말씀해 주세요.
+</code></pre></div>
+<h3 id="22-phase">2.2 설정 가능 범위 (Phase별)<a class="headerlink" href="#22-phase" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>기간</th>
+<th>범위</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Phase 1 (MVP)</td>
+<td>출시 ~ 3개월</td>
+<td>스토어 기본 설정, 배송 정책, 결제 ON/OFF</td>
+</tr>
+<tr>
+<td>Phase 2</td>
+<td>3~6개월</td>
+<td>상품 일괄 관리, 할인/쿠폰, 마케팅 자동화 트리거</td>
+</tr>
+<tr>
+<td>Phase 3</td>
+<td>6~12개월</td>
+<td>리포트 커스텀, 고객 세그먼트 설정, 워크플로 조합</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3">3. 기능 세분화 (현재 기획 기능 전수 목록)<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 스토어 기본 설정<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>기능</th>
+<th>자연어 예시</th>
+<th>Phase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>스토어명 변경</td>
+<td>"스토어 이름을 OO로 바꿔줘"</td>
+<td>1</td>
+</tr>
+<tr>
+<td>로고 교체</td>
+<td>"로고 바꿀게, 파일 올릴게"</td>
+<td>1</td>
+</tr>
+<tr>
+<td>운영 시간 설정</td>
+<td>"주말엔 주문 접수 안 받게 해줘"</td>
+<td>1</td>
+</tr>
+<tr>
+<td>공지사항 등록</td>
+<td>"오늘 배송 지연 공지 올려줘"</td>
+<td>1</td>
+</tr>
+<tr>
+<td>도메인 연결</td>
+<td>"내 도메인 연결하고 싶어"</td>
+<td>1</td>
+</tr>
+<tr>
+<td>언어/통화 설정</td>
+<td>"일본어 버전도 켜줘"</td>
+<td>2</td>
+</tr>
+<tr>
+<td>SNS 링크 관리</td>
+<td>"인스타 계정 바꿨어, 링크 수정해줘"</td>
+<td>1</td>
+</tr>
+<tr>
+<td>법적 고지 페이지</td>
+<td>"개인정보처리방침 최신 버전으로 업데이트"</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32">3.2 상품 관리<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>기능</th>
+<th>자연어 예시</th>
+<th>Phase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>상품 노출/숨김</td>
+<td>"품절 상품 전부 숨겨줘"</td>
+<td>1</td>
+</tr>
+<tr>
+<td>카테고리별 가격 일괄 변경</td>
+<td>"바지 카테고리 전부 5% 올려줘"</td>
+<td>2</td>
+</tr>
+<tr>
+<td>재고 임계값 알림 설정</td>
+<td>"재고 10개 이하면 알려줘"</td>
+<td>1</td>
+</tr>
+<tr>
+<td>상품 정렬 기준 변경</td>
+<td>"신상품 먼저 보이게 해줘"</td>
+<td>1</td>
+</tr>
+<tr>
+<td>옵션 추가/삭제</td>
+<td>"M 사이즈 옵션 추가해줘"</td>
+<td>2</td>
+</tr>
+<tr>
+<td>태그 일괄 적용</td>
+<td>"봄 컬렉션 태그 신상품에 붙여줘"</td>
+<td>2</td>
+</tr>
+<tr>
+<td>관련 상품 설정</td>
+<td>"이 상품이랑 세트로 추천되게 해줘"</td>
+<td>3</td>
+</tr>
+<tr>
+<td>번들 상품 구성</td>
+<td>"A+B 묶음 상품 만들어줘"</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33">3.3 주문/배송<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>기능</th>
+<th>자연어 예시</th>
+<th>Phase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>무료배송 기준 변경</td>
+<td>"5만원 이상 무료배송으로 바꿔줘"</td>
+<td>1</td>
+</tr>
+<tr>
+<td>배송지역 제한</td>
+<td>"제주도 배송 추가 비용 설정해줘"</td>
+<td>1</td>
+</tr>
+<tr>
+<td>택배사 변경</td>
+<td>"기본 택배사를 CJ로 바꿔줘"</td>
+<td>1</td>
+</tr>
+<tr>
+<td>배송 예상일 안내</td>
+<td>"3-5 영업일로 바꿔줘"</td>
+<td>1</td>
+</tr>
+<tr>
+<td>주문 자동 확정</td>
+<td>"배송완료 3일 후 자동 구매확정 켜줘"</td>
+<td>2</td>
+</tr>
+<tr>
+<td>반품/교환 정책 변경</td>
+<td>"반품 가능 기간 14일로 늘려줘"</td>
+<td>2</td>
+</tr>
+<tr>
+<td>해외 배송 설정</td>
+<td>"일본 배송 추가해줘"</td>
+<td>2</td>
+</tr>
+<tr>
+<td>출고 우선순위 설정</td>
+<td>"결제 금액 높은 주문 먼저 처리하게 해줘"</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="34">3.4 결제 설정<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>기능</th>
+<th>자연어 예시</th>
+<th>Phase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>결제 수단 ON/OFF</td>
+<td>"카카오페이 결제 껐다 켜줘"</td>
+<td>1</td>
+</tr>
+<tr>
+<td>무통장입금 계좌 변경</td>
+<td>"입금 계좌 바꿀게"</td>
+<td>1</td>
+</tr>
+<tr>
+<td>결제 실패 시 재시도 안내</td>
+<td>"결제 실패 안내 문구 바꿔줘"</td>
+<td>2</td>
+</tr>
+<tr>
+<td>할부 개월 수 설정</td>
+<td>"3개월 무이자 할부 추가해줘"</td>
+<td>2</td>
+</tr>
+<tr>
+<td>PG사 변경</td>
+<td>"PG사를 토스로 바꾸고 싶어"</td>
+<td>2</td>
+</tr>
+<tr>
+<td>정산 주기 확인</td>
+<td>"이번 달 정산일 언제야?"</td>
+<td>1 (조회)</td>
+</tr>
+<tr>
+<td>거래 수수료 조회</td>
+<td>"이번 달 수수료 얼마나 냈어?"</td>
+<td>1 (조회)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="35">3.5 고객/마케팅<a class="headerlink" href="#35" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>기능</th>
+<th>자연어 예시</th>
+<th>Phase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>쿠폰 생성</td>
+<td>"신규 고객 10% 쿠폰 만들어줘"</td>
+<td>2</td>
+</tr>
+<tr>
+<td>회원 등급 조건 변경</td>
+<td>"골드 등급 기준 100만원으로 올려줘"</td>
+<td>2</td>
+</tr>
+<tr>
+<td>장바구니 이탈 자동 알림</td>
+<td>"1시간 후 이탈 고객 알림 설정"</td>
+<td>2</td>
+</tr>
+<tr>
+<td>리뷰 요청 자동 발송</td>
+<td>"배송완료 2일 후 리뷰 요청 발송"</td>
+<td>2</td>
+</tr>
+<tr>
+<td>뉴스레터 발송</td>
+<td>"지금 신상품 메일 보내줘"</td>
+<td>3</td>
+</tr>
+<tr>
+<td>SNS 공유 이벤트</td>
+<td>"공유하면 5% 할인 이벤트 켜줘"</td>
+<td>3</td>
+</tr>
+<tr>
+<td>고객 세그먼트 생성</td>
+<td>"3달 안 산 고객 세그먼트 만들어줘"</td>
+<td>3</td>
+</tr>
+<tr>
+<td>포인트 지급</td>
+<td>"구매액의 2% 포인트 지급으로 변경"</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="36">3.6 통계/리포트<a class="headerlink" href="#36" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>기능</th>
+<th>자연어 예시</th>
+<th>Phase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>일 매출 조회</td>
+<td>"어제 매출 얼마야?"</td>
+<td>1 (조회)</td>
+</tr>
+<tr>
+<td>상품별 매출 랭킹</td>
+<td>"이번 달 가장 많이 팔린 상품 알려줘"</td>
+<td>1 (조회)</td>
+</tr>
+<tr>
+<td>고객 재구매율</td>
+<td>"재구매율 얼마야?"</td>
+<td>2 (조회)</td>
+</tr>
+<tr>
+<td>채널별 유입 분석</td>
+<td>"인스타에서 얼마나 들어와?"</td>
+<td>2 (조회)</td>
+</tr>
+<tr>
+<td>리포트 자동 발송</td>
+<td>"매주 월요일 주간 리포트 카톡으로 줘"</td>
+<td>3</td>
+</tr>
+<tr>
+<td>목표 매출 설정</td>
+<td>"이번 달 목표 1000만원으로 잡아줘"</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-ai">4. AI 처리 구조<a class="headerlink" href="#4-ai" title="Permanent link">&para;</a></h2>
+<h3 id="41">4.1 자연어 → 인텐트 파싱<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>사용자 입력
+    │
+    ▼
+[전처리 레이어]
+  - 언어 감지 (한국어/일본어/영어)
+  - 맥락 히스토리 포함 (직전 5개 메시지)
+    │
+    ▼
+[인텐트 분류 LLM]
+  - Intent: CHANGE_SETTING / QUERY / AMBIGUOUS / OUT_OF_SCOPE
+  - Domain: delivery / product / payment / marketing / report / store
+  - Action: update / create / delete / toggle / bulk_update
+  - Target: 변경 대상 리소스 ID/명칭
+  - Value: 변경 값 또는 조건
+    │
+    ▼
+[파라미터 추출기]
+  - 누락 파라미터 감지 → 추가 질문 생성
+  - 현재 설정 값 조회 (읽기 세션)
+  - 변경 영향 범위 계산
+</code></pre></div>
+<p><strong>인텐트 분류 예시</strong></p>
+<table>
+<thead>
+<tr>
+<th>입력</th>
+<th>Intent</th>
+<th>Domain</th>
+<th>Action</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"무료배송 5만원으로"</td>
+<td>CHANGE_SETTING</td>
+<td>delivery</td>
+<td>update</td>
+<td>50000</td>
+</tr>
+<tr>
+<td>"어제 매출 얼마?"</td>
+<td>QUERY</td>
+<td>report</td>
+<td>read</td>
+<td>date=yesterday</td>
+</tr>
+<tr>
+<td>"예쁘게 해줘"</td>
+<td>AMBIGUOUS</td>
+<td>store</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>"직원 채용해줘"</td>
+<td>OUT_OF_SCOPE</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42">4.2 확인 → 실행 플로우<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>인텐트 파싱 완료
+    │
+    ├── QUERY → 즉시 조회 결과 반환 (확인 불필요)
+    │
+    └── CHANGE_SETTING
+            │
+            ▼
+        [영향도 판단]
+        - LOW: 공지사항, 메모, 알림 설정
+        - MED: 배송비, 상품 노출, 쿠폰 생성
+        - HIGH: 가격 일괄 변경, PG사 변경, 결제 수단 삭제
+            │
+            ├── LOW → 변경 내역 미리보기 표시 → [즉시 적용]
+            │
+            ├── MED → 변경 전/후 비교 카드 표시 → [변경하기] [취소]
+            │
+            └── HIGH → 변경 영향 상세 안내 → 텍스트 확인 입력 요구
+                       예: &quot;계속하려면 &#39;확인&#39;을 입력해주세요&quot;
+                            │
+                            ▼
+                        [실행 레이어]
+                          - 쓰기 세션으로 DB 업데이트
+                          - 변경 로그 기록 (rollback_snapshot 포함)
+                          - 실시간 스토어 반영 확인
+                            │
+                            ▼
+                        완료 메시지 + 되돌리기 버튼 (24시간)
+</code></pre></div>
+<h3 id="43">4.3 에러 처리 및 롤백<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>에러 유형</th>
+<th>처리 방식</th>
+<th>복구 방법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>파라미터 누락</td>
+<td>AI가 추가 질문 생성</td>
+<td>대화 계속</td>
+</tr>
+<tr>
+<td>권한 없음</td>
+<td>"이 설정은 [어드민/소유자]만 변경할 수 있어요"</td>
+<td>권한자 태그 알림</td>
+</tr>
+<tr>
+<td>비즈니스 규칙 위반</td>
+<td>"최소 배송비는 0원 이상이어야 해요"</td>
+<td>유효 범위 안내</td>
+</tr>
+<tr>
+<td>API 실패</td>
+<td>"일시적 오류가 발생했어요. 다시 시도할까요?"</td>
+<td>자동 재시도 (3회)</td>
+</tr>
+<tr>
+<td>부분 실패 (일괄 처리)</td>
+<td>"23개 중 21개 성공, 2개 실패. 실패 목록 보기"</td>
+<td>선택적 재시도</td>
+</tr>
+<tr>
+<td>사용자 롤백 요청</td>
+<td>변경 전 스냅샷으로 복구</td>
+<td>24시간 이내</td>
+</tr>
+</tbody>
+</table>
+<p><strong>롤백 스냅샷 정책</strong>
+- 모든 CHANGE_SETTING 실행 전 현재 설정 값 snapshot 저장
+- 저장 기간: 24시간 (HIGH 영향도는 72시간)
+- 롤백 방법: 완료 메시지의 "되돌리기" 버튼 또는 "방금 설정 되돌려줘" 명령</p>
+<hr />
+<h2 id="5-ux">5. UX 설계 원칙<a class="headerlink" href="#5-ux" title="Permanent link">&para;</a></h2>
+<h3 id="51">5.1 채팅 인터페이스 배치<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>항상 노출</strong>: 어드민 우측 하단 플로팅 버튼 (기존 UI 위에 오버레이)</li>
+<li><strong>단축키</strong>: <code>Ctrl/Cmd + K</code> 즉시 활성화 (Linear 스타일)</li>
+<li><strong>컨텍스트 인식</strong>: 현재 보고 있는 페이지 기준으로 기본 도메인 설정</li>
+<li>배송 설정 페이지에서 열면 → 배송 관련 명령 우선 처리</li>
+</ul>
+<h3 id="52-ui">5.2 응답 UI 패턴<a class="headerlink" href="#52-ui" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>응답 유형</th>
+<th>UI 컴포넌트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>조회 결과</td>
+<td>텍스트 + 인라인 테이블/차트</td>
+</tr>
+<tr>
+<td>설정 변경 확인</td>
+<td>변경 전/후 비교 카드 + CTA 버튼</td>
+</tr>
+<tr>
+<td>선택지 제시</td>
+<td>빠른 응답 버튼 (최대 4개)</td>
+</tr>
+<tr>
+<td>오류 안내</td>
+<td>붉은 테두리 카드 + 해결 방법 링크</td>
+</tr>
+<tr>
+<td>완료 안내</td>
+<td>녹색 체크 + 변경 내역 링크 + 되돌리기</td>
+</tr>
+</tbody>
+</table>
+<h3 id="53">5.3 메시지 설계 원칙<a class="headerlink" href="#53" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>친근하지만 명확하게</strong>: 반말 존댓말 혼용 금지, 일관된 "~해요" 체</li>
+<li><strong>숫자는 구체적으로</strong>: "배송비가 바뀌었어요" (X) → "배송비가 3,000원 → 무료(5만원 이상)로 바뀌었어요" (O)</li>
+<li><strong>항상 되돌리기 제공</strong>: 모든 변경 완료 메시지에 24시간 롤백 옵션 포함</li>
+<li><strong>모호함은 즉시 해소</strong>: AMBIGUOUS 인텐트는 4개 이하의 선택지로 유도</li>
+</ul>
+<hr />
+<h2 id="6-mvp-vs">6. 구현 우선순위 (MVP vs 고도화)<a class="headerlink" href="#6-mvp-vs" title="Permanent link">&para;</a></h2>
+<h3 id="mvp-phase-1">MVP (출시 필수, Phase 1)<a class="headerlink" href="#mvp-phase-1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>기능</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>자연어 인텐트 분류 (CHANGE/QUERY/AMBIGUOUS)</td>
+<td>핵심 엔진</td>
+</tr>
+<tr>
+<td>확인 → 실행 → 롤백 플로우</td>
+<td>신뢰성 기반</td>
+</tr>
+<tr>
+<td>스토어 기본 설정 10개 변경</td>
+<td>데모 가능 범위</td>
+</tr>
+<tr>
+<td>배송비/무료배송 조건 변경</td>
+<td>가장 빈번한 요청</td>
+</tr>
+<tr>
+<td>일 매출 / 상품별 랭킹 조회</td>
+<td>즉각적 가치 제공</td>
+</tr>
+<tr>
+<td>플로팅 채팅 UI + 단축키</td>
+<td>접근성</td>
+</tr>
+</tbody>
+</table>
+<h3 id="phase-2">Phase 2 고도화<a class="headerlink" href="#phase-2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>기능</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>상품 일괄 가격 변경</td>
+<td>고위험 → 충분한 확인 UX 필요</td>
+</tr>
+<tr>
+<td>쿠폰/할인 자동화 설정</td>
+<td>마케팅 자동화 연동 필요</td>
+</tr>
+<tr>
+<td>장바구니 이탈 자동화</td>
+<td>카카오/SMS 연동 선행</td>
+</tr>
+<tr>
+<td>다국어 지원 (일본어)</td>
+<td>일본 시장 Phase 2 진입 시</td>
+</tr>
+</tbody>
+</table>
+<h3 id="phase-3">Phase 3 고도화<a class="headerlink" href="#phase-3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>기능</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>워크플로 조합 ("A하면 B하게 해줘")</td>
+<td>복합 인텐트 처리 고도화</td>
+</tr>
+<tr>
+<td>리포트 커스텀 생성</td>
+<td>분석 레이어 별도 구축 필요</td>
+</tr>
+<tr>
+<td>고객 세그먼트 동적 생성</td>
+<td>CRM 고도화 선행</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7">7. 기술 요건<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<h3 id="71-llm">7.1 LLM 선택<a class="headerlink" href="#71-llm" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>권장</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>인텐트 분류</td>
+<td>GPT-4o-mini 또는 Claude Haiku</td>
+<td>빠른 응답, 저비용</td>
+</tr>
+<tr>
+<td>파라미터 추출</td>
+<td>GPT-4o 또는 Claude Sonnet</td>
+<td>정확도 우선</td>
+</tr>
+<tr>
+<td>응답 생성</td>
+<td>Claude Sonnet</td>
+<td>한국어 자연스러운 톤</td>
+</tr>
+</tbody>
+</table>
+<h3 id="72">7.2 아키텍처 요건<a class="headerlink" href="#72" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>채팅 UI (Next.js)
+    │ SSE 스트리밍
+    ▼
+AI 게이트웨이 (FastAPI)
+    ├── 인텐트 분류 서비스
+    ├── 파라미터 추출 서비스
+    ├── 설정 변경 실행 서비스 (쓰기 세션)
+    ├── 조회 서비스 (읽기 세션)
+    └── 롤백 스냅샷 서비스 (Redis TTL 24h)
+</code></pre></div>
+<h3 id="73">7.3 비기능 요건<a class="headerlink" href="#73" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>목표</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>인텐트 분류 응답</td>
+<td>1초 이내</td>
+</tr>
+<tr>
+<td>설정 변경 실행</td>
+<td>3초 이내</td>
+</tr>
+<tr>
+<td>롤백 실행</td>
+<td>5초 이내</td>
+</tr>
+<tr>
+<td>일괄 처리 (상품 100개)</td>
+<td>30초 이내 (프로그레스 표시)</td>
+</tr>
+<tr>
+<td>가용성</td>
+<td>99.9% (설정 변경 실패 시 원본 유지)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="74">7.4 보안/권한<a class="headerlink" href="#74" title="Permanent link">&para;</a></h3>
+<ul>
+<li>스태프 권한별 변경 가능 범위 제한 (Shopify Sidekick 모델 참조)</li>
+<li>HIGH 영향도 변경은 소유자/어드민 권한만 가능</li>
+<li>모든 변경 로그는 감사 추적(Audit Log) 저장 (변경자, 시간, 이전값, 이후값)</li>
+<li>AI 채팅 로그 30일 보관 (개인정보처리방침 반영 필요)</li>
+</ul>
+<hr />
+<p><em>참고 자료:</em>
+- <em>Shopify Sidekick: https://www.shopify.com/sidekick</em>
+- <em>AI UX Patterns 2026: https://www.orbix.studio/blogs/ai-driven-ux-patterns-saas-2026</em>
+- <em>LLM 이커머스 UX: https://econsultancy.com/llm-ai-ux-ecommerce/</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.top", "navigation.sections", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

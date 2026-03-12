@@ -1,0 +1,3563 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="누리메이트 제품 전략, 시장 리서치, 기능 스펙">
+      
+      
+      
+        <link rel="canonical" href="https://sweetginger.github.io/nurymate-docs/spec/first-sale-engine/">
+      
+      
+        <link rel="prev" href="../unified-payment-dashboard/">
+      
+      
+        <link rel="next" href="../analytics-spec/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>[P1] 첫 매출 견인 도구 - 누리메이트 전략 문서</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../.." title="누리메이트 전략 문서" class="md-header__button md-logo" aria-label="누리메이트 전략 문서" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            누리메이트 전략 문서
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              [P1] 첫 매출 견인 도구
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  개요
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../strategy/product-plan/" class="md-tabs__link">
+          
+  
+  
+  전략
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../research/japan-korea-ecommerce/" class="md-tabs__link">
+          
+  
+  
+  리서치
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../spec-priority/" class="md-tabs__link">
+          
+  
+  
+  Spec
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="누리메이트 전략 문서" class="md-nav__button md-logo" aria-label="누리메이트 전략 문서" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    누리메이트 전략 문서
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    전략
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    전략
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/product-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    제품 기획
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/business-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    비즈니스 로드맵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/strategic-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    전략 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/pricing-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    수익 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/early-customer-acquisition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    초기 고객 확보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/new-seller-acquisition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    신규 창업자 확보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/organic-growth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    자연 유입 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/global-expansion-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글로벌 확장 로드맵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/vertical-expansion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    버티컬 확장
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/japan-gtm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 GTM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/api-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 정책
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    리서치
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    리서치
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/japan-korea-ecommerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본·한국 이커머스 문화 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-jp-payment-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 결제 불편 UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-japan-weaknesses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 약점 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-japan-payment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 결제
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-pricing-revenue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 수익 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/pg-stripe-support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stripe·PG 지원 조사
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/stripe-connect-countries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stripe Connect 국가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/pg-licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PG 라이선스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/local-pg-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    현지 PG 계약 난이도
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/paymentwall-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paymentwall 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/payoneer-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payoneer 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/korea-ecommerce-platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    한국 이커머스 경쟁 지형
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/japan-ec-saas-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 D2C EC SaaS 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/global-market-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글로벌 시장 개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/logistics-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    배송·3PL 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/sns-review-legal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SNS 리뷰 법적 검토
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/cafe24-pro-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/cafe24-app-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 앱 디자인
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/cafe24-analytics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/fashion-ecommerce-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    패션 이커머스 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/platform-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플랫폼 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/platform-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플랫폼 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/rakuten-amazon-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    라쿠텐·아마존 API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/sns-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SNS 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/review-platform-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    리뷰 플랫폼 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/japan-conveni-pickup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 편의점 픽업
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/korea-japan-trust-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    한일 신뢰 사례
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/closed-app-marketplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    클로즈드 앱 마켓플레이스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-marketing-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 마케팅 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-queryql-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify GraphQL 리포트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/latest-stats-2025-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    최신 통계 2025~2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Spec
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spec-priority/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec 우선순위
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../seller-store-creation-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 셀러 스토어 생성 UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../domain-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 멀티테넌시 도메인 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jp-payment-native/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 일본 결제 네이티브
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 국가별 단위 현지화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 마이그레이션
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operator-admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 운영자 어드민
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module-definition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 모듈 기능 정의
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unified-payment-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 통합 결제 대시보드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 첫 매출 견인 도구
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 첫 매출 견인 도구
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 문제 정의
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 문제 정의">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 온보딩 완료 후 첫 매출까지의 공백 문제
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 도구 후보 평가 매트릭스
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 도구 후보 평가 매트릭스">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        각 도구 상세 평가
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="각 도구 상세 평가">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        도구 1: 웰컴 쿠폰 자동 발급
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-sns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        도구 2: SNS 공유 → 즉시 구매 링크
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        도구 3: 판매자 지인 초대 루프
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-sns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        도구 4: 누리메이트 공식 SNS 노출
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        도구 5: 샘플 주문 시뮬레이션
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        도구 6: 누리메이트 내부 쇼핑 피드
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-b2b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        도구 7: B2B 연결 (기업 복지몰 등)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-A. 인플루언서 협찬을 통한 첫 매출 경로
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-phase-1-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 권장 도구 조합 (Phase 1 MVP)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 권장 도구 조합 (Phase 1 MVP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        핵심 조합: "3일 안에 첫 주문" 패키지
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 온보딩 → 첫 매출 시나리오 설계
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 온보딩 → 첫 매출 시나리오 설계">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 스토어 개설 완료 → 자동으로 일어나는 것
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 판매자가 선택적으로 활성화하는 것
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 성공 지표 (첫 매출 달성률 목표)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 성공 지표 (첫 매출 달성률 목표)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 핵심 지표 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 목표 수치
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 도구별 가설 검증 계획
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 유사 플랫폼 사례
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 유사 플랫폼 사례">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shopify
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squarespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Squarespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referralcandy-shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ReferralCandy (Shopify 앱)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yotpo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Yotpo 사례 (온보딩 활성화)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analytics-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 통계·분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sns-marketing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] SNS 마케팅 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sns-review-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] SNS 리뷰 수집
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../affiliate-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 어필리에이트 트래킹
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../country-preset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 국가별 설정 프리셋
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global-launch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 글로벌 진출 지원
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shipping-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 배송 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../influencer-matching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 인플루언서 매칭
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmark-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 벤치마크 리포트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] AI 운영 어시스턴트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-chat-setting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] AI 채팅 설정
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 글로벌 통합 대시보드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sellex-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    셀익스 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 문제 정의
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 문제 정의">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 온보딩 완료 후 첫 매출까지의 공백 문제
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 도구 후보 평가 매트릭스
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 도구 후보 평가 매트릭스">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        각 도구 상세 평가
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="각 도구 상세 평가">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        도구 1: 웰컴 쿠폰 자동 발급
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-sns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        도구 2: SNS 공유 → 즉시 구매 링크
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        도구 3: 판매자 지인 초대 루프
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-sns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        도구 4: 누리메이트 공식 SNS 노출
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        도구 5: 샘플 주문 시뮬레이션
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        도구 6: 누리메이트 내부 쇼핑 피드
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-b2b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        도구 7: B2B 연결 (기업 복지몰 등)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-A. 인플루언서 협찬을 통한 첫 매출 경로
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-phase-1-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 권장 도구 조합 (Phase 1 MVP)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 권장 도구 조합 (Phase 1 MVP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        핵심 조합: "3일 안에 첫 주문" 패키지
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 온보딩 → 첫 매출 시나리오 설계
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 온보딩 → 첫 매출 시나리오 설계">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 스토어 개설 완료 → 자동으로 일어나는 것
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 판매자가 선택적으로 활성화하는 것
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 성공 지표 (첫 매출 달성률 목표)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 성공 지표 (첫 매출 달성률 목표)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 핵심 지표 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 목표 수치
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 도구별 가설 검증 계획
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 유사 플랫폼 사례
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 유사 플랫폼 사례">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shopify
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squarespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Squarespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referralcandy-shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ReferralCandy (Shopify 앱)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yotpo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Yotpo 사례 (온보딩 활성화)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">첫 매출 견인 도구 기획서<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>작성일: 2026-03-06
+관련 태스크: [6-4] 첫 매출 견인 도구 선정
+버전: v0.1 (초안)</p>
+</blockquote>
+<hr />
+<h2 id="1">1. 문제 정의<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1 온보딩 완료 후 첫 매출까지의 공백 문제<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<p>누리메이트의 핵심 목표는 "가입 후 30분 안에 판매 가능한 스토어 완성"이다. 그러나 스토어를 만드는 것과 실제로 첫 매출을 올리는 것은 완전히 다른 문제다.</p>
+<div class="highlight"><pre><span></span><code>가입 → AI 온보딩 완료 → 스토어 개설 → [공백 구간] → 첫 주문 발생
+                                              ▲
+                              대부분의 신규 판매자가 이탈하는 구간
+</code></pre></div>
+<p><strong>공백 구간의 본질적 문제:</strong>
+- 판매자는 스토어를 만들었지만 어디에 홍보해야 할지 모름
+- 첫 고객을 어떻게 유입시킬지 방법을 모름
+- 아무것도 팔리지 않는 상태가 지속되면 "이 플랫폼이 안 되나?"라는 의심으로 이어짐
+- 첫 매출이 없으면 플랫폼 가치를 체감하지 못해 이탈로 연결</p>
+<p><strong>업계 맥락:</strong>
+- SaaS 온보딩 연구에서 "활성화(Activation)" 이벤트에 도달한 사용자의 장기 리텐션이 도달하지 못한 사용자 대비 수배 높음
+- Yotpo 사례: 온보딩 완료율 측정 및 개선으로 리텐션 50% 향상
+- Shopify, Squarespace 모두 신규 스토어의 첫 3개월 이탈률이 가장 높음</p>
+<p><strong>누리메이트의 정의:</strong>
+- <strong>첫 매출 = 플랫폼 활성화 이벤트 (Activation Event)</strong>
+- 첫 주문 발생 → 판매자가 "이 플랫폼에서 실제로 팔린다"는 경험 획득 → 리텐션 급상승
+- 따라서 첫 매출은 단순 매출 지표가 아닌 <strong>플랫폼 생존 지표</strong></p>
+<hr />
+<h2 id="2">2. 도구 후보 평가 매트릭스<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>평가 기준:
+- <strong>실현가능성</strong>: 기술/비용/파트너십 복잡도 (5점 = 쉬움)
+- <strong>예상 효과</strong>: 첫 매출 기여 가능성 (5점 = 높음)
+- <strong>개발 난이도</strong>: 개발 공수 (5점 = 쉬움)
+- <strong>우선순위</strong>: 종합 점수 기반</p>
+<table>
+<thead>
+<tr>
+<th>도구</th>
+<th style="text-align: center;">실현가능성</th>
+<th style="text-align: center;">예상 효과</th>
+<th style="text-align: center;">개발 난이도</th>
+<th style="text-align: center;">종합 점수</th>
+<th style="text-align: center;">우선순위</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>웰컴 쿠폰 자동 발급</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;"><strong>1순위</strong></td>
+</tr>
+<tr>
+<td>SNS 공유 → 즉시 구매 링크</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;"><strong>2순위</strong></td>
+</tr>
+<tr>
+<td>판매자 지인 초대 루프</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;"><strong>3순위</strong></td>
+</tr>
+<tr>
+<td>누리메이트 공식 SNS 노출</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;"><strong>3순위</strong></td>
+</tr>
+<tr>
+<td>샘플 주문 시뮬레이션</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">4순위*</td>
+</tr>
+<tr>
+<td>누리메이트 내부 쇼핑 피드</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">5순위</td>
+</tr>
+<tr>
+<td>B2B 연결 (기업 복지몰 등)</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">6순위**</td>
+</tr>
+</tbody>
+</table>
+<p><em>샘플 주문 시뮬레이션: 실제 매출이 아닌 '경험' 제공, 활성화 보조 도구로 분류
+</em>*B2B 연결: 효과는 크지만 파트너십 구축에 수개월 필요, Phase 2 이후</p>
+<h3 id="_2">각 도구 상세 평가<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h4 id="1_1">도구 1: 웰컴 쿠폰 자동 발급<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>설명</strong>: 스토어 개설 완료 시 구매자용 웰컴 쿠폰 자동 생성 + 스토어 URL과 함께 공유 가능</li>
+<li><strong>실제 동작</strong>: "첫 구매 10% 할인 쿠폰" 자동 생성, QR코드/링크로 주변에 바로 공유 가능</li>
+<li><strong>강점</strong>: 개발 공수 최소, 즉시 구현 가능, 판매자가 지인에게 "우리 스토어 열었어요 + 쿠폰"으로 자연스러운 첫 홍보</li>
+<li><strong>약점</strong>: 쿠폰 남용 방지 로직 필요 (1인 1회, 신규 구매자 한정)</li>
+<li><strong>사례</strong>: Erin Condren 양방향 쿠폰 프로그램 — 추천인 $10 쿠폰 + 신규 구매자 $10 쿠폰</li>
+</ul>
+<h4 id="2-sns">도구 2: SNS 공유 → 즉시 구매 링크<a class="headerlink" href="#2-sns" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>설명</strong>: 스토어 개설 직후 "인스타에 공유하기" 버튼 → 스토어 링크 + 쿠폰이 포함된 SNS 게시물 초안 자동 생성</li>
+<li><strong>실제 동작</strong>: 원클릭으로 인스타그램/카카오톡/X에 "스토어 오픈 소식" 게시물 완성, 바이오 링크에 자동 추가 안내</li>
+<li><strong>강점</strong>: 판매자의 기존 팔로워를 즉시 구매자로 전환, 제로 비용 마케팅</li>
+<li><strong>약점</strong>: SNS 계정 연동 필요 (OAuth), 팔로워 없는 신규 판매자에게는 효과 제한적</li>
+</ul>
+<h4 id="3">도구 3: 판매자 지인 초대 루프<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>설명</strong>: "지인 초대 → 지인이 구매 시 판매자에게 포인트/현금 보상"</li>
+<li><strong>실제 동작</strong>: 고유 추천 링크 생성, 링크로 들어온 구매자의 첫 구매 완료 시 판매자에게 자동 보상</li>
+<li><strong>강점</strong>: 첫 매출과 동시에 구매자 네트워크 확장, 장기 리텐션 도구로도 작동</li>
+<li><strong>약점</strong>: 보상 재원 설계 필요 (플랫폼 부담 vs 판매자 부담)</li>
+</ul>
+<h4 id="4-sns">도구 4: 누리메이트 공식 SNS 노출<a class="headerlink" href="#4-sns" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>설명</strong>: 신규 스토어 오픈 시 누리메이트 공식 인스타/블로그에 "이번 주 신규 스토어" 소개</li>
+<li><strong>실제 동작</strong>: 스토어 개설 시 "공식 채널 노출 신청" 옵션, 주 1회 큐레이션 게시물</li>
+<li><strong>강점</strong>: 개발 공수 거의 없음, 플랫폼 신뢰도 동시 구축</li>
+<li><strong>약점</strong>: 효과는 팔로워 수 의존, 초기에는 제한적. 운영 리소스 필요</li>
+</ul>
+<h4 id="5">도구 5: 샘플 주문 시뮬레이션<a class="headerlink" href="#5" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>설명</strong>: 판매자 본인이 자기 스토어에서 테스트 주문 (실제 결제 없이) → 전체 구매 플로우 체험</li>
+<li><strong>실제 동작</strong>: "테스트 구매" 버튼 → 가상 구매 → 주문 관리 화면에서 처리 연습 → 자동 삭제</li>
+<li><strong>강점</strong>: 첫 매출 전 판매자 자신감 향상, 설정 오류 사전 발견</li>
+<li><strong>약점</strong>: 실제 매출 발생 없음, 활성화 보조 역할에 그침</li>
+</ul>
+<h4 id="6">도구 6: 누리메이트 내부 쇼핑 피드<a class="headerlink" href="#6" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>설명</strong>: 누리메이트 판매자 상품이 플랫폼 내 공개 피드에 노출, 다른 판매자/방문자가 직접 구매</li>
+<li><strong>실제 동작</strong>: "누리메이트 마켓" 섹션, 입점 스토어 상품 집합 노출</li>
+<li><strong>강점</strong>: 플랫폼 자체 트래픽으로 첫 매출 발생 가능, 강력한 차별화</li>
+<li><strong>약점</strong>: 개발 공수 대형 (별도 마켓플레이스 수준), 초기 트래픽 없으면 무의미, Phase 3 이후 검토</li>
+</ul>
+<h4 id="7-b2b">도구 7: B2B 연결 (기업 복지몰 등)<a class="headerlink" href="#7-b2b" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>설명</strong>: 기업 복지몰 운영사와 제휴 → 누리메이트 판매자 상품을 복지몰에 입점</li>
+<li><strong>실제 동작</strong>: 판매자가 복지몰 입점 신청 → 심사 후 대량 노출, B2B 구매로 첫 매출</li>
+<li><strong>강점</strong>: 한 번 연결되면 대량 주문 가능, 안정적 첫 매출 보장</li>
+<li><strong>약점</strong>: 파트너십 구축 3~6개월, 심사 기준 복잡, Phase 2 이후 현실적</li>
+</ul>
+<hr />
+<h2 id="2-a">2-A. 인플루언서 협찬을 통한 첫 매출 경로<a class="headerlink" href="#2-a" title="Permanent link">&para;</a></h2>
+<p><strong>인플루언서 협찬을 통한 첫 매출 경로</strong>: 인플루언서에게 무료 상품을 제공(협찬)하고 협찬 리뷰 포스팅을 통해 초기 실매출을 발생시키는 방안. 판매자가 자신의 상품을 인플루언서에게 무상 제공하고, 인플루언서가 팔로워에게 스토어 링크와 함께 소개하는 형태로 첫 구매 유입을 발생시킨다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>적합 시나리오</td>
+<td>판매자가 소규모 인플루언서(마이크로 인플루언서)에게 협찬 접근 가능한 경우</td>
+</tr>
+<tr>
+<td>첫 매출 기여 방식</td>
+<td>인플루언서 팔로워 → 스토어 방문 → 실구매 발생</td>
+</tr>
+<tr>
+<td>비용 구조</td>
+<td>상품 원가만 소요 (광고비 없음)</td>
+</tr>
+<tr>
+<td>예상 전환율</td>
+<td>인플루언서 신뢰도에 따라 상이, 마이크로 인플루언서 평균 3~8%</td>
+</tr>
+<tr>
+<td>플랫폼 지원</td>
+<td>누리메이트 어필리에이트 링크 트래킹으로 협찬 채널별 전환 측정 가능</td>
+</tr>
+</tbody>
+</table>
+<p>상세 인플루언서 매칭 및 협찬 관리 기능 기획: <a href="../influencer-matching/"><code>spec/influencer-matching.md</code></a> 참조.</p>
+<hr />
+<h2 id="3-phase-1-mvp">3. 권장 도구 조합 (Phase 1 MVP)<a class="headerlink" href="#3-phase-1-mvp" title="Permanent link">&para;</a></h2>
+<h3 id="3_1">핵심 조합: "3일 안에 첫 주문" 패키지<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>[즉시 효과 - 개설 당일]          [단기 효과 - 1주일 내]
+웰컴 쿠폰 자동 발급        +      SNS 공유 즉시 구매 링크
+        +                                +
+샘플 주문 시뮬레이션               누리메이트 공식 SNS 노출
+(자신감 빌드업)                   (판매자 요청 시)
+</code></pre></div>
+<p><strong>조합 선정 이유:</strong></p>
+<ol>
+<li><strong>웰컴 쿠폰</strong>: 개발 1주 이내, 즉시 배포 가능. 판매자가 지인에게 "스토어 열었어요 + 이 쿠폰으로 사줘"라고 보내는 가장 자연스러운 첫 매출 경로</li>
+<li><strong>SNS 공유 링크</strong>: 판매자의 기존 SNS 팔로워를 즉시 구매자로 전환. 패션 D2C 판매자 특성상 인스타 팔로워 보유율 높음</li>
+<li><strong>샘플 주문</strong>: 실제 매출 아니지만 설정 오류 방지 + 판매자 자신감. 고객센터 문의 감소 효과</li>
+<li><strong>공식 SNS 노출</strong>: 운영 비용만으로 제공 가능한 "플랫폼이 나를 홍보해준다"는 감동 경험</li>
+</ol>
+<p><strong>Phase 1에서 제외한 이유:</strong>
+- 지인 초대 루프: 보상 재원 설계에 시간 필요, Phase 2
+- 내부 쇼핑 피드: 대형 개발 필요, Phase 3
+- B2B 연결: 파트너십 구축 필요, Phase 2</p>
+<hr />
+<h2 id="4">4. 온보딩 → 첫 매출 시나리오 설계<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h3 id="41">4.1 스토어 개설 완료 → 자동으로 일어나는 것<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>스토어 개설 완료 (AI 온보딩 30분)
+        │
+        ▼
+[T+0: 즉시 자동 트리거]
+1. 웰컴 쿠폰 자동 생성
+   - &quot;첫 구매 10% 할인&quot; 쿠폰 (7일 유효기간)
+   - QR코드 + 단축 URL 생성
+   - 카카오톡/SNS 공유 버튼 포함
+
+2. 어드민 대시보드에 &quot;첫 매출 체크리스트&quot; 배너 등장
+   □ 테스트 구매 해보기
+   □ 웰컴 쿠폰 지인에게 공유하기
+   □ SNS에 스토어 오픈 소식 올리기
+   □ 누리메이트 공식 채널 노출 신청하기
+
+3. 온보딩 완료 카카오 알림 발송 (판매자에게)
+   &quot;스토어가 열렸어요! 첫 손님을 맞이할 준비를 도와드릴게요.&quot;
+   [첫 매출 가이드 보기]
+
+        │
+        ▼
+[T+1h: 진행 체크]
+- 테스트 주문 미완료 시: &quot;스토어 설정에 문제가 없는지 확인해 보세요&quot;
+- 웰컴 쿠폰 미공유 시: 공유 유도 메시지
+
+        │
+        ▼
+[T+24h: 넛지]
+- 첫 주문 없을 경우: &quot;아직 첫 손님을 기다리고 있네요. 오늘 인스타에 공유해 보세요!&quot;
+- 첫 주문 발생 시: 축하 메시지 + 두 번째 주문 유도 팁
+
+        │
+        ▼
+[T+72h: 에스컬레이션]
+- 첫 주문 미발생 시: CS 팀 알림 → 1:1 온보딩 지원 제안
+- 또는 &quot;첫 매출 전문 코치 연결&quot; 옵션 (유료/무료 검토)
+</code></pre></div>
+<h3 id="42">4.2 판매자가 선택적으로 활성화하는 것<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>도구</th>
+<th>활성화 방법</th>
+<th>예상 소요 시간</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SNS 공유 게시물 자동 생성</td>
+<td>"인스타 연동하기" 버튼 클릭</td>
+<td>2분</td>
+</tr>
+<tr>
+<td>누리메이트 공식 채널 노출 신청</td>
+<td>스토어 정보 + 대표 상품 이미지 제출</td>
+<td>5분</td>
+</tr>
+<tr>
+<td>지인 초대 링크 생성</td>
+<td>"추천인 링크 만들기" 클릭</td>
+<td>1분</td>
+</tr>
+<tr>
+<td>복지몰 입점 신청 (Phase 2)</td>
+<td>사업자 정보 + 상품 카탈로그 제출</td>
+<td>30분</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5_1">5. 성공 지표 (첫 매출 달성률 목표)<a class="headerlink" href="#5_1" title="Permanent link">&para;</a></h2>
+<h3 id="51">5.1 핵심 지표 정의<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>지표명</th>
+<th>정의</th>
+<th>측정 방법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>첫 매출 달성률</strong></td>
+<td>스토어 개설 후 7일 내 첫 주문 발생 비율</td>
+<td>(7일 내 첫 주문 발생 스토어 수) / (전체 신규 스토어 수)</td>
+</tr>
+<tr>
+<td><strong>활성화 소요 시간</strong></td>
+<td>스토어 개설 → 첫 주문 발생까지 평균 시간</td>
+<td>중위값 기준</td>
+</tr>
+<tr>
+<td><strong>도구별 기여율</strong></td>
+<td>각 도구를 활성화한 스토어의 첫 매출 달성률</td>
+<td>활성화 여부 코호트 분석</td>
+</tr>
+<tr>
+<td><strong>30일 리텐션 차이</strong></td>
+<td>첫 매출 달성 vs 미달성 스토어의 30일 유지율 비교</td>
+<td>코호트 분석</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52">5.2 목표 수치<a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>기간</th>
+<th>지표</th>
+<th>목표</th>
+<th>측정 방법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>출시 3개월차</td>
+<td>7일 내 첫 매출 달성률</td>
+<td>30%</td>
+<td>코호트 분석</td>
+</tr>
+<tr>
+<td>출시 6개월차</td>
+<td>7일 내 첫 매출 달성률</td>
+<td>50%</td>
+<td>코호트 분석</td>
+</tr>
+<tr>
+<td>출시 6개월차</td>
+<td>14일 내 첫 매출 달성률</td>
+<td>65%</td>
+<td>코호트 분석</td>
+</tr>
+<tr>
+<td>출시 6개월차</td>
+<td>첫 매출 달성 스토어 30일 리텐션</td>
+<td>70% 이상</td>
+<td>코호트 분석</td>
+</tr>
+<tr>
+<td>출시 6개월차</td>
+<td>웰컴 쿠폰 공유율 (개설 후 48h 내)</td>
+<td>40%</td>
+<td>이벤트 트래킹</td>
+</tr>
+</tbody>
+</table>
+<p><strong>목표 근거:</strong>
+- Shopify: 신규 스토어 중 3개월 내 첫 매출 달성률 약 20~30% (업계 추정)
+- 누리메이트는 AI 온보딩 + 적극적 첫 매출 도구로 업계 대비 1.5~2배 목표
+- 50% 달성 시 "30분 스토어 완성" 만큼 강력한 마케팅 메시지 확보 가능</p>
+<h3 id="53">5.3 도구별 가설 검증 계획<a class="headerlink" href="#53" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>도구</th>
+<th>가설</th>
+<th>검증 방법</th>
+<th>검증 기간</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>웰컴 쿠폰</td>
+<td>쿠폰 공유 스토어의 7일 첫 매출률 &gt; 미공유 2배</td>
+<td>A/B 테스트 (자동 발급 vs 수동 설정)</td>
+<td>출시 후 4주</td>
+</tr>
+<tr>
+<td>SNS 공유 링크</td>
+<td>SNS 연동 스토어의 첫 방문자 수 3배 이상</td>
+<td>방문 출처 분석</td>
+<td>출시 후 4주</td>
+</tr>
+<tr>
+<td>공식 SNS 노출</td>
+<td>노출 요청 스토어의 7일 내 방문자 +500 이상</td>
+<td>노출 전후 트래픽 비교</td>
+<td>노출 후 1주</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6_1">6. 유사 플랫폼 사례<a class="headerlink" href="#6_1" title="Permanent link">&para;</a></h2>
+<h3 id="shopify">Shopify<a class="headerlink" href="#shopify" title="Permanent link">&para;</a></h3>
+<p><strong>첫 매출 지원 방식:</strong>
+- Shopify는 신규 스토어에 "판매 시작 체크리스트"를 어드민 메인에 고정 노출
+- Shopify Sidekick이 "첫 상품 어떻게 홍보하면 될까?" 질문에 구체적인 마케팅 플랜 제안
+- Shopify Starter 플랜: 소셜 미디어 판매에 특화, SNS 프로필에 구매 링크 즉시 연결
+- 3개월 $1 프로모션: 금전적 허들 제거로 첫 매출까지 시도 기회 극대화</p>
+<p><strong>누리메이트 적용 인사이트:</strong>
+- 체크리스트 + 진행 상태 표시가 판매자 행동을 유도하는 핵심 UX
+- 플랜 가격이 아닌 "첫 매출 경험"을 최우선 가치로 설계</p>
+<h3 id="squarespace">Squarespace<a class="headerlink" href="#squarespace" title="Permanent link">&para;</a></h3>
+<p><strong>첫 매출 지원 방식:</strong>
+- 스토어 개설 직후 "첫 방문자 유입 가이드" 이메일 시리즈 자동 발송 (7일 시퀀스)
+- 소셜 링크 in bio 기능으로 인스타 → 구매 플로우 단순화</p>
+<p><strong>누리메이스 적용 인사이트:</strong>
+- 개설 후 자동 이메일 시퀀스 = 낮은 개발 비용, 높은 효과</p>
+<h3 id="referralcandy-shopify">ReferralCandy (Shopify 앱)<a class="headerlink" href="#referralcandy-shopify" title="Permanent link">&para;</a></h3>
+<p><strong>방식:</strong> 결제 완료 직후 추천 링크 자동 생성, 신규 구매자 쿠폰 자동 제공
+<strong>결과 사례:</strong> Erin Condren — 추천인 $10 쿠폰 + 신규 $10 쿠폰 이중 인센티브로 추천 구매 비율 증가</p>
+<p><strong>누리메이트 적용 인사이트:</strong>
+- 판매자가 아니라 구매자에게도 인센티브 → 양방향 구조가 단방향보다 전환율 높음
+- 웰컴 쿠폰을 "판매자가 구매자에게 주는 선물"로 포지셔닝</p>
+<h3 id="yotpo">Yotpo 사례 (온보딩 활성화)<a class="headerlink" href="#yotpo" title="Permanent link">&para;</a></h3>
+<p><strong>방식:</strong> 온보딩 완료 체크포인트 측정 → 미완료 사용자에게 개인화 넛지
+<strong>결과:</strong> 리텐션 50% 향상 (온보딩 완료율 개선)</p>
+<p><strong>누리메이트 적용 인사이트:</strong>
+- 첫 매출 달성 전까지 판매자를 포기하지 않는 자동화 넛지 시스템 필수
+- 각 단계별 이탈 포인트 측정 → 어디서 막히는지 파악 → 해당 단계 집중 개선</p>
+<hr />
+<p><em>참고 자료:</em>
+- <em>Shopify Referral Program Guide: https://www.shopify.com/retail/referral-program</em>
+- <em>User Onboarding Metrics: https://www.appcues.com/blog/user-onboarding-metrics-and-kpis</em>
+- <em>ReferralCandy Shopify: https://apps.shopify.com/referralcandy</em>
+- <em>Yotpo Retention Case: https://www.moengage.com/blog/top-customer-onboarding-metrics-to-prioritize/</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.top", "navigation.sections", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

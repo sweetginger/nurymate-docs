@@ -1,0 +1,4245 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="누리메이트 제품 전략, 시장 리서치, 기능 스펙">
+      
+      
+      
+        <link rel="canonical" href="https://sweetginger.github.io/nurymate-docs/research/local-pg-contracts/">
+      
+      
+        <link rel="prev" href="../pg-licensing/">
+      
+      
+        <link rel="next" href="../paymentwall-analysis/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>현지 PG 계약 난이도 - 누리메이트 전략 문서</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pg-8-7" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../.." title="누리메이트 전략 문서" class="md-header__button md-logo" aria-label="누리메이트 전략 문서" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            누리메이트 전략 문서
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              현지 PG 계약 난이도
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  개요
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../strategy/product-plan/" class="md-tabs__link">
+          
+  
+  
+  전략
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../japan-korea-ecommerce/" class="md-tabs__link">
+          
+  
+  
+  리서치
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../spec/spec-priority/" class="md-tabs__link">
+          
+  
+  
+  Spec
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="누리메이트 전략 문서" class="md-nav__button md-logo" aria-label="누리메이트 전략 문서" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    누리메이트 전략 문서
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    전략
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    전략
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/product-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    제품 기획
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/business-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    비즈니스 로드맵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/strategic-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    전략 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/pricing-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    수익 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/early-customer-acquisition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    초기 고객 확보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/new-seller-acquisition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    신규 창업자 확보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/organic-growth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    자연 유입 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/global-expansion-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글로벌 확장 로드맵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/vertical-expansion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    버티컬 확장
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/japan-gtm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 GTM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/api-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 정책
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    리서치
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    리서치
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../japan-korea-ecommerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본·한국 이커머스 문화 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-jp-payment-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 결제 불편 UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-japan-weaknesses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 약점 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-japan-payment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 결제
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-pricing-revenue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 수익 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pg-stripe-support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stripe·PG 지원 조사
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stripe-connect-countries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stripe Connect 국가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pg-licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PG 라이선스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    현지 PG 계약 난이도
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    현지 PG 계약 난이도
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-pg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 현지 PG사 직접 계약이 필요한 이유
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 현지 PG사 직접 계약이 필요한 이유">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-1. 현지 결제수단 지원
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-2. 수수료 최적화
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-3. 규제 대응
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-4. 소비자 신뢰 및 전환율
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 국가별 계약 조건 및 요구사항
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 국가별 계약 조건 및 요구사항">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1. 한국
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-1. 한국">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        주요 현지 PG사
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        계약 요건
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        난이도 평가: ★★☆☆☆ (낮음)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-2. 일본
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-2. 일본">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pg_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        주요 현지 PG사
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        계약 요건
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        외국 법인 대안
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        난이도 평가: ★★★☆☆ (중간)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-3. 인도네시아
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-3. 인도네시아">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pg_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        주요 현지 PG사
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        계약 요건
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        난이도 평가: ★★★★☆ (높음)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-4. 태국
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-4. 태국">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pg_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        주요 현지 PG사
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        계약 요건
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        난이도 평가: ★★★☆☆ (중간)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-5. 베트남
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-5. 베트남">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pg_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        주요 현지 PG사
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        계약 요건
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        난이도 평가: ★★★★★ (매우 높음)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 국가별 계약 난이도 비교표
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-stripepaypal-pg-pg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Stripe/PayPal 글로벌 PG 단독 운영의 한계와 현지 PG 병행의 구조적 복잡도
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Stripe/PayPal 글로벌 PG 단독 운영의 한계와 현지 PG 병행의 구조적 복잡도">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-1-pg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-1. 글로벌 PG 단독 운영 한계
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-2-pg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-2. 현지 PG 병행 시 구조적 복잡도
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-3. 통합 솔루션을 통한 복잡도 경감 옵션
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-24shopify-pg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 카페24·Shopify의 현지 PG 연동 방식 벤치마크
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 카페24·Shopify의 현지 PG 연동 방식 벤치마크">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5-1-24-pg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-1. 카페24의 현지 PG 연동 전략
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-2-shopify-pg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-2. Shopify의 현지 PG 연동 전략
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-3. 누리메이트를 위한 벤치마크 교훈
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 결론 및 전략 권고
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 결론 및 전략 권고">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pg_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        단계별 현지 PG 계약 전략
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        출처
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paymentwall-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paymentwall 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../payoneer-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payoneer 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../korea-ecommerce-platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    한국 이커머스 경쟁 지형
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../japan-ec-saas-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 D2C EC SaaS 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global-market-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글로벌 시장 개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logistics-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    배송·3PL 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sns-review-legal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SNS 리뷰 법적 검토
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cafe24-pro-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cafe24-app-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 앱 디자인
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cafe24-analytics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fashion-ecommerce-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    패션 이커머스 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../platform-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플랫폼 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../platform-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플랫폼 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rakuten-amazon-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    라쿠텐·아마존 API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sns-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SNS 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../review-platform-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    리뷰 플랫폼 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../japan-conveni-pickup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 편의점 픽업
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../korea-japan-trust-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    한일 신뢰 사례
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../closed-app-marketplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    클로즈드 앱 마켓플레이스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-marketing-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 마케팅 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-queryql-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify GraphQL 리포트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../latest-stats-2025-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    최신 통계 2025~2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Spec
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/spec-priority/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec 우선순위
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/seller-store-creation-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 셀러 스토어 생성 UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/domain-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 멀티테넌시 도메인 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/jp-payment-native/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 일본 결제 네이티브
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/unit-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 국가별 단위 현지화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 마이그레이션
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/operator-admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 운영자 어드민
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/module-definition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 모듈 기능 정의
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/unified-payment-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 통합 결제 대시보드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/first-sale-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 첫 매출 견인 도구
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/analytics-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 통계·분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/sns-marketing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] SNS 마케팅 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/sns-review-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] SNS 리뷰 수집
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/affiliate-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 어필리에이트 트래킹
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/country-preset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 국가별 설정 프리셋
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/global-launch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 글로벌 진출 지원
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/shipping-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 배송 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/influencer-matching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 인플루언서 매칭
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/benchmark-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 벤치마크 리포트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] AI 운영 어시스턴트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/ai-chat-setting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] AI 채팅 설정
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/global-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 글로벌 통합 대시보드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/sellex-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    셀익스 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-pg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 현지 PG사 직접 계약이 필요한 이유
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 현지 PG사 직접 계약이 필요한 이유">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-1. 현지 결제수단 지원
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-2. 수수료 최적화
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-3. 규제 대응
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1-4. 소비자 신뢰 및 전환율
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 국가별 계약 조건 및 요구사항
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 국가별 계약 조건 및 요구사항">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-1. 한국
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-1. 한국">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        주요 현지 PG사
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        계약 요건
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        난이도 평가: ★★☆☆☆ (낮음)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-2. 일본
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-2. 일본">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pg_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        주요 현지 PG사
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        계약 요건
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        외국 법인 대안
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        난이도 평가: ★★★☆☆ (중간)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-3. 인도네시아
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-3. 인도네시아">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pg_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        주요 현지 PG사
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        계약 요건
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        난이도 평가: ★★★★☆ (높음)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-4. 태국
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-4. 태국">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pg_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        주요 현지 PG사
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        계약 요건
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        난이도 평가: ★★★☆☆ (중간)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2-5. 베트남
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2-5. 베트남">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pg_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        주요 현지 PG사
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        계약 요건
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        난이도 평가: ★★★★★ (매우 높음)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 국가별 계약 난이도 비교표
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-stripepaypal-pg-pg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Stripe/PayPal 글로벌 PG 단독 운영의 한계와 현지 PG 병행의 구조적 복잡도
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Stripe/PayPal 글로벌 PG 단독 운영의 한계와 현지 PG 병행의 구조적 복잡도">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-1-pg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-1. 글로벌 PG 단독 운영 한계
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-2-pg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-2. 현지 PG 병행 시 구조적 복잡도
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4-3. 통합 솔루션을 통한 복잡도 경감 옵션
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-24shopify-pg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 카페24·Shopify의 현지 PG 연동 방식 벤치마크
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 카페24·Shopify의 현지 PG 연동 방식 벤치마크">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5-1-24-pg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-1. 카페24의 현지 PG 연동 전략
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-2-shopify-pg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-2. Shopify의 현지 PG 연동 전략
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-3. 누리메이트를 위한 벤치마크 교훈
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 결론 및 전략 권고
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 결론 및 전략 권고">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pg_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        단계별 현지 PG 계약 전략
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        출처
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="pg-8-7">현지 PG사 직접 계약 필요성·조건·난이도 조사 [8-7]<a class="headerlink" href="#pg-8-7" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>조사일: 2026-03-10 | 목적: 누리메이트 시장별 결제 인프라 전략 수립</p>
+</blockquote>
+<hr />
+<h2 id="1-pg">1. 현지 PG사 직접 계약이 필요한 이유<a class="headerlink" href="#1-pg" title="Permanent link">&para;</a></h2>
+<p>글로벌 PG(Stripe, PayPal 등) 단독 운영만으로는 아시아 주요 시장에서 결제 전환율을 최적화하기 어렵다. 현지 PG사 직접 계약이 필요한 주요 이유는 다음과 같다.</p>
+<h3 id="1-1">1-1. 현지 결제수단 지원<a class="headerlink" href="#1-1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>이유</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>현지 주력 결제수단 미지원</td>
+<td>Stripe는 한국의 카카오페이·네이버페이·토스페이·계좌이체를 일부만 지원. 한국 발행 신용카드 직접 처리 불가</td>
+</tr>
+<tr>
+<td>일본 편의점 결제(콘비니)</td>
+<td>Stripe도 지원하나, 현지 PG(SBPS, GMO-PG)를 통할 때 더 많은 편의점 네트워크 커버</td>
+</tr>
+<tr>
+<td>동남아 e-wallet</td>
+<td>GoPay, OVO, TrueMoney, GCash 등은 해당 국가 현지 PG/결제 앱과만 직거래 가능</td>
+</tr>
+<tr>
+<td>한국 신용카드 발급사 직접 처리</td>
+<td>해외 법인 기반의 Stripe로는 한국 발행 카드 처리 시 수수료 상승 및 승인률 저하</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-2">1-2. 수수료 최적화<a class="headerlink" href="#1-2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>글로벌 PG 단독</th>
+<th>현지 PG 직접 계약</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>카드 수수료 구조</td>
+<td>크로스보더 수수료 포함 (일반적으로 1~2% 추가)</td>
+<td>국내 처리 수수료 적용 (더 낮음)</td>
+</tr>
+<tr>
+<td>환전 수수료</td>
+<td>별도 발생</td>
+<td>현지 통화 정산으로 최소화</td>
+</tr>
+<tr>
+<td>최저 수수료율</td>
+<td>협상 여지 제한적</td>
+<td>거래량 기반 협상 가능</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-3">1-3. 규제 대응<a class="headerlink" href="#1-3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>일부 국가(인도네시아, 베트남 등)는 외국 PG사의 현지 결제 처리를 제한하거나, 현지 금융 라이선스를 요구</li>
+<li>한국의 전자금융거래법은 PG업 등록 없이 자금을 경유·보유하는 구조를 제한</li>
+<li>일본의 자금결제법(資金決済法)은 결제 서비스 사업자에 대한 등록·공탁 요건 부과</li>
+</ul>
+<h3 id="1-4">1-4. 소비자 신뢰 및 전환율<a class="headerlink" href="#1-4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>한국·일본 소비자는 낯선 결제 브랜드보다 <strong>신뢰하는 현지 PG(이니시스, 토스페이먼츠, GMO-PG 등)</strong> 결제창에서 전환율이 높음</li>
+<li>현지 언어 결제창, 현지 CS 대응 가능 여부가 전환율에 직접 영향</li>
+</ul>
+<hr />
+<h2 id="2">2. 국가별 계약 조건 및 요구사항<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="2-1">2-1. 한국<a class="headerlink" href="#2-1" title="Permanent link">&para;</a></h3>
+<h4 id="pg">주요 현지 PG사<a class="headerlink" href="#pg" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>PG사</th>
+<th>시장 점유율</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KG이니시스</td>
+<td>1위</td>
+<td>카드·계좌이체·가상계좌·에스크로 완비</td>
+</tr>
+<tr>
+<td>토스페이먼츠</td>
+<td>급성장</td>
+<td>간편결제 통합, API 친화적</td>
+</tr>
+<tr>
+<td>NHN KCP</td>
+<td>상위권</td>
+<td>카드·간편결제·해외 결제</td>
+</tr>
+<tr>
+<td>Nice Payments</td>
+<td>상위권</td>
+<td>카드·계좌이체</td>
+</tr>
+<tr>
+<td>KSNET</td>
+<td>중위권</td>
+<td>카드 중심</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_1">계약 요건<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>요건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>법인 요건</td>
+<td><strong>국내 법인 원칙적 필요</strong> (단, 외국 법인도 국내 영업소 설치 또는 위탁 대리인을 통해 계약 가능한 경우 있음)</td>
+</tr>
+<tr>
+<td>사업자등록증</td>
+<td>필수 (국내 사업자 또는 외국법인 국내 지점)</td>
+</tr>
+<tr>
+<td>통신판매업 신고증</td>
+<td>필수 (이커머스 사업자의 경우)</td>
+</tr>
+<tr>
+<td>개인정보처리방침</td>
+<td>사이트에 게시 필수</td>
+</tr>
+<tr>
+<td>보안 서버(HTTPS)</td>
+<td>필수</td>
+</tr>
+<tr>
+<td>서비스 운영 실적</td>
+<td>일부 PG사는 오픈 예정 쇼핑몰도 계약 가능</td>
+</tr>
+<tr>
+<td>가입비</td>
+<td>PG사별 상이 (카페24 등 쇼핑몰 솔루션 통하면 면제·할인 가능)</td>
+</tr>
+<tr>
+<td>수수료율</td>
+<td>카드 약 2~3%, 거래량 기반 협상</td>
+</tr>
+<tr>
+<td>보증보험 또는 에스크로</td>
+<td>선불 상품·고가 상품 취급 시 요구 가능</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_2">난이도 평가: ★★☆☆☆ (낮음)<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p>한국은 PG 가입 절차가 체계화되어 있고, 카페24·아임포트(포트원) 등 연동 솔루션이 발달해 있어 <strong>국내 법인 기준으로는 진입 장벽이 낮다.</strong> 단, 외국 법인의 직접 계약은 절차가 추가된다.</p>
+<hr />
+<h3 id="2-2">2-2. 일본<a class="headerlink" href="#2-2" title="Permanent link">&para;</a></h3>
+<h4 id="pg_1">주요 현지 PG사<a class="headerlink" href="#pg_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>PG사</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GMO Payment Gateway (GMO-PG)</td>
+<td>일본 1위, 매출 기준 압도적 점유율</td>
+</tr>
+<tr>
+<td>SB Payment Service (SBPS)</td>
+<td>소프트뱅크 자회사, Shopify Payments 일본 파트너</td>
+</tr>
+<tr>
+<td>Epsilon (GMO Epsilon)</td>
+<td>중소 쇼핑몰 특화, 후불 결제 강점</td>
+</tr>
+<tr>
+<td>Veritrans (DGフィナンシャルテクノロジー)</td>
+<td>정기결제·구독 강점</td>
+</tr>
+<tr>
+<td>KOMOJU</td>
+<td>일본·한국 결제 통합, 외국 사업자 친화적</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_3">계약 요건<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>요건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>법인 요건</td>
+<td><strong>일본 현지 법인 원칙적 필요</strong> (이사 1인 이상 일본 주소 보유 필요)</td>
+</tr>
+<tr>
+<td>법인등기부 등본</td>
+<td>필수</td>
+</tr>
+<tr>
+<td>신분증 (대표자)</td>
+<td>여권 또는 일본 국적자는 마이넘버</td>
+</tr>
+<tr>
+<td>사업 계획서</td>
+<td>GMO-PG, SBPS 등 대형 PG는 사업 검토 필요</td>
+</tr>
+<tr>
+<td>사이트 심사</td>
+<td>운영 중인 사이트 또는 테스트 사이트 제출 필요</td>
+</tr>
+<tr>
+<td>자금결제법 등록</td>
+<td>PG사가 등록된 사업자와 계약해야 하므로, 가맹점 자체 등록은 불필요</td>
+</tr>
+<tr>
+<td>최소 거래량</td>
+<td>대형 PG(GMO-PG, SBPS)는 최소 거래량 기준 또는 초기 기본료 부과</td>
+</tr>
+<tr>
+<td>수수료</td>
+<td>신용카드 약 3.0~3.6%, 콘비니 약 5~7%</td>
+</tr>
+<tr>
+<td>에스크로</td>
+<td>선불 서비스·디지털 콘텐츠의 경우 선불 전자결제 등록 별도 필요</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_4">외국 법인 대안<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>KOMOJU:</strong> 일본·한국 결제를 모두 지원하며, 외국 법인도 계약 가능한 경우가 많음 (Shopify 앱으로도 연동 가능)</li>
+<li><strong>KG이니시스 일본 법인:</strong> 2021년 일본 법인 설립 + GMO-PG 파트너십, 한국 사업자가 일본 결제를 처리하는 브릿지 서비스 제공</li>
+</ul>
+<h4 id="_5">난이도 평가: ★★★☆☆ (중간)<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>일본 현지 법인이 없으면 GMO-PG, SBPS 등 주요 PG와 직접 계약이 어렵다. 단, KOMOJU 같은 중간자 서비스를 활용하면 외국 법인도 일본 결제수단을 처리할 수 있다.</p>
+<hr />
+<h3 id="2-3">2-3. 인도네시아<a class="headerlink" href="#2-3" title="Permanent link">&para;</a></h3>
+<h4 id="pg_2">주요 현지 PG사<a class="headerlink" href="#pg_2" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>PG사</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Midtrans (GoTo 계열)</td>
+<td>시장 선두, GoPay·OVO·Indomaret 지원</td>
+</tr>
+<tr>
+<td>DOKU</td>
+<td>중견 PG, 은행 계좌이체 강세</td>
+</tr>
+<tr>
+<td>Xendit</td>
+<td>동남아 통합 API, 외국 법인 친화적</td>
+</tr>
+<tr>
+<td>iPaymu</td>
+<td>소규모 사업자 특화</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_6">계약 요건<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>요건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>법인 요건</td>
+<td><strong>인도네시아 현지 법인(PT) 원칙적 필요</strong></td>
+</tr>
+<tr>
+<td>외국인 직접 투자 제한</td>
+<td>핀테크·결제 분야는 외국인 지분 제한 있음 (Negative Investment List)</td>
+</tr>
+<tr>
+<td>Bank Indonesia 규제</td>
+<td>결제 서비스 사업자(PJSP) 라이선스 취득 필요 (PG사가 취득, 가맹점 불필요)</td>
+</tr>
+<tr>
+<td>Xendit 예외</td>
+<td>외국 법인도 Xendit API를 통해 인도네시아 결제 처리 가능 (Xendit이 라이선스 보유)</td>
+</tr>
+<tr>
+<td>서류</td>
+<td>NPWP(세금번호), 사업자 등록증, 이사 신분증</td>
+</tr>
+<tr>
+<td>최소 거래량</td>
+<td>스타트업 친화적인 Xendit, DOKU 등은 최소 거래량 무관</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_7">난이도 평가: ★★★★☆ (높음)<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p>외국인 투자 제한과 강력한 중앙은행 규제로 직접 진입이 복잡하다. <strong>Xendit 등 라이선스 보유 중간자를 통한 간접 연동</strong>이 현실적이다.</p>
+<hr />
+<h3 id="2-4">2-4. 태국<a class="headerlink" href="#2-4" title="Permanent link">&para;</a></h3>
+<h4 id="pg_3">주요 현지 PG사<a class="headerlink" href="#pg_3" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>PG사</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2C2P</td>
+<td>동남아 최대 독립 PG, PromptPay 지원</td>
+</tr>
+<tr>
+<td>GBPrimePay</td>
+<td>태국 특화, QR Code Pay 지원</td>
+</tr>
+<tr>
+<td>Omise (Opn Payments)</td>
+<td>개발자 친화, 다국어 API</td>
+</tr>
+<tr>
+<td>TrueMoney</td>
+<td>True Corporation 계열, 태국 최대 e-wallet</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_8">계약 요건<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>요건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>법인 요건</td>
+<td><strong>태국 현지 법인 또는 파트너 필요</strong></td>
+</tr>
+<tr>
+<td>Bank of Thailand (BOT) 규제</td>
+<td>e-Payment 라이선스 소지 PG와 계약 필요</td>
+</tr>
+<tr>
+<td>PromptPay</td>
+<td>태국 중앙은행 QR 결제 표준, 2C2P/GBPrimePay 통해 지원 가능</td>
+</tr>
+<tr>
+<td>외국 법인 옵션</td>
+<td>2C2P는 동남아 전반 커버, 싱가포르 법인을 통한 태국 결제 처리 가능한 경우 있음</td>
+</tr>
+<tr>
+<td>수수료</td>
+<td>카드 2.5~3.5%, PromptPay QR 저렴</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_9">난이도 평가: ★★★☆☆ (중간)<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<p>2C2P 등을 통하면 태국 현지 법인 없이도 일부 결제 처리 가능. 단, Stripe Connect는 태국 플랫폼 계정에서 자체 온보딩 불가이므로 Stripe 단독 운영 시 한계 명확.</p>
+<hr />
+<h3 id="2-5">2-5. 베트남<a class="headerlink" href="#2-5" title="Permanent link">&para;</a></h3>
+<h4 id="pg_4">주요 현지 PG사<a class="headerlink" href="#pg_4" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>PG사</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VNPay</td>
+<td>시장 1위 QR 결제, 은행 공동망</td>
+</tr>
+<tr>
+<td>MoMo</td>
+<td>베트남 최대 e-wallet (7,000만+ 사용자)</td>
+</tr>
+<tr>
+<td>OnePay</td>
+<td>비자·마스터 포함 다양한 결제수단</td>
+</tr>
+<tr>
+<td>Xendit</td>
+<td>베트남 진출 (2021~), 외국 법인 접근 가능</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_10">계약 요건<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>요건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>법인 요건</td>
+<td><strong>베트남 현지 법인 원칙적 필요</strong></td>
+</tr>
+<tr>
+<td>SBV(국가은행) 규제</td>
+<td>결제 중개 서비스 라이선스 엄격</td>
+</tr>
+<tr>
+<td>외국 자본 제한</td>
+<td>전자결제 분야 외국인 지분 49% 이하 제한</td>
+</tr>
+<tr>
+<td>외국 법인 대안</td>
+<td>Xendit의 베트남 진출로 일부 접근 가능, 단 기능 제한</td>
+</tr>
+<tr>
+<td>현금 비중</td>
+<td>여전히 높은 현금 거래 비중 → e-wallet 전환 중</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_11">난이도 평가: ★★★★★ (매우 높음)<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<p>외국인 투자 제한과 엄격한 SBV 규제로 직접 계약이 매우 어렵다. <strong>Xendit 또는 현지 JV 파트너 통한 간접 진출</strong>이 사실상 유일한 현실적 옵션.</p>
+<hr />
+<h2 id="3">3. 국가별 계약 난이도 비교표<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>국가</th>
+<th>난이도</th>
+<th>현지 법인 필요</th>
+<th>외국 법인 대안</th>
+<th>권장 접근법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>한국</td>
+<td>★★☆☆☆</td>
+<td>필요 (원칙)</td>
+<td>Eximbay, Paymentwall 활용 가능</td>
+<td>국내 법인 또는 Eximbay</td>
+</tr>
+<tr>
+<td>일본</td>
+<td>★★★☆☆</td>
+<td>필요 (원칙)</td>
+<td>KOMOJU로 일부 가능</td>
+<td>KOMOJU or 일본 법인 설립</td>
+</tr>
+<tr>
+<td>싱가포르</td>
+<td>★☆☆☆☆</td>
+<td>불필요</td>
+<td>Stripe Connect 가능</td>
+<td>Stripe Connect</td>
+</tr>
+<tr>
+<td>태국</td>
+<td>★★★☆☆</td>
+<td>권장</td>
+<td>2C2P (SG 법인으로 가능)</td>
+<td>2C2P 통한 간접 연동</td>
+</tr>
+<tr>
+<td>인도네시아</td>
+<td>★★★★☆</td>
+<td>강력 권장</td>
+<td>Xendit으로 일부 가능</td>
+<td>Xendit API</td>
+</tr>
+<tr>
+<td>베트남</td>
+<td>★★★★★</td>
+<td>거의 필수</td>
+<td>Xendit 제한적</td>
+<td>현지 JV 또는 Xendit</td>
+</tr>
+<tr>
+<td>말레이시아</td>
+<td>★★★☆☆</td>
+<td>권장</td>
+<td>iPay88, MOLPay 일부 가능</td>
+<td>iPay88 또는 현지 법인</td>
+</tr>
+<tr>
+<td>필리핀</td>
+<td>★★★★☆</td>
+<td>강력 권장</td>
+<td>DragonPay, PayMongo</td>
+<td>PayMongo API</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-stripepaypal-pg-pg">4. Stripe/PayPal 글로벌 PG 단독 운영의 한계와 현지 PG 병행의 구조적 복잡도<a class="headerlink" href="#4-stripepaypal-pg-pg" title="Permanent link">&para;</a></h2>
+<h3 id="4-1-pg">4-1. 글로벌 PG 단독 운영 한계<a class="headerlink" href="#4-1-pg" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>한계</th>
+<th>세부 내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>국가 커버리지 갭</td>
+<td>한국·베트남·말레이시아 등 주요 아시아 시장에서 사업자 계정 미지원</td>
+</tr>
+<tr>
+<td>로컬 결제수단 미비</td>
+<td>e-wallet, QR 결제, 편의점 결제 등 현지 주력 수단 미지원</td>
+</tr>
+<tr>
+<td>승인률 저하</td>
+<td>크로스보더 처리 시 현지 은행 거부율 상승</td>
+</tr>
+<tr>
+<td>높은 수수료</td>
+<td>크로스보더 + 환전 수수료 이중 발생</td>
+</tr>
+<tr>
+<td>규제 비대응</td>
+<td>현지 금융 규제(Bank Indonesia, SBV 등) 미충족</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-2-pg">4-2. 현지 PG 병행 시 구조적 복잡도<a class="headerlink" href="#4-2-pg" title="Permanent link">&para;</a></h3>
+<p>현지 PG 병행 운영 시 아래와 같은 복잡도가 추가된다:</p>
+<table>
+<thead>
+<tr>
+<th>복잡도 요소</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>다중 PG 통합 개발</td>
+<td>PG사별 API가 상이 → 개발 비용 증가</td>
+</tr>
+<tr>
+<td>정산 일정 불일치</td>
+<td>PG사마다 정산 주기 다름 (D+1, D+2, D+7 등)</td>
+</tr>
+<tr>
+<td>복수 통화 정산</td>
+<td>KRW, JPY, THB 등 다통화 관리</td>
+</tr>
+<tr>
+<td>이중 모니터링</td>
+<td>결제 오류·사기 탐지를 PG사별로 별도 운영</td>
+</tr>
+<tr>
+<td>계약·법무 관리</td>
+<td>국가별 PG 계약서, 현지 법률 검토 필요</td>
+</tr>
+<tr>
+<td>고객 서비스 복잡도</td>
+<td>결제 오류 시 담당 PG 식별 및 CS 처리 분산</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-3">4-3. 통합 솔루션을 통한 복잡도 경감 옵션<a class="headerlink" href="#4-3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>솔루션</th>
+<th>설명</th>
+<th>커버 국가</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>포트원(PortOne/아임포트)</strong></td>
+<td>한국·일본·동남아 다중 PG 통합 API</td>
+<td>한국, 일본, 인도네시아, 태국 등</td>
+</tr>
+<tr>
+<td><strong>Xendit</strong></td>
+<td>동남아 통합 결제 API (인도네시아·필리핀·베트남 등)</td>
+<td>동남아 6개국 이상</td>
+</tr>
+<tr>
+<td><strong>2C2P</strong></td>
+<td>동남아·한국·일본 결제 통합</td>
+<td>아시아 전반</td>
+</tr>
+<tr>
+<td><strong>KOMOJU</strong></td>
+<td>일본·한국 결제 통합 (Shopify 앱 포함)</td>
+<td>일본, 한국</td>
+</tr>
+<tr>
+<td><strong>Paymentwall</strong></td>
+<td>200개국 150+ 결제수단 통합</td>
+<td>글로벌 (로컬 결제 특화)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-24shopify-pg">5. 카페24·Shopify의 현지 PG 연동 방식 벤치마크<a class="headerlink" href="#5-24shopify-pg" title="Permanent link">&para;</a></h2>
+<h3 id="5-1-24-pg">5-1. 카페24의 현지 PG 연동 전략<a class="headerlink" href="#5-1-24-pg" title="Permanent link">&para;</a></h3>
+<p>카페24는 단일 플랫폼 내에서 <strong>다중 PG 병렬 연동</strong>을 기본 아키텍처로 채택한다.</p>
+<table>
+<thead>
+<tr>
+<th>전략 요소</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>국내 PG 다중 선택</td>
+<td>KG이니시스, 토스페이먼츠, KCP, KSNET, 다날, KG모빌리언스 등 동시 지원</td>
+</tr>
+<tr>
+<td>해외 결제 전용 PG</td>
+<td>카페24 글로벌 페이먼츠, Paymentwall, Eximbay 별도 운영</td>
+</tr>
+<tr>
+<td>API 추상화</td>
+<td>카페24 플랫폼 레이어에서 PG별 API를 추상화 → 가맹점은 단일 설정 인터페이스</td>
+</tr>
+<tr>
+<td>가입 간소화</td>
+<td>카페24를 통한 PG 신청 시 가입비 면제·심사 간소화</td>
+</tr>
+</tbody>
+</table>
+<p><strong>글로벌 확장 구조:</strong>
+<div class="highlight"><pre><span></span><code>카페24 쇼핑몰 (한국 가맹점)
+      ↓
+카페24 글로벌 (해외 쇼핑몰 솔루션)
+      ↓
+카페24 글로벌 PG (해외 결제수단 처리)
+  + Paymentwall (로컬 결제 보완)
+</code></pre></div></p>
+<h3 id="5-2-shopify-pg">5-2. Shopify의 현지 PG 연동 전략<a class="headerlink" href="#5-2-shopify-pg" title="Permanent link">&para;</a></h3>
+<p>Shopify는 <strong>자체 Shopify Payments(Stripe 기반) + 앱 마켓플레이스를 통한 외부 PG 앱</strong> 구조를 채택한다.</p>
+<table>
+<thead>
+<tr>
+<th>전략 요소</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1차 결제 레이어</td>
+<td>Shopify Payments (Stripe 기반, 40여개국 지원)</td>
+</tr>
+<tr>
+<td>2차 결제 레이어</td>
+<td>Shopify 앱 마켓의 외부 결제 앱 (KOMOJU, KG이니시스, Eximbay 등)</td>
+</tr>
+<tr>
+<td>수수료 구조</td>
+<td>Shopify Payments 사용 시 Transaction Fee 없음, 외부 PG 사용 시 0.5~2% 추가</td>
+</tr>
+<tr>
+<td>한국 전략</td>
+<td>Shopify Payments 미지원 → KOMOJU/KG이니시스 앱으로 한국 결제 처리</td>
+</tr>
+<tr>
+<td>일본 전략</td>
+<td>Shopify Payments(SBPS 기반) 기본 + PayPay/Rakuten 앱 추가</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Shopify 일본 결제 구조:</strong>
+<div class="highlight"><pre><span></span><code>Shopify 체크아웃
+      ├── Shopify Payments (SBPS 기반) → 카드, 콘비니
+      ├── PayPay 앱 → PayPay
+      ├── Rakuten Pay 앱 → 라쿠텐 포인트 결제
+      └── GMO Epsilon 앱 → 후불 결제
+</code></pre></div></p>
+<h3 id="5-3">5-3. 누리메이트를 위한 벤치마크 교훈<a class="headerlink" href="#5-3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>교훈</th>
+<th>카페24/Shopify 사례</th>
+<th>누리메이트 적용 방안</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>플랫폼 레이어 추상화</td>
+<td>PG별 API를 플랫폼 레이어에서 통합 → 가맹점 부담 최소화</td>
+<td>포트원·Xendit 같은 통합 PG API 레이어 도입</td>
+</tr>
+<tr>
+<td>1차+2차 PG 이중 구조</td>
+<td>글로벌 PG(기본) + 현지 PG(보완)의 투트랙 구조</td>
+<td>Stripe(글로벌 카드) + 현지 PG(로컬 결제수단)</td>
+</tr>
+<tr>
+<td>앱 생태계 활용</td>
+<td>외부 결제 앱으로 PG 다양성 확보</td>
+<td>누리메이트 파트너 PG 목록 확장</td>
+</tr>
+<tr>
+<td>국가별 최소화 전략</td>
+<td>모든 국가에 현지 PG 계약 대신 필요 국가만 집중</td>
+<td>Phase 1: 한국·일본 집중, Phase 2: 동남아</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6">6. 결론 및 전략 권고<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h3 id="pg_5">단계별 현지 PG 계약 전략<a class="headerlink" href="#pg_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>국가</th>
+<th>방법</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Phase 0 (즉시)</strong></td>
+<td>싱가포르·일본·미국</td>
+<td>Stripe Connect</td>
+<td>별도 PG 계약 불필요</td>
+</tr>
+<tr>
+<td><strong>Phase 1 (6개월)</strong></td>
+<td>한국</td>
+<td>Eximbay 또는 Paymentwall</td>
+<td>외국 법인으로 한국 결제 수취 가능</td>
+</tr>
+<tr>
+<td><strong>Phase 1 (6개월)</strong></td>
+<td>일본 보완</td>
+<td>KOMOJU</td>
+<td>현지 법인 없이 콘비니·PayPay 지원</td>
+</tr>
+<tr>
+<td><strong>Phase 2 (12개월)</strong></td>
+<td>인도네시아·태국</td>
+<td>Xendit + 2C2P</td>
+<td>동남아 통합 PG API로 복잡도 경감</td>
+</tr>
+<tr>
+<td><strong>Phase 3 (18개월+)</strong></td>
+<td>베트남·말레이시아</td>
+<td>Xendit 확장 또는 현지 JV</td>
+<td>규제 리스크 최소화</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_12">출처<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.inicis.com/pg-docs">KG이니시스 구비서류 안내</a></li>
+<li><a href="https://developers.portone.io/opi/ko/integration/pg/v1/inicis?v=v1">포트원 KG이니시스 연동 가이드</a></li>
+<li><a href="https://support.cafe24.com/hc/ko/articles/8466999851929">카페24 결제서비스(PG) 신청 안내</a></li>
+<li><a href="https://fetv.co.kr/news/article.html?no=195834">KG이니시스 일본법인·GMO-PG 파트너십</a></li>
+<li><a href="https://www.inicis.com/blog/archives/129279">KG이니시스·SBPS 파트너십</a></li>
+<li><a href="https://www.insidevina.com/news/articleView.html?no=27046">하나은행·GMO-PG 해외결제 정산 협력</a></li>
+<li><a href="https://www.cafe24.com/story/use/globalpg.html">카페24 글로벌 PG 선택 가이드</a></li>
+<li><a href="https://help.shopify.com/en/manual/payments/shopify-payments/supported-countries/japan">Shopify Payments Japan - 공식 헬프 센터</a></li>
+<li><a href="https://www.sbpayment.jp/en/service/partner/shopify/lp02/">SB Payment Service × Shopify 파트너 페이지</a></li>
+<li><a href="https://en.komoju.com/integrations/shopify/">KOMOJU × Shopify 연동 가이드</a></li>
+<li><a href="https://www.punchkorea.com/korean-payment-gateways-shopify/">Shopify 한국 결제 게이트웨이</a></li>
+<li><a href="https://docs.adyen.com/marketplaces">Adyen for Platforms 마켓플레이스 결제</a></li>
+<li><a href="https://platum.kr/archives/209263">전자지급결제대행업(PG) 등록 요건 - 플래텀</a></li>
+<li><a href="https://www.tosspayments.com/blog/articles/amendment">전금법 개정 - 토스페이먼츠</a></li>
+<li><a href="https://www.etnews.com/20200518000097">갤럭시아커뮤니케이션즈 태국 JV 설립</a></li>
+<li><a href="https://blog.portone.io/allabout-pg-02/">포트원 블로그 - PG사 완전정복</a></li>
+<li><a href="https://imweb.me/faq?mode=view&amp;category=29&amp;category2=39&amp;idx=27596">한국 PG 수수료 안내 - IMWeb</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.top", "navigation.sections", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
