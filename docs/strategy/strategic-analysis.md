@@ -193,7 +193,7 @@
     <td colspan="2" style="border:2px solid #5c6bc0;padding:14px 12px;vertical-align:top;background:#fafafa;">
       <strong style="color:#5c6bc0;">💸 비용 구조</strong><br><br>
       · 클라우드 인프라 (월 ~103만 원)<br>
-      · 인건비 9인 × 550만 원 = 월 ~4,950만 원<br>
+      · 인건비 9인 × 500만 원 = 월 ~4,500만 원<br>
       · PG 연동 개발·유지 비용<br><br>
       <strong>BEP: 활성 판매자 약 56명 / 월 GMV 약 16.7억 원</strong>
     </td>
