@@ -111,6 +111,8 @@ nav:
     - "[P1] 글로벌 진출 지원": spec/global-launch.md
     - "[P1] 배송 연동": spec/shipping-integration.md
     - "[P1] 구매 전환율 향상 기능": spec/conversion-rate-features.md
+    - "[P1] 운영 편의기능": spec/convenience-features.md
+    - "[P2] 재방문율 향상 기능": spec/engagement-features.md
     - "[P2] 인플루언서 매칭": spec/influencer-matching.md
     - "[P2] 벤치마크 리포트": spec/benchmark-report.md
     - "[P2] AI 운영 어시스턴트": spec/ai-assistant.md
