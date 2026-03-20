@@ -1,0 +1,4592 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="누리메이트 제품 전략, 시장 리서치, 기능 스펙">
+      
+      
+      
+        <link rel="canonical" href="https://sweetginger.github.io/nurymate-docs/spec/global-dashboard/">
+      
+      
+        <link rel="prev" href="../ai-chat-setting/">
+      
+      
+        <link rel="next" href="../marketplace-integration/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>[P2] 글로벌 통합 대시보드 - 누리메이트 전략 문서</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../.." title="누리메이트 전략 문서" class="md-header__button md-logo" aria-label="누리메이트 전략 문서" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            누리메이트 전략 문서
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              [P2] 글로벌 통합 대시보드
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  개요
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../strategy/product-plan/" class="md-tabs__link">
+          
+  
+  
+  전략
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../research/japan-korea-ecommerce/" class="md-tabs__link">
+          
+  
+  
+  리서치
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../spec-priority/" class="md-tabs__link">
+          
+  
+  
+  Spec
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="누리메이트 전략 문서" class="md-nav__button md-logo" aria-label="누리메이트 전략 문서" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    누리메이트 전략 문서
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    전략
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    전략
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/product-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    제품 기획
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/business-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    비즈니스 로드맵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/strategic-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    전략 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/pricing-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    수익 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/early-customer-acquisition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    초기 고객 확보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/new-seller-acquisition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    신규 창업자 확보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/organic-growth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    자연 유입 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/global-expansion-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글로벌 확장 로드맵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/vertical-expansion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    버티컬 확장
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/japan-gtm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 GTM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/api-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 정책
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    리서치
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    리서치
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/japan-korea-ecommerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본·한국 이커머스 문화 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-jp-payment-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 결제 불편 UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-japan-weaknesses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 약점 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-japan-payment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 결제
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-pricing-revenue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 수익 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/pg-stripe-support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stripe·PG 지원 조사
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/stripe-connect-countries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stripe Connect 국가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/pg-licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PG 라이선스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/local-pg-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    현지 PG 계약 난이도
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/paymentwall-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paymentwall 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/payoneer-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payoneer 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/korea-ecommerce-platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    한국 이커머스 경쟁 지형
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/japan-ec-saas-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 D2C EC SaaS 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/global-market-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글로벌 시장 개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/logistics-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    배송·3PL 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/sns-review-legal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SNS 리뷰 법적 검토
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/cafe24-pro-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/cafe24-app-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 앱 디자인
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/cafe24-analytics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/fashion-ecommerce-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    패션 이커머스 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/platform-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플랫폼 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/platform-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플랫폼 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/rakuten-amazon-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    라쿠텐·아마존 API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/sns-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SNS 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/review-platform-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    리뷰 플랫폼 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/japan-conveni-pickup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 편의점 픽업
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/korea-japan-trust-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    한일 신뢰 사례
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/closed-app-marketplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    클로즈드 앱 마켓플레이스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify AI 어시스턴트 사례
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-markets-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify Markets 다국가 연결 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-marketing-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 마케팅 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-queryql-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify GraphQL 리포트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/payment-fee-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    결제 수수료 원가 구조 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/competitor-ux-updates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    경쟁사 UX 업데이트 벤치마킹
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/global-ux-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글로벌 커머스 UX 디자인 차이점
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shipping-profile-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    발송 프로필 관리 필요성 검증
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/youtube-shopping-partner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    YouTube Shopping 등록 절차
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/latest-stats-2025-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    최신 통계 2025~2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Spec
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spec-priority/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec 우선순위
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../seller-store-creation-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 셀러 스토어 생성 UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../domain-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 멀티테넌시 도메인 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jp-payment-native/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 일본 결제 네이티브
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 국가별 단위 현지화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 마이그레이션
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operator-admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 운영자 어드민
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module-definition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 모듈 기능 정의
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../payment-bank-transfer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 무통장입금·가상계좌
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unified-payment-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 통합 결제 대시보드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../first-sale-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 첫 매출 견인 도구
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analytics-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 통계·분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sns-marketing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] SNS 마케팅 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sns-review-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] SNS 리뷰 수집
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../affiliate-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 어필리에이트 트래킹
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../country-preset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 국가별 설정 프리셋
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global-launch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 글로벌 진출 지원
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shipping-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 배송 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conversion-rate-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 구매 전환율 향상 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../convenience-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 운영 편의기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engagement-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 재방문율 향상 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../influencer-matching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 인플루언서 매칭
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmark-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 벤치마크 리포트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] AI 운영 어시스턴트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-chat-setting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] AI 채팅 설정
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 글로벌 통합 대시보드
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 글로벌 통합 대시보드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        목차
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 개요
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 개요">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 배경 및 목적
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 타겟 사용자
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 설계 원칙
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 글로벌 통합 대시보드 지표 정의
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 글로벌 통합 대시보드 지표 정의">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-global-summary-cards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 최상위 통합 지표 (Global Summary Cards)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-kpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 국가별 KPI 비교 패널
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 국가별 매출 비중 차트
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 환율 기준 통합 정산액
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 국가별 ↔ 글로벌 통합 전환 UX
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 국가별 ↔ 글로벌 통합 전환 UX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 전환 패턴 설계
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 드릴다운 구조 (글로벌 → 국가 → 카테고리 → 상품)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 크로스 필터링
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 실시간 vs 배치 처리 기준
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 실시간 vs 배치 처리 기준">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 국가별 시간대 고려 원칙
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 처리 방식별 지표 분류
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 국가별 마감 처리
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 환율 처리 정책
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 환율 처리 정책">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 환율 갱신 주기 및 소스
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 기준 통화 설정
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 환율 변동 리스크 표시
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 환율 데이터 보존 정책
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 기술 요건
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 기술 요건">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 멀티테넌시 글로벌 집계 아키텍처
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 글로벌 통합 집계 API 설계
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 성능 요건
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 데이터 정합성 보장
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 캐싱 전략
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 구현 우선순위 (Phase별)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 구현 우선순위 (Phase별)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-mvp-2026-q2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 — 단일 국가 대시보드 (MVP, 2026 Q2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-2026-q3q4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 — 글로벌 통합 대시보드 (2026 Q3~Q4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-2027" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 — 글로벌 확장 대시보드 (2027~)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marketplace-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 마켓플레이스 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sellex-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    셀익스 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        목차
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 개요
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 개요">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 배경 및 목적
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 타겟 사용자
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 설계 원칙
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 글로벌 통합 대시보드 지표 정의
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 글로벌 통합 대시보드 지표 정의">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-global-summary-cards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 최상위 통합 지표 (Global Summary Cards)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-kpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 국가별 KPI 비교 패널
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 국가별 매출 비중 차트
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 환율 기준 통합 정산액
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 국가별 ↔ 글로벌 통합 전환 UX
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 국가별 ↔ 글로벌 통합 전환 UX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 전환 패턴 설계
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 드릴다운 구조 (글로벌 → 국가 → 카테고리 → 상품)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 크로스 필터링
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 실시간 vs 배치 처리 기준
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 실시간 vs 배치 처리 기준">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 국가별 시간대 고려 원칙
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 처리 방식별 지표 분류
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 국가별 마감 처리
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 환율 처리 정책
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 환율 처리 정책">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 환율 갱신 주기 및 소스
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 기준 통화 설정
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 환율 변동 리스크 표시
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 환율 데이터 보존 정책
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 기술 요건
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 기술 요건">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 멀티테넌시 글로벌 집계 아키텍처
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 글로벌 통합 집계 API 설계
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 성능 요건
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 데이터 정합성 보장
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 캐싱 전략
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 구현 우선순위 (Phase별)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 구현 우선순위 (Phase별)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-mvp-2026-q2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 — 단일 국가 대시보드 (MVP, 2026 Q2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-2026-q3q4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 — 글로벌 통합 대시보드 (2026 Q3~Q4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-2027" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 — 글로벌 확장 대시보드 (2027~)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">글로벌 통합 대시보드 기능 정의서<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>작성일: 2026-03-06
+버전: v0.1 (초안)
+관련 태스크: [10-5]
+기반 문서: analytics-spec.md, country-preset.md, global-launch.md, product-plan.md</p>
+</blockquote>
+<hr />
+<h2 id="_2">목차<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#1-개요">개요</a></li>
+<li><a href="#2-글로벌-통합-대시보드-지표-정의">글로벌 통합 대시보드 지표 정의</a></li>
+<li><a href="#3-국가별--글로벌-통합-전환-ux">국가별 ↔ 글로벌 통합 전환 UX</a></li>
+<li><a href="#4-실시간-vs-배치-처리-기준">실시간 vs 배치 처리 기준</a></li>
+<li><a href="#5-환율-처리-정책">환율 처리 정책</a></li>
+<li><a href="#6-기술-요건">기술 요건</a></li>
+<li><a href="#7-구현-우선순위-phase별">구현 우선순위 (Phase별)</a></li>
+</ol>
+<hr />
+<h2 id="1">1. 개요<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1 배경 및 목적<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<p>누리메이트의 핵심 차별화 전략은 한국 판매자의 글로벌 진출 지원이다. 판매자가 한국·일본·동남아시아 등 다국가에서 동시에 판매하게 되면, <strong>분산된 국가별 데이터를 한눈에 파악하고 의사결정할 수 있는 통합 뷰</strong>가 필수적으로 요구된다.</p>
+<p>기존 analytics-spec.md의 어드민 홈 대시보드는 단일 스토어 기준 KPI에 집중한다. 글로벌 통합 대시보드는 이를 확장하여 <strong>다국가 운영 판매자가 전체 사업을 하나의 화면에서 조망</strong>할 수 있게 한다.</p>
+<p><strong>해결할 핵심 문제:</strong></p>
+<table>
+<thead>
+<tr>
+<th>문제</th>
+<th>현재 상황</th>
+<th>누리메이트 글로벌 대시보드 목표</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>국가별 매출 파편화</td>
+<td>일본 어드민, 한국 어드민 별도 접근</td>
+<td>단일 화면에서 전체 국가 매출 통합 조회</td>
+</tr>
+<tr>
+<td>환율 혼재</td>
+<td>JPY, KRW, USD 수치가 혼재되어 비교 불가</td>
+<td>KRW 기준 환산 통합 GMV 즉시 확인</td>
+</tr>
+<tr>
+<td>국가별 성과 비교 불가</td>
+<td>각국 전환율·반품율을 별도로 확인</td>
+<td>나란히 비교하는 국가별 KPI 패널</td>
+</tr>
+<tr>
+<td>시간대 혼란</td>
+<td>KST 기준 집계가 EST 영업 현황과 불일치</td>
+<td>국가별 현지 시간 기준 데이터 + 글로벌 통합 기준 명시</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12">1.2 타겟 사용자<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>사용자 유형</th>
+<th>대시보드 활용 목적</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>다국가 운영 판매자</strong></td>
+<td>한국+일본 동시 운영, 전체 GMV 파악, 국가별 성과 비교</td>
+</tr>
+<tr>
+<td><strong>글로벌 진출 준비 판매자</strong></td>
+<td>진출 전 시뮬레이션, 진출 후 초기 성과 모니터링</td>
+</tr>
+<tr>
+<td><strong>브랜드 오너 (운영 위임)</strong></td>
+<td>요약된 국가별 현황 한눈에 파악</td>
+</tr>
+</tbody>
+</table>
+<h3 id="13">1.3 설계 원칙<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>단일 진입점</strong>: 국가별 어드민을 별도로 열지 않아도 글로벌 대시보드 하나로 전체 조망 가능</li>
+<li><strong>드릴다운 구조</strong>: 글로벌 → 국가 → 카테고리 → 상품 순서로 점진적 상세 접근</li>
+<li><strong>통화 일관성</strong>: 기본 기준 통화(KRW)로 통합 표시, 판매자 선택으로 변경 가능</li>
+<li><strong>시간대 명시</strong>: 모든 지표에 해당 데이터의 기준 시간대를 명시하여 혼란 방지</li>
+<li><strong>실행 가능한 인사이트</strong>: 숫자 나열이 아닌 "이 국가에서 이 액션이 필요하다"는 수준의 인사이트 제공</li>
+</ol>
+<hr />
+<h2 id="2">2. 글로벌 통합 대시보드 지표 정의<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="21-global-summary-cards">2.1 최상위 통합 지표 (Global Summary Cards)<a class="headerlink" href="#21-global-summary-cards" title="Permanent link">&para;</a></h3>
+<p>판매자가 대시보드 진입 즉시 보는 전체 사업 현황 요약 카드.</p>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────────────────────┐
+│  글로벌 통합 현황  기준 통화: KRW  |  기준 시간: KST  |  오늘 기준    │
+├──────────────┬──────────────┬──────────────┬──────────────┬─────────┤
+│   총 GMV     │  총 주문 수  │  통합 전환율  │   총 방문자  │ 평균 AOV │
+│  ₩24,820,000 │    312건     │    3.2%      │   9,750명    │ ₩79,551 │
+│  +8.3% DoD   │  +12% DoD   │  -0.1%pp    │  +5.2% DoD  │ +3.1%   │
+├──────────────┴──────────────┴──────────────┴──────────────┴─────────┤
+│  국가별 GMV 비중                                                       │
+│  [한국 ██████████████████ 68%] [일본 ████████ 28%] [기타 █ 4%]        │
+└─────────────────────────────────────────────────────────────────────┘
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>집계 방식</th>
+<th>통화 기준</th>
+<th>갱신 주기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>총 GMV</strong></td>
+<td>전체 국가 결제 완료 거래액 합산 (환불 전)</td>
+<td>KRW 환산 합산</td>
+<td>5분 배치</td>
+</tr>
+<tr>
+<td><strong>총 순 매출 (Net Sales)</strong></td>
+<td>GMV - 할인 - 환불</td>
+<td>KRW 환산 합산</td>
+<td>5분 배치</td>
+</tr>
+<tr>
+<td><strong>총 주문 수</strong></td>
+<td>전체 국가 주문 건수 합산</td>
+<td>건수 (단위 없음)</td>
+<td>실시간</td>
+</tr>
+<tr>
+<td><strong>통합 전환율 (CVR)</strong></td>
+<td>전체 세션 대비 구매 완료 세션 비율</td>
+<td>%</td>
+<td>5분 배치</td>
+</tr>
+<tr>
+<td><strong>총 방문자 수</strong></td>
+<td>전체 국가 순 방문자 합산</td>
+<td>명</td>
+<td>5분 배치</td>
+</tr>
+<tr>
+<td><strong>통합 AOV</strong></td>
+<td>총 GMV ÷ 총 주문 수</td>
+<td>KRW</td>
+<td>5분 배치</td>
+</tr>
+<tr>
+<td><strong>국가별 GMV 비중</strong></td>
+<td>국가별 GMV ÷ 총 GMV × 100</td>
+<td>%</td>
+<td>5분 배치</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-kpi">2.2 국가별 KPI 비교 패널<a class="headerlink" href="#22-kpi" title="Permanent link">&para;</a></h3>
+<p>각 국가를 나란히 비교할 수 있는 패널. 국가별 성과 차이를 즉각 파악 가능.</p>
+<div class="highlight"><pre><span></span><code>┌───────────────────┬──────────────────┬──────────────────┬─────────────┐
+│ 지표               │ 한국 (KST)       │ 일본 (JST)        │ 글로벌 합계  │
+├───────────────────┼──────────────────┼──────────────────┼─────────────┤
+│ 오늘 GMV          │ ₩16,877,600      │ ₩6,973,400 (¥)   │ ₩24,820,000 │
+│ 오늘 주문 수       │ 214건            │ 87건             │ 312건        │
+│ 전환율            │ 3.5%             │ 2.6%             │ 3.2%        │
+│ AOV              │ ₩78,867          │ ₩80,153          │ ₩79,551     │
+│ 반품율            │ 2.1%             │ 3.8%             │ 2.7%        │
+│ 신규 고객 비율     │ 41%              │ 58%              │ 46%         │
+│ 재구매 고객 비율   │ 59%              │ 42%              │ 54%         │
+├───────────────────┼──────────────────┼──────────────────┼─────────────┤
+│ 환율 기준 (오늘)   │ KRW 기준         │ 1 JPY = 9.12 KRW │ -           │
+│ 환율 적용 GMV     │ ₩16,877,600      │ ₩63,597,408 (JPY 기준 원화 환산) │ - │
+└───────────────────┴──────────────────┴──────────────────┴─────────────┘
+</code></pre></div>
+<p><strong>국가별 KPI 정의:</strong></p>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>정의</th>
+<th>집계 단위</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>국가별 GMV</strong></td>
+<td>해당 국가 구매자의 결제 완료 총액</td>
+<td>현지 통화 + KRW 환산 병기</td>
+</tr>
+<tr>
+<td><strong>국가별 주문 수</strong></td>
+<td>해당 국가 발생 주문 건수</td>
+<td>건</td>
+</tr>
+<tr>
+<td><strong>국가별 전환율</strong></td>
+<td>해당 국가 세션 대비 구매 완료 비율</td>
+<td>%</td>
+</tr>
+<tr>
+<td><strong>국가별 AOV</strong></td>
+<td>해당 국가 평균 주문 금액</td>
+<td>현지 통화 + KRW 환산</td>
+</tr>
+<tr>
+<td><strong>국가별 반품율</strong></td>
+<td>해당 국가 주문 중 반품 처리된 비율</td>
+<td>%</td>
+</tr>
+<tr>
+<td><strong>국가별 신규 고객 비율</strong></td>
+<td>해당 기간 첫 구매 고객 비율</td>
+<td>%</td>
+</tr>
+<tr>
+<td><strong>국가별 재구매율</strong></td>
+<td>해당 기간 2회 이상 구매 고객 비율</td>
+<td>%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23">2.3 국가별 매출 비중 차트<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>[도넛 차트 — 오늘 GMV 기준]
+
+               ┌─────────────────────────────────┐
+               │        국가별 GMV 비중           │
+               │                                 │
+               │    ██████  한국   ₩16.9M (68%)   │
+               │    ████    일본   ₩7.0M  (28%)   │
+               │    █       기타   ₩1.0M  (4%)    │
+               │                                 │
+               │  총 GMV: ₩24.8M                 │
+               └─────────────────────────────────┘
+</code></pre></div>
+<p><strong>차트 조작 기능:</strong>
+- 기간 선택: 오늘 / 7일 / 30일 / 90일 / 커스텀
+- 국가 클릭 시 해당 국가 상세 드릴다운 진입
+- 트렌드 표시: 전기 대비 비중 변화 화살표 표시</p>
+<h3 id="24">2.4 환율 기준 통합 정산액<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
+<p>판매자가 실제 수령하게 될 정산액을 통화별로 분리하여 표시.</p>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────┐
+│  이번 달 정산 예정액  (정산 주기: D+1 기준)           │
+│                                                 │
+│  한국 (KRW)   ₩68,450,000    정산일: 03-07      │
+│  일본 (JPY)   ¥2,180,000     정산일: 03-08      │
+│             = ₩19,881,600    (환율: 9.12 KRW/JPY)│
+│                                                 │
+│  통합 정산 예정액: ₩88,331,600                    │
+│                                                 │
+│  [정산 내역 상세 보기]                             │
+└─────────────────────────────────────────────────┘
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>정의</th>
+<th>표시 방식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>국가별 정산 예정액</strong></td>
+<td>해당 국가 PG사에서 정산 예정인 금액</td>
+<td>현지 통화</td>
+</tr>
+<tr>
+<td><strong>KRW 환산 정산액</strong></td>
+<td>정산 시점 환율 기준 원화 환산 금액</td>
+<td>₩</td>
+</tr>
+<tr>
+<td><strong>통합 정산 예정액</strong></td>
+<td>전체 국가 정산액 KRW 합산</td>
+<td>₩</td>
+</tr>
+<tr>
+<td><strong>환율 변동 리스크</strong></td>
+<td>기준일 환율 대비 현재 환율 차이에 따른 예상 손익</td>
+<td>₩ (±)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-ux">3. 국가별 ↔ 글로벌 통합 전환 UX<a class="headerlink" href="#3-ux" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 전환 패턴 설계<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<p>판매자는 두 가지 뷰 사이를 자유롭게 전환한다.</p>
+<div class="highlight"><pre><span></span><code>[어드민 상단 내비게이션]
+
+  [글로벌 통합 뷰]  |  [한국]  |  [일본]  |  [+ 국가 추가]
+
+   ▲ 현재 선택된 뷰에 따라 대시보드 내용 전환
+</code></pre></div>
+<p><strong>뷰 전환 방식:</strong></p>
+<table>
+<thead>
+<tr>
+<th>전환</th>
+<th>방법</th>
+<th>UX 패턴</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>글로벌 → 특정 국가</td>
+<td>상단 탭 클릭 또는 국가별 패널 클릭</td>
+<td>슬라이드 전환 애니메이션</td>
+</tr>
+<tr>
+<td>특정 국가 → 글로벌</td>
+<td>상단 "글로벌 통합 뷰" 탭 클릭</td>
+<td>슬라이드 전환</td>
+</tr>
+<tr>
+<td>글로벌 차트 드릴다운</td>
+<td>파이 차트 국가 섹터 클릭</td>
+<td>인라인 확장</td>
+</tr>
+<tr>
+<td>지표 드릴다운</td>
+<td>카드의 숫자 클릭</td>
+<td>모달 or 슬라이드 패널</td>
+</tr>
+</tbody>
+</table>
+<p><strong>URL 구조:</strong>
+<div class="highlight"><pre><span></span><code>/admin/analytics                → 글로벌 통합 뷰
+/admin/analytics?country=kr     → 한국 단독 뷰
+/admin/analytics?country=jp     → 일본 단독 뷰
+</code></pre></div></p>
+<p>북마크·공유 가능하도록 URL 파라미터로 뷰 상태를 유지한다.</p>
+<h3 id="32">3.2 드릴다운 구조 (글로벌 → 국가 → 카테고리 → 상품)<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<p><strong>레벨 1 — 글로벌 통합:</strong>
+- 전체 GMV, 국가별 비중 파이 차트, 국가별 KPI 비교 패널
+- 트리거: 대시보드 기본 진입 화면</p>
+<p><strong>레벨 2 — 국가:</strong>
+- 선택 국가의 단독 매출·주문·방문자·전환율
+- 해당 국가 현지 통화 + KRW 환산 병기
+- 트리거: 파이 차트 국가 클릭 또는 상단 탭</p>
+<p><strong>레벨 3 — 카테고리:</strong>
+- 선택 국가 내 카테고리별 매출 분해
+- 카테고리별 전환율·반품율 비교
+- 트리거: 국가 뷰에서 카테고리 차트 클릭</p>
+<p><strong>레벨 4 — 상품:</strong>
+- 선택 카테고리 내 상품별 판매 순위, 재고, 수익성
+- 트리거: 카테고리 뷰에서 상품 행 클릭</p>
+<div class="highlight"><pre><span></span><code>[드릴다운 브레드크럼 예시]
+
+글로벌 &gt; 일본 &gt; 의류 &gt; 카고팬츠
+
+[◀ 글로벌 통합으로 돌아가기]
+</code></pre></div>
+<h3 id="33">3.3 크로스 필터링<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<p>글로벌 대시보드의 필터는 드릴다운된 뷰에도 유지된다.</p>
+<table>
+<thead>
+<tr>
+<th>필터</th>
+<th>적용 범위</th>
+<th>기본값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기간</td>
+<td>전체 글로벌 + 국가 뷰 동시 적용</td>
+<td>오늘</td>
+</tr>
+<tr>
+<td>기준 통화</td>
+<td>통합 지표 환산 기준</td>
+<td>KRW</td>
+</tr>
+<tr>
+<td>국가 비교 선택</td>
+<td>2개 국가 선택 시 나란히 비교</td>
+<td>전체</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-vs">4. 실시간 vs 배치 처리 기준<a class="headerlink" href="#4-vs" title="Permanent link">&para;</a></h2>
+<h3 id="41">4.1 국가별 시간대 고려 원칙<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<p>누리메이트의 주요 판매 국가는 KST(UTC+9)와 JST(UTC+9)로 동일한 시간대이나, 이후 동남아(UTC+7~+8), 미국(UTC-5~-8) 등으로 확장 시 시간대 처리가 복잡해진다.</p>
+<p><strong>시간대 처리 원칙:</strong></p>
+<table>
+<thead>
+<tr>
+<th>원칙</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>데이터 저장 기준</td>
+<td>모든 이벤트 데이터는 UTC로 저장</td>
+</tr>
+<tr>
+<td>표시 기준</td>
+<td>판매자 설정 기준 시간대 (기본: KST)로 변환하여 표시</td>
+</tr>
+<tr>
+<td>국가별 "오늘" 기준</td>
+<td>해당 국가 현지 시간 기준 "오늘 00:00~23:59"로 집계</td>
+</tr>
+<tr>
+<td>통합 집계 기준</td>
+<td>글로벌 통합 뷰는 판매자 기준 시간대(KST) 기준 집계</td>
+</tr>
+</tbody>
+</table>
+<p><strong>일본 판매자 예시:</strong>
+<div class="highlight"><pre><span></span><code>한국 판매자의 글로벌 대시보드 기준: KST
+- &quot;오늘 일본 매출&quot; = 한국 시간 기준 오늘 (KST 00:00~23:59) 발생한 일본 주문
+- 일본 어드민 단독 뷰 = JST 기준 오늘로 표시
+→ 두 뷰가 동일 데이터이나 집계 시간대가 다를 수 있음 — UI에서 명시
+</code></pre></div></p>
+<h3 id="42">4.2 처리 방식별 지표 분류<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>처리 방식</th>
+<th>지연 허용</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>국가별 주문 수 (오늘)</strong></td>
+<td>실시간 스트리밍</td>
+<td>&lt; 1초</td>
+<td>Live View 실시간 카운터</td>
+</tr>
+<tr>
+<td><strong>국가별 GMV (오늘)</strong></td>
+<td>5분 배치</td>
+<td>&lt; 5분</td>
+<td>대시보드 홈 KPI</td>
+</tr>
+<tr>
+<td><strong>통합 GMV / 정산 예정액</strong></td>
+<td>5분 배치</td>
+<td>&lt; 5분</td>
+<td>판매자 의사결정 기준 지표</td>
+</tr>
+<tr>
+<td><strong>환율 갱신</strong></td>
+<td>1시간 배치</td>
+<td>&lt; 1시간</td>
+<td>외부 환율 API 호출 비용 절감</td>
+</tr>
+<tr>
+<td><strong>국가별 전환율</strong></td>
+<td>5분 배치</td>
+<td>&lt; 5분</td>
+<td>대시보드 KPI</td>
+</tr>
+<tr>
+<td><strong>국가별 반품율</strong></td>
+<td>일별 배치</td>
+<td>&lt; 24시간</td>
+<td>반품 처리 완료 후 집계</td>
+</tr>
+<tr>
+<td><strong>코호트 분석 (국가별)</strong></td>
+<td>일별 배치</td>
+<td>&lt; 24시간</td>
+<td>계산 비용 큼</td>
+</tr>
+<tr>
+<td><strong>RFM 세그먼테이션 (국가별)</strong></td>
+<td>일별 배치</td>
+<td>&lt; 24시간</td>
+<td>계산 비용 큼</td>
+</tr>
+<tr>
+<td><strong>GA4 데이터 Pull</strong></td>
+<td>3시간 배치</td>
+<td>&lt; 3시간</td>
+<td>GA4 API 할당량 절약</td>
+</tr>
+<tr>
+<td><strong>마케팅 채널 어트리뷰션</strong></td>
+<td>3시간 배치</td>
+<td>&lt; 3시간</td>
+<td>GA4 데이터 의존</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43">4.3 국가별 마감 처리<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
+<p>일별 리포트 생성 시 각 국가의 마감 시간을 현지 시간대 기준 자정(00:00)으로 처리한다.</p>
+<div class="highlight"><pre><span></span><code>[야간 배치 스케줄 예시]
+
+UTC 15:00 (KST/JST 00:00) → 한국·일본 일별 리포트 생성
+UTC 06:00 (ICT 13:00)     → 동남아 일별 리포트 생성 (Phase 3~)
+UTC 06:00 (EST 01:00)     → 미국 동부 일별 리포트 생성 (Phase 4~)
+</code></pre></div>
+<hr />
+<h2 id="5">5. 환율 처리 정책<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<h3 id="51">5.1 환율 갱신 주기 및 소스<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>정책</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>환율 갱신 주기</strong></td>
+<td>1시간마다 외부 API 호출하여 최신 환율 갱신</td>
+</tr>
+<tr>
+<td><strong>환율 데이터 소스</strong></td>
+<td>Open Exchange Rates API (기본) / ECB (유럽 통화) / 한국은행 기준 환율 (KRW 관련 보조)</td>
+</tr>
+<tr>
+<td><strong>거래 시점 환율</strong></td>
+<td>주문 결제 시점의 환율을 주문 레코드에 스냅샷으로 저장 (<code>exchange_rate</code> 필드)</td>
+</tr>
+<tr>
+<td><strong>집계 표시 환율</strong></td>
+<td>대시보드 조회 시점 기준 최신 환율로 환산 (집계 목적)</td>
+</tr>
+<tr>
+<td><strong>정산 환율</strong></td>
+<td>PG사 실제 정산 시 적용된 환율 (PG사 정산 데이터 기준, 사후 업데이트)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52">5.2 기준 통화 설정<a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
+<p><strong>기본값: KRW (한국 원)</strong></p>
+<p>한국 판매자가 기준이므로 KRW를 기본 기준 통화로 설정한다. 판매자는 어드민 설정에서 기준 통화를 변경할 수 있다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기본 기준 통화</td>
+<td>KRW</td>
+</tr>
+<tr>
+<td>변경 가능 통화</td>
+<td>KRW, JPY, USD, EUR</td>
+</tr>
+<tr>
+<td>적용 범위</td>
+<td>글로벌 통합 대시보드의 통합 집계 지표</td>
+</tr>
+<tr>
+<td>국가별 단독 뷰</td>
+<td>해당 국가 현지 통화로 표시 (기준 통화 설정과 무관)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>기준 통화 표시 원칙:</strong></p>
+<div class="highlight"><pre><span></span><code>[글로벌 통합 뷰 — 기준 통화 KRW 설정 시]
+
+총 GMV: ₩24,820,000  (KRW 기준)
+  ├── 한국:  ₩16,877,600  (KRW 원본)
+  └── 일본:  ₩7,942,400   (¥870,879 → KRW 환산, 환율 9.12 적용)
+
+[일본 단독 뷰]
+
+오늘 매출: ¥870,879     (JPY 원본 — 현지 통화 우선 표시)
+           ₩7,942,400   (KRW 환산 참고값 병기)
+</code></pre></div>
+<h3 id="53">5.3 환율 변동 리스크 표시<a class="headerlink" href="#53" title="Permanent link">&para;</a></h3>
+<p>다국가 정산 시 환율 변동으로 인해 실수령액이 달라질 수 있다. 이를 판매자에게 투명하게 표시한다.</p>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────┐
+│  환율 변동 리스크 알림  (일본 JPY)                     │
+│                                                     │
+│  이번 달 일본 정산 예정: ¥2,180,000                   │
+│  현재 환율:   1 JPY = 9.12 KRW  (03-06 09:00 기준)  │
+│  30일 전 환율: 1 JPY = 9.45 KRW                     │
+│                                                     │
+│  환율 변동 영향: -₩720,000 (예상 대비 감소)            │
+│  현재 환산 기준 정산 예정: ₩19,881,600                │
+│                                                     │
+│  [환율 추이 보기]  [환리스크 관리 가이드]               │
+└─────────────────────────────────────────────────────┘
+</code></pre></div>
+<p><strong>환율 리스크 알림 트리거 기준:</strong></p>
+<table>
+<thead>
+<tr>
+<th>조건</th>
+<th>알림 방식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>30일 전 대비 환율 변동 ±5% 이상</td>
+<td>대시보드 정산 패널에 경고 배너</td>
+</tr>
+<tr>
+<td>30일 전 대비 환율 변동 ±10% 이상</td>
+<td>어드민 상단 전역 경고 + 이메일 알림</td>
+</tr>
+<tr>
+<td>환율 데이터 갱신 1시간 초과 실패</td>
+<td>데이터 신선도 경고 ("환율 정보가 오래됐습니다")</td>
+</tr>
+</tbody>
+</table>
+<h3 id="54">5.4 환율 데이터 보존 정책<a class="headerlink" href="#54" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>데이터 유형</th>
+<th>보존 기간</th>
+<th>저장소</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>시간별 환율 스냅샷</td>
+<td>2년</td>
+<td>PostgreSQL</td>
+</tr>
+<tr>
+<td>주문 시점 환율 (스냅샷)</td>
+<td>무기한 (주문 데이터와 함께)</td>
+<td>PostgreSQL</td>
+</tr>
+<tr>
+<td>현재 환율 캐시</td>
+<td>1시간</td>
+<td>Redis</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6">6. 기술 요건<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h3 id="61">6.1 멀티테넌시 글로벌 집계 아키텍처<a class="headerlink" href="#61" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>[데이터 수집 — 국가별 분산]
+
+한국 주문/결제 이벤트 ──┐
+일본 주문/결제 이벤트 ──┼──▶ [이벤트 큐 (Kinesis/Kafka)]
+기타 국가 이벤트       ──┘              │
+                                        ▼
+                         [글로벌 집계 엔진]
+                           ├── 국가별 테넌트 스키마 분리
+                           ├── 환율 변환 레이어
+                           └── 통합 집계 뷰 (Materialized View)
+                                        │
+                         ┌──────────────┼──────────────┐
+                         ▼              ▼              ▼
+                    국가별 스키마  통합 집계 DB    환율 캐시
+                    (KR, JP...)   (글로벌 통합)   (Redis)
+                                        │
+                                        ▼
+                              [Analytics API Layer]
+                                        │
+                                        ▼
+                               글로벌 대시보드 (Next.js)
+</code></pre></div>
+<h3 id="62-api">6.2 글로벌 통합 집계 API 설계<a class="headerlink" href="#62-api" title="Permanent link">&para;</a></h3>
+<p><strong>엔드포인트 구조:</strong></p>
+<div class="highlight"><pre><span></span><code>GET /api/v1/analytics/global/summary
+  ?period=today|7d|30d|90d|custom
+  &amp;start_date=2026-03-01
+  &amp;end_date=2026-03-06
+  &amp;base_currency=KRW
+  → 글로벌 통합 KPI (GMV, 주문수, 전환율, AOV, 국가별 비중)
+
+GET /api/v1/analytics/global/countries
+  ?period=today
+  &amp;base_currency=KRW
+  → 국가별 KPI 비교 테이블
+
+GET /api/v1/analytics/global/settlement
+  ?month=2026-03
+  → 국가별·통화별 정산 예정액 + KRW 환산
+
+GET /api/v1/analytics/global/exchange-rates
+  → 현재 환율 캐시 조회 (Redis)
+
+GET /api/v1/analytics/countries/{country_code}/summary
+  ?period=today
+  → 특정 국가 단독 KPI (현지 통화 기준)
+</code></pre></div>
+<p><strong>공통 응답 필드:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;base_currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;KRW&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;timezone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Asia/Seoul&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;data_updated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-06T09:05:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;exchange_rates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;JPY&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;rate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">9.12</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;rate_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-06T09:00:00Z&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;USD&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;rate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1340.5</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;rate_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-06T09:00:00Z&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>모든 글로벌 집계 API 응답에 <code>exchange_rates</code> 객체를 포함하여 프론트엔드가 적용된 환율을 투명하게 표시할 수 있도록 한다.</p>
+<h3 id="63">6.3 성능 요건<a class="headerlink" href="#63" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>목표</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>글로벌 대시보드 초기 로드</td>
+<td>2초 이내 (P95)</td>
+</tr>
+<tr>
+<td>국가 간 뷰 전환 응답</td>
+<td>500ms 이내</td>
+</tr>
+<tr>
+<td>글로벌 집계 API 응답</td>
+<td>500ms 이내 (캐시 히트 시 100ms)</td>
+</tr>
+<tr>
+<td>5분 배치 집계 처리 완료</td>
+<td>5분 이내 (VIP 고객사 3분 이내)</td>
+</tr>
+<tr>
+<td>실시간 주문 카운터 갱신</td>
+<td>1초 이내 (SSE 기반)</td>
+</tr>
+<tr>
+<td>환율 캐시 만료 후 갱신</td>
+<td>3초 이내</td>
+</tr>
+</tbody>
+</table>
+<h3 id="64">6.4 데이터 정합성 보장<a class="headerlink" href="#64" title="Permanent link">&para;</a></h3>
+<p>글로벌 통합 집계는 여러 국가·통화·시간대가 혼재하므로 정합성 오류가 발생하기 쉽다.</p>
+<p><strong>정합성 검증 포인트:</strong></p>
+<table>
+<thead>
+<tr>
+<th>검증 항목</th>
+<th>방법</th>
+<th>주기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>국가별 합계 = 통합 합계</td>
+<td>Materialized View 재계산 후 합산 검증</td>
+<td>5분 배치마다</td>
+</tr>
+<tr>
+<td>환율 적용 전후 값 일치</td>
+<td>환율 변환 로직 단위 테스트</td>
+<td>CI/CD</td>
+</tr>
+<tr>
+<td>타임존 전환 오류 감지</td>
+<td>UTC 저장값 vs 현지 표시값 역산 검증</td>
+<td>일별 배치</td>
+</tr>
+<tr>
+<td>환율 데이터 신선도</td>
+<td>Redis TTL 만료 감지 + 갱신 실패 알림</td>
+<td>실시간</td>
+</tr>
+</tbody>
+</table>
+<h3 id="65">6.5 캐싱 전략<a class="headerlink" href="#65" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>대상</th>
+<th>캐시 저장소</th>
+<th>TTL</th>
+<th>무효화 조건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>글로벌 통합 KPI (오늘)</td>
+<td>Redis</td>
+<td>5분</td>
+<td>새 주문 발생 시 즉시 무효화</td>
+</tr>
+<tr>
+<td>국가별 KPI</td>
+<td>Redis</td>
+<td>5분</td>
+<td>해당 국가 새 주문 발생 시</td>
+</tr>
+<tr>
+<td>환율 캐시</td>
+<td>Redis</td>
+<td>1시간</td>
+<td>1시간 후 자동 만료 → 재조회</td>
+</tr>
+<tr>
+<td>월별 정산 예정액</td>
+<td>Redis</td>
+<td>30분</td>
+<td>PG 정산 데이터 업데이트 시</td>
+</tr>
+<tr>
+<td>국가별 매출 비중 차트</td>
+<td>Redis</td>
+<td>5분</td>
+<td>새 주문 발생 시</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-phase">7. 구현 우선순위 (Phase별)<a class="headerlink" href="#7-phase" title="Permanent link">&para;</a></h2>
+<h3 id="phase-1-mvp-2026-q2">Phase 1 — 단일 국가 대시보드 (MVP, 2026 Q2)<a class="headerlink" href="#phase-1-mvp-2026-q2" title="Permanent link">&para;</a></h3>
+<p><strong>목표:</strong> 한국 단독 운영 판매자를 위한 기본 대시보드 완성. 글로벌 대시보드의 기반 인프라 구축.</p>
+<p>analytics-spec.md의 Phase 1 구현 범위와 동일하게 진행하되, 글로벌 확장을 고려한 데이터 모델 설계를 선행한다.</p>
+<table>
+<thead>
+<tr>
+<th>기능</th>
+<th>우선순위</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>국가(country_code) 필드 모든 주문 데이터에 포함</td>
+<td>P0</td>
+<td>글로벌 확장 기반</td>
+</tr>
+<tr>
+<td>통화(currency) + 환율(exchange_rate) 주문 레코드에 저장</td>
+<td>P0</td>
+<td>Phase 2 집계 기반</td>
+</tr>
+<tr>
+<td>한국 단독 대시보드 (analytics-spec.md Phase 1 구현)</td>
+<td>P0</td>
+<td>기본 통계</td>
+</tr>
+<tr>
+<td>환율 API 연동 인프라 구축 (캐싱, 갱신 스케줄러)</td>
+<td>P1</td>
+<td>Phase 2 준비</td>
+</tr>
+<tr>
+<td>멀티테넌트 schema-per-tenant 집계 쿼리 설계</td>
+<td>P1</td>
+<td>글로벌 확장 기반</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Phase 1 의도적 제외:</strong> 글로벌 통합 집계 UI, 국가별 비교 패널, 환율 변동 리스크 표시</p>
+<hr />
+<h3 id="phase-2-2026-q3q4">Phase 2 — 글로벌 통합 대시보드 (2026 Q3~Q4)<a class="headerlink" href="#phase-2-2026-q3q4" title="Permanent link">&para;</a></h3>
+<p><strong>목표:</strong> 한국+일본 동시 운영 판매자를 위한 통합 대시보드 런칭. 일본 시장 진출 판매자의 핵심 운영 도구.</p>
+<table>
+<thead>
+<tr>
+<th>기능</th>
+<th>우선순위</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>글로벌 통합 KPI 카드 (총 GMV, 주문 수, CVR)</td>
+<td>P0</td>
+<td>핵심 기능</td>
+</tr>
+<tr>
+<td>국가별 GMV 비중 도넛 차트</td>
+<td>P0</td>
+<td>핵심 기능</td>
+</tr>
+<tr>
+<td>국가별 KPI 비교 패널 (한국/일본)</td>
+<td>P0</td>
+<td>핵심 기능</td>
+</tr>
+<tr>
+<td>KRW 기준 환율 통합 환산</td>
+<td>P0</td>
+<td>핵심 기능</td>
+</tr>
+<tr>
+<td>글로벌 ↔ 국가 뷰 전환 탭 UI</td>
+<td>P0</td>
+<td>핵심 기능</td>
+</tr>
+<tr>
+<td>드릴다운 구조 (글로벌 → 국가 → 카테고리)</td>
+<td>P1</td>
+<td>UX 고도화</td>
+</tr>
+<tr>
+<td>국가별 정산 예정액 + KRW 환산 패널</td>
+<td>P1</td>
+<td>판매자 재무 관리</td>
+</tr>
+<tr>
+<td>환율 변동 리스크 알림</td>
+<td>P1</td>
+<td>운영 리스크 관리</td>
+</tr>
+<tr>
+<td>국가별 시간대 명시 표시</td>
+<td>P1</td>
+<td>UX 신뢰성</td>
+</tr>
+<tr>
+<td>기준 통화 변경 설정</td>
+<td>P2</td>
+<td>사용자 선호 지원</td>
+</tr>
+<tr>
+<td>2개 국가 나란히 비교 기능</td>
+<td>P2</td>
+<td>고급 UX</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="phase-3-2027">Phase 3 — 글로벌 확장 대시보드 (2027~)<a class="headerlink" href="#phase-3-2027" title="Permanent link">&para;</a></h3>
+<p><strong>목표:</strong> 동남아시아·미국 등 다국가 확장 시 대시보드 자동 적용. AI 기반 글로벌 인사이트.</p>
+<table>
+<thead>
+<tr>
+<th>기능</th>
+<th>우선순위</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>동남아시아 국가 추가 (태국, 인도네시아 등)</td>
+<td>P1</td>
+<td>Phase 3 시장 확장 연동</td>
+</tr>
+<tr>
+<td>다시간대 처리 고도화 (UTC-5~-8 지원)</td>
+<td>P1</td>
+<td>미국 시장 확장 시</td>
+</tr>
+<tr>
+<td>AI 글로벌 인사이트</td>
+<td>P2</td>
+<td>"일본 전환율이 한국 대비 낮은 이유" 자동 분석</td>
+</tr>
+<tr>
+<td>글로벌 벤치마크 비교</td>
+<td>P2</td>
+<td>동업종 국가별 평균 대비 내 수치</td>
+</tr>
+<tr>
+<td>Data Export API</td>
+<td>P2</td>
+<td>BigQuery, Looker Studio 연동</td>
+</tr>
+<tr>
+<td>국가별 예측 분석</td>
+<td>P3</td>
+<td>국가별 매출 예측, 계절성 분석</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>본 문서는 2026-03-25 전략 회의 기준 초안입니다. Phase별 상세 일정 및 우선순위는 시장 진출 속도에 따라 조정됩니다.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.top", "navigation.sections", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

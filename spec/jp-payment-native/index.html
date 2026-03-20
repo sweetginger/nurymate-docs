@@ -1,0 +1,4623 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="누리메이트 제품 전략, 시장 리서치, 기능 스펙">
+      
+      
+      
+        <link rel="canonical" href="https://sweetginger.github.io/nurymate-docs/spec/jp-payment-native/">
+      
+      
+        <link rel="prev" href="../domain-architecture/">
+      
+      
+        <link rel="next" href="../unit-localization/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>[P0] 일본 결제 네이티브 - 누리메이트 전략 문서</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../.." title="누리메이트 전략 문서" class="md-header__button md-logo" aria-label="누리메이트 전략 문서" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            누리메이트 전략 문서
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              [P0] 일본 결제 네이티브
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  개요
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../strategy/product-plan/" class="md-tabs__link">
+          
+  
+  
+  전략
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../research/japan-korea-ecommerce/" class="md-tabs__link">
+          
+  
+  
+  리서치
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../spec-priority/" class="md-tabs__link">
+          
+  
+  
+  Spec
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="누리메이트 전략 문서" class="md-nav__button md-logo" aria-label="누리메이트 전략 문서" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    누리메이트 전략 문서
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    전략
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    전략
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/product-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    제품 기획
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/business-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    비즈니스 로드맵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/strategic-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    전략 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/pricing-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    수익 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/early-customer-acquisition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    초기 고객 확보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/new-seller-acquisition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    신규 창업자 확보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/organic-growth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    자연 유입 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/global-expansion-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글로벌 확장 로드맵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/vertical-expansion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    버티컬 확장
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/japan-gtm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 GTM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/api-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 정책
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    리서치
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    리서치
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/japan-korea-ecommerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본·한국 이커머스 문화 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-jp-payment-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 결제 불편 UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-japan-weaknesses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 약점 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-japan-payment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 결제
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-pricing-revenue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 수익 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/pg-stripe-support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stripe·PG 지원 조사
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/stripe-connect-countries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stripe Connect 국가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/pg-licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PG 라이선스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/local-pg-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    현지 PG 계약 난이도
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/paymentwall-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paymentwall 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/payoneer-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payoneer 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/korea-ecommerce-platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    한국 이커머스 경쟁 지형
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/japan-ec-saas-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 D2C EC SaaS 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/global-market-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글로벌 시장 개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/logistics-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    배송·3PL 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/sns-review-legal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SNS 리뷰 법적 검토
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/cafe24-pro-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/cafe24-app-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 앱 디자인
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/cafe24-analytics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/fashion-ecommerce-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    패션 이커머스 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/platform-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플랫폼 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/platform-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플랫폼 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/rakuten-amazon-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    라쿠텐·아마존 API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/sns-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SNS 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/review-platform-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    리뷰 플랫폼 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/japan-conveni-pickup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 편의점 픽업
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/korea-japan-trust-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    한일 신뢰 사례
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/closed-app-marketplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    클로즈드 앱 마켓플레이스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify AI 어시스턴트 사례
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-markets-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify Markets 다국가 연결 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-marketing-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 마케팅 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-queryql-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify GraphQL 리포트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/payment-fee-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    결제 수수료 원가 구조 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/competitor-ux-updates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    경쟁사 UX 업데이트 벤치마킹
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/global-ux-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글로벌 커머스 UX 디자인 차이점
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shipping-profile-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    발송 프로필 관리 필요성 검증
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/youtube-shopping-partner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    YouTube Shopping 등록 절차
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/latest-stats-2025-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    최신 통계 2025~2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Spec
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spec-priority/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec 우선순위
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../seller-store-creation-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 셀러 스토어 생성 UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../domain-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 멀티테넌시 도메인 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 일본 결제 네이티브
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 일본 결제 네이티브
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 문제 정의 — Shopify의 일본 결제 페인포인트
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 문제 정의 — Shopify의 일본 결제 페인포인트">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 배경
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-komoju" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 KOMOJU 연동의 실제 단계
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 이중 수수료 구조
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 한국 법인의 구조적 진입 장벽
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 일본 주요 결제수단 전수 목록
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 일본 주요 결제수단 전수 목록">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 결제수단별 현황 (2024년 기준)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 핵심 인사이트
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 네이티브 통합 우선순위
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 네이티브 통합 우선순위">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 우선순위 결정 기준
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-payment-aggregator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Payment Aggregator 모델 검토
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Payment Aggregator 모델 검토">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 단일 계약으로 다수 결제수단 지원 구조
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 후보 파트너사 비교
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-gmo-pg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 셀메이트 일본 법인 × GMO PG 직접 제휴 구조
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 정산 단일화 설계
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 정산 단일화 설계">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 통합 정산 대시보드 구조
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 정산 주기 및 통화 처리
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 결제 활성화 UX 설계
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 결제 활성화 UX 설계">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-vs-shopify-komoju" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 누리메이트 vs Shopify + KOMOJU 설정 단계 비교
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 판매자 설정 흐름
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 수수료 투명성 표시
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 수수료 구조 설계
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 수수료 구조 설계">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 누리메이트 수수료 원칙
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 경쟁사 대비 수수료 절감 시뮬레이션
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-shopify-plus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Shopify Plus 대비 비교
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 구현 우선순위 (Phase별)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. 구현 우선순위 (Phase별)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-mvp-2026-q3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 — 기본 결제 패키지 (MVP, 목표: 2026년 Q3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-2026-q4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 — 확장 결제 패키지 (목표: 2026년 Q4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-2027-h1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 — 심화 결제 패키지 (목표: 2027년 H1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 기술 요건 개요
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. 기술 요건 개요">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 결제 레이어 아키텍처
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 주요 기술 요건
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-kpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 성공 지표 (KPI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        부록: 경쟁사 현황 요약
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 국가별 단위 현지화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 마이그레이션
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operator-admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 운영자 어드민
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module-definition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 모듈 기능 정의
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../payment-bank-transfer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 무통장입금·가상계좌
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unified-payment-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 통합 결제 대시보드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../first-sale-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 첫 매출 견인 도구
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analytics-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 통계·분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sns-marketing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] SNS 마케팅 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sns-review-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] SNS 리뷰 수집
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../affiliate-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 어필리에이트 트래킹
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../country-preset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 국가별 설정 프리셋
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global-launch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 글로벌 진출 지원
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shipping-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 배송 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conversion-rate-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 구매 전환율 향상 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../convenience-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 운영 편의기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engagement-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 재방문율 향상 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../influencer-matching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 인플루언서 매칭
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmark-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 벤치마크 리포트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] AI 운영 어시스턴트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-chat-setting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] AI 채팅 설정
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 글로벌 통합 대시보드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marketplace-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 마켓플레이스 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sellex-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    셀익스 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 문제 정의 — Shopify의 일본 결제 페인포인트
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 문제 정의 — Shopify의 일본 결제 페인포인트">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 배경
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-komoju" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 KOMOJU 연동의 실제 단계
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 이중 수수료 구조
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 한국 법인의 구조적 진입 장벽
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 일본 주요 결제수단 전수 목록
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 일본 주요 결제수단 전수 목록">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 결제수단별 현황 (2024년 기준)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 핵심 인사이트
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 네이티브 통합 우선순위
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 네이티브 통합 우선순위">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 우선순위 결정 기준
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-payment-aggregator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Payment Aggregator 모델 검토
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Payment Aggregator 모델 검토">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 단일 계약으로 다수 결제수단 지원 구조
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 후보 파트너사 비교
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-gmo-pg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 셀메이트 일본 법인 × GMO PG 직접 제휴 구조
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 정산 단일화 설계
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 정산 단일화 설계">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 통합 정산 대시보드 구조
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 정산 주기 및 통화 처리
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 결제 활성화 UX 설계
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 결제 활성화 UX 설계">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-vs-shopify-komoju" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 누리메이트 vs Shopify + KOMOJU 설정 단계 비교
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 판매자 설정 흐름
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 수수료 투명성 표시
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 수수료 구조 설계
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 수수료 구조 설계">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 누리메이트 수수료 원칙
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 경쟁사 대비 수수료 절감 시뮬레이션
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-shopify-plus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Shopify Plus 대비 비교
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 구현 우선순위 (Phase별)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. 구현 우선순위 (Phase별)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-mvp-2026-q3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 — 기본 결제 패키지 (MVP, 목표: 2026년 Q3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-2026-q4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 — 확장 결제 패키지 (목표: 2026년 Q4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-2027-h1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 — 심화 결제 패키지 (목표: 2027년 H1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 기술 요건 개요
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. 기술 요건 개요">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 결제 레이어 아키텍처
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 주요 기술 요건
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-kpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 성공 지표 (KPI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        부록: 경쟁사 현황 요약
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">일본 결제 네이티브 지원 기능 기획서<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p><strong>문서 번호</strong>: SPEC-JP-PAY-001
+<strong>작성일</strong>: 2026-03-06
+<strong>상태</strong>: Draft
+<strong>관련 Task</strong>: [6-5] 일본 결제 불편 해소 방안</p>
+<hr />
+<h2 id="1-shopify">1. 문제 정의 — Shopify의 일본 결제 페인포인트<a class="headerlink" href="#1-shopify" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1 배경<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<p>Shopify는 일본 이커머스 시장에서 글로벌 표준 결제수단(신용카드, Apple Pay, Google Pay)만 네이티브로 지원하며, 일본 소비자가 실제로 사용하는 핵심 결제수단 대부분을 커버하지 못한다. 이를 보완하기 위해 한국 판매자들은 KOMOJU와 같은 서드파티 결제 게이트웨이를 추가로 도입해야 하며, 이 과정에서 구조적 페인포인트가 발생한다.</p>
+<h3 id="12-komoju">1.2 KOMOJU 연동의 실제 단계<a class="headerlink" href="#12-komoju" title="Permanent link">&para;</a></h3>
+<p>KOMOJU를 Shopify에 완전 연동하기까지의 단계:</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>내용</th>
+<th>소요 시간</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Shopify 앱스토어에서 KOMOJU 앱 설치</td>
+<td>즉시</td>
+</tr>
+<tr>
+<td>2</td>
+<td>KOMOJU 계정 생성 및 사업자 정보 제출</td>
+<td>1~2일</td>
+</tr>
+<tr>
+<td>3</td>
+<td>사업자 심사 통과 대기</td>
+<td>3~5 영업일</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Shopify 관리자 → 설정 → 결제에서 서드파티 게이트웨이로 추가</td>
+<td>즉시</td>
+</tr>
+<tr>
+<td>5</td>
+<td>KOMOJU 대시보드에서 API 키 발급 후 Shopify에 입력</td>
+<td>즉시</td>
+</tr>
+<tr>
+<td>6</td>
+<td>활성화할 결제수단 개별 선택 (콘비니, PAY-EASY, 후불 등)</td>
+<td>즉시</td>
+</tr>
+<tr>
+<td>7</td>
+<td>PayPay·LINE Pay 등 스마트폰 결제 별도 심사 신청</td>
+<td>—</td>
+</tr>
+<tr>
+<td>8</td>
+<td>스마트폰 결제 심사 통과 대기</td>
+<td>결제수단별 3~4주</td>
+</tr>
+</tbody>
+</table>
+<p><strong>요약</strong>: 기본 설치만 해도 최소 3~5 영업일, 주요 QR 결제(PayPay 등)까지 완전히 활성화하려면 <strong>최소 4~5주</strong> 소요.</p>
+<h3 id="13">1.3 이중 수수료 구조<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<p>KOMOJU를 Shopify에 연동하면 두 개의 수수료가 중복 부과된다.</p>
+<table>
+<thead>
+<tr>
+<th>수수료 항목</th>
+<th>비율</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KOMOJU 트랜잭션 수수료 (신용카드)</td>
+<td>3.6~3.85%</td>
+<td>결제수단별 상이</td>
+</tr>
+<tr>
+<td>KOMOJU 트랜잭션 수수료 (콘비니)</td>
+<td>2.75%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Shopify 서드파티 수수료 (Basic 플랜)</td>
+<td>2.0%</td>
+<td>Shopify Payments 미사용 시 부과</td>
+</tr>
+<tr>
+<td>Shopify 서드파티 수수료 (Shopify 플랜)</td>
+<td>1.0%</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>실질 최대 부담 (Basic + KOMOJU 신용카드)</strong></td>
+<td><strong>최대 ~5.85%</strong></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>추가 비용:
+- 환불 처리 시: KOMOJU 트랜잭션 수수료 환불 불가
+- 콘비니 결제 환불 시: 건당 <strong>JPY 300</strong> 추가 수수료 발생
+- 정산 데이터 수동 대조 필요 (KOMOJU 정산 주기 ≠ Shopify Payments 정산 주기)</p>
+<h3 id="14">1.4 한국 법인의 구조적 진입 장벽<a class="headerlink" href="#14" title="Permanent link">&para;</a></h3>
+<p>일본 스마트폰 결제(PayPay, LINE Pay, Rakuten Pay 등)는 각 결제수단 제공사의 직접 심사를 통과해야 연동 가능하다. <strong>KOMOJU 공식 정책상 일본 법인이 없는 해외 사업자는 스마트폰 결제 이용 불가</strong>이다. 이는 한국 법인 판매자가 일본 QR 결제 시장(전체 캐시리스의 9.6%, 13.5조 엔)에 완전히 접근하지 못함을 의미한다.</p>
+<hr />
+<h2 id="2">2. 일본 주요 결제수단 전수 목록<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="21-2024">2.1 결제수단별 현황 (2024년 기준)<a class="headerlink" href="#21-2024" title="Permanent link">&para;</a></h3>
+<p>일본 전체 캐시리스 결제 규모: <strong>141.0조 엔 (2024년)</strong>, 캐시리스 비율 42.8% (전년 대비 3.5%p 상승, 정부 목표 40% 조기 달성).</p>
+<table>
+<thead>
+<tr>
+<th>결제수단</th>
+<th>캐시리스 내 비중</th>
+<th>거래 규모</th>
+<th>타겟 고객층</th>
+<th>이커머스 적용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>신용카드</strong></td>
+<td>82.9%</td>
+<td>116.9조 엔</td>
+<td>전 연령, 고가 구매</td>
+<td>필수</td>
+</tr>
+<tr>
+<td><strong>QR코드 결제 (전체)</strong></td>
+<td>9.6%</td>
+<td>13.5조 엔</td>
+<td>20~40대, 소규모 결제</td>
+<td>중요</td>
+</tr>
+<tr>
+<td>— PayPay</td>
+<td>QR 내 65.1%</td>
+<td>~8.8조 엔</td>
+<td>전 연령 (1위)</td>
+<td>최우선</td>
+</tr>
+<tr>
+<td>— Rakuten Pay</td>
+<td>QR 내 36.0%</td>
+<td>—</td>
+<td>라쿠텐 이용자</td>
+<td>2순위</td>
+</tr>
+<tr>
+<td>— d 払い (d Payment)</td>
+<td>QR 내 28.6%</td>
+<td>—</td>
+<td>NTT도코모 이용자</td>
+<td>3순위</td>
+</tr>
+<tr>
+<td><strong>전자화폐 (IC카드 등)</strong></td>
+<td>4.4%</td>
+<td>6.2조 엔</td>
+<td>통근·일상 소액</td>
+<td>저우선</td>
+</tr>
+<tr>
+<td><strong>직불카드</strong></td>
+<td>3.1%</td>
+<td>4.4조 엔</td>
+<td>은행 계좌 연동 선호</td>
+<td>중간</td>
+</tr>
+<tr>
+<td><strong>콘비니 결제</strong></td>
+<td>별도 통계</td>
+<td>—</td>
+<td>현금 선호·무카드</td>
+<td>필수</td>
+</tr>
+<tr>
+<td><strong>후불 결제 (Paidy 등)</strong></td>
+<td>BNPL 시장</td>
+<td>~1.8조 엔 (2024년 예측)</td>
+<td>10~30대, 충동구매</td>
+<td>중요</td>
+</tr>
+<tr>
+<td><strong>은행 자동이체 (口座振替)</strong></td>
+<td>구독 결제 표준</td>
+<td>—</td>
+<td>정기결제 이용자</td>
+<td>Phase 2</td>
+</tr>
+<tr>
+<td><strong>착불 결제 (代金引換)</strong></td>
+<td>현금 선호층</td>
+<td>—</td>
+<td>고령층, 고가 주문</td>
+<td>Phase 3</td>
+</tr>
+<tr>
+<td><strong>포인트 결제 (楽天ポイント 등)</strong></td>
+<td>라쿠텐 생태계</td>
+<td>—</td>
+<td>라쿠텐 헤비유저</td>
+<td>Phase 3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22">2.2 핵심 인사이트<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>LINE Pay 일본 서비스 2025년 4월 30일 종료</strong> → 기존 사용자 전량 PayPay로 이전 완료. PayPay 사용자 7,000만 명 이상 (2025년 7월 기준), 일본 인구의 2명 중 1명 이상.</li>
+<li><strong>콘비니 결제 미도입 시 매출 손실</strong>: 콘비니 결제 도입 시 매출 15~25% 상승 효과 추정 (KOMOJU/CartDNA 리포트).</li>
+<li><strong>BNPL(Paidy)</strong>: 2024년 일본 BNPL 시장 규모 약 1.8조 엔 예측. 10~30대 구매층 공략에 유효.</li>
+<li><strong>신용카드</strong>: 이커머스 결제의 65% 차지. 반드시 첫 번째로 완성해야 하는 기반.</li>
+</ul>
+<hr />
+<h2 id="3">3. 네이티브 통합 우선순위<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 우선순위 결정 기준<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<p>각 결제수단의 도입 우선순위를 세 축으로 평가:</p>
+<ul>
+<li><strong>이용률 (A)</strong>: 2024년 일본 이커머스 내 실사용 비중</li>
+<li><strong>도입 복잡도 (B)</strong>: 기술 연동·심사 난이도 (낮을수록 높은 점수)</li>
+<li><strong>판매자 영향도 (C)</strong>: 미도입 시 예상 매출 손실 규모</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>결제수단</th>
+<th>이용률 (A)</th>
+<th>도입 복잡도 (B)</th>
+<th>판매자 영향도 (C)</th>
+<th>종합 점수</th>
+<th>우선순위</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>신용카드 (Visa/MC/JCB)</td>
+<td>매우 높음</td>
+<td>낮음</td>
+<td>매우 높음</td>
+<td>★★★★★</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>콘비니 결제</td>
+<td>높음</td>
+<td>중간</td>
+<td>매우 높음 (+15~25% 매출)</td>
+<td>★★★★★</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>PayPay</td>
+<td>높음 (QR 1위)</td>
+<td>높음</td>
+<td>높음</td>
+<td>★★★★☆</td>
+<td>P2</td>
+</tr>
+<tr>
+<td>Paidy (후불)</td>
+<td>중간 (성장 중)</td>
+<td>중간</td>
+<td>높음 (10~30대)</td>
+<td>★★★★☆</td>
+<td>P2</td>
+</tr>
+<tr>
+<td>Rakuten Pay</td>
+<td>중간</td>
+<td>높음</td>
+<td>중간</td>
+<td>★★★☆☆</td>
+<td>P2</td>
+</tr>
+<tr>
+<td>은행 자동이체 (口座振替)</td>
+<td>구독 한정</td>
+<td>매우 높음</td>
+<td>구독 서비스 필수</td>
+<td>★★★☆☆</td>
+<td>P3</td>
+</tr>
+<tr>
+<td>착불 결제 (代金引換)</td>
+<td>낮음 (고령층)</td>
+<td>매우 높음</td>
+<td>낮음</td>
+<td>★★☆☆☆</td>
+<td>P3</td>
+</tr>
+<tr>
+<td>포인트 결제</td>
+<td>라쿠텐 한정</td>
+<td>높음</td>
+<td>낮음</td>
+<td>★★☆☆☆</td>
+<td>P3</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-payment-aggregator">4. Payment Aggregator 모델 검토<a class="headerlink" href="#4-payment-aggregator" title="Permanent link">&para;</a></h2>
+<h3 id="41">4.1 단일 계약으로 다수 결제수단 지원 구조<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<p>일본에서 각 결제수단을 직접 계약으로 연동하면 결제수단별 개별 심사(3~4주), 별도 계약, 별도 API 연동, 별도 정산 채널이 필요하다. Payment Aggregator(결제 집계 서비스)는 하나의 계약으로 다수 결제수단을 일괄 지원하는 구조다.</p>
+<div class="highlight"><pre><span></span><code>[판매자 단일 계약]
+       ↓
+[Payment Aggregator (GMO-PG, SBPS, KOMOJU 등)]
+       ↓
+┌─────────────────────────────────────┐
+│ 신용카드 │ 콘비니 │ PayPay │ Paidy  │
+│ Pay-easy│ 口座振替│ d払い  │ au PAY │
+└─────────────────────────────────────┘
+       ↓
+[정산 단일화 → 판매자 계좌]
+</code></pre></div>
+<p><strong>장점</strong>: 계약 1건, API 1개, 정산 채널 1개로 일본 전 결제수단 커버 가능.</p>
+<h3 id="42">4.2 후보 파트너사 비교<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>파트너사</th>
+<th>포지션</th>
+<th>지원 결제수단 수</th>
+<th>해외 법인 계약</th>
+<th>수수료 구조</th>
+<th>누리메이트 적합성</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GMO Payment Gateway (GMO-PG)</strong></td>
+<td>일본 최대 PG, 연간 처리액 10.6조 엔</td>
+<td>신용카드·콘비니·PayPay·후리코미·au PAY·d払い 등 30종 이상</td>
+<td>해외 법인 계약 가능 (하나은행 제휴 경로 활용)</td>
+<td>초기비 + 월정액 + 트랜잭션 수수료</td>
+<td>최우선 검토</td>
+</tr>
+<tr>
+<td><strong>SoftBank Payment Service (SBPS)</strong></td>
+<td>SoftBank 그룹, B2B 결제 강점</td>
+<td>신용카드·콘비니·PayPay·LINE Pay·口座振替 등 20종 이상</td>
+<td>한국 법인 계약 경로 확인 필요</td>
+<td>GMO-PG와 유사 구조</td>
+<td>2순위</td>
+</tr>
+<tr>
+<td><strong>KOMOJU</strong></td>
+<td>해외 판매자 전문, Shopify 연동 최적화</td>
+<td>신용카드·콘비니·PayPay·Paidy·Rakuten Pay 등</td>
+<td>해외 법인 계약 가능. 단, 스마트폰 결제는 일본 법인 필요</td>
+<td>트랜잭션 수수료 위주 (초기비 낮음)</td>
+<td>단기 브릿지용</td>
+</tr>
+<tr>
+<td><strong>Stripe Japan</strong></td>
+<td>글로벌 인프라, 2025년 일본 확장</td>
+<td>신용카드·콘비니·PayPay·후리코미 (2025년 신규)</td>
+<td>한국 법인 계약 가능</td>
+<td>단순 트랜잭션 수수료 (2.9%~3.6%)</td>
+<td>기술 파트너 후보</td>
+</tr>
+<tr>
+<td><strong>Paidy</strong></td>
+<td>BNPL 전문</td>
+<td>후불결제 전문</td>
+<td>해외 법인 계약 가능</td>
+<td>가맹점 수수료 2~6%</td>
+<td>BNPL 단독 파트너</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-gmo-pg">4.3 셀메이트 일본 법인 × GMO PG 직접 제휴 구조<a class="headerlink" href="#43-gmo-pg" title="Permanent link">&para;</a></h3>
+<p>셀메이트(운영사)의 일본 법인이 GMO Payment Gateway(GMO PG)와 직접 제휴 계약을 체결하는 구조를 채택한다. 이 구조에서 누리메이트 플랫폼은 GMO PG 계약의 서브머천트(Sub-Merchant) 역할을 하며, 거래 마진 구조로 수익을 확보한다.</p>
+<p><strong>셀메이트 PG 파트너십 현황 (2026-03-11 기준)</strong>: 이니시스(한국·일본), 토스페이먼츠, 엑심베이, PayPal multiparty 계약 완료. 이들 파트너십을 통해 수수료 수익 확보 구조가 구축되어 있음.</p>
+<p><strong>계약 구조</strong></p>
+<div class="highlight"><pre><span></span><code>셀메이트 일본 법인
+    │ (GMO PG 직접 제휴 계약)
+    ▼
+GMO Payment Gateway (일본 최대 PG)
+    │
+    ├─ 신용카드 (Visa/MC/JCB/AMEX)
+    ├─ 콘비니 결제
+    ├─ PayPay / Rakuten Pay / au PAY / d払い
+    ├─ 은행 자동이체 (口座振替)
+    └─ Paidy (BNPL) ← 별도 직접 계약
+
+[누리메이트 플랫폼]
+    │ (Sub-Merchant 역할)
+    ├─ 판매자 결제 요청 → GMO PG 라우팅
+    └─ 거래 마진 수익: GMO PG 정산 수수료 - 판매자 청구 수수료 = 마진
+</code></pre></div>
+<p><strong>거래 마진 구조</strong></p>
+<table>
+<thead>
+<tr>
+<th>결제수단</th>
+<th>GMO PG 원가 수수료</th>
+<th>판매자 청구 수수료</th>
+<th>누리메이트 마진</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>신용카드</td>
+<td>2.5~3.0%</td>
+<td>2.9%</td>
+<td>~0.0~0.4%</td>
+</tr>
+<tr>
+<td>콘비니 결제</td>
+<td>2.0~2.3%</td>
+<td>2.5%</td>
+<td>~0.2~0.5%</td>
+</tr>
+<tr>
+<td>PayPay</td>
+<td>2.0~2.5%</td>
+<td>2.8%</td>
+<td>~0.3~0.8%</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>주의: 상기 수치는 협상 목표치이며 실제 GMO PG 계약 조건에 따라 변동될 수 있다.</p>
+</blockquote>
+<p><strong>장점</strong></p>
+<ul>
+<li>셀메이트 일본 법인 기반으로 일본 내 모든 결제수단 직접 계약 가능 (스마트폰 결제 포함)</li>
+<li>하나의 GMO PG 계약으로 30종 이상 결제수단 일괄 지원</li>
+<li>거래 마진 구조로 수수료 수익 확보</li>
+<li>한국 법인 경유 시 발생하는 우회 구조 불필요</li>
+</ul>
+<p><strong>참고: 기존 경로와의 비교</strong></p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>기존 검토 경로 (한국 법인)</th>
+<th>셀메이트 일본 법인 직접 계약</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PayPay 연동</td>
+<td>불가 (일본 법인 필요)</td>
+<td><strong>가능</strong></td>
+</tr>
+<tr>
+<td>계약 주체</td>
+<td>한국 법인 (제약 많음)</td>
+<td>일본 법인 (직접 계약)</td>
+</tr>
+<tr>
+<td>수익 구조</td>
+<td>수수료 pass-through</td>
+<td><strong>거래 마진 수익</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5">5. 정산 단일화 설계<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<h3 id="51">5.1 통합 정산 대시보드 구조<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
+<p>Shopify + KOMOJU 구조에서는 두 개의 정산 채널이 분리되어 수동 대조가 필요하다. 누리메이트는 모든 결제수단의 정산을 <strong>단일 어드민 화면</strong>에서 통합 관리한다.</p>
+<div class="highlight"><pre><span></span><code>[소비자]
+  신용카드 결제 ─┐
+  콘비니 결제   ─┤
+  PayPay 결제   ─┤→ [누리메이트 결제 레이어] → [GMO-PG 단일 정산]
+  Paidy 결제    ─┤                                     ↓
+  기타 결제     ─┘                          [판매자 어드민 - 통합 정산 뷰]
+                                                        ↓
+                                           [JPY → KRW 자동 환전 정산]
+</code></pre></div>
+<p><strong>어드민 통합 뷰 제공 항목</strong>:
+- 결제수단별 매출 합계 (실시간)
+- 미정산 잔액 (콘비니 미납 건 포함 현황)
+- 정산 예정일 및 예상 정산액
+- 환불 처리 현황 (건당 수수료 포함 자동 계산)
+- CSV 다운로드 (일본 세무 대응용 세금 포함가 기재)</p>
+<h3 id="52">5.2 정산 주기 및 통화 처리<a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>설계 방향</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>정산 구조</td>
+<td><strong>PG사 → 판매자 직접 정산</strong> (누리메이트를 경유한 재정산 불가)</td>
+</tr>
+<tr>
+<td>정산 주체</td>
+<td>GMO PG가 판매자 계좌로 직접 정산</td>
+</tr>
+<tr>
+<td>누리메이트 역할</td>
+<td>거래 마진은 GMO PG 계약 시 수수료 구조에서 직접 수취 (재정산 아님)</td>
+</tr>
+<tr>
+<td>정산 주기</td>
+<td>GMO PG 기준: 월 2회 (매월 15일, 말일) 또는 주 1회 선택 가능</td>
+</tr>
+<tr>
+<td>정산 통화</td>
+<td>JPY 정산 또는 KRW 자동 환전 중 판매자 선택</td>
+</tr>
+<tr>
+<td>환전 타이밍</td>
+<td>정산일 기준 전일 환율 고정 또는 월평균 환율 적용 선택</td>
+</tr>
+<tr>
+<td>콘비니 미납 처리</td>
+<td>유효기간(3~7일) 내 미납 시 자동 주문 취소 및 재고 반환</td>
+</tr>
+<tr>
+<td>환불 처리</td>
+<td>어드민 1클릭으로 처리. 결제수단별 환불 가능 여부 자동 판단</td>
+</tr>
+</tbody>
+</table>
+<p><strong>정산 구조 선택 근거</strong></p>
+<p>누리메이트가 PG사로부터 결제 대금을 수취한 뒤 판매자에게 재정산하는 구조는 <strong>한국·일본 전자금융거래법·자금결제법상 결제 서비스 제공자(PG) 면허 없이는 불법</strong>이다. 따라서 누리메이트는 다음 구조를 채택한다:</p>
+<ul>
+<li><strong>PG사 → 판매자 직접 정산</strong>: GMO PG가 판매자 계좌로 직접 정산</li>
+<li><strong>누리메이트 수익</strong>: 거래 마진(GMO PG 계약상 수수료 스플릿)으로 수취 → 재정산 없음</li>
+</ul>
+<p><strong>미결 조사 항목</strong></p>
+<blockquote>
+<p>⚠️ <strong>조사 필요</strong>: Stripe Connect(미국 법인 기반) 크로스보더 정산 가능 국가 범위 확인 필요. 미국 법인(Stripe Atlas 경유) 기반 Stripe Connect를 활용하면 한국·일본·동남아 셀러에 대한 플랫폼 정산이 가능할 수 있으며, 이 경우 PG 면허 이슈를 우회할 수 있다. 관련 조사: <code>research/stripe-connect-countries.md</code> 참조.</p>
+</blockquote>
+<hr />
+<h2 id="6-ux">6. 결제 활성화 UX 설계<a class="headerlink" href="#6-ux" title="Permanent link">&para;</a></h2>
+<h3 id="61-vs-shopify-komoju">6.1 누리메이트 vs Shopify + KOMOJU 설정 단계 비교<a class="headerlink" href="#61-vs-shopify-komoju" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>Shopify + KOMOJU</th>
+<th>누리메이트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>초기 설치 단계 수</td>
+<td>8단계</td>
+<td><strong>1단계</strong> (일본 결제 패키지 활성화 토글)</td>
+</tr>
+<tr>
+<td>기본 설정 소요 시간</td>
+<td>3~5 영업일</td>
+<td><strong>즉시 (당일)</strong></td>
+</tr>
+<tr>
+<td>PayPay 활성화</td>
+<td>불가 (한국 법인)</td>
+<td><strong>가능</strong> (누리메이트가 GMO-PG 계약 보유)</td>
+</tr>
+<tr>
+<td>콘비니 결제 활성화</td>
+<td>KOMOJU 별도 계약 필요</td>
+<td><strong>포함</strong> (패키지 내 기본 제공)</td>
+</tr>
+<tr>
+<td>정산 통합</td>
+<td>불가 (2개 채널 분리)</td>
+<td><strong>단일 대시보드</strong></td>
+</tr>
+<tr>
+<td>추가 앱 설치 필요</td>
+<td>결제수단별 1~3개</td>
+<td><strong>없음</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="62">6.2 판매자 설정 흐름<a class="headerlink" href="#62" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>[누리메이트 판매자 어드민]
+  → 설정 &gt; 결제 &gt; 일본 결제
+  → &quot;일본 결제 패키지 활성화&quot; 토글 ON
+  → 지원할 결제수단 선택 (토글 방식)
+
+  ┌────────────────────────────────────────┐
+  │ [ON]  신용카드 (Visa/MC/JCB/AMEX)      │
+  │ [ON]  콘비니 결제                       │
+  │ [ON]  PayPay                           │
+  │ [OFF] Rakuten Pay                      │
+  │ [ON]  Paidy (후불결제)                  │
+  │ [OFF] 은행 자동이체 (口座振替)           │
+  └────────────────────────────────────────┘
+
+  → 저장 → 즉시 적용 (심사 대기 없음)
+</code></pre></div>
+<h3 id="63">6.3 수수료 투명성 표시<a class="headerlink" href="#63" title="Permanent link">&para;</a></h3>
+<p>판매자 어드민 내에서 결제수단별 수수료를 실시간으로 표시한다.</p>
+<div class="highlight"><pre><span></span><code>결제수단       수수료    예상 정산액 (¥10,000 결제 시)
+신용카드       2.9%      ¥9,710
+콘비니 결제    2.5%      ¥9,500
+PayPay         2.8%      ¥9,720
+Paidy          3.5%      ¥9,650
+
+* 추가 앱 수수료 없음. 이중 수수료 없음.
+</code></pre></div>
+<hr />
+<h2 id="7">7. 수수료 구조 설계<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<h3 id="71">7.1 누리메이트 수수료 원칙<a class="headerlink" href="#71" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>이중 수수료 없음</strong>: 플랫폼 이용료와 결제 수수료가 분리되어 중복 부과되지 않는다.</li>
+<li><strong>서드파티 앱 추가 수수료 없음</strong>: 결제수단별 추가 앱 설치 불필요. 모든 결제수단이 플랫폼에 내장.</li>
+<li><strong>결제수단별 단일 수수료 고지</strong>: 판매자가 예측 가능한 비용 구조 제공.</li>
+</ol>
+<h3 id="72">7.2 경쟁사 대비 수수료 절감 시뮬레이션<a class="headerlink" href="#72" title="Permanent link">&para;</a></h3>
+<p><strong>전제</strong>: 월 거래액 1,000만 엔, 신용카드 결제 비율 65%, 콘비니 결제 15%, PayPay 20%, Shopify Basic 플랜 사용.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>Shopify Basic + KOMOJU</th>
+<th>누리메이트 (목표)</th>
+<th>절감액</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>신용카드 수수료 (650만 엔)</td>
+<td>3.25% (KOMOJU) + 2.0% (Shopify) = <strong>5.25%</strong> → 341,250엔</td>
+<td><strong>2.9%</strong> → 188,500엔</td>
+<td>△152,750엔</td>
+</tr>
+<tr>
+<td>콘비니 결제 수수료 (150만 엔)</td>
+<td>2.75% (KOMOJU) + 2.0% (Shopify) = <strong>4.75%</strong> → 71,250엔</td>
+<td><strong>2.5%</strong> → 37,500엔</td>
+<td>△33,750엔</td>
+</tr>
+<tr>
+<td>PayPay (200만 엔)</td>
+<td>불가 (한국 법인)</td>
+<td><strong>2.8%</strong> → 56,000엔</td>
+<td>N/A (신규 수익)</td>
+</tr>
+<tr>
+<td>환불 수수료 (가정: 월 10건)</td>
+<td>건당 JPY 300 = 3,000엔</td>
+<td><strong>없음</strong></td>
+<td>△3,000엔</td>
+</tr>
+<tr>
+<td><strong>월 수수료 합계</strong></td>
+<td><strong>약 415,500엔+</strong></td>
+<td><strong>약 282,000엔</strong></td>
+<td><strong>△133,500엔 이상</strong></td>
+</tr>
+<tr>
+<td><strong>연간 절감액</strong></td>
+<td>—</td>
+<td>—</td>
+<td><strong>약 160만 엔</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>수수료 근거 (2026-03-18 조사 기준)</strong>:
+- KOMOJU 신용카드: <strong>3.25%</strong> (공식 공개 수수료. 구 3.85%에서 인하됨. 출처: komoju.com/pricing)
+- KOMOJU 콘비니: <strong>2.75%</strong> (공식 공개 수수료)
+- Stripe Japan 신용카드: <strong>3.6%</strong> (공식 공개 수수료. Shopify Payments 미제공 시 대안)
+- Shopify Basic 서드파티 수수료: <strong>2.0%</strong> (Shopify Payments 미사용 시 부과)
+- 누리메이트 2.9% 달성 조건: <strong>GMO-PG 직접 계약(셀메이트 일본 법인 기반)으로 신용카드 원가 2.5% 이하 확보 시 마진 +0.4% 가능</strong>. KOMOJU 또는 Stripe 경유 시 적자 구조. 상세 분석: <code>research/payment-fee-structure.md</code> 참조.</p>
+<p><strong>PayPay 항목</strong>: Shopify+KOMOJU 구조에서는 한국 법인 판매자의 PayPay 연동 자체가 불가 (KOMOJU 정책상 일본 법인 필요). 누리메이트는 셀메이트 일본 법인 × GMO-PG 계약으로 PayPay 제공 가능 → 이 항목은 수수료 절감이 아닌 <strong>신규 매출 창출 효과</strong>다.</p>
+</blockquote>
+<h3 id="73-shopify-plus">7.3 Shopify Plus 대비 비교<a class="headerlink" href="#73-shopify-plus" title="Permanent link">&para;</a></h3>
+<p>Shopify Plus(서드파티 수수료 0%)를 사용해도 KOMOJU 수수료(신용카드 3.25%)는 그대로 발생한다. 누리메이트 목표 수수료(2.9%)는 Shopify Plus 구조 대비도 유리하다.</p>
+<table>
+<thead>
+<tr>
+<th>구조</th>
+<th>신용카드 실질 수수료</th>
+<th>월 이용료</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shopify Plus + KOMOJU</td>
+<td><strong>3.25%</strong> (KOMOJU 공식, 2026-03-18 기준)</td>
+<td>$2,300~/월</td>
+</tr>
+<tr>
+<td>누리메이트</td>
+<td>2.9% (GMO-PG 직접 계약 달성 시)</td>
+<td>별도 플랜 설계</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-phase">8. 구현 우선순위 (Phase별)<a class="headerlink" href="#8-phase" title="Permanent link">&para;</a></h2>
+<h3 id="phase-1-mvp-2026-q3">Phase 1 — 기본 결제 패키지 (MVP, 목표: 2026년 Q3)<a class="headerlink" href="#phase-1-mvp-2026-q3" title="Permanent link">&para;</a></h3>
+<p><strong>목표</strong>: 일본 이커머스 매출의 80% 이상을 커버하는 최소 필수 결제수단 지원.</p>
+<table>
+<thead>
+<tr>
+<th>결제수단</th>
+<th>기술 파트너</th>
+<th>난이도</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>신용카드 (Visa/MC/JCB/AMEX)</td>
+<td>GMO-PG 또는 Stripe</td>
+<td>낮음</td>
+<td>이커머스 65%</td>
+</tr>
+<tr>
+<td>콘비니 결제 (7-Eleven, Lawson, FamilyMart)</td>
+<td>GMO-PG</td>
+<td>중간</td>
+<td>미도입 시 매출 15~25% 손실</td>
+</tr>
+<tr>
+<td>PayPay</td>
+<td>GMO-PG</td>
+<td>높음</td>
+<td>QR결제 1위, 7,000만 사용자</td>
+</tr>
+</tbody>
+</table>
+<p><strong>완료 기준</strong>: 판매자가 어드민에서 토글 1회로 위 3종 결제수단 즉시 활성화 가능.</p>
+<h3 id="phase-2-2026-q4">Phase 2 — 확장 결제 패키지 (목표: 2026년 Q4)<a class="headerlink" href="#phase-2-2026-q4" title="Permanent link">&para;</a></h3>
+<p><strong>목표</strong>: QR 결제 전체 커버 + BNPL 지원으로 10~30대 타겟 강화.</p>
+<table>
+<thead>
+<tr>
+<th>결제수단</th>
+<th>기술 파트너</th>
+<th>난이도</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Paidy (후불결제 BNPL)</td>
+<td>Paidy 직접 계약</td>
+<td>중간</td>
+<td>BNPL 시장 1.8조 엔</td>
+</tr>
+<tr>
+<td>Rakuten Pay</td>
+<td>GMO-PG</td>
+<td>중간</td>
+<td>QR결제 2위</td>
+</tr>
+<tr>
+<td>au PAY / d 払い</td>
+<td>GMO-PG</td>
+<td>중간</td>
+<td>각각 3위권</td>
+</tr>
+<tr>
+<td>Pay-easy (은행·ATM 결제)</td>
+<td>GMO-PG</td>
+<td>중간</td>
+<td>법인 B2B 거래에 유효</td>
+</tr>
+</tbody>
+</table>
+<h3 id="phase-3-2027-h1">Phase 3 — 심화 결제 패키지 (목표: 2027년 H1)<a class="headerlink" href="#phase-3-2027-h1" title="Permanent link">&para;</a></h3>
+<p><strong>목표</strong>: 구독 서비스·오프라인 병행·고령층 커버로 시장 침투율 극대화.</p>
+<table>
+<thead>
+<tr>
+<th>결제수단</th>
+<th>기술 파트너</th>
+<th>난이도</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>은행 자동이체 (口座振替)</td>
+<td>GMO-PG</td>
+<td>매우 높음</td>
+<td>구독형 서비스 필수</td>
+</tr>
+<tr>
+<td>착불 결제 (代金引換)</td>
+<td>야마토·사가와 연동</td>
+<td>매우 높음</td>
+<td>물류 시스템 연동 필요</td>
+</tr>
+<tr>
+<td>楽天ポイント 포인트 결제</td>
+<td>Rakuten 직접 계약</td>
+<td>높음</td>
+<td>라쿠텐 생태계 사용자</td>
+</tr>
+<tr>
+<td>Amazon Pay</td>
+<td>Amazon 직접 계약</td>
+<td>높음</td>
+<td>Shopify 2025년 1월 종료 → 차별화 포인트</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Amazon Pay: Shopify가 2025년 1월 6일 일본에서 지원 종료. 누리메이트가 지원 시 이탈한 Shopify 판매자 유입 기대.</p>
+</blockquote>
+<hr />
+<h2 id="9">9. 기술 요건 개요<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
+<h3 id="91">9.1 결제 레이어 아키텍처<a class="headerlink" href="#91" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>[누리메이트 프론트엔드 체크아웃]
+           ↓
+[결제 오케스트레이션 레이어]
+  - 결제수단 라우팅 (신용카드 → GMO-PG, Paidy → Paidy API 등)
+  - 웹훅 수신 및 상태 동기화
+  - 정산 데이터 집계
+           ↓
+┌─────────────────────────────────┐
+│ GMO-PG API (메인 집계 파트너)    │
+│  - 신용카드, 콘비니, PayPay 등   │
+│ Paidy API (BNPL 전용)           │
+└─────────────────────────────────┘
+           ↓
+[정산 엔진]
+  - 결제수단별 정산 데이터 통합
+  - JPY → KRW 환전 처리
+  - 판매자 어드민 리포팅
+</code></pre></div>
+<h3 id="92">9.2 주요 기술 요건<a class="headerlink" href="#92" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>요건</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>결제 상태 동기화</td>
+<td>콘비니 결제 미납/납부 완료 웹훅 처리 및 주문 상태 자동 업데이트</td>
+</tr>
+<tr>
+<td>환불 자동화</td>
+<td>결제수단별 환불 가능 여부 판단 + 처리 API 호출 자동화</td>
+</tr>
+<tr>
+<td>실패 결제 재시도</td>
+<td>신용카드 승인 실패 시 대체 결제수단 안내 (콘비니 등)</td>
+</tr>
+<tr>
+<td>세금 처리</td>
+<td>일본 소비세 10% (경감세율 8%) 자동 분류, 세금 포함가 표시 (内税表示)</td>
+</tr>
+<tr>
+<td>보안</td>
+<td>PCI DSS Level 1 준수, 카드 정보 직접 보유 불필요 (GMO-PG 토큰화)</td>
+</tr>
+<tr>
+<td>다국어 체크아웃</td>
+<td>일본어 체크아웃 UI 기본 제공, 콘비니 안내 메시지 일본어 자동 생성</td>
+</tr>
+<tr>
+<td>정산 리포트 API</td>
+<td>판매자 어드민 대시보드용 정산 데이터 API (일별/주별/월별)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="93-kpi">9.3 성공 지표 (KPI)<a class="headerlink" href="#93-kpi" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>목표값</th>
+<th>측정 방법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>결제 활성화 소요 시간</td>
+<td>≤ 1 영업일 (현재 Shopify+KOMOJU 대비 3~5 영업일)</td>
+<td>어드민 활성화 로그</td>
+</tr>
+<tr>
+<td>결제 성공률 (신용카드)</td>
+<td>≥ 95%</td>
+<td>GMO-PG 리포팅</td>
+</tr>
+<tr>
+<td>콘비니 결제 도입 후 매출 변화</td>
+<td>+15% 이상</td>
+<td>A/B 테스트</td>
+</tr>
+<tr>
+<td>판매자 수수료 만족도</td>
+<td>NPS +30 이상</td>
+<td>분기 설문</td>
+</tr>
+<tr>
+<td>이중 수수료 제거율</td>
+<td>100% (서드파티 앱 추가 수수료 0원)</td>
+<td>리뷰 감사</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_2">부록: 경쟁사 현황 요약<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>플랫폼</th>
+<th>일본 콘비니</th>
+<th>PayPay</th>
+<th>한국 법인 계약</th>
+<th>이중 수수료</th>
+<th>정산 통합</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shopify + KOMOJU</td>
+<td>서드파티 필요</td>
+<td>불가 (한국 법인)</td>
+<td>불가</td>
+<td>있음 (최대 ~5.85%)</td>
+<td>불가</td>
+</tr>
+<tr>
+<td>카페24 × KG이니시스</td>
+<td>지원 (2026.01~)</td>
+<td>미지원</td>
+<td>가능</td>
+<td>미확인</td>
+<td>부분</td>
+</tr>
+<tr>
+<td>Stripe Japan</td>
+<td>지원 (2025~)</td>
+<td>지원 (심사 3~4주)</td>
+<td>가능</td>
+<td>없음</td>
+<td>가능</td>
+</tr>
+<tr>
+<td><strong>누리메이트 (목표)</strong></td>
+<td><strong>네이티브 지원</strong></td>
+<td><strong>네이티브 지원</strong></td>
+<td><strong>N/A (플랫폼 내장)</strong></td>
+<td><strong>없음</strong></td>
+<td><strong>완전 통합</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.top", "navigation.sections", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

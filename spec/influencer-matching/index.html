@@ -1,0 +1,4188 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="누리메이트 제품 전략, 시장 리서치, 기능 스펙">
+      
+      
+      
+        <link rel="canonical" href="https://sweetginger.github.io/nurymate-docs/spec/influencer-matching/">
+      
+      
+        <link rel="prev" href="../engagement-features/">
+      
+      
+        <link rel="next" href="../benchmark-report/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>[P2] 인플루언서 매칭 - 누리메이트 전략 문서</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#db" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../.." title="누리메이트 전략 문서" class="md-header__button md-logo" aria-label="누리메이트 전략 문서" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            누리메이트 전략 문서
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              [P2] 인플루언서 매칭
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  개요
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../strategy/product-plan/" class="md-tabs__link">
+          
+  
+  
+  전략
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../research/japan-korea-ecommerce/" class="md-tabs__link">
+          
+  
+  
+  리서치
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../spec-priority/" class="md-tabs__link">
+          
+  
+  
+  Spec
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="누리메이트 전략 문서" class="md-nav__button md-logo" aria-label="누리메이트 전략 문서" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    누리메이트 전략 문서
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    전략
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    전략
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/product-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    제품 기획
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/business-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    비즈니스 로드맵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/strategic-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    전략 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/pricing-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    수익 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/early-customer-acquisition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    초기 고객 확보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/new-seller-acquisition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    신규 창업자 확보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/organic-growth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    자연 유입 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/global-expansion-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글로벌 확장 로드맵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/vertical-expansion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    버티컬 확장
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/japan-gtm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 GTM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/api-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 정책
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    리서치
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    리서치
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/japan-korea-ecommerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본·한국 이커머스 문화 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-jp-payment-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 결제 불편 UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-japan-weaknesses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 약점 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-japan-payment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 결제
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-pricing-revenue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 수익 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/pg-stripe-support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stripe·PG 지원 조사
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/stripe-connect-countries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stripe Connect 국가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/pg-licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PG 라이선스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/local-pg-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    현지 PG 계약 난이도
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/paymentwall-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paymentwall 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/payoneer-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payoneer 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/korea-ecommerce-platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    한국 이커머스 경쟁 지형
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/japan-ec-saas-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 D2C EC SaaS 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/global-market-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글로벌 시장 개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/logistics-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    배송·3PL 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/sns-review-legal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SNS 리뷰 법적 검토
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/cafe24-pro-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/cafe24-app-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 앱 디자인
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/cafe24-analytics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/fashion-ecommerce-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    패션 이커머스 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/platform-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플랫폼 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/platform-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플랫폼 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/rakuten-amazon-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    라쿠텐·아마존 API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/sns-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SNS 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/review-platform-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    리뷰 플랫폼 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/japan-conveni-pickup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 편의점 픽업
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/korea-japan-trust-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    한일 신뢰 사례
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/closed-app-marketplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    클로즈드 앱 마켓플레이스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify AI 어시스턴트 사례
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-markets-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify Markets 다국가 연결 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-marketing-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 마케팅 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-queryql-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify GraphQL 리포트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/payment-fee-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    결제 수수료 원가 구조 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/competitor-ux-updates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    경쟁사 UX 업데이트 벤치마킹
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/global-ux-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글로벌 커머스 UX 디자인 차이점
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shipping-profile-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    발송 프로필 관리 필요성 검증
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/youtube-shopping-partner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    YouTube Shopping 등록 절차
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/latest-stats-2025-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    최신 통계 2025~2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Spec
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spec-priority/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec 우선순위
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../seller-store-creation-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 셀러 스토어 생성 UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../domain-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 멀티테넌시 도메인 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jp-payment-native/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 일본 결제 네이티브
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 국가별 단위 현지화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 마이그레이션
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operator-admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 운영자 어드민
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module-definition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 모듈 기능 정의
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../payment-bank-transfer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 무통장입금·가상계좌
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unified-payment-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 통합 결제 대시보드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../first-sale-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 첫 매출 견인 도구
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analytics-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 통계·분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sns-marketing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] SNS 마케팅 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sns-review-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] SNS 리뷰 수집
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../affiliate-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 어필리에이트 트래킹
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../country-preset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 국가별 설정 프리셋
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global-launch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 글로벌 진출 지원
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shipping-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 배송 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conversion-rate-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 구매 전환율 향상 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../convenience-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 운영 편의기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engagement-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 재방문율 향상 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 인플루언서 매칭
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 인플루언서 매칭
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 전략 배경 및 목표
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 전략 배경 및 목표">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 배경
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 시장 근거
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 목표
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 인플루언서 DB 수집 시스템
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 인플루언서 DB 수집 시스템">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 수집 소스 및 API 활용 방안
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 수집 소스 및 API 활용 방안">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instagram-graph-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instagram Graph API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tiktok-creator-marketplace-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TikTok Creator Marketplace API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#youtube-data-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YouTube Data API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        제3자 데이터 제공업체 (보완 소스)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 수집 데이터 항목
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 자동 수집 주기 및 갱신 정책
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 판매자-인플루언서 중개 구조
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 판매자-인플루언서 중개 구조">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 누리메이트 개입 방식
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 캠페인 생성 → 인플루언서 매칭 → 계약 → 성과 측정 플로우
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 매칭 알고리즘 설계
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 매칭 알고리즘 설계">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 판매자 상품 카테고리 × 인플루언서 팔로워 특성
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-roi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 예산 범위 × 예상 ROI 필터링
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 수익 구조
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 수익 구조">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 중개 수수료 모델
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 구독 기능으로 운영 방안
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 초기 DB 구축 전략 (콜드스타트 해결)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 초기 DB 구축 전략 (콜드스타트 해결)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 제3자 데이터 라이선스 계약
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 인플루언서 자발적 등록 유도 (공급 측 인센티브)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 판매자 현재 파트너 인플루언서 임포트
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 크롤링 보완 (공개 정보 범위 내)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 구현 우선순위 (Phase별)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 구현 우선순위 (Phase별)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 — 기초 인프라 (서비스 출시 전, 개발 기간)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 — 중개 기능 런칭 (서비스 출시 후 3~6개월)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-712" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 — 고도화 (서비스 출시 후 7~12개월)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-kpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. KPI 및 성공 지표
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        참고 자료
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmark-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 벤치마크 리포트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] AI 운영 어시스턴트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-chat-setting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] AI 채팅 설정
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 글로벌 통합 대시보드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marketplace-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 마켓플레이스 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sellex-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    셀익스 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 전략 배경 및 목표
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 전략 배경 및 목표">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 배경
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 시장 근거
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 목표
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 인플루언서 DB 수집 시스템
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 인플루언서 DB 수집 시스템">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 수집 소스 및 API 활용 방안
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 수집 소스 및 API 활용 방안">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instagram-graph-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instagram Graph API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tiktok-creator-marketplace-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TikTok Creator Marketplace API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#youtube-data-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YouTube Data API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        제3자 데이터 제공업체 (보완 소스)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 수집 데이터 항목
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 자동 수집 주기 및 갱신 정책
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 판매자-인플루언서 중개 구조
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 판매자-인플루언서 중개 구조">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 누리메이트 개입 방식
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 캠페인 생성 → 인플루언서 매칭 → 계약 → 성과 측정 플로우
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 매칭 알고리즘 설계
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 매칭 알고리즘 설계">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 판매자 상품 카테고리 × 인플루언서 팔로워 특성
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-roi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 예산 범위 × 예상 ROI 필터링
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 수익 구조
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 수익 구조">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 중개 수수료 모델
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 구독 기능으로 운영 방안
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 초기 DB 구축 전략 (콜드스타트 해결)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 초기 DB 구축 전략 (콜드스타트 해결)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 제3자 데이터 라이선스 계약
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 인플루언서 자발적 등록 유도 (공급 측 인센티브)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 판매자 현재 파트너 인플루언서 임포트
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 크롤링 보완 (공개 정보 범위 내)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 구현 우선순위 (Phase별)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 구현 우선순위 (Phase별)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 — 기초 인프라 (서비스 출시 전, 개발 기간)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 — 중개 기능 런칭 (서비스 출시 후 3~6개월)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-712" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 — 고도화 (서비스 출시 후 7~12개월)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-kpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. KPI 및 성공 지표
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        참고 자료
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="db">글로벌 인플루언서 DB 수집 및 중개 기능 기획서<a class="headerlink" href="#db" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>문서 버전: v1.0
+작성일: 2026-03-06
+관련 태스크: [11-1]</p>
+</blockquote>
+<hr />
+<h2 id="1">1. 전략 배경 및 목표<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1 배경<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<p>패션 D2C 판매자의 가장 큰 고민 중 하나는 <strong>마케팅 채널 확보</strong>다. 특히 초기 판매자는 인플루언서를 직접 발굴하고 컨택·협상·계약·성과 측정까지 혼자 감당해야 한다. 이 과정에서 발생하는 마찰(friction)이 크다.</p>
+<ul>
+<li>인플루언서 직접 컨택 → 사기·미이행 리스크 발생</li>
+<li>국가별 컨택 채널 상이 (DM, 이메일, 에이전시 등)</li>
+<li>협업 결과물 품질·납기 관리 어려움</li>
+<li>성과 측정 기준 없이 돈만 지출하는 구조</li>
+</ul>
+<p><strong>누리메이트는 이 마찰을 플랫폼 내부에서 해소</strong>하는 것으로 판매자 락인(Lock-in)을 달성할 수 있다. 인플루언서 마케팅 기능이 플랫폼에 내장되면 판매자는 누리메이트를 이탈하기 어려워진다.</p>
+<h3 id="12">1.2 시장 근거<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>글로벌 인플루언서 마케팅 시장 규모: 2024년 240억 달러 → 2025년 330억 달러 이상 추정 (Statista)</li>
+<li>인플루언서 마케팅 플랫폼 주요 사례:</li>
+<li><strong>Modash</strong>: 350만 명 이상 인플루언서 DB (Instagram, YouTube, TikTok), 팔로워 1,000명 이상 전수 수집</li>
+<li><strong>Aspire (AspireIQ)</strong>: 이커머스 특화, UGC 라이선싱·어필리에이트 트래킹 통합</li>
+<li><strong>GRIN</strong>: Shopify 연동에 최적화, 캠페인 전체 생애주기 관리</li>
+<li><strong>Shopify Collabs</strong>: Shopify 자체 인플루언서 기능. 무료 설치, 어필리에이트 링크 자동 생성, 수수료 자동 정산 (2.9% 처리 수수료). 누리메이트가 이 수준 이상의 기능을 내장해야 경쟁력 확보 가능.</li>
+</ul>
+<h3 id="13">1.3 목표<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>목표</th>
+<th>지표</th>
+<th>달성 시점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>플랫폼 내 인플루언서 생태계 구축</td>
+<td>등록 인플루언서 수 10만 명+</td>
+<td>Phase 2 (서비스 출시 후 12개월)</td>
+</tr>
+<tr>
+<td>판매자 마케팅 채널 내재화</td>
+<td>인플루언서 기능 사용 판매자 비율 30%+</td>
+<td>Phase 2</td>
+</tr>
+<tr>
+<td>판매자 이탈율 감소 기여</td>
+<td>인플루언서 기능 사용 판매자 이탈율 50% 이하</td>
+<td>Phase 3</td>
+</tr>
+<tr>
+<td>수수료 수익 발생</td>
+<td>중개 거래액 기준 월 1억 원+</td>
+<td>Phase 3</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-db">2. 인플루언서 DB 수집 시스템<a class="headerlink" href="#2-db" title="Permanent link">&para;</a></h2>
+<h3 id="21-api">2.1 수집 소스 및 API 활용 방안<a class="headerlink" href="#21-api" title="Permanent link">&para;</a></h3>
+<h4 id="instagram-graph-api">Instagram Graph API<a class="headerlink" href="#instagram-graph-api" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>수집 가능 범위 (2025년 기준)</strong>:</li>
+<li>비즈니스·크리에이터 계정이 앱을 <strong>직접 인증(OAuth)</strong>한 경우에만 접근 가능</li>
+<li>인증된 계정의 팔로워 수, 도달 범위(reach), 노출(impressions), 인게이지먼트, 인구통계(상위 45개 세그먼트까지) 수집 가능</li>
+<li>팔로워 100명 미만 계정은 팔로워 지표 제한 (2025년 신규 제약)</li>
+<li><strong>비공개 크롤링 불가</strong>: 공식 API 이외 수집은 Meta ToS 위반</li>
+<li><strong>누리메이트 활용 전략</strong>:</li>
+<li>인플루언서가 누리메이트 앱을 인증하면 자동으로 데이터 수집·갱신</li>
+<li>인증 인센티브 설계 필요 (아래 6장 참조)</li>
+<li>제3자 데이터 제공업체(Phyllo, Data365 등) API 병행 활용으로 미인증 계정 기본 정보 보완</li>
+</ul>
+<h4 id="tiktok-creator-marketplace-api">TikTok Creator Marketplace API<a class="headerlink" href="#tiktok-creator-marketplace-api" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>수집 가능 범위 (2025년 기준)</strong>:</li>
+<li>TikTok Creator Marketplace 파트너사(공식 승인)만 접근 가능</li>
+<li>크리에이터 인구통계, 성장 추세, 인기 영상, 실시간 캠페인 성과(조회·좋아요·공유·댓글) 수집</li>
+<li>2025년 승인 절차 강화: 사용 목적 상세 제출, 심사 기간 수 주 소요</li>
+<li><strong>누리메이트 활용 전략</strong>:</li>
+<li>파트너사 자격 신청 (마케팅 플랫폼 카테고리로 신청)</li>
+<li>승인 전까지는 크리에이터 자발적 정보 입력 + 공개 데이터 수집으로 대체</li>
+<li>TikTok Business API 별도 연동하여 광고 캠페인 성과 측정 지원</li>
+</ul>
+<h4 id="youtube-data-api">YouTube Data API<a class="headerlink" href="#youtube-data-api" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>수집 가능 범위 (2025년 기준)</strong>:</li>
+<li>채널 구독자 수, 영상 조회수, 좋아요·댓글 수: <strong>OAuth 없이도</strong> 공개 채널 기준 수집 가능</li>
+<li>상세 시청자 분석(성별·연령·지역): 채널 소유자 OAuth 인증 후 YouTube Analytics API 이용</li>
+<li>YouTube Shorts 분석, YouTube Shopping 연동 데이터: 2025년 이후 확장 중</li>
+<li><strong>누리메이트 활용 전략</strong>:</li>
+<li>공개 채널 데이터는 YouTube Data API v3 (무료 쿼터 내)로 기본 수집</li>
+<li>상세 데이터는 인플루언서 인증 시 Analytics API 추가 수집</li>
+<li>패션·뷰티 카테고리 유튜버 우선 인덱싱</li>
+</ul>
+<h4 id="3">제3자 데이터 제공업체 (보완 소스)<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>업체</th>
+<th>특징</th>
+<th>활용 방안</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Modash</td>
+<td>350만+ 크리에이터, 공개 데이터 기반</td>
+<td>초기 DB 구축용 라이선스 계약 검토</td>
+</tr>
+<tr>
+<td>Phyllo (getphyllo.com)</td>
+<td>인플루언서 인증 연동 API, 다플랫폼 지원</td>
+<td>인플루언서 자발적 연동 시 데이터 집계 인프라</td>
+</tr>
+<tr>
+<td>Data365</td>
+<td>Instagram Analytics API 대안</td>
+<td>미인증 계정 기본 지표 보완</td>
+</tr>
+<tr>
+<td>HypeAuditor</td>
+<td>어뷰징 탐지, 진성 팔로워 비율 분석</td>
+<td>품질 필터링 레이어</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22">2.2 수집 데이터 항목<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<p>인플루언서 1명당 수집·관리하는 데이터 항목:</p>
+<table>
+<thead>
+<tr>
+<th>카테고리</th>
+<th>항목</th>
+<th>출처</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>기본 정보</strong></td>
+<td>이름/핸들, 국가, 언어, 주요 활동 플랫폼</td>
+<td>공개 API / 직접 입력</td>
+</tr>
+<tr>
+<td><strong>규모 지표</strong></td>
+<td>팔로워 수 (플랫폼별), 구독자 수</td>
+<td>공개 API</td>
+</tr>
+<tr>
+<td><strong>참여율(ER)</strong></td>
+<td>게시물당 평균 좋아요·댓글 / 팔로워 × 100</td>
+<td>공개 API 계산</td>
+</tr>
+<tr>
+<td><strong>콘텐츠 카테고리</strong></td>
+<td>주요 콘텐츠 태그 (패션, 뷰티, 라이프스타일 등)</td>
+<td>자동 분류 (NLP 태깅)</td>
+</tr>
+<tr>
+<td><strong>대상 고객</strong></td>
+<td>팔로워 연령·성별·국가 분포</td>
+<td>OAuth 인증 후 수집</td>
+</tr>
+<tr>
+<td><strong>콘텐츠 업로드 주기</strong></td>
+<td>최근 3개월 평균 게시 빈도</td>
+<td>공개 API 분석</td>
+</tr>
+<tr>
+<td><strong>협업 이력</strong></td>
+<td>과거 협업 브랜드 카테고리, 협업 빈도</td>
+<td>콘텐츠 분석 / 직접 입력</td>
+</tr>
+<tr>
+<td><strong>예상 단가</strong></td>
+<td>팔로워 수·ER·카테고리 기반 시장가 추정</td>
+<td>자체 모델링</td>
+</tr>
+<tr>
+<td><strong>진성도 점수</strong></td>
+<td>어뷰징 탐지 (HypeAuditor API 또는 자체 모델)</td>
+<td>HypeAuditor API</td>
+</tr>
+<tr>
+<td><strong>컨택 포인트</strong></td>
+<td>이메일, 에이전시 여부, 선호 컨택 방법</td>
+<td>직접 입력 (인플루언서)</td>
+</tr>
+<tr>
+<td><strong>누리메이트 협업 이력</strong></td>
+<td>완료 캠페인 수, 평점, 납기 준수율</td>
+<td>플랫폼 내부 데이터</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23">2.3 자동 수집 주기 및 갱신 정책<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>데이터 유형</th>
+<th>갱신 주기</th>
+<th>방식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>팔로워 수 · 구독자 수</td>
+<td>주 1회 (매주 월요일 새벽)</td>
+<td>API 배치</td>
+</tr>
+<tr>
+<td>최근 게시물 인게이지먼트</td>
+<td>주 1회</td>
+<td>API 배치</td>
+</tr>
+<tr>
+<td>대상 고객 인구통계</td>
+<td>월 1회</td>
+<td>OAuth 인증 계정만</td>
+</tr>
+<tr>
+<td>예상 단가</td>
+<td>월 1회 재산정</td>
+<td>자체 모델</td>
+</tr>
+<tr>
+<td>진성도 점수</td>
+<td>월 1회</td>
+<td>HypeAuditor API</td>
+</tr>
+<tr>
+<td>협업 이력 (누리메이트 내)</td>
+<td>실시간</td>
+<td>캠페인 완료 이벤트</td>
+</tr>
+</tbody>
+</table>
+<p><strong>DB 삭제 정책</strong>: 6개월 이상 활동 없는 인플루언서는 비활성 처리. 12개월 이상 비활성 시 DB에서 제거 (또는 아카이빙).</p>
+<hr />
+<h2 id="3-">3. 판매자-인플루언서 중개 구조<a class="headerlink" href="#3-" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 누리메이트 개입 방식<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<p><strong>핵심 원칙: 판매자와 인플루언서 간 직접 컨택 차단</strong></p>
+<p>누리메이트가 계약 주체로 개입하는 이유:
+1. <strong>수익화</strong>: 중개 수수료 수취 기반 확보
+2. <strong>락인 강화</strong>: 외부에서 형성된 관계가 플랫폼을 떠나지 않도록
+3. <strong>품질 보증</strong>: 계약 불이행, 콘텐츠 품질 미달 시 플랫폼이 책임지고 환불·재협의
+4. <strong>데이터 독점</strong>: 캠페인 성과 데이터가 누리메이트에 축적</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>허용</th>
+<th>차단</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>판매자 → 인플루언서</td>
+<td>플랫폼 내 메시지만</td>
+<td>외부 SNS DM, 이메일 직접 공유</td>
+</tr>
+<tr>
+<td>계약서</td>
+<td>누리메이트 표준 계약</td>
+<td>외부 계약서 교환</td>
+</tr>
+<tr>
+<td>정산</td>
+<td>누리메이트 경유 정산</td>
+<td>계좌 직접 이체</td>
+</tr>
+</tbody>
+</table>
+<p><strong>인플루언서 컨택 정보 보호</strong>: 이메일·전화번호는 누리메이트가 보관, 판매자에게 노출하지 않음.</p>
+<h3 id="32">3.2 캠페인 생성 → 인플루언서 매칭 → 계약 → 성과 측정 플로우<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>[판매자]
+   │
+   ├─ 1. 캠페인 생성
+   │      - 상품 선택 / 캠페인 목표 (인지도·전환·팔로워)
+   │      - 예산 범위 / 희망 콘텐츠 유형 (릴스·쇼츠·이미지·블로그)
+   │      - 희망 인플루언서 조건 (국가·카테고리·팔로워 범위)
+   │
+   ├─ 2. 매칭 추천 (자동)
+   │      - 누리메이트 매칭 알고리즘이 후보 3~10명 추천
+   │      - 판매자는 프로필 열람 (상세 지표 포함) 후 제안 전송
+   │
+   ├─ 3. 인플루언서 수락·협의
+   │      - 인플루언서: 제안 수락 / 조건 수정 요청 / 거절
+   │      - 누리메이트 메시지 채널 내에서만 소통
+   │
+   ├─ 4. 계약 체결
+   │      - 누리메이트 표준 계약서 자동 생성 (금액·납기·콘텐츠 조건)
+   │      - 전자서명 (판매자 + 인플루언서)
+   │      - 대금 에스크로 예치 (캠페인 완료 후 정산)
+   │
+   ├─ 5. 콘텐츠 제작·검수
+   │      - 인플루언서: 콘텐츠 초안 업로드 (플랫폼 내)
+   │      - 판매자: 수정 요청 또는 승인 (최대 2회 수정 가능)
+   │      - 최종 승인 후 콘텐츠 게시
+   │
+   └─ 6. 성과 측정 및 정산
+          - 게시 후 7일·30일 성과 자동 수집 (조회수·클릭·전환)
+          - 어필리에이트 링크·쿠폰 코드 기반 전환 추적
+          - 성과 확인 후 에스크로 정산 (인플루언서 수취액 = 계약금 - 누리메이트 수수료)
+          - 판매자 어드민에 ROI 리포트 자동 생성
+</code></pre></div>
+<hr />
+<h2 id="4">4. 매칭 알고리즘 설계<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h3 id="41">4.1 판매자 상품 카테고리 × 인플루언서 팔로워 특성<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<p>매칭 점수(Match Score)는 다음 변수의 가중합으로 산출:</p>
+<table>
+<thead>
+<tr>
+<th>변수</th>
+<th>설명</th>
+<th>가중치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>카테고리 일치도</td>
+<td>판매자 상품 카테고리 ↔ 인플루언서 주요 콘텐츠 카테고리 코사인 유사도</td>
+<td>30%</td>
+</tr>
+<tr>
+<td>팔로워 지역 일치도</td>
+<td>판매자 목표 판매 국가 ↔ 인플루언서 팔로워 국가 분포 겹침 비율</td>
+<td>25%</td>
+</tr>
+<tr>
+<td>참여율(ER)</td>
+<td>인플루언서 ER이 카테고리 평균 이상인지 여부</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>예산 적합도</td>
+<td>판매자 예산 범위 내 예상 단가 해당 여부</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>진성도 점수</td>
+<td>어뷰징 탐지 점수</td>
+<td>10%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>보조 필터</strong>:
+- 누리메이트 플랫폼 내 협업 완료 이력 유무 (우선 노출)
+- 최근 3개월 활동 여부 (비활성 인플루언서 하위 노출)
+- 판매자가 이전에 제안했으나 거절당한 인플루언서 제외</p>
+<h3 id="42-roi">4.2 예산 범위 × 예상 ROI 필터링<a class="headerlink" href="#42-roi" title="Permanent link">&para;</a></h3>
+<p><strong>예상 ROI 산출 공식 (초기 모델)</strong>:</p>
+<div class="highlight"><pre><span></span><code>예상 ROI = (예상 도달 × 카테고리 평균 전환율 × 상품 평균 객단가) / 캠페인 비용
+</code></pre></div>
+<ul>
+<li>예상 도달 = 팔로워 수 × ER × 플랫폼 도달 계수 (Instagram: 0.1~0.3, TikTok: 0.3~0.6)</li>
+<li>카테고리 평균 전환율: 플랫폼 내 누적 데이터 기반 (초기에는 업계 벤치마크 사용)</li>
+<li>ROI &lt; 1.0인 조합은 경고 표시 (판매자가 확인 후 진행 가능)</li>
+</ul>
+<p><strong>예산 티어별 추천 인플루언서 유형</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>예산</th>
+<th>인플루언서 유형</th>
+<th>팔로워 규모</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10~50만 원</td>
+<td>나노 인플루언서</td>
+<td>1,000~10,000명</td>
+</tr>
+<tr>
+<td>50~200만 원</td>
+<td>마이크로 인플루언서</td>
+<td>10,000~100,000명</td>
+</tr>
+<tr>
+<td>200~1,000만 원</td>
+<td>미드티어 인플루언서</td>
+<td>100,000~500,000명</td>
+</tr>
+<tr>
+<td>1,000만 원+</td>
+<td>매크로 인플루언서</td>
+<td>500,000명+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5">5. 수익 구조<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<h3 id="51">5.1 중개 수수료 모델<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
+<p>판매자가 인플루언서에게 지급하는 캠페인 계약금에서 수수료 차감.</p>
+<table>
+<thead>
+<tr>
+<th>거래 유형</th>
+<th>수수료율</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기본 캠페인 중개</td>
+<td>계약금의 15%</td>
+<td>플랫폼이 계약·정산·성과 측정 제공</td>
+</tr>
+<tr>
+<td>어필리에이트 캠페인</td>
+<td>매출 발생 시 매출의 5%</td>
+<td>선불 없이 성과 기반 정산</td>
+</tr>
+<tr>
+<td>긴급 매칭 (24시간 이내)</td>
+<td>계약금의 20%</td>
+<td>프리미엄 속성 서비스</td>
+</tr>
+</tbody>
+</table>
+<p><strong>비교 기준 (Shopify Collabs)</strong>: 판매 발생 시 2.9% 처리 수수료. 누리메이트는 더 높은 수수료 대신 더 높은 서비스 수준(매칭·보증·성과 측정) 제공.</p>
+<h3 id="52">5.2 구독 기능으로 운영 방안<a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
+<p>인플루언서 기능을 플랜별로 차등 제공하여 구독 플랜 업셀링에 활용:</p>
+<table>
+<thead>
+<tr>
+<th>플랜</th>
+<th>인플루언서 기능 포함 내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>무료</td>
+<td>인플루언서 DB 탐색만 가능 (프로필 기본 정보)</td>
+</tr>
+<tr>
+<td>스탠다드</td>
+<td>월 3건 캠페인 생성, 기본 매칭 추천</td>
+</tr>
+<tr>
+<td>프로</td>
+<td>무제한 캠페인, 고급 매칭 알고리즘, ROI 리포트, 어필리에이트 추적</td>
+</tr>
+<tr>
+<td>엔터프라이즈</td>
+<td>전담 매니저, 커스텀 인플루언서 풀 구성</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-db">6. 초기 DB 구축 전략 (콜드스타트 해결)<a class="headerlink" href="#6-db" title="Permanent link">&para;</a></h2>
+<p>인플루언서 DB가 없으면 매칭 기능 자체가 의미 없다. 콜드스타트를 해결하기 위한 4가지 접근:</p>
+<h3 id="61-3">6.1 제3자 데이터 라이선스 계약<a class="headerlink" href="#61-3" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Modash API</strong> 또는 유사 플랫폼과 데이터 라이선스 계약 체결</li>
+<li>초기 한국·일본 패션·뷰티 카테고리 인플루언서 최소 10만 명 DB 확보</li>
+<li>비용: Modash 기준 월 $99~$299 (Starter~Pro 플랜) → 초기 투자 가능 수준</li>
+</ul>
+<h3 id="62">6.2 인플루언서 자발적 등록 유도 (공급 측 인센티브)<a class="headerlink" href="#62" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>얼리버드 인플루언서 프로그램</strong>: 먼저 등록한 인플루언서에게 플랫폼 런칭 후 선호 노출 보장</li>
+<li><strong>무료 분석 리포트 제공</strong>: 자신의 계정을 인증하면 상세 분석 리포트 즉시 제공 (자기 데이터 확인 수단)</li>
+<li><strong>협업 수수료 할인</strong>: 얼리버드 인플루언서는 초기 캠페인 수수료 10% 감면</li>
+</ul>
+<h3 id="63">6.3 판매자 현재 파트너 인플루언서 임포트<a class="headerlink" href="#63" title="Permanent link">&para;</a></h3>
+<ul>
+<li>판매자가 온보딩 시 "현재 협업 중인 인플루언서"를 초대할 수 있는 기능 제공</li>
+<li>초대받은 인플루언서 → 플랫폼 가입 → DB에 추가</li>
+<li>기존 관계를 플랫폼으로 이전하는 자연스러운 온보딩 경로</li>
+</ul>
+<h3 id="64">6.4 크롤링 보완 (공개 정보 범위 내)<a class="headerlink" href="#64" title="Permanent link">&para;</a></h3>
+<ul>
+<li>YouTube 공개 채널 데이터: YouTube Data API v3 (OAuth 불필요)</li>
+<li>TikTok 공개 영상 메타데이터: TikTok Research API (학술·리서치 목적 신청)</li>
+<li>Instagram: 공개 API 제약으로 인해 직접 크롤링 불가 → 제3자 데이터 업체 의존</li>
+</ul>
+<hr />
+<h2 id="7-phase">7. 구현 우선순위 (Phase별)<a class="headerlink" href="#7-phase" title="Permanent link">&para;</a></h2>
+<h3 id="phase-1">Phase 1 — 기초 인프라 (서비스 출시 전, 개발 기간)<a class="headerlink" href="#phase-1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] 인플루언서 DB 스키마 설계 및 저장소 구축</li>
+<li>[ ] 제3자 데이터 라이선스 계약 (Modash 또는 Phyllo)</li>
+<li>[ ] YouTube Data API 수집 파이프라인 구축 (공개 채널 데이터)</li>
+<li>[ ] 인플루언서 자발적 등록 폼 + Instagram/TikTok OAuth 연동</li>
+<li>[ ] 기본 매칭 로직 (카테고리·팔로워 수 필터링)</li>
+<li>[ ] 판매자용 인플루언서 탐색 UI (프리뷰)</li>
+</ul>
+<h3 id="phase-2-36">Phase 2 — 중개 기능 런칭 (서비스 출시 후 3~6개월)<a class="headerlink" href="#phase-2-36" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] 캠페인 생성 플로우 전체 구현</li>
+<li>[ ] 플랫폼 내 메시지 채널 (판매자 ↔ 인플루언서)</li>
+<li>[ ] 표준 계약서 자동 생성 및 전자서명 연동</li>
+<li>[ ] 에스크로 결제 시스템 구축 (PG사 연동)</li>
+<li>[ ] 어필리에이트 링크·쿠폰 코드 생성 및 전환 추적</li>
+<li>[ ] 기본 ROI 리포트 (캠페인별 성과 요약)</li>
+</ul>
+<h3 id="phase-3-712">Phase 3 — 고도화 (서비스 출시 후 7~12개월)<a class="headerlink" href="#phase-3-712" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] AI 기반 매칭 알고리즘 고도화 (ML 모델)</li>
+<li>[ ] TikTok Creator Marketplace API 파트너 신청 및 연동</li>
+<li>[ ] 진성도 분석 (HypeAuditor 연동 또는 자체 모델)</li>
+<li>[ ] ROI 예측 모델 (캠페인 시작 전 예상 성과 표시)</li>
+<li>[ ] 인플루언서 평점·리뷰 시스템</li>
+<li>[ ] 글로벌 인플루언서 확장 (동남아·미국 등)</li>
+</ul>
+<hr />
+<h2 id="8-kpi">8. KPI 및 성공 지표<a class="headerlink" href="#8-kpi" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>KPI</th>
+<th>측정 방법</th>
+<th>Phase 1 목표</th>
+<th>Phase 2 목표</th>
+<th>Phase 3 목표</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>인플루언서 DB 규모</td>
+<td>등록 인플루언서 수</td>
+<td>5만 명</td>
+<td>15만 명</td>
+<td>50만 명</td>
+</tr>
+<tr>
+<td>인플루언서 기능 사용 판매자 비율</td>
+<td>월 1회 이상 사용 판매자 / 전체 활성 판매자</td>
+<td>-</td>
+<td>20%</td>
+<td>40%</td>
+</tr>
+<tr>
+<td>캠페인 완료율</td>
+<td>계약 체결 후 완료 캠페인 / 전체 계약 체결</td>
+<td>-</td>
+<td>85%</td>
+<td>92%</td>
+</tr>
+<tr>
+<td>평균 캠페인 ROI</td>
+<td>판매자 리포트 기준 평균 ROI</td>
+<td>-</td>
+<td>2.0x</td>
+<td>3.5x</td>
+</tr>
+<tr>
+<td>중개 수수료 월 수익</td>
+<td>플랫폼 수수료 합산</td>
+<td>-</td>
+<td>500만 원</td>
+<td>5,000만 원</td>
+</tr>
+<tr>
+<td>판매자 이탈율 차이</td>
+<td>인플루언서 기능 사용 vs 미사용 판매자 이탈율 비교</td>
+<td>-</td>
+<td>-20%</td>
+<td>-40%</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_1">참고 자료<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Instagram Graph API 2025 변경사항: <a href="https://elfsight.com/blog/instagram-graph-api-changes/">Elfsight — Instagram API Changes 2025</a></li>
+<li>Phyllo Instagram Graph API 활용 가이드: <a href="https://www.getphyllo.com/post/how-to-use-the-instagram-graph-api-for-audience-insight-iv">getphyllo.com</a></li>
+<li>TikTok Creator Marketplace API 출시: <a href="https://www.socialmediatoday.com/news/tiktok-launches-creator-marketplace-api-to-facilitate-more-brand-collaborat/605900/">Social Media Today</a></li>
+<li>TikTok API 공개 여부 2025: <a href="https://www.echotik.live/blog/is-tiktoks-api-public-access-approval-process-2025/">Echotik Live</a></li>
+<li>YouTube Analytics API: <a href="https://developers.google.com/youtube/analytics">Google for Developers</a></li>
+<li>Modash vs GRIN 비교: <a href="https://www.modash.io/modash-vs-grin">Modash.io</a></li>
+<li>Shopify Collabs 2025 가이드: <a href="https://pagefly.io/blogs/shopify/shopify-collabs-app">PageFly</a></li>
+<li>GRIN 대안 플랫폼: <a href="https://www.influencer-hero.com/blogs/top-8-grin-alternatives-enhance-your-influencer-marketing-strategy">Influencer Hero</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.top", "navigation.sections", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
