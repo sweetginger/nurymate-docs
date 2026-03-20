@@ -81,8 +81,15 @@ nav:
     - 일본 편의점 픽업: research/japan-conveni-pickup.md
     - 한일 신뢰 사례: research/korea-japan-trust-cases.md
     - 클로즈드 앱 마켓플레이스: research/closed-app-marketplace.md
+    - Shopify AI 어시스턴트 사례: research/shopify-ai-assistant.md
+    - Shopify Markets 다국가 연결 구조: research/shopify-markets-localization.md
     - Shopify 마케팅 기능: research/shopify-marketing-features.md
     - Shopify GraphQL 리포트: research/shopify-queryql-report.md
+    - 결제 수수료 원가 구조 분석: research/payment-fee-structure.md
+    - 경쟁사 UX 업데이트 벤치마킹: research/competitor-ux-updates.md
+    - 글로벌 커머스 UX 디자인 차이점: research/global-ux-design.md
+    - 발송 프로필 관리 필요성 검증: research/shipping-profile-validation.md
+    - YouTube Shopping 등록 절차: research/youtube-shopping-partner.md
     - 최신 통계 2025~2026: research/latest-stats-2025-2026.md
   - Spec:
     - Spec 우선순위: spec/spec-priority.md
@@ -93,6 +100,7 @@ nav:
     - "[P0] 마이그레이션": spec/migration.md
     - "[P0] 운영자 어드민": spec/operator-admin.md
     - "[P0] 모듈 기능 정의": spec/module-definition.md
+    - "[P0] 무통장입금·가상계좌": spec/payment-bank-transfer.md
     - "[P1] 통합 결제 대시보드": spec/unified-payment-dashboard.md
     - "[P1] 첫 매출 견인 도구": spec/first-sale-engine.md
     - "[P1] 통계·분석": spec/analytics-spec.md
@@ -102,9 +110,11 @@ nav:
     - "[P1] 국가별 설정 프리셋": spec/country-preset.md
     - "[P1] 글로벌 진출 지원": spec/global-launch.md
     - "[P1] 배송 연동": spec/shipping-integration.md
+    - "[P1] 구매 전환율 향상 기능": spec/conversion-rate-features.md
     - "[P2] 인플루언서 매칭": spec/influencer-matching.md
     - "[P2] 벤치마크 리포트": spec/benchmark-report.md
     - "[P2] AI 운영 어시스턴트": spec/ai-assistant.md
     - "[P2] AI 채팅 설정": spec/ai-chat-setting.md
     - "[P2] 글로벌 통합 대시보드": spec/global-dashboard.md
+    - "[P2] 마켓플레이스 연동": spec/marketplace-integration.md
     - "셀익스 연동": spec/sellex-integration.md
