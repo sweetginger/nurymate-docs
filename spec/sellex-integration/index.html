@@ -1,0 +1,4203 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="누리메이트 제품 전략, 시장 리서치, 기능 스펙">
+      
+      
+      
+        <link rel="canonical" href="https://sweetginger.github.io/nurymate-docs/spec/sellex-integration/">
+      
+      
+        <link rel="prev" href="../marketplace-integration/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>셀익스 연동 - 누리메이트 전략 문서</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sellex" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../.." title="누리메이트 전략 문서" class="md-header__button md-logo" aria-label="누리메이트 전략 문서" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            누리메이트 전략 문서
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              셀익스 연동
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  개요
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../strategy/product-plan/" class="md-tabs__link">
+          
+  
+  
+  전략
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../research/japan-korea-ecommerce/" class="md-tabs__link">
+          
+  
+  
+  리서치
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../spec-priority/" class="md-tabs__link">
+          
+  
+  
+  Spec
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="누리메이트 전략 문서" class="md-nav__button md-logo" aria-label="누리메이트 전략 문서" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    누리메이트 전략 문서
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    전략
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    전략
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/product-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    제품 기획
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/business-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    비즈니스 로드맵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/strategic-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    전략 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/pricing-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    수익 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/early-customer-acquisition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    초기 고객 확보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/new-seller-acquisition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    신규 창업자 확보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/organic-growth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    자연 유입 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/global-expansion-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글로벌 확장 로드맵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/vertical-expansion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    버티컬 확장
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/japan-gtm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 GTM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/api-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 정책
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    리서치
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    리서치
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/japan-korea-ecommerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본·한국 이커머스 문화 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-jp-payment-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 결제 불편 UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-japan-weaknesses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 약점 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-japan-payment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 결제
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-pricing-revenue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 수익 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/pg-stripe-support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stripe·PG 지원 조사
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/stripe-connect-countries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stripe Connect 국가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/pg-licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PG 라이선스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/local-pg-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    현지 PG 계약 난이도
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/paymentwall-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paymentwall 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/payoneer-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payoneer 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/korea-ecommerce-platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    한국 이커머스 경쟁 지형
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/japan-ec-saas-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 D2C EC SaaS 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/global-market-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글로벌 시장 개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/logistics-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    배송·3PL 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/sns-review-legal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SNS 리뷰 법적 검토
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/cafe24-pro-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/cafe24-app-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 앱 디자인
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/cafe24-analytics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/fashion-ecommerce-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    패션 이커머스 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/platform-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플랫폼 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/platform-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플랫폼 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/rakuten-amazon-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    라쿠텐·아마존 API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/sns-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SNS 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/review-platform-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    리뷰 플랫폼 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/japan-conveni-pickup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 편의점 픽업
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/korea-japan-trust-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    한일 신뢰 사례
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/closed-app-marketplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    클로즈드 앱 마켓플레이스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify AI 어시스턴트 사례
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-markets-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify Markets 다국가 연결 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-marketing-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 마케팅 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shopify-queryql-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify GraphQL 리포트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/payment-fee-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    결제 수수료 원가 구조 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/competitor-ux-updates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    경쟁사 UX 업데이트 벤치마킹
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/global-ux-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글로벌 커머스 UX 디자인 차이점
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/shipping-profile-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    발송 프로필 관리 필요성 검증
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/youtube-shopping-partner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    YouTube Shopping 등록 절차
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/latest-stats-2025-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    최신 통계 2025~2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Spec
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spec-priority/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec 우선순위
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../seller-store-creation-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 셀러 스토어 생성 UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../domain-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 멀티테넌시 도메인 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jp-payment-native/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 일본 결제 네이티브
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 국가별 단위 현지화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 마이그레이션
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operator-admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 운영자 어드민
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module-definition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 모듈 기능 정의
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../payment-bank-transfer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 무통장입금·가상계좌
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unified-payment-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 통합 결제 대시보드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../first-sale-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 첫 매출 견인 도구
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analytics-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 통계·분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sns-marketing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] SNS 마케팅 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sns-review-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] SNS 리뷰 수집
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../affiliate-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 어필리에이트 트래킹
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../country-preset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 국가별 설정 프리셋
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global-launch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 글로벌 진출 지원
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shipping-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 배송 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conversion-rate-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 구매 전환율 향상 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../convenience-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 운영 편의기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engagement-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 재방문율 향상 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../influencer-matching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 인플루언서 매칭
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmark-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 벤치마크 리포트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] AI 운영 어시스턴트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-chat-setting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] AI 채팅 설정
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 글로벌 통합 대시보드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marketplace-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 마켓플레이스 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    셀익스 연동
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    셀익스 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 셀익스 서비스 개요
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 셀익스 서비스 개요">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 한 줄 요약
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 주요 기능
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-oms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 셀메이트 OMS와의 관계
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 연동 목적 및 판매자 가치
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 연동 목적 및 판매자 가치">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 누리메이트 연동의 전략적 목적
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 판매자 가치 제안
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 누리메이트 비즈니스 가치
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 연동 플로우 설계
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 연동 플로우 설계">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 누리메이트 주문 발생 → 셀익스 자동 연동
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 수출신고 → 배송 추적 → 완료 상태 동기화
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 판매자 어드민 UI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 판매자 어드민 UI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 해외 배송 상태 통합 조회 (누리메이트 대시보드 내)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 셀익스 연동 활성화 설정 페이지
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 셀익스 미사용 판매자 온보딩
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 셀익스 미사용 판매자 온보딩">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-ux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 연동 활성화 유도 UX
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 셀익스 가입 안내 플로우
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 국가별 지원 포워더·특송사 목록 노출
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 국가별 지원 포워더·특송사 목록 노출">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 포워더 선택 UI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 국가별 지원 포워더 매핑 (초기 버전)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. API 연동 스펙 (개략)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. API 연동 스펙 (개략)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 누리메이트 → 셀익스: 주문 전달
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-webhook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 셀익스 → 누리메이트: 상태 업데이트 (Webhook)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 누리메이트 → 셀익스: 주문 취소·수정
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 구현 우선순위
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. 구현 우선순위">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-mvp-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 — MVP 연동 (3개월 이내)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-ux-36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 — UX 고도화 (3~6개월)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 — 고도화 (6개월 이후)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 리스크 및 대응 방안
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 셀익스 서비스 개요
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 셀익스 서비스 개요">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 한 줄 요약
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 주요 기능
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-oms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 셀메이트 OMS와의 관계
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 연동 목적 및 판매자 가치
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 연동 목적 및 판매자 가치">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 누리메이트 연동의 전략적 목적
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 판매자 가치 제안
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 누리메이트 비즈니스 가치
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 연동 플로우 설계
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 연동 플로우 설계">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 누리메이트 주문 발생 → 셀익스 자동 연동
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 수출신고 → 배송 추적 → 완료 상태 동기화
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 판매자 어드민 UI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 판매자 어드민 UI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 해외 배송 상태 통합 조회 (누리메이트 대시보드 내)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 셀익스 연동 활성화 설정 페이지
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 셀익스 미사용 판매자 온보딩
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 셀익스 미사용 판매자 온보딩">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-ux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 연동 활성화 유도 UX
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 셀익스 가입 안내 플로우
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 국가별 지원 포워더·특송사 목록 노출
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 국가별 지원 포워더·특송사 목록 노출">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 포워더 선택 UI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 국가별 지원 포워더 매핑 (초기 버전)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. API 연동 스펙 (개략)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. API 연동 스펙 (개략)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 누리메이트 → 셀익스: 주문 전달
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-webhook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 셀익스 → 누리메이트: 상태 업데이트 (Webhook)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 누리메이트 → 셀익스: 주문 취소·수정
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 구현 우선순위
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. 구현 우선순위">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-mvp-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 — MVP 연동 (3개월 이내)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-ux-36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 — UX 고도화 (3~6개월)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 — 고도화 (6개월 이후)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 리스크 및 대응 방안
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="sellex">셀익스(SellEX) 해외배송 모듈 연동 기획서<a class="headerlink" href="#sellex" title="Permanent link">&para;</a></h1>
+<ul>
+<li><strong>문서 버전</strong>: v1.0</li>
+<li><strong>작성일</strong>: 2026-03-06</li>
+<li><strong>태스크</strong>: [10-6]</li>
+</ul>
+<hr />
+<h2 id="1">1. 셀익스 서비스 개요<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1 한 줄 요약<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<p><strong>셀익스(SellEX)</strong>는 해외 판매처 주문 입력 → 배송 → 수출신고를 원스톱으로 처리하는 해외배송 관리 플랫폼이다. 셀메이트(Sellmate) 그룹이 운영하며, 직접 운송·풀필먼트는 수행하지 않고 <strong>플랫폼 간 연결과 서류 자동화에 집중</strong>한다.</p>
+<h3 id="12">1.2 주요 기능<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>기능</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>해외 판매처 주문 자동 수집</td>
+<td>Cafe24 글로벌몰, Rakuten, Qoo10, Shopify, Shopee 등 연동 마켓에서 주문 자동 수집</td>
+</tr>
+<tr>
+<td>원클릭 수출신고</td>
+<td>배송과 수출신고를 한 번에 처리. 1건부터 수량 제한 없이 지원</td>
+</tr>
+<tr>
+<td>라스트마일 배송 라벨 발행</td>
+<td>포워더·특송사별 표준 라벨 자동 생성</td>
+</tr>
+<tr>
+<td>통관용 데이터 생성</td>
+<td>HS코드·가격·구성품 정보 기반 통관 서류 자동화</td>
+</tr>
+<tr>
+<td>포워더 API 연계</td>
+<td>수집·전송·배송 상태 동기화</td>
+</tr>
+<tr>
+<td>운영 어드민</td>
+<td>접수/전송 결과, 실패 재시도, 이력 조회</td>
+</tr>
+</tbody>
+</table>
+<h3 id="13-oms">1.3 셀메이트 OMS와의 관계<a class="headerlink" href="#13-oms" title="Permanent link">&para;</a></h3>
+<p>셀익스 사용자는 셀메이트 서비스를 유료로 사용하지 않더라도, <strong>주문 수집 용도로 셀메이트 OMS 기능을 무료 제공</strong>받는다. 이는 누리메이트 연동 설계 시 중요한 포인트다 — 누리메이트의 주문을 셀메이트 OMS를 거치거나 셀익스에 직접 전달하는 방식 모두 검토가 필요하다.</p>
+<hr />
+<h2 id="2">2. 연동 목적 및 판매자 가치<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="21">2.1 누리메이트 연동의 전략적 목적<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<p>누리메이트는 한국 → 일본·글로벌 판매를 핵심 시장으로 설정하고 있다. 해외배송 기능은 누리메이트가 카페24 대비 갖춰야 할 차별화 포인트이며, 셀익스와의 연동은 이를 빠르게 실현하는 파트너십 모델이다.</p>
+<p>셀익스를 직접 구축하는 것이 아니라 <strong>연동 레이어</strong>로 연결함으로써:
+- 개발 리소스 절약 (수출신고 시스템은 규제 연계 복잡도가 높음)
+- 검증된 포워더 네트워크 즉시 활용
+- 판매자가 이미 알고 있는 셀익스 브랜드 신뢰도 활용</p>
+<h3 id="22">2.2 판매자 가치 제안<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>판매자 고통점</th>
+<th>셀익스 연동 후</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>해외 주문을 수동으로 별도 시스템에 입력</td>
+<td>누리메이트 주문 발생 시 셀익스에 자동 전달</td>
+</tr>
+<tr>
+<td>수출신고 절차를 모르거나 외주 처리</td>
+<td>원클릭 수출신고로 처리 시간 대폭 단축</td>
+</tr>
+<tr>
+<td>포워더별로 다른 라벨 형식 수동 작성</td>
+<td>포워더 선택 시 라벨 자동 생성</td>
+</tr>
+<tr>
+<td>배송 상태를 셀익스 어드민에서 별도 확인</td>
+<td>누리메이트 대시보드에서 통합 조회</td>
+</tr>
+<tr>
+<td>해외배송 진입 장벽 (최소 수량, 복잡한 절차)</td>
+<td>1건부터 수량 제한 없이 해외배송 가능</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23">2.3 누리메이트 비즈니스 가치<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<ul>
+<li>해외 판매 판매자의 누리메이트 선택 동기 강화</li>
+<li>셀익스 사용 판매자의 누리메이트 유입 채널 (셀메이트 생태계 교차 유입)</li>
+<li>추후 셀익스 유료 기능 연계 수익 분배 구조 검토 기반 마련</li>
+</ul>
+<hr />
+<h2 id="3">3. 연동 플로우 설계<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 누리메이트 주문 발생 → 셀익스 자동 연동<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<p><strong>전체 플로우</strong></p>
+<div class="highlight"><pre><span></span><code>[해외 구매자]
+    │  주문 완료
+    ▼
+[누리메이트 주문 시스템]
+    │  주문 상태: &quot;결제 완료&quot;
+    │
+    ├─ [국내 배송 주문] → 기존 배송 프로세스
+    │
+    └─ [해외 배송 주문] → 셀익스 연동 대상
+           │
+           ▼
+    [연동 활성화 여부 확인]
+       ├─ 비활성화: 판매자 어드민에 셀익스 연동 안내 배너 노출
+       └─ 활성화:
+              │
+              ▼
+       [주문 데이터 변환]  ← 누리메이트 주문 스키마 → 셀익스 API 포맷
+              │
+              ▼
+       [셀익스 API 전송]  POST /orders
+              │
+              ├─ 성공: 셀익스 주문 ID 저장 → 누리메이트 주문에 연결
+              └─ 실패: 오류 로그 + 판매자 알림 + 재시도 큐 등록
+</code></pre></div>
+<p><strong>연동 트리거 조건</strong></p>
+<table>
+<thead>
+<tr>
+<th>조건</th>
+<th>처리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>배송지 국가 = 한국</td>
+<td>셀익스 전송 안 함</td>
+</tr>
+<tr>
+<td>배송지 국가 ≠ 한국 + 셀익스 연동 활성화</td>
+<td>셀익스 자동 전송</td>
+</tr>
+<tr>
+<td>배송지 국가 ≠ 한국 + 셀익스 연동 비활성화</td>
+<td>판매자 어드민에 안내 배너</td>
+</tr>
+<tr>
+<td>부분 취소·환불 발생</td>
+<td>셀익스에 취소/수정 요청 전송</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32">3.2 수출신고 → 배송 추적 → 완료 상태 동기화<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<p><strong>상태 동기화 흐름</strong></p>
+<div class="highlight"><pre><span></span><code>[셀익스 내부 처리]                    [누리메이트 동기화]
+
+주문 접수 완료          ──Webhook──▶  주문 상태: &quot;해외배송 준비 중&quot;
+수출신고 완료           ──Webhook──▶  주문 상태: &quot;수출신고 완료&quot;
+라벨 발행 완료          ──Webhook──▶  주문 상태: &quot;배송 라벨 발행 완료&quot;
+포워더 픽업 완료        ──Webhook──▶  주문 상태: &quot;배송 중&quot;
+현지 배송 추적 업데이트  ──Webhook──▶  배송 추적 정보 업데이트 (구매자 노출)
+배송 완료               ──Webhook──▶  주문 상태: &quot;배송 완료&quot;
+반송/분실 발생          ──Webhook──▶  주문 상태: &quot;배송 이슈&quot; + 판매자 알림
+</code></pre></div>
+<p><strong>상태 코드 매핑 테이블</strong></p>
+<table>
+<thead>
+<tr>
+<th>셀익스 상태 코드</th>
+<th>누리메이트 주문 상태</th>
+<th>구매자 노출 문구</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RECEIVED</code></td>
+<td><code>overseas_received</code></td>
+<td>해외배송 준비 중</td>
+</tr>
+<tr>
+<td><code>EXPORT_DECLARED</code></td>
+<td><code>export_declared</code></td>
+<td>수출신고 완료</td>
+</tr>
+<tr>
+<td><code>LABEL_ISSUED</code></td>
+<td><code>label_issued</code></td>
+<td>배송 라벨 발행 완료</td>
+</tr>
+<tr>
+<td><code>PICKED_UP</code></td>
+<td><code>in_transit</code></td>
+<td>배송 중</td>
+</tr>
+<tr>
+<td><code>IN_TRANSIT</code></td>
+<td><code>in_transit</code></td>
+<td>배송 중 (현지 추적 중)</td>
+</tr>
+<tr>
+<td><code>OUT_FOR_DELIVERY</code></td>
+<td><code>out_for_delivery</code></td>
+<td>배달 중</td>
+</tr>
+<tr>
+<td><code>DELIVERED</code></td>
+<td><code>delivered</code></td>
+<td>배송 완료</td>
+</tr>
+<tr>
+<td><code>RETURNED</code></td>
+<td><code>return_in_progress</code></td>
+<td>반송 처리 중</td>
+</tr>
+<tr>
+<td><code>LOST</code></td>
+<td><code>delivery_issue</code></td>
+<td>배송 이슈 (고객 센터 문의 안내)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Webhook 수신 처리</strong></p>
+<ul>
+<li>엔드포인트: <code>POST /api/v1/webhooks/sellex</code></li>
+<li>인증: HMAC-SHA256 서명 검증 (셀익스 Secret Key 기반)</li>
+<li>멱등성 보장: <code>sellex_event_id</code> 기준 중복 처리 방지</li>
+<li>실패 재시도: 셀익스 측 3회 재전송 (5분·15분·1시간 간격)</li>
+<li>수신 실패 시: 누리메이트 측 폴링 보조 (1시간 주기)</li>
+</ul>
+<hr />
+<h2 id="4-ui">4. 판매자 어드민 UI<a class="headerlink" href="#4-ui" title="Permanent link">&para;</a></h2>
+<h3 id="41">4.1 해외 배송 상태 통합 조회 (누리메이트 대시보드 내)<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<p>누리메이트 주문 관리 화면 내에 해외배송 상태를 통합하여 표시한다. 판매자가 셀익스 어드민을 별도로 열지 않아도 된다.</p>
+<p><strong>주문 목록 통합 뷰</strong></p>
+<div class="highlight"><pre><span></span><code>[주문 목록]
+
+주문번호   구매자   상품명         금액      배송지     배송 상태           셀익스 상태
+─────────────────────────────────────────────────────────────────────────────────
+#10234   김민준   카고팬츠 M     ¥12,800   도쿄, JP   배송 중 🟡         추적번호: JX123456789JP
+#10231   Tanaka   후드티 XL     ¥8,500    오사카, JP  배송 완료 ✅        2026-02-28 배달 완료
+#10229   박지우   반팔티 S      ¥6,200    상하이, CN  수출신고 완료 🔵    셀익스 처리 중
+#10225   홍길동   청바지 L      ¥15,000   Seoul, KR  배송 준비 중 ⚪     국내 배송 (셀익스 미사용)
+</code></pre></div>
+<p><strong>개별 주문 상세 — 해외배송 섹션</strong></p>
+<div class="highlight"><pre><span></span><code>[주문 #10234 상세]
+
+─────────────────────────────────
+해외배송 (셀익스 연동)
+─────────────────────────────────
+셀익스 주문 ID: SEX-2026-00234
+포워더: CJ 대한통운 국제특송
+추적번호: JX123456789JP
+수출신고번호: 12ABC12345-0234
+
+[배송 타임라인]
+✅ 수출신고 완료   2026-02-20 09:14
+✅ 라벨 발행      2026-02-20 10:05
+✅ 픽업 완료      2026-02-21 14:30
+🟡 배송 중        2026-02-22 현재 (도쿄 인바운드 처리 중)
+
+[배송 추적 원문]
+&quot;Arrived at customs clearance facility in Tokyo&quot;
+─────────────────────────────────
+</code></pre></div>
+<h3 id="42">4.2 셀익스 연동 활성화 설정 페이지<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<p><strong>접근 경로</strong>: 누리메이트 어드민 → 설정 → 해외배송 → 셀익스 연동</p>
+<p><strong>설정 화면 구성</strong></p>
+<div class="highlight"><pre><span></span><code>[셀익스(SellEX) 해외배송 연동 설정]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+연동 상태:  ○ 비활성화  ●활성화
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+셀익스 API 키
+[●●●●●●●●●●●●●●●●]  [수정]  [검증]
+
+셀익스 Webhook Secret
+[●●●●●●●●●●●●●●●●]  [수정]
+
+연동 대상 국가
+  ☑ 일본 (JP)
+  ☑ 중국 (CN)
+  ☑ 미국 (US)
+  ☑ 그 외 전체
+
+자동 전송 조건
+  ● 결제 완료 즉시 자동 전송
+  ○ 판매자 수동 전송 (개별 확인 후 발송)
+
+기본 포워더 설정
+  [CJ대한통운 국제특송 ▼]  (셀익스에서 선택 가능한 목록 연동)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[연동 테스트]   [저장]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+</code></pre></div>
+<p><strong>API 키 검증 프로세스</strong></p>
+<ol>
+<li>판매자가 API 키 입력 후 [검증] 클릭</li>
+<li>누리메이트 백엔드에서 셀익스 API 호출 (인증 확인용 엔드포인트)</li>
+<li>성공: "연동 확인 완료 (셀익스 계정: example@domain.com)" 표시</li>
+<li>실패: 오류 메시지 + 셀익스 가이드 링크</li>
+</ol>
+<hr />
+<h2 id="5">5. 셀익스 미사용 판매자 온보딩<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<h3 id="51-ux">5.1 연동 활성화 유도 UX<a class="headerlink" href="#51-ux" title="Permanent link">&para;</a></h3>
+<p>셀익스 연동을 아직 설정하지 않은 판매자가 해외 주문을 받았을 때, 누리메이트가 적극적으로 셀익스 연동을 안내한다.</p>
+<p><strong>트리거 시나리오 1: 첫 해외 주문 발생</strong></p>
+<div class="highlight"><pre><span></span><code>[알림 배너 — 주문 관리 페이지 상단]
+
+🌏 해외 주문이 도착했습니다!
+일본(도쿄) 배송 주문 #10234가 결제 완료되었습니다.
+
+셀익스(SellEX)를 연동하면 수출신고·라벨 발행을 원클릭으로 처리할 수 있습니다.
+1건부터 수량 제한 없이 해외배송이 가능합니다.
+
+[셀익스 연동하기 →]   [나중에]
+</code></pre></div>
+<p><strong>트리거 시나리오 2: 설정 &gt; 해외배송 탭 진입</strong></p>
+<p>셀익스 연동 설정 페이지 상단에 "셀익스란?" 소개 섹션 노출:</p>
+<div class="highlight"><pre><span></span><code>[셀익스(SellEX) 해외배송 플랫폼]
+
+해외 판매처 주문 수집 → 배송 → 수출신고를 원스톱으로 처리합니다.
+- 1건부터 수량 제한 없이 해외배송
+- 원클릭 수출신고 (복잡한 세관 절차 자동화)
+- CJ대한통운, EMS, DHL, FedEx 등 포워더 연계
+- 누리메이트 연동 시 주문 자동 전송
+
+[셀익스 무료 시작하기 →]  (새 탭: sellmate.io/sellEX)
+셀익스 계정이 있으신가요? → [API 키 입력하여 연동하기]
+</code></pre></div>
+<h3 id="52">5.2 셀익스 가입 안내 플로우<a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
+<p>셀익스 계정이 없는 판매자를 위한 가입 안내 플로우.</p>
+<div class="highlight"><pre><span></span><code>[Step 1] 누리메이트 어드민에서 &quot;셀익스 연동하기&quot; 클릭
+    │
+    ▼
+[Step 2] 셀익스 소개 모달 (누리메이트 내)
+  - 주요 기능 3가지 강조 (수출신고 원클릭 / 1건부터 가능 / 주요 포워더 연계)
+  - &quot;셀익스 가입하기 →&quot; 버튼 (sellmate.io 새 탭 오픈)
+    │
+    ▼
+[Step 3] 셀익스 가입 완료 후
+  - 셀익스 어드민 → API 키 발급
+    │
+    ▼
+[Step 4] 누리메이트로 복귀
+  - 설정 페이지에서 API 키 입력 → 검증 → 저장
+    │
+    ▼
+[Step 5] 연동 완료 확인
+  - &quot;셀익스 연동이 완료되었습니다. 다음 해외 주문부터 자동으로 처리됩니다.&quot; 안내
+</code></pre></div>
+<p><strong>가입 유도 메트릭</strong></p>
+<ul>
+<li>해외 주문 발생 후 셀익스 연동 페이지 방문율</li>
+<li>방문 → 연동 완료 전환율</li>
+<li>연동 완료 후 첫 셀익스 자동 전송 성공률</li>
+</ul>
+<hr />
+<h2 id="6">6. 국가별 지원 포워더·특송사 목록 노출<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h3 id="61-ui">6.1 포워더 선택 UI<a class="headerlink" href="#61-ui" title="Permanent link">&para;</a></h3>
+<p>주문 발송 처리 시, 해당 배송 국가에서 셀익스가 지원하는 포워더·특송사 목록을 표시한다.</p>
+<div class="highlight"><pre><span></span><code>[발송 처리 — 주문 #10234]
+
+배송 국가: 일본 (JP)
+예상 배송지: 도쿄도 시부야구
+
+[포워더 선택]
+───────────────────────────────
+  ● CJ대한통운 국제특송   평균 3~5일  ¥1,200~
+    (K-Packet, EMS 포함)
+  ○ EMS (우편)            평균 4~7일  ¥900~
+  ○ DHL Express           평균 2~3일  ¥3,500~
+  ○ FedEx International   평균 2~3일  ¥3,800~
+  ○ 우리로·판토스         평균 5~8일  ¥1,000~
+───────────────────────────────
+[선택한 포워더로 셀익스 발송 처리 →]
+</code></pre></div>
+<h3 id="62">6.2 국가별 지원 포워더 매핑 (초기 버전)<a class="headerlink" href="#62" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>배송 국가</th>
+<th>지원 포워더·특송사</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>일본 (JP)</td>
+<td>CJ대한통운 국제특송, EMS, DHL, FedEx, K-Packet, 우리로</td>
+</tr>
+<tr>
+<td>중국 (CN)</td>
+<td>CJ대한통운, DHL, FedEx, SF Express 연계</td>
+</tr>
+<tr>
+<td>미국 (US)</td>
+<td>DHL, FedEx, UPS, USPS 연계</td>
+</tr>
+<tr>
+<td>동남아시아</td>
+<td>DHL, FedEx, J&amp;T Express 연계</td>
+</tr>
+<tr>
+<td>그 외</td>
+<td>EMS, DHL, FedEx</td>
+</tr>
+</tbody>
+</table>
+<p>포워더 목록은 셀익스 API로부터 실시간으로 조회하며, 누리메이트 측에서 하드코딩하지 않는다.</p>
+<hr />
+<h2 id="7-api">7. API 연동 스펙 (개략)<a class="headerlink" href="#7-api" title="Permanent link">&para;</a></h2>
+<h3 id="71">7.1 누리메이트 → 셀익스: 주문 전달<a class="headerlink" href="#71" title="Permanent link">&para;</a></h3>
+<p><strong>엔드포인트</strong></p>
+<div class="highlight"><pre><span></span><code>POST https://api.sellmate.io/sellex/v1/orders
+Authorization: Bearer {SELLEX_API_KEY}
+Content-Type: application/json
+</code></pre></div>
+<p><strong>요청 페이로드 (개략)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;external_order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nurymate-10234&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;merchant_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nurymate-merchant-001&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;order_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-20T09:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;receiver&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;田中 太郎&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name_en&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tanaka Taro&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;phone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;+81-90-1234-5678&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;address_line1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;渋谷区道玄坂1-1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;city&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;渋谷区&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;東京都&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;postal_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;150-0043&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;country_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JP&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;product_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;카고팬츠&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;product_name_en&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cargo Pants&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;hs_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6203429090&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;unit_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12800</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JPY&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;origin_country&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;KR&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;shipping&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;forwarder_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CJ_INTL&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;service_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXPRESS&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;declaration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;declared_value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12800</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;declared_currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JPY&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;purpose&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GIFT&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>응답</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;sellex_order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SEX-2026-00234&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RECEIVED&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;estimated_label_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-20T11:00:00Z&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="72-webhook">7.2 셀익스 → 누리메이트: 상태 업데이트 (Webhook)<a class="headerlink" href="#72-webhook" title="Permanent link">&para;</a></h3>
+<p><strong>엔드포인트 (누리메이트 수신)</strong></p>
+<div class="highlight"><pre><span></span><code>POST https://api.nurymate.com/api/v1/webhooks/sellex
+X-Sellex-Signature: sha256={HMAC_SIGNATURE}
+Content-Type: application/json
+</code></pre></div>
+<p><strong>페이로드 예시</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;event_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;evt-sellex-abc123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;event_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;order.status_updated&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;occurred_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-21T14:30:00Z&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;sellex_order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SEX-2026-00234&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;external_order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nurymate-10234&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PICKED_UP&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tracking_number&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JX123456789JP&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;forwarder&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CJ_INTL&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tracking_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://trace.cjlogistics.com/JX123456789JP&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>누리메이트 처리 로직</strong></p>
+<ol>
+<li>HMAC 서명 검증 → 실패 시 401 반환</li>
+<li><code>event_id</code> 중복 체크 → 중복 시 200 반환 (멱등성)</li>
+<li><code>external_order_id</code> 기준 누리메이트 주문 조회</li>
+<li>주문 상태 업데이트 + 추적 정보 저장</li>
+<li>구매자 알림 발송 (이메일·SMS) — 해당되는 경우</li>
+<li>응답: <code>200 OK</code></li>
+</ol>
+<h3 id="73">7.3 누리메이트 → 셀익스: 주문 취소·수정<a class="headerlink" href="#73" title="Permanent link">&para;</a></h3>
+<p><strong>취소 요청</strong></p>
+<div class="highlight"><pre><span></span><code>DELETE https://api.sellmate.io/sellex/v1/orders/{sellex_order_id}
+</code></pre></div>
+<p><strong>수량·수령자 수정 요청</strong></p>
+<div class="highlight"><pre><span></span><code>PATCH https://api.sellmate.io/sellex/v1/orders/{sellex_order_id}
+</code></pre></div>
+<p>취소·수정은 셀익스에서 수출신고 또는 라벨 발행이 완료된 이후에는 불가능하다. 해당 상태에서의 취소는 셀익스 어드민에서 수동 처리해야 하며, 누리메이트는 판매자에게 이를 안내한다.</p>
+<hr />
+<h2 id="8">8. 구현 우선순위<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<h3 id="phase-1-mvp-3">Phase 1 — MVP 연동 (3개월 이내)<a class="headerlink" href="#phase-1-mvp-3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>기능</th>
+<th>우선순위</th>
+<th>담당</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>셀익스 API 키 설정 페이지 (어드민)</td>
+<td>P0</td>
+<td>FE + BE</td>
+</tr>
+<tr>
+<td>해외 주문 셀익스 자동 전송</td>
+<td>P0</td>
+<td>BE</td>
+</tr>
+<tr>
+<td>Webhook 수신 및 주문 상태 업데이트</td>
+<td>P0</td>
+<td>BE</td>
+</tr>
+<tr>
+<td>주문 목록에 셀익스 상태 컬럼 추가</td>
+<td>P0</td>
+<td>FE</td>
+</tr>
+<tr>
+<td>API 키 검증 기능</td>
+<td>P1</td>
+<td>BE</td>
+</tr>
+<tr>
+<td>셀익스 연동 안내 배너 (미연동 판매자)</td>
+<td>P1</td>
+<td>FE</td>
+</tr>
+<tr>
+<td>오류 발생 시 판매자 알림</td>
+<td>P1</td>
+<td>BE</td>
+</tr>
+</tbody>
+</table>
+<h3 id="phase-2-ux-36">Phase 2 — UX 고도화 (3~6개월)<a class="headerlink" href="#phase-2-ux-36" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>기능</th>
+<th>우선순위</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>주문 상세 페이지 배송 타임라인 UI</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>포워더 선택 UI (주문별 선택)</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>국가별 지원 포워더 목록 실시간 조회</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>셀익스 온보딩 모달 및 가입 플로우</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>배송 완료 시 구매자 자동 알림 (이메일·SMS)</td>
+<td>P2</td>
+</tr>
+<tr>
+<td>부분 취소·환불 셀익스 연동</td>
+<td>P2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="phase-3-6">Phase 3 — 고도화 (6개월 이후)<a class="headerlink" href="#phase-3-6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>기능</th>
+<th>우선순위</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>셀익스 통계 대시보드 (국가별 배송 현황, 포워더별 성공률)</td>
+<td>P2</td>
+</tr>
+<tr>
+<td>HS코드 자동 추천 (상품명 기반 AI 제안)</td>
+<td>P2</td>
+</tr>
+<tr>
+<td>다중 주문 일괄 셀익스 전송</td>
+<td>P2</td>
+</tr>
+<tr>
+<td>셀익스 수수료 누리메이트 청구서 통합</td>
+<td>P3</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="9">9. 리스크 및 대응 방안<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>리스크</th>
+<th>가능성</th>
+<th>영향도</th>
+<th>대응 방안</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>셀익스 API 장애</td>
+<td>중</td>
+<td>높음</td>
+<td>실패 시 큐 보관 → 자동 재시도 (3회, 5분 간격). 판매자 알림 즉시 발송</td>
+</tr>
+<tr>
+<td>Webhook 미수신</td>
+<td>중</td>
+<td>중간</td>
+<td>1시간 주기 상태 폴링 보조 로직 구현</td>
+</tr>
+<tr>
+<td>HS코드 오류로 통관 반려</td>
+<td>높음</td>
+<td>높음</td>
+<td>상품 등록 시 HS코드 입력 유도 UI. 공란 시 발송 전 경고</td>
+</tr>
+<tr>
+<td>셀익스 API 스펙 변경</td>
+<td>낮음</td>
+<td>높음</td>
+<td>버전 관리 (v1 명시), 변경 알림 채널 확보 (셀메이트 파트너십 계약 시 포함)</td>
+</tr>
+<tr>
+<td>판매자 API 키 노출</td>
+<td>낮음</td>
+<td>매우 높음</td>
+<td>API 키 암호화 저장 (DB 레벨 AES-256). 키 재발급 기능 제공</td>
+</tr>
+<tr>
+<td>셀익스 미가입 판매자 불편</td>
+<td>높음</td>
+<td>중간</td>
+<td>온보딩 플로우 최소화 (5단계 이내). 가입 없이 CSV 수동 처리 fallback 제공</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>참조: SellEX 공식 https://sellmate.io/sellEX | 셀메이트 홈페이지 https://sellmate.io/ | 한국경제TV https://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A202108200161</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.top", "navigation.sections", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

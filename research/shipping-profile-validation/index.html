@@ -1,0 +1,4419 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="누리메이트 제품 전략, 시장 리서치, 기능 스펙">
+      
+      
+      
+        <link rel="canonical" href="https://sweetginger.github.io/nurymate-docs/research/shipping-profile-validation/">
+      
+      
+        <link rel="prev" href="../global-ux-design/">
+      
+      
+        <link rel="next" href="../youtube-shopping-partner/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>발송 프로필 관리 필요성 검증 - 누리메이트 전략 문서</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../.." title="누리메이트 전략 문서" class="md-header__button md-logo" aria-label="누리메이트 전략 문서" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            누리메이트 전략 문서
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              발송 프로필 관리 필요성 검증
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  개요
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../strategy/product-plan/" class="md-tabs__link">
+          
+  
+  
+  전략
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../japan-korea-ecommerce/" class="md-tabs__link">
+          
+  
+  
+  리서치
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../spec/spec-priority/" class="md-tabs__link">
+          
+  
+  
+  Spec
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="누리메이트 전략 문서" class="md-nav__button md-logo" aria-label="누리메이트 전략 문서" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    누리메이트 전략 문서
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    전략
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    전략
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/product-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    제품 기획
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/business-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    비즈니스 로드맵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/strategic-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    전략 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/pricing-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    수익 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/early-customer-acquisition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    초기 고객 확보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/new-seller-acquisition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    신규 창업자 확보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/organic-growth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    자연 유입 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/global-expansion-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글로벌 확장 로드맵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/vertical-expansion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    버티컬 확장
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/japan-gtm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 GTM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../strategy/api-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 정책
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    리서치
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    리서치
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../japan-korea-ecommerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본·한국 이커머스 문화 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-jp-payment-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 결제 불편 UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-japan-weaknesses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 약점 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-japan-payment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 일본 결제
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-pricing-revenue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 수익 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pg-stripe-support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stripe·PG 지원 조사
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stripe-connect-countries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stripe Connect 국가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pg-licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PG 라이선스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../local-pg-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    현지 PG 계약 난이도
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paymentwall-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paymentwall 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../payoneer-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payoneer 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../korea-ecommerce-platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    한국 이커머스 경쟁 지형
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../japan-ec-saas-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 D2C EC SaaS 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global-market-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글로벌 시장 개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logistics-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    배송·3PL 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sns-review-legal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SNS 리뷰 법적 검토
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cafe24-pro-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cafe24-app-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 앱 디자인
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cafe24-analytics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카페24 Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fashion-ecommerce-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    패션 이커머스 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../platform-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플랫폼 비교
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../platform-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    플랫폼 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rakuten-amazon-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    라쿠텐·아마존 API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sns-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SNS 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../review-platform-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    리뷰 플랫폼 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../japan-conveni-pickup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    일본 편의점 픽업
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../korea-japan-trust-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    한일 신뢰 사례
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../closed-app-marketplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    클로즈드 앱 마켓플레이스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify AI 어시스턴트 사례
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-markets-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify Markets 다국가 연결 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-marketing-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify 마케팅 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shopify-queryql-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shopify GraphQL 리포트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../payment-fee-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    결제 수수료 원가 구조 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../competitor-ux-updates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    경쟁사 UX 업데이트 벤치마킹
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global-ux-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글로벌 커머스 UX 디자인 차이점
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    발송 프로필 관리 필요성 검증
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    발송 프로필 관리 필요성 검증
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 셀러 규모별 발송 프로필 필요성 분석
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 셀러 규모별 발송 프로필 필요성 분석">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 분석 프레임
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 소호 셀러 (1인, 단일 발송처)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 중소 셀러 (한국+일본 복수 창고)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-3pl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 기업형 셀러 (국가별 3PL 운영)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 셀러 규모별 요약
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 경쟁사 발송 프로필 구현 방식 벤치마크
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 경쟁사 발송 프로필 구현 방식 벤치마크">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-shopify-locations-shipping-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Shopify Locations + Shipping Profiles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Shopify Locations + Shipping Profiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        구조 개요
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2025년 중요 변경 사항
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shopify의 발송 프로필 구성 항목
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shopify_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shopify의 한계
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 카페24
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 카페24">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        구조 개요
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-magento-adobe-commerce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Magento / Adobe Commerce
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 Magento / Adobe Commerce">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        구조 개요
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-woocommerce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 WooCommerce
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-bigcommerce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 BigCommerce
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 경쟁사 비교 요약
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 발송 프로필 정보 항목 정의
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 발송 프로필 정보 항목 정의">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 기본 정보
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 출발 국가·주소 (창고/사업장)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 이용 택배사
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 배송 가능 국가·지역 범위
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 국제배송 통관 정보
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 배송비 정책 연결
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-ux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 다국가 운영 셀러를 위한 프로필 전환 UX
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 다국가 운영 셀러를 위한 프로필 전환 UX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 주문 생성 시 프로필 선택 플로우
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 자동 선택 우선순위 규칙 (판매자 설정 가능)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 누리메이트 구현 우선순위 및 권장 사항
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 누리메이트 구현 우선순위 및 권장 사항">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-mvpp0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 MVP(P0) 최소 구현 범위
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-p1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 P1 구현 범위 (일본 진출 지원 전 선행)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 결론 및 권장 방향
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 결론 및 권장 방향">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 발송 프로필 기능은 필요하다 — 단, 단계적으로
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Shopify 모델을 기준으로 설계
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 카페24 대비 명확한 개선 포인트
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 권장 구현 로드맵
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        출처
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../youtube-shopping-partner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    YouTube Shopping 등록 절차
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../latest-stats-2025-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    최신 통계 2025~2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Spec
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/spec-priority/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec 우선순위
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/seller-store-creation-ux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 셀러 스토어 생성 UX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/domain-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 멀티테넌시 도메인 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/jp-payment-native/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 일본 결제 네이티브
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/unit-localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 국가별 단위 현지화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 마이그레이션
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/operator-admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 운영자 어드민
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/module-definition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 모듈 기능 정의
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/payment-bank-transfer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P0] 무통장입금·가상계좌
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/unified-payment-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 통합 결제 대시보드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/first-sale-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 첫 매출 견인 도구
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/analytics-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 통계·분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/sns-marketing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] SNS 마케팅 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/sns-review-collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] SNS 리뷰 수집
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/affiliate-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 어필리에이트 트래킹
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/country-preset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 국가별 설정 프리셋
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/global-launch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 글로벌 진출 지원
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/shipping-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 배송 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/conversion-rate-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 구매 전환율 향상 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/convenience-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P1] 운영 편의기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/engagement-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 재방문율 향상 기능
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/influencer-matching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 인플루언서 매칭
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/benchmark-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 벤치마크 리포트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] AI 운영 어시스턴트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/ai-chat-setting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] AI 채팅 설정
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/global-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 글로벌 통합 대시보드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/marketplace-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [P2] 마켓플레이스 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec/sellex-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    셀익스 연동
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 셀러 규모별 발송 프로필 필요성 분석
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 셀러 규모별 발송 프로필 필요성 분석">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 분석 프레임
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 소호 셀러 (1인, 단일 발송처)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 중소 셀러 (한국+일본 복수 창고)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-3pl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 기업형 셀러 (국가별 3PL 운영)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 셀러 규모별 요약
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 경쟁사 발송 프로필 구현 방식 벤치마크
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 경쟁사 발송 프로필 구현 방식 벤치마크">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-shopify-locations-shipping-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Shopify Locations + Shipping Profiles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Shopify Locations + Shipping Profiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        구조 개요
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2025년 중요 변경 사항
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shopify의 발송 프로필 구성 항목
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shopify_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shopify의 한계
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 카페24
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 카페24">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        구조 개요
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-magento-adobe-commerce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Magento / Adobe Commerce
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 Magento / Adobe Commerce">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        구조 개요
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-woocommerce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 WooCommerce
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-bigcommerce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 BigCommerce
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 경쟁사 비교 요약
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 발송 프로필 정보 항목 정의
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 발송 프로필 정보 항목 정의">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 기본 정보
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 출발 국가·주소 (창고/사업장)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 이용 택배사
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 배송 가능 국가·지역 범위
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 국제배송 통관 정보
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 배송비 정책 연결
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-ux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 다국가 운영 셀러를 위한 프로필 전환 UX
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 다국가 운영 셀러를 위한 프로필 전환 UX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 주문 생성 시 프로필 선택 플로우
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 자동 선택 우선순위 규칙 (판매자 설정 가능)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 누리메이트 구현 우선순위 및 권장 사항
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 누리메이트 구현 우선순위 및 권장 사항">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-mvpp0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 MVP(P0) 최소 구현 범위
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-p1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 P1 구현 범위 (일본 진출 지원 전 선행)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 결론 및 권장 방향
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 결론 및 권장 방향">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 발송 프로필 기능은 필요하다 — 단, 단계적으로
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-shopify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Shopify 모델을 기준으로 설계
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 카페24 대비 명확한 개선 포인트
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 권장 구현 로드맵
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        출처
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">발송 프로필 관리 기능 필요성 검증<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>조사 기준일: 2026년 3월
+관련 태스크: [17-11]</p>
+</blockquote>
+<hr />
+<h2 id="1">1. 셀러 규모별 발송 프로필 필요성 분석<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1 분석 프레임<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<p>"발송 프로필"이란 셀러가 주문을 처리할 때 사용하는 발송 출발지(창고·사업장)·택배사·배송 가능 지역·통관 정보의 묶음이다. 셀러가 하나의 발송지에서 하나의 택배사만 이용한다면 프로필 개념은 불필요하다. 복수의 발송지 또는 복수의 택배사를 운영할 때 비로소 "프로필 단위 관리"의 가치가 생긴다.</p>
+<h3 id="12-1">1.2 소호 셀러 (1인, 단일 발송처)<a class="headerlink" href="#12-1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>운영 형태</td>
+<td>자택 또는 소규모 작업실에서 직접 포장·발송</td>
+</tr>
+<tr>
+<td>발송지 수</td>
+<td>1개 (고정)</td>
+</tr>
+<tr>
+<td>이용 택배사</td>
+<td>1~2개 (주로 CJ대한통운 또는 우체국)</td>
+</tr>
+<tr>
+<td>배송 국가</td>
+<td>대부분 국내 단독. 해외는 EMS·국제소포로 산발 처리</td>
+</tr>
+<tr>
+<td>복수 프로필 필요성</td>
+<td><strong>낮음</strong></td>
+</tr>
+</tbody>
+</table>
+<p>소호 셀러는 발송지 1개, 택배사 1개로 운영하는 것이 일반적이다. 이들에게 복수 프로필 등록 UI를 강제하면 온보딩 마찰이 오히려 증가한다. MVP에서는 기본 발송지 1개 + 기본 택배사 선택으로 충분하되, 이후 추가 발송지를 등록할 수 있는 확장 경로를 열어두는 것이 적합하다.</p>
+<h3 id="13">1.3 중소 셀러 (한국+일본 복수 창고)<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>운영 형태</td>
+<td>한국 본사 창고 + 일본 현지 3PL 창고 병행 운영</td>
+</tr>
+<tr>
+<td>발송지 수</td>
+<td>2개 이상 (국가 단위로 분리)</td>
+</tr>
+<tr>
+<td>이용 택배사</td>
+<td>한국: CJ대한통운·한진·롯데 / 일본: 야마토·사가와·일본우편</td>
+</tr>
+<tr>
+<td>배송 국가</td>
+<td>한국→국내+해외, 일본→일본 내 + 인접 국가</td>
+</tr>
+<tr>
+<td>복수 프로필 필요성</td>
+<td><strong>높음</strong></td>
+</tr>
+</tbody>
+</table>
+<p>이 규모의 셀러는 창고 위치에 따라 이용 가능한 택배사가 완전히 다르고, 발송지별 배송 가능 국가·지역도 다르다. 예를 들어 한국 창고에서 발송하는 경우 국제배송 통관 서류(수출신고·HS코드)가 필요하지만, 일본 창고에서 일본 내 배송이라면 통관 절차가 불필요하다. 주문 생성 시 "어떤 창고에서 발송할지"를 프로필 단위로 선택하는 UX가 필요하다.</p>
+<h3 id="14-3pl">1.4 기업형 셀러 (국가별 3PL 운영)<a class="headerlink" href="#14-3pl" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>운영 형태</td>
+<td>한국·일본·동남아 각국별 3PL 제휴, 글로벌 OMS 연동</td>
+</tr>
+<tr>
+<td>발송지 수</td>
+<td>3개 이상 (국가별 다수)</td>
+</tr>
+<tr>
+<td>이용 택배사</td>
+<td>국가별로 상이한 캐리어 계약</td>
+</tr>
+<tr>
+<td>배송 국가</td>
+<td>국가별로 서비스 범위 구분 운영</td>
+</tr>
+<tr>
+<td>복수 프로필 필요성</td>
+<td><strong>필수</strong></td>
+</tr>
+</tbody>
+</table>
+<p>기업형 셀러는 발송 국가에 따른 세관 번호(EORI·통관고유부호), HS코드 기본값, 발송인 정보가 프로필마다 상이하다. OMS·WMS 시스템과 연동 시 프로필 ID를 기준으로 배송 처리 플로우가 분기되어야 하므로, 발송 프로필을 독립된 엔티티로 관리하는 데이터 모델이 필수다.</p>
+<h3 id="15">1.5 셀러 규모별 요약<a class="headerlink" href="#15" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>셀러 유형</th>
+<th>발송지 수</th>
+<th>복수 프로필 필요성</th>
+<th>MVP 포함 여부</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>소호 (1인)</td>
+<td>1</td>
+<td>낮음</td>
+<td>기본 설정으로 충분</td>
+</tr>
+<tr>
+<td>중소 (한+일 창고)</td>
+<td>2~3</td>
+<td>높음</td>
+<td>프로필 추가 기능 필요</td>
+</tr>
+<tr>
+<td>기업형 (다국 3PL)</td>
+<td>3+</td>
+<td>필수</td>
+<td>완전한 프로필 관리 UI 필요</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2">2. 경쟁사 발송 프로필 구현 방식 벤치마크<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="21-shopify-locations-shipping-profiles">2.1 Shopify Locations + Shipping Profiles<a class="headerlink" href="#21-shopify-locations-shipping-profiles" title="Permanent link">&para;</a></h3>
+<h4 id="_2">구조 개요<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p>Shopify는 Location과 Delivery Profile(DeliveryProfile) 두 개념을 분리하여 관리한다.</p>
+<div class="highlight"><pre><span></span><code>DeliveryProfile (배송 프로필)
+├── locationGroups (발송지 그룹)
+│   ├── location[] (창고·거점 묶음)
+│   └── locationGroupZones (배송 가능 구역)
+│       ├── zone[] (국가/지역 그룹)
+│       └── methodDefinitions[] (배송 방식 + 요금)
+│           ├── DeliveryRateDefinition (고정 요금)
+│           └── DeliveryParticipant (동적 요금 — Carrier Service API 연동)
+└── products[] (이 프로필이 적용되는 상품 목록)
+</code></pre></div>
+<p><strong>핵심 동작 원리</strong>:
+- 셀러는 창고(Location)를 여러 개 등록하고, 배송 프로필 내에서 창고를 "Location Group"으로 묶는다.
+- 각 Location Group마다 독립적인 배송 구역(Zone)과 배송비를 설정할 수 있다.
+- 상품별로 어떤 배송 프로필을 사용할지 지정한다. 즉 "이 상품은 한국 창고에서만 발송", "저 상품은 일본 창고에서도 발송 가능" 구분이 가능하다.</p>
+<h4 id="2025">2025년 중요 변경 사항<a class="headerlink" href="#2025" title="Permanent link">&para;</a></h4>
+<p>2025년 7월~9월, Shopify는 모든 스토어를 <strong>"설정된 배송 구역 내에서만 판매(Sell only within configured shipping zones)"</strong> 모드로 전환 완료했다. 이로 인해 각 Location이 서비스할 배송 구역을 명시적으로 지정하지 않으면 해당 Location의 재고가 고객에게 노출되지 않는다. 이는 복수 창고 운영 셀러에게 배송 프로필 설정이 선택이 아닌 필수가 됐음을 의미한다.</p>
+<h4 id="shopify">Shopify의 발송 프로필 구성 항목<a class="headerlink" href="#shopify" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Location (발송지)</td>
+<td>창고명, 주소(국가·도시·우편번호), 전화번호</td>
+</tr>
+<tr>
+<td>Location Group</td>
+<td>동일한 배송 조건을 공유하는 발송지 묶음</td>
+</tr>
+<tr>
+<td>Zone</td>
+<td>배송 가능 국가/지역 (예: 일본, 동남아, 미국 등)</td>
+</tr>
+<tr>
+<td>Rate</td>
+<td>Zone별 배송비 (고정·무료·무게 기반·캐리어 연동)</td>
+</tr>
+<tr>
+<td>상품 연결</td>
+<td>어떤 상품이 이 프로필 적용 대상인지</td>
+</tr>
+</tbody>
+</table>
+<h4 id="shopify_1">Shopify의 한계<a class="headerlink" href="#shopify_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>발송 프로필에 통관 정보(HS코드, 발송인 세관 번호 등)를 직접 저장하는 필드 없음</li>
+<li>국제배송 통관은 서드파티 앱(Flexport, Zonos 등) 또는 캐리어 서비스 API로 별도 처리</li>
+<li>크로스보더 규정 준수(관세·수입세)는 Shopify Markets + Duties and Import Taxes 기능으로 분리 제공</li>
+</ul>
+<h3 id="22-24">2.2 카페24<a class="headerlink" href="#22-24" title="Permanent link">&para;</a></h3>
+<h4 id="_3">구조 개요<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>카페24는 발송 프로필이라는 독립 개념을 두지 않는다. 대신 다음 구조로 운영된다:</p>
+<div class="highlight"><pre><span></span><code>쇼핑몰 설정
+└── 배송 설정
+    ├── 배송 업체 관리 (택배사 등록)
+    │   └── 운송장 입력 시 선택 가능한 택배사 목록
+    ├── 배송비 정책 (국내/해외 구분)
+    │   ├── 무료/유료/조건부 무료
+    │   └── 지역별 추가 배송비
+    └── 해외 배송 설정
+        ├── 지원 국가 선택
+        ├── 해외 배송비 설정
+        └── HS코드 (상품별 설정)
+</code></pre></div>
+<p><strong>핵심 특징</strong>:
+- 발송지는 사업자 정보(쇼핑몰 설정)에 1개만 등록. 복수 발송지 개념 없음
+- 해외배송 활성화 시 EMS(우체국 연동) 또는 특송(DHL·FedEx) 선택
+- HS코드는 배송 프로필이 아닌 <strong>상품별로</strong> 개별 설정 (상품 &gt; 통관 정보)
+- 일본 배송은 "글로벌 쇼핑몰"(별도 일본어 쇼핑몰 개설)과 연동 구조 — 단일 어드민에서 한국·일본 통합 관리가 되지 않음</p>
+<p><strong>카페24의 한계</strong>:
+- 복수 발송지(창고) 관리 불가 — 한국 창고 외 일본 현지 창고 개념 없음
+- 발송 위치별로 다른 택배사를 연결하는 구조 부재
+- 국가별 판매 채널이 별도 쇼핑몰로 분리되어 있어 통합 재고·발송 관리가 어려움</p>
+<h3 id="23-magento-adobe-commerce">2.3 Magento / Adobe Commerce<a class="headerlink" href="#23-magento-adobe-commerce" title="Permanent link">&para;</a></h3>
+<h4 id="_4">구조 개요<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>Magento는 기본적으로 발송지 1개(Store Configuration의 Shipping Origin)만 설정할 수 있다. 복수 창고 관리는 <strong>Multi-Source Inventory(MSI)</strong> 기능으로 별도 제공된다.</p>
+<div class="highlight"><pre><span></span><code>Store Configuration
+└── Shipping Settings
+    └── Origin (단일 발송지: 국가·주소·우편번호)
+
+Multi-Source Inventory (MSI, Adobe Commerce 기본 포함)
+├── Source (재고 출처: 창고별 주소·재고 수량 관리)
+└── Stock (복수 Source를 묶어 판매 채널에 할당)
+</code></pre></div>
+<p><strong>복수 발송지(Multi-Origin Shipping)</strong>:
+- 기본 Magento는 발송지 1개. 복수 발송지별 배송비 자동 계산은 기본 미지원
+- <strong>Calcurates, ShipperHQ</strong> 같은 서드파티 확장을 통해 Origin별 배송비·택배사 매핑 구현
+- Split Checkout 기능(복수 창고에서 분할 발송 시 배송비 합산 처리)도 확장으로 제공</p>
+<p><strong>통관 정보 관리</strong>:
+- Magento 자체는 HS코드·통관 정보를 기본 필드로 제공하지 않음
+- 국제배송 통관은 DHL eCommerce, FedEx 등 캐리어 확장에서 별도 처리</p>
+<h3 id="24-woocommerce">2.4 WooCommerce<a class="headerlink" href="#24-woocommerce" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Shipping Zones (배송 구역)
+├── Zone (국가/지역 지정)
+└── Methods (해당 구역에서 제공할 배송 방식·요금)
+
+Custom Origins (플러그인 의존)
+└── 구역별·방식별로 다른 발송지 설정 가능 (Octolize UPS 플러그인 등)
+</code></pre></div>
+<p>WooCommerce는 기본적으로 단일 발송지만 지원하고, 복수 발송지 관리는 플러그인(Calcurates Multi-Origin Shipping, WooCommerce Shipping Locations Pro 등)에 의존한다.</p>
+<h3 id="25-bigcommerce">2.5 BigCommerce<a class="headerlink" href="#25-bigcommerce" title="Permanent link">&para;</a></h3>
+<p>BigCommerce는 <strong>Store Location</strong> 섹션에서 단일 창고 주소를 설정하며, Shipping Zones로 배송 가능 구역을 관리한다. Multi-Storefront 기능을 통해 스토어별로 별도 재고·배송 설정이 가능하지만, 단일 스토어 내 복수 발송지 관리는 ShipperHQ 같은 서드파티 연동이 필요하다.</p>
+<h3 id="26">2.6 경쟁사 비교 요약<a class="headerlink" href="#26" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>플랫폼</th>
+<th>복수 발송지</th>
+<th>발송지별 택배사 매핑</th>
+<th>통관 정보 내장</th>
+<th>구현 방식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shopify</td>
+<td>✅ (Locations)</td>
+<td>✅ (Delivery Profile)</td>
+<td>❌ (서드파티)</td>
+<td>네이티브</td>
+</tr>
+<tr>
+<td>카페24</td>
+<td>❌</td>
+<td>❌</td>
+<td>△ (상품별 HS코드)</td>
+<td>제한적</td>
+</tr>
+<tr>
+<td>Magento</td>
+<td>△ (MSI)</td>
+<td>❌ (확장 필요)</td>
+<td>❌ (확장 필요)</td>
+<td>확장 의존</td>
+</tr>
+<tr>
+<td>WooCommerce</td>
+<td>❌ (플러그인 의존)</td>
+<td>❌ (플러그인 의존)</td>
+<td>❌</td>
+<td>플러그인 의존</td>
+</tr>
+<tr>
+<td>BigCommerce</td>
+<td>❌ (서드파티)</td>
+<td>❌ (서드파티)</td>
+<td>❌</td>
+<td>서드파티 의존</td>
+</tr>
+</tbody>
+</table>
+<p><strong>시사점</strong>: Shopify만이 복수 발송지 + 발송지별 배송 조건 매핑을 네이티브로 구현했다. 카페24를 포함한 나머지는 이 기능이 없거나 확장에 의존한다. 누리메이트가 글로벌 SaaS를 표방한다면 Shopify 수준의 구조가 기준점이 되어야 한다.</p>
+<hr />
+<h2 id="3">3. 발송 프로필 정보 항목 정의<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 기본 정보<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>필드명</th>
+<th>설명</th>
+<th>필수 여부</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>프로필명</td>
+<td><code>name</code></td>
+<td>셀러가 식별하기 위한 이름 (예: "한국 서울 창고", "일본 도쿄 3PL")</td>
+<td>필수</td>
+</tr>
+<tr>
+<td>프로필 설명</td>
+<td><code>description</code></td>
+<td>내부 메모</td>
+<td>선택</td>
+</tr>
+<tr>
+<td>기본 프로필 여부</td>
+<td><code>is_default</code></td>
+<td>주문 생성 시 기본으로 선택되는 프로필</td>
+<td>필수</td>
+</tr>
+<tr>
+<td>활성화 여부</td>
+<td><code>is_active</code></td>
+<td>비활성화 시 주문 처리에서 제외</td>
+<td>필수</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32">3.2 출발 국가·주소 (창고/사업장)<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>필드명</th>
+<th>설명</th>
+<th>필수 여부</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>출발 국가</td>
+<td><code>origin_country</code></td>
+<td>ISO 3166-1 alpha-2 (KR, JP 등)</td>
+<td>필수</td>
+</tr>
+<tr>
+<td>우편번호</td>
+<td><code>origin_postal_code</code></td>
+<td>국가별 형식 적용</td>
+<td>필수</td>
+</tr>
+<tr>
+<td>주 / 도</td>
+<td><code>origin_state</code></td>
+<td>도도부현, 시/도 등</td>
+<td>선택</td>
+</tr>
+<tr>
+<td>도시</td>
+<td><code>origin_city</code></td>
+<td></td>
+<td>필수</td>
+</tr>
+<tr>
+<td>상세 주소</td>
+<td><code>origin_address1</code></td>
+<td></td>
+<td>필수</td>
+</tr>
+<tr>
+<td>상세 주소 2</td>
+<td><code>origin_address2</code></td>
+<td></td>
+<td>선택</td>
+</tr>
+<tr>
+<td>사업장명</td>
+<td><code>origin_company</code></td>
+<td>창고명 또는 3PL 업체명</td>
+<td>선택</td>
+</tr>
+<tr>
+<td>담당자명</td>
+<td><code>origin_contact_name</code></td>
+<td></td>
+<td>선택</td>
+</tr>
+<tr>
+<td>담당자 연락처</td>
+<td><code>origin_phone</code></td>
+<td></td>
+<td>선택</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33">3.3 이용 택배사<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>필드명</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>지원 택배사 목록</td>
+<td><code>carriers[]</code></td>
+<td>이 프로필에서 사용 가능한 택배사 목록</td>
+</tr>
+<tr>
+<td>기본 택배사</td>
+<td><code>default_carrier</code></td>
+<td>주문 생성 시 기본 선택 택배사</td>
+</tr>
+<tr>
+<td>택배사 계약 코드</td>
+<td><code>carrier_account_code</code></td>
+<td>셀러의 택배사 계약 고객번호 (선택·B2B 계약 시)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>한국 지원 택배사 (Phase 1)</strong>:
+- CJ대한통운 (<code>CJ_KOREA</code>)
+- 한진택배 (<code>HANJIN</code>)
+- 롯데택배 (<code>LOTTE</code>)
+- 우체국택배 (<code>EPOST</code>)</p>
+<p><strong>일본 지원 택배사 (Phase 3 — logistics-strategy.md 참조)</strong>:
+- 야마토 운수 (<code>YAMATO</code>)
+- 사가와 급편 (<code>SAGAWA</code>)
+- 일본우편 ゆうパック (<code>JAPAN_POST</code>)</p>
+<h3 id="34">3.4 배송 가능 국가·지역 범위<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>필드명</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>배송 가능 국가</td>
+<td><code>shipping_zones[]</code></td>
+<td>이 프로필로 발송 가능한 국가/지역 목록</td>
+</tr>
+<tr>
+<td>배송비 정책 연결</td>
+<td><code>shipping_rate_policy_id</code></td>
+<td>연결된 배송비 정책 (별도 배송비 설정 모듈과 연동)</td>
+</tr>
+<tr>
+<td>배송 불가 지역</td>
+<td><code>excluded_zones[]</code></td>
+<td>특정 지역 제외 (도서·산간 등)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="35">3.5 국제배송 통관 정보<a class="headerlink" href="#35" title="Permanent link">&para;</a></h3>
+<p>국제배송(한국→일본 등 크로스보더)이 포함된 프로필에만 적용된다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>필드명</th>
+<th>설명</th>
+<th>필수 여부</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>발송인 통관 번호</td>
+<td><code>customs_sender_id</code></td>
+<td>한국: 통관고유부호 / 일본: 법인 번호 등</td>
+<td>국제배송 시 필수</td>
+</tr>
+<tr>
+<td>발송인 사업자 등록번호</td>
+<td><code>business_registration_no</code></td>
+<td>수출신고 시 필요</td>
+<td>국제배송 시 필수</td>
+</tr>
+<tr>
+<td>기본 HS코드</td>
+<td><code>default_hs_code</code></td>
+<td>프로필 기본값 (상품별 HS코드로 오버라이드 가능)</td>
+<td>선택</td>
+</tr>
+<tr>
+<td>원산지</td>
+<td><code>country_of_origin</code></td>
+<td>상품 기본 원산지 (Made in Korea 등)</td>
+<td>선택</td>
+</tr>
+<tr>
+<td>세관 신고 통화</td>
+<td><code>customs_currency</code></td>
+<td>세관 신고 시 사용 통화</td>
+<td>선택</td>
+</tr>
+<tr>
+<td>통관 메모</td>
+<td><code>customs_note</code></td>
+<td>품목 특이사항 (식품·화장품 등 규제 품목 관련)</td>
+<td>선택</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>참고</strong>: HS코드는 프로필 기본값을 설정하되, 상품별로 개별 오버라이드가 가능해야 한다. 카페24의 경우 HS코드를 상품별로만 관리하여 대량 상품 등록 시 반복 입력이 불편하다는 셀러 불만이 있다.</p>
+</blockquote>
+<h3 id="36">3.6 배송비 정책 연결<a class="headerlink" href="#36" title="Permanent link">&para;</a></h3>
+<p>발송 프로필과 배송비 정책은 1:N 관계로 관리하는 것이 권장된다(Shopify 모델 참조).</p>
+<div class="highlight"><pre><span></span><code>ShippingProfile (1)
+└── ShippingZoneGroup (N)
+    ├── countries[] (배송 가능 국가 묶음)
+    └── rates[] (해당 구역의 배송비 규칙)
+        ├── flat_rate (고정 금액)
+        ├── free_above (일정 금액 이상 무료)
+        └── weight_based (중량 기반)
+</code></pre></div>
+<hr />
+<h2 id="4-ux">4. 다국가 운영 셀러를 위한 프로필 전환 UX<a class="headerlink" href="#4-ux" title="Permanent link">&para;</a></h2>
+<h3 id="41">4.1 주문 생성 시 프로필 선택 플로우<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>주문 접수
+    │
+    ▼
+발송 프로필 자동 매칭 시도
+    ├── 상품의 재고 위치(창고) 확인
+    ├── 구매자 배송지 국가 확인
+    └── 매칭 조건: (재고 보유 창고) × (배송지 국가를 서비스하는 프로필)
+    │
+    ▼ (복수 프로필 매칭 시)
+판매자에게 선택 요청
+    ├── &quot;이 주문은 아래 2개 발송 프로필로 처리 가능합니다&quot;
+    │   ├── [한국 서울 창고 — CJ대한통운 — 국제배송 3~5일]
+    │   └── [일본 도쿄 창고 — 야마토 — 국내배송 1~2일]
+    └── 선택 후 → 운송장 생성 + 배송비 확정
+</code></pre></div>
+<h3 id="42">4.2 자동 선택 우선순위 규칙 (판매자 설정 가능)<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<ol>
+<li>구매자 배송지와 동일 국가의 창고 우선</li>
+<li>배송비 최소화 우선</li>
+<li>배송 소요일 최단 우선</li>
+<li>재고 여유 큰 창고 우선 (재고 분산 방지)</li>
+</ol>
+<hr />
+<h2 id="5">5. 누리메이트 구현 우선순위 및 권장 사항<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>기능</th>
+<th>우선순위</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>발송지 1개 (기본 설정)</td>
+<td><strong>P0</strong></td>
+<td>소호 셀러·MVP 대상 필수. 모든 셀러에게 기본 발송지(주소·택배사 선택)는 반드시 있어야 함</td>
+</tr>
+<tr>
+<td>발송 프로필 복수 등록 UI</td>
+<td><strong>P1</strong></td>
+<td>중소 셀러 이상 대상. 6월 런칭 MVP에는 불필요하나 일본 진출 지원(Phase 3)에 선행 필요</td>
+</tr>
+<tr>
+<td>한국 택배사 연동 (운송장 자동 생성)</td>
+<td><strong>P1</strong></td>
+<td><code>logistics-strategy.md</code> Phase 2 항목. 운송장 입력은 P0, 자동 생성은 P1</td>
+</tr>
+<tr>
+<td>배송 가능 국가·구역 설정</td>
+<td><strong>P1</strong></td>
+<td>글로벌 진출 기능(<code>spec/global-launch.md</code>)과 연동 시 필요</td>
+</tr>
+<tr>
+<td>통관 정보 (HS코드 기본값, 통관 번호)</td>
+<td><strong>P1</strong></td>
+<td>한국→일본 크로스보더 셀러 대상. 일본 진출 지원 기능 활성화 전 선행</td>
+</tr>
+<tr>
+<td>발송 프로필 기반 배송비 자동 연동</td>
+<td><strong>P2</strong></td>
+<td>발송지별 배송비가 자동 계산되는 고급 기능. 초기에는 수동 입력으로 대체 가능</td>
+</tr>
+<tr>
+<td>일본 택배사 연동 (야마토·사가와 API)</td>
+<td><strong>P2</strong></td>
+<td><code>logistics-strategy.md</code> Phase 3 항목. 2026 H2~2027 일정</td>
+</tr>
+<tr>
+<td>주문별 프로필 자동 매칭 엔진</td>
+<td><strong>P2</strong></td>
+<td>기업형 셀러 대상. 복수 프로필 보유 셀러가 다수 생긴 뒤 필요</td>
+</tr>
+</tbody>
+</table>
+<h3 id="51-mvpp0">5.1 MVP(P0) 최소 구현 범위<a class="headerlink" href="#51-mvpp0" title="Permanent link">&para;</a></h3>
+<p>6월 런칭 시 발송 프로필과 관련하여 필요한 최소 기능:</p>
+<ol>
+<li><strong>기본 발송지 설정</strong>: 셀러 스토어에 발송지 주소(국가·주소·우편번호) 1개 등록</li>
+<li><strong>택배사 선택</strong>: 한국 택배사(CJ·한진·롯데·우체국) 중 선택</li>
+<li><strong>운송장 번호 입력 + 배송 추적</strong>: 어드민에서 운송장 번호 수기 입력 → 배송 추적 자동 연동</li>
+</ol>
+<h3 id="52-p1">5.2 P1 구현 범위 (일본 진출 지원 전 선행)<a class="headerlink" href="#52-p1" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>발송 프로필 복수 등록</strong>: 창고별로 독립된 프로필 생성 (이름·주소·택배사 지정)</li>
+<li><strong>통관 정보 입력</strong>: 프로필별 통관고유부호, HS코드 기본값</li>
+<li><strong>배송 가능 국가 지정</strong>: 프로필별로 서비스 가능 국가 범위 설정</li>
+</ol>
+<hr />
+<h2 id="6">6. 결론 및 권장 방향<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h3 id="61">6.1 발송 프로필 기능은 필요하다 — 단, 단계적으로<a class="headerlink" href="#61" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>소호 셀러(초기 타겟 고객)</strong>에게 복수 프로필 기능은 MVP 단계에서 불필요하며 온보딩 복잡도만 높인다. 기본 발송지 1개 설정으로 충분하다.</li>
+<li><strong>중소·기업형 셀러</strong>는 복수 발송지 관리, 택배사 연동, 통관 정보 입력이 반드시 필요하다. 이 규모 셀러가 누리메이트를 선택하려면 발송 프로필 기능의 완성도가 카페24 이상이어야 한다.</li>
+<li>누리메이트의 핵심 차별화 포인트인 "일본 진출 지원"은 결국 한국 창고 발송 + 일본 통관을 하나의 플로우로 처리해야 하므로, <strong>발송 프로필 구조 없이는 글로벌 진출 기능 자체가 불완전해진다</strong>.</li>
+</ul>
+<h3 id="62-shopify">6.2 Shopify 모델을 기준으로 설계<a class="headerlink" href="#62-shopify" title="Permanent link">&para;</a></h3>
+<p>Shopify의 Location + DeliveryProfile 분리 구조는 업계 표준으로 검증됐다. 누리메이트도 이 구조를 따르되 아시아 크로스보더에 특화된 필드(통관 번호, 한국·일본 택배사 직접 연동)를 추가하는 방향을 권장한다.</p>
+<h3 id="63-24">6.3 카페24 대비 명확한 개선 포인트<a class="headerlink" href="#63-24" title="Permanent link">&para;</a></h3>
+<p>카페24는 발송 프로필 개념 자체가 없고, 한국 쇼핑몰과 일본 쇼핑몰을 별도로 운영해야 한다. 누리메이트가 단일 어드민에서 한국·일본 발송 프로필을 통합 관리하는 기능을 제공하면, 다국가 운영 셀러에게 카페24 대비 명확한 전환 유인이 된다.</p>
+<h3 id="64">6.4 권장 구현 로드맵<a class="headerlink" href="#64" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>2026 Q2 (MVP 런칭)
+└── P0: 기본 발송지 1개 + 택배사 선택 + 운송장 입력
+
+2026 Q3 (일본 진출 지원 전)
+└── P1: 발송 프로필 복수 등록
+    P1: 프로필별 통관 정보 입력
+    P1: 배송 가능 국가 설정
+
+2026 H2 ~ 2027
+└── P2: 일본 택배사 API 연동 (야마토·사가와)
+    P2: 배송비 자동 계산 연동
+    P2: 주문별 프로필 자동 매칭 엔진
+</code></pre></div>
+<hr />
+<h2 id="_5">출처<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://help.shopify.com/en/manual/fulfillment/setup/shipping-profiles">Shopify Help Center | Shipping profiles</a></li>
+<li><a href="https://help.shopify.com/en/manual/fulfillment/setup/shipping-profiles/managing-fulfillment-locations">Shopify Help Center | Managing fulfillment locations in shipping profiles</a></li>
+<li><a href="https://shopify.dev/docs/api/admin-graphql/latest/objects/deliveryprofile">Shopify DeliveryProfile — GraphQL Admin API</a></li>
+<li><a href="https://shopify.dev/docs/apps/build/purchase-options/deferred/delivery-and-deferment/build-delivery-profiles">Build delivery profiles — Shopify Dev</a></li>
+<li><a href="https://www.klizer.com/blog/shopify-update-2025/">Shopify Update 2025: "Sell Only Within Configured Shipping Zones" — Klizer</a></li>
+<li><a href="https://www.pluginhive.com/knowledge-base/shopify-fedex-shipping-with-multiple-warehouses/">How to handle Shopify shipping with Multiple Warehouses — PluginHive</a></li>
+<li><a href="https://experienceleague.adobe.com/en/docs/commerce-admin/stores-sales/delivery/shipping-settings">Shipping settings | Adobe Commerce</a></li>
+<li><a href="https://calcurates.com/features/magento-multi-origin-shipping">Multi Origin Shipping for Magento — Calcurates</a></li>
+<li><a href="https://support.cafe24.com/hc/ko/articles/14114388048793">카페24 간편해외배송 설정 — 카페24 Help Center</a></li>
+<li><a href="https://support.cafe24.com/hc/ko/articles/8475772579993">카페24 HS코드란 무엇이고 어떻게 설정하나요? — 카페24 Help Center</a></li>
+<li><a href="https://support.bigcommerce.com/s/article/Shipping-Zones">BigCommerce Shipping Zones — BigCommerce Help Center</a></li>
+<li><a href="https://www.shipstation.com/blog/cross-border-ecommerce-made-easy-leveraging-technology-for-seamless-expansion/">Cross-Border Ecommerce Made Easy — ShipStation</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.top", "navigation.sections", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
