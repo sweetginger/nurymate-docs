@@ -192,11 +192,77 @@ GET /{hashtag_id}/recent_media?user_id={IG_USER_ID}&fields=id,media_type,media_u
 - 자동화 DM이 상업적 목적일 경우 CAN-SPAM Act 적용
 - TCPA: 자동화 메시지 발송 전 서면 동의 필요 (소셜 미디어 메시징에 확대 적용 추세)
 
-### 5-3. 누리메이트 DM 자동화 권고 기준
+### 5-3. 누리메이트 DM 자동화 — 구체적 법적 근거 및 브랜드 태그 예외 가능성
 
-- 리뷰 요청 DM 발송 조건: 사용자가 브랜드 계정에 먼저 연락하거나, 특정 캠페인 참여를 통해 명시적 동의를 확인한 경우에 한정
-- "구매 완료 후 자동 DM" 방식은 사전 동의 없는 경우 법적 리스크 존재
-- 권장 방식: 주문 완료 페이지에서 "인스타그램으로 리뷰 공유하기" 버튼 제공 → 사용자 자발적 액션 유도
+#### 각국 법적 조문 분석
+
+**한국 — 정보통신망법 제50조**
+
+> 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 제50조 제1항: "누구든지 전자적 전송매체를 이용하여 영리목적의 광고성 정보를 전송하려면 그 수신자의 **명시적인 사전 동의**를 받아야 한다."
+
+- **적용 범위**: "전자적 전송매체"는 정보통신망을 통해 부호·문자·음성·화상·영상을 전송하는 일체의 매체로 해석됨 — **SNS DM 포함**
+- **위반 제재**: 3천만원 이하 과태료 (제76조 제3항), 고의·반복 위반 시 형사처벌 가능
+- **수신동의 재확인 의무** (제50조 제8항): 최초 동의일로부터 **2년마다** 수신 의사 재확인 필요
+- **수신거부 조치 의무**: 수신거부 또는 동의 철회 즉시 전송 중단, 위반 시 1년 이하 징역 또는 1천만원 이하 벌금 (제50조 제5항)
+- **거래관계 예외(제50조 제3항)**: 재화·서비스 거래 관계가 있는 수신자에게 거래 관련 정보를 전송하는 경우는 사전 동의 없이도 허용 — 단, **구매 관련 정보에 한정**하며, 리뷰 요청 DM이 이 예외에 해당하는지는 **별도 법무 검토 필요** (상업적 마케팅 목적이 혼재되므로 안전하지 않음)
+
+**유럽 — GDPR (Regulation (EU) 2016/679)**
+
+- **제6조 제1항 (a)호**: 개인정보 처리의 적법성 근거 중 하나로 "정보주체의 동의(consent)" 요구
+- **제4조 제11호**: 동의의 정의 — "자유롭게 부여된(freely given), 구체적인(specific), 정보에 기반한(informed), 모호하지 않은(unambiguous) 의사 표시"
+- **마케팅 DM 발송 요건**: SNS DM을 통해 수집된 연락처를 마케팅 목적으로 활용하려면 사전에 GDPR 기준의 명시적 동의 필요; 묵시적 동의 불인정
+- **데이터 최소화 원칙(제5조 제1항 c호)**: 수집·처리는 목적에 필요한 최소 범위로 제한
+
+**일본 — 特定電子メールの送信の適正化等に関する法律(특정전자메일법)**
+
+- **주요 규율 대상**: 이메일 및 SMS. SNS DM(Instagram, LINE 등)은 **현행법상 직접 적용 대상 아님** — 별도 규제 공백 구간
+- **다만**: 일본 소비자청은 2025년 이후 SNS DM·채팅 앱을 통한 광고성 권유 행위에 대해 특정상거래법 개정을 통한 규제 검토 중 (2026년 3월 현재 논의 단계)
+- **현재 실무 적용**: 명시적 규정 부재로 당장의 직접 처벌 리스크는 낮으나, 특정상거래법상 "권유 목적 미고지" 위반 또는 APPI 개인정보 처리 위반으로 제재 가능성 있음
+- **결론**: "현재는 법적 공백이지만, 2026~2027년 입법화 가능성 높음" — 보수적 운영 권고
+
+#### 브랜드 태그(멘션) 예외 가능성 분석
+
+**Meta Instagram Messaging API 정책 관점**
+
+Meta의 공식 정책은 "사용자가 먼저 행동을 취한 경우"를 DM 자동화의 적법한 트리거로 명시적으로 인정한다:
+
+| 트리거 유형 | 정책 허용 여부 | 비고 |
+|-------------|---------------|------|
+| 사용자가 먼저 DM 발송 | 허용 (24시간 창 개방) | 프로모션 포함 가능 |
+| 사용자가 게시물에 댓글 작성 (Comment-to-DM) | 허용 | 공식 API 통해서만 |
+| 사용자가 스토리에서 브랜드 멘션(@태그) | **허용** | API webhook 트리거 인정 |
+| 사용자가 게시물에 브랜드 태그 | **허용** | Mentions API 연동 시 |
+| 브랜드 측에서 먼저 일방적 DM 발송 | 금지 | 명백한 정책 위반 |
+
+**핵심 결론**: 브랜드를 태그하거나 멘션한 게시물은 **사용자가 먼저 브랜드와의 대화를 개시한 행위로 간주**되며, 이에 대한 자동 응답 DM은 Meta 플랫폼 정책상 opt-in에 준하는 행위로 인정됨.
+
+**그러나 법적 해석과 플랫폼 정책은 별개**
+
+| 구분 | 브랜드 태그 DM 허용 여부 |
+|------|-------------------------|
+| Meta 플랫폼 정책 | 사용자 주도 트리거로 **허용** |
+| 한국 정보통신망법 제50조 | "명시적 사전 동의" 요건 미충족 가능성 있음 — **법무 검토 필요** |
+| EU GDPR | 태그 행위 자체가 DM 마케팅 동의로 보기 어려움 — **동의 별도 획득 필요** |
+| 일본 특정전자메일법 | 현행법 적용 범위 외 — **실질 리스크 낮음** |
+
+**브랜드 태그 기반 DM 자동화를 법적으로 안전하게 운영하는 방법**
+
+1. **태그·멘션 시 동의 고지 삽입**: 브랜드 계정 프로필 bio 또는 캠페인 페이지에 "브랜드를 태그하면 리뷰 요청 DM이 발송될 수 있습니다" 명시 → 사전 고지로 동의에 근접
+2. **DM 내 수신 거부 안내 필수**: "더 이상 받지 않으려면 STOP 이라고 답장하세요" 문구 포함 — 한국 정보통신망법 제50조 제5항 및 Meta 정책 동시 대응
+3. **과잉 발송 금지**: 동일 사용자에게 반복 DM 자제, 시간당 200건 Meta API 한도 준수
+4. **프로모션 내용 배제**: 태그 트리거 DM에는 할인·쿠폰 등 프로모션 콘텐츠 포함 금지 (24시간 창 내에서만 허용)
+
+#### 누리메이트 DM 자동화 권고 기준 (업데이트)
+
+| 시나리오 | 허용 여부 | 리스크 수준 | 권고 조치 |
+|----------|-----------|-------------|-----------|
+| 사용자가 먼저 DM 발송 → 자동 응답 | 허용 | 낮음 | 24시간 내 리뷰 요청 포함 가능 |
+| 사용자가 브랜드 @태그 → 자동 DM | 플랫폼 허용, 법적 회색지대 | 중간 | 프로필 bio에 사전 고지 + 거부 안내 삽입 |
+| 사용자가 댓글 작성 → Comment-to-DM | 플랫폼 허용, 법적 회색지대 | 중간 | 댓글 CTA에 "DM 발송 동의" 명시 |
+| 구매 완료 후 자동 DM (동의 없음) | 정책·법 모두 위반 | 높음 | 절대 금지 |
+| 주문 완료 페이지 "인스타 공유" CTA → 사용자 자발 행동 | 허용 | 낮음 | 가장 권장되는 방식 |
+
+**핵심 원칙**: 브랜드 태그는 플랫폼 정책상 예외로 허용되나, 한국·EU 법적 요건을 충족하려면 **사전 고지 + 거부 안내 + 비프로모션 내용** 3가지를 반드시 갖춰야 한다.
 
 ---
 
@@ -301,6 +367,16 @@ GET /{hashtag_id}/recent_media?user_id={IG_USER_ID}&fields=id,media_type,media_u
 - Court Rules Meta's Terms Do Not Prohibit Scraping of Public Data: https://www.zyte.com/blog/california-court-meta-ruling/
 - Instagram Auto-DM Legal Guidelines 2025: https://superprofile.bio/blog/instagram-auto-dm-legal-guidelines-stay-compliant
 - Instagram DM Automation Rules 2025: https://instantdm.com/blog/instagram-dm-automation-rules-best-practices-2025
+- Instagram DM Automation Full Guide 2026 (Spur): https://www.spurnow.com/en/blogs/instagram-dm-automation-rules
+- Instagram Automated Behaviour — Banned vs. Safe (Spur): https://www.spurnow.com/en/blogs/instagram-automated-behaviour
+- DM Automation Compliance — Meta, GDPR, Platform Policies (Vista Social): https://vistasocial.com/insights/dm-automation-compliance/
+- Instagram Messaging API (Meta for Developers): https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login/messaging-api/
+- GDPR and Social Media Marketing 2025 (TWIPLA): https://www.twipla.com/en/blog/gdpr-impact-on-social-media
+- GDPR and Marketing: Complete Compliance Guide 2025: https://secureprivacy.ai/blog/gdpr-and-marketing
+- 정보통신망법 제50조 (법제처): https://www.law.go.kr/법령/정보통신망%20이용촉진%20및%20정보보호%20등에%20관한%20법률/제50조
+- 법제처 법령해석 — 거래관계 광고성 정보 전송 시점 (제50조제1항): https://www.moleg.go.kr/lawinfo/nwLwAnInfo.mo?mid=a10106020000&cs_seq=439734
+- 일본 소비자청 SNS DM 권유 규제 검토 동향 (재팬코리아데일리): https://www.jk-daily.co.kr/news/articleView.html?idxno=37398
+- 특정전자메일법 (세계법제정보센터): https://world.moleg.go.kr/web/wli/lgslInfoReadPage.do?CTS_SEQ=9684&AST_SEQ=157
 - 공정거래위원회 추천·보증 심사지침: https://www.law.go.kr/행정규칙/추천·보증등에관한표시·광고심사지침
 - Kim & Chang 인스타그램 인플루언서 공정위 첫 제재: https://www.kimchang.com/ko/insights/detail.kc?sch_section=4&idx=20961
 - 한국 개인정보보호법: https://www.law.go.kr/LSW/lsInfoP.do?lsId=011357
