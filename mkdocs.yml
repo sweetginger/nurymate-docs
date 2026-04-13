@@ -1,5 +1,5 @@
-site_name: 누리메이트 전략 문서
-site_description: 누리메이트 제품 전략, 시장 리서치, 기능 스펙
+site_name: 셀메이트CM 전략 문서
+site_description: 셀메이트CM 제품 전략, 시장 리서치, 기능 스펙
 site_url: https://sweetginger.github.io/nurymate-docs/
 
 docs_dir: docs
@@ -40,58 +40,27 @@ markdown_extensions:
 
 nav:
   - 개요: index.md
-  - 전략:
+
+  - 전략 개요:
     - 제품 기획: strategy/product-plan.md
     - 비즈니스 로드맵: strategy/business-roadmap.md
     - 전략 분석: strategy/strategic-analysis.md
-    - 수익 구조: strategy/pricing-model.md
+
+  - 타겟 & GTM:
     - 초기 고객 확보: strategy/early-customer-acquisition.md
     - 신규 창업자 확보: strategy/new-seller-acquisition.md
+    - 일본 GTM: strategy/japan-gtm.md
+    - 버티컬 확장: strategy/vertical-expansion.md
     - 자연 유입 전략: strategy/organic-growth.md
     - 글로벌 확장 로드맵: strategy/global-expansion-roadmap.md
-    - 버티컬 확장: strategy/vertical-expansion.md
-    - 일본 GTM: strategy/japan-gtm.md
-    - API 정책: strategy/api-policy.md
-  - 리서치:
-    - 일본·한국 이커머스 문화 비교: research/japan-korea-ecommerce.md
-    - Shopify 일본 결제 불편 UX: research/shopify-jp-payment-ux.md
-    - Shopify 일본 약점 분석: research/shopify-japan-weaknesses.md
-    - Shopify 일본 결제: research/shopify-japan-payment.md
-    - Shopify 수익 구조: research/shopify-pricing-revenue.md
-    - Stripe·PG 지원 조사: research/pg-stripe-support.md
-    - Stripe Connect 국가: research/stripe-connect-countries.md
-    - PG 라이선스: research/pg-licensing.md
-    - 현지 PG 계약 난이도: research/local-pg-contracts.md
-    - Paymentwall 분석: research/paymentwall-analysis.md
-    - Payoneer 분석: research/payoneer-analysis.md
-    - 한국 이커머스 경쟁 지형: research/korea-ecommerce-platforms.md
-    - 일본 D2C EC SaaS 비교: research/japan-ec-saas-comparison.md
-    - 글로벌 시장 개요: research/global-market-overview.md
-    - 배송·3PL 전략: research/logistics-strategy.md
-    - SNS 리뷰 법적 검토: research/sns-review-legal.md
-    - 카페24 분석: research/cafe24-pro-analysis.md
-    - 카페24 앱 디자인: research/cafe24-app-design.md
-    - 카페24 Analytics: research/cafe24-analytics.md
-    - 패션 이커머스 기능: research/fashion-ecommerce-features.md
-    - 플랫폼 비교: research/platform-comparison.md
-    - 플랫폼 전략: research/platform-strategy.md
-    - 라쿠텐·아마존 API: research/rakuten-amazon-api.md
-    - SNS 연동: research/sns-integration.md
-    - 리뷰 플랫폼 연동: research/review-platform-integration.md
-    - 일본 편의점 픽업: research/japan-conveni-pickup.md
-    - 한일 신뢰 사례: research/korea-japan-trust-cases.md
-    - 클로즈드 앱 마켓플레이스: research/closed-app-marketplace.md
-    - Shopify AI 어시스턴트 사례: research/shopify-ai-assistant.md
-    - Shopify Markets 다국가 연결 구조: research/shopify-markets-localization.md
-    - Shopify 마케팅 기능: research/shopify-marketing-features.md
-    - Shopify GraphQL 리포트: research/shopify-queryql-report.md
-    - 결제 수수료 원가 구조 분석: research/payment-fee-structure.md
-    - 경쟁사 UX 업데이트 벤치마킹: research/competitor-ux-updates.md
-    - 글로벌 커머스 UX 디자인 차이점: research/global-ux-design.md
-    - 발송 프로필 관리 필요성 검증: research/shipping-profile-validation.md
-    - YouTube Shopping 등록 절차: research/youtube-shopping-partner.md
-    - 최신 통계 2025~2026: research/latest-stats-2025-2026.md
-  - Spec:
+    - 글로벌 확장 전략 (보류): strategy/global-expansion.md
+
+  - 수익 & 재무:
+    - 수익 구조: strategy/pricing-model.md
+    - BEP 시뮬레이션: strategy/bep-simulation.md
+    - 인프라 비용 구조: strategy/infrastructure-cost.md
+
+  - 기능 기획 (Spec):
     - Spec 우선순위: spec/spec-priority.md
     - "[P0] 셀러 스토어 생성 UX": spec/seller-store-creation-ux.md
     - "[P0] 멀티테넌시 도메인 구조": spec/domain-architecture.md
@@ -112,6 +81,11 @@ nav:
     - "[P1] 배송 연동": spec/shipping-integration.md
     - "[P1] 구매 전환율 향상 기능": spec/conversion-rate-features.md
     - "[P1] 운영 편의기능": spec/convenience-features.md
+    - "[P1] 광고 서비스 전략": spec/ad-service-strategy.md
+    - "[P1] 스토어프론트 커스터마이징": spec/storefront-customization.md
+    - "[P1] 사전예약 시스템": spec/preorder-system.md
+    - "[P1] 온·오프라인 통합": spec/offline-online-integration.md
+    - "[P1] POS 연동": spec/pos-integration.md
     - "[P2] 재방문율 향상 기능": spec/engagement-features.md
     - "[P2] 인플루언서 매칭": spec/influencer-matching.md
     - "[P2] 벤치마크 리포트": spec/benchmark-report.md
@@ -120,3 +94,62 @@ nav:
     - "[P2] 글로벌 통합 대시보드": spec/global-dashboard.md
     - "[P2] 마켓플레이스 연동": spec/marketplace-integration.md
     - "셀익스 연동": spec/sellex-integration.md
+
+  - 시장 조사 (Research):
+    - 경쟁사 & 플랫폼 분석:
+      - 한국 이커머스 경쟁 지형: research/korea-ecommerce-platforms.md
+      - 일본 D2C EC SaaS 비교: research/japan-ec-saas-comparison.md
+      - 일본 EC 솔루션 조사 (futureshop·ecbeing·W2): research/japan-ec-solutions.md
+      - 일본 EC 대행사 구조: research/japan-ec-agency-structure.md
+      - 플랫폼 비교: research/platform-comparison.md
+      - 플랫폼 전략: research/platform-strategy.md
+      - 경쟁사 UX 업데이트 벤치마킹: research/competitor-ux-updates.md
+      - 글로벌 시장 개요: research/global-market-overview.md
+      - 최신 통계 2025~2026: research/latest-stats-2025-2026.md
+    - 카페24 분석:
+      - 카페24 분석: research/cafe24-pro-analysis.md
+      - 카페24 페인포인트: research/cafe24-pain-points.md
+      - 카페24 앱 디자인: research/cafe24-app-design.md
+      - 카페24 Analytics: research/cafe24-analytics.md
+    - Shopify 분석:
+      - Shopify 일본 결제 불편 UX: research/shopify-jp-payment-ux.md
+      - Shopify 일본 약점 분석: research/shopify-japan-weaknesses.md
+      - Shopify 일본 결제: research/shopify-japan-payment.md
+      - Shopify 수익 구조: research/shopify-pricing-revenue.md
+      - Shopify AI 어시스턴트 사례: research/shopify-ai-assistant.md
+      - Shopify Markets 다국가 연결 구조: research/shopify-markets-localization.md
+      - Shopify 마케팅 기능: research/shopify-marketing-features.md
+      - Shopify GraphQL 리포트: research/shopify-queryql-report.md
+    - 결제 & 인프라:
+      - Stripe·PG 지원 조사: research/pg-stripe-support.md
+      - Stripe Connect 국가: research/stripe-connect-countries.md
+      - PG 라이선스: research/pg-licensing.md
+      - 현지 PG 계약 난이도: research/local-pg-contracts.md
+      - Paymentwall 분석: research/paymentwall-analysis.md
+      - Payoneer 분석: research/payoneer-analysis.md
+      - 결제 수수료 원가 구조 분석: research/payment-fee-structure.md
+    - 수익 모델:
+      - 부가 수익 모델: research/addon-revenue-models.md
+      - 클로즈드 앱 마켓플레이스: research/closed-app-marketplace.md
+    - 일본 시장:
+      - 일본·한국 이커머스 문화 비교: research/japan-korea-ecommerce.md
+      - 일본 편의점 픽업: research/japan-conveni-pickup.md
+      - 한일 신뢰 사례: research/korea-japan-trust-cases.md
+      - 라쿠텐·아마존 API: research/rakuten-amazon-api.md
+    - 마케팅 & UX:
+      - SNS 연동: research/sns-integration.md
+      - SNS 리뷰 법적 검토: research/sns-review-legal.md
+      - 리뷰 플랫폼 연동: research/review-platform-integration.md
+      - YouTube Shopping 등록 절차: research/youtube-shopping-partner.md
+      - 패션 이커머스 기능: research/fashion-ecommerce-features.md
+      - 글로벌 커머스 UX 디자인 차이점: research/global-ux-design.md
+    - 물류 & 운영:
+      - 배송·3PL 전략: research/logistics-strategy.md
+      - 발송 프로필 관리 필요성 검증: research/shipping-profile-validation.md
+      - O2O 성공 사례: research/o2o-success-cases.md
+      - OMO 성공 사례: research/omo-success-cases.md
+
+  - 기타 전략 문서:
+    - API 정책: strategy/api-policy.md
+    - SEO 마이그레이션 전략: strategy/seo-migration.md
+    - 사용자 시나리오: strategy/user-scenarios.md

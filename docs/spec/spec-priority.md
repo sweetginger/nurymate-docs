@@ -41,6 +41,7 @@
 | `ai-assistant.md` | **P2** | AI 운영 어시스턴트. 기본 기능 런칭 후 고도화 |
 | `ai-chat-setting.md` | **P2** | AI 채팅 설정. 판매자 수 증가 후 운영 효율화 목적 |
 | `global-dashboard.md` | **P2** | 글로벌 통합 대시보드. 다국가 진출 이후 필요 |
+| `ad-service-strategy.md` | **P2** | 광고 대행사 파트너 연동. 코어 런칭 후 2026 Q4 수익 다변화 단계에서 실행 |
 | `sellex-integration.md` | **P2** | 셀익스 연동. 셀익스 사업 진행 상황에 연동 |
 | `shipping-integration.md` | **P2** | 3PL 연동·콘비니 픽업은 Phase 2. 기본 배송 추적은 P0~P1 |
 | `global-launch.md` (이미지 번역·다국어 확장) | **P2** | 이미지 번역은 기술 구현 난이도 높음. 텍스트 번역 이후 진행 |
