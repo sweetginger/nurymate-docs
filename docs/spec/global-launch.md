@@ -8,7 +8,7 @@
 
 ### 1.1 배경 및 목적
 
-누리메이트의 핵심 차별화 전략 중 하나는 **한국 판매자가 해외 시장에 진출하는 전체 과정을 플랫폼이 자동화**하는 것이다. 현재 Shopify Markets는 단일 스토어에서 다국가 관리를 지원하나, 구조적 한계가 분명하다.
+셀메이트CM의 핵심 차별화 전략 중 하나는 **한국 판매자가 해외 시장에 진출하는 전체 과정을 플랫폼이 자동화**하는 것이다. 현재 Shopify Markets는 단일 스토어에서 다국가 관리를 지원하나, 구조적 한계가 분명하다.
 
 **Shopify Markets의 현재 한계**:
 - 번역은 Translate & Adapt 앱 또는 CSV 방식에 의존 — 자동화 수준 낮음
@@ -17,7 +17,7 @@
 - 번역 품질 검토·승인 워크플로우 없음 — 기계번역 오류가 스토어에 바로 노출됨
 - 통화·세금 설정은 수동 구성 필요 (2025년 Editions에서 일부 개선)
 
-누리메이트는 이 모든 과정을 **판매자가 "일본에서도 판매하기" 버튼 하나로 시작**할 수 있는 수준으로 자동화한다.
+셀메이트CM는 이 모든 과정을 **판매자가 "일본에서도 판매하기" 버튼 하나로 시작**할 수 있는 수준으로 자동화한다.
 
 ### 1.2 시장 규모
 
@@ -26,7 +26,7 @@
 - 글로벌 K-뷰티 시장(2025): **USD 162.6억**, 2033년 USD 382.9억 예상 (CAGR 11.3%)
 - 동남아 K-뷰티 시장(2025): **USD 44억**, 2035년 USD 111억 예상 (CAGR 9.6%)
 
-한국 브랜드의 글로벌 수요는 실증적으로 확인된다. 판매자가 해외 진출 시 겪는 핵심 장벽은 언어·콘텐츠 현지화이며, 이를 자동화하면 누리메이트는 카페24·Shopify 대비 명확한 우위를 확보한다.
+한국 브랜드의 글로벌 수요는 실증적으로 확인된다. 판매자가 해외 진출 시 겪는 핵심 장벽은 언어·콘텐츠 현지화이며, 이를 자동화하면 셀메이트CM는 카페24·Shopify 대비 명확한 우위를 확보한다.
 
 ### 1.3 핵심 설계 원칙
 
@@ -159,14 +159,14 @@
 
 hreflang은 Google에게 동일 페이지의 언어/국가별 버전을 알려주는 HTML 속성으로, 국제 이커머스 SEO의 핵심이다. 잘못 구현 시 중복 콘텐츠로 인식되어 검색 순위가 하락한다.
 
-**누리메이트 자동화 방식**:
+**셀메이트CM 자동화 방식**:
 
 ```html
 <!-- 예시: 한국 스토어의 상품 페이지 -->
-<link rel="alternate" hreflang="ko-KR" href="https://store.nurymate.com/ko/products/item-001" />
-<link rel="alternate" hreflang="ja-JP" href="https://store.nurymate.com/ja/products/item-001" />
-<link rel="alternate" hreflang="en"    href="https://store.nurymate.com/en/products/item-001" />
-<link rel="alternate" hreflang="x-default" href="https://store.nurymate.com/products/item-001" />
+<link rel="alternate" hreflang="ko-KR" href="https://store.sellmatecm.com/ko/products/item-001" />
+<link rel="alternate" hreflang="ja-JP" href="https://store.sellmatecm.com/ja/products/item-001" />
+<link rel="alternate" hreflang="en"    href="https://store.sellmatecm.com/en/products/item-001" />
+<link rel="alternate" hreflang="x-default" href="https://store.sellmatecm.com/products/item-001" />
 ```
 
 | 자동화 항목 | 내용 |

@@ -41,7 +41,7 @@
 | 2027 전망 | USD 465 billion | PCMI |
 
 > 주의: 기관별 시장 정의(B2C 전용 vs. B2B 포함, 여행·서비스 포함 여부 등)에 따라 수치 편차가 크다.
-> 누리메이트 전략 문서에서는 Statista 기준(USD 193.4B, 2025)을 보수적 기준치로 활용 권장.
+> 셀메이트CM 전략 문서에서는 Statista 기준(USD 193.4B, 2025)을 보수적 기준치로 활용 권장.
 
 **출처:**
 - https://www.statista.com/outlook/emo/ecommerce/japan

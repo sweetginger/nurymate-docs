@@ -24,7 +24,7 @@
 
 ### 1.1 기능 목적
 
-누리메이트 셀러가 인스타그램, 페이스북, 틱톡 등 SNS 채널을 자사몰과 연동하여 상품 카탈로그를 자동 동기화하고, 광고 성과를 통합 분석하며, SNS에서 자사몰로의 구매 전환을 극대화할 수 있도록 지원한다.
+셀메이트CM 셀러가 인스타그램, 페이스북, 틱톡 등 SNS 채널을 자사몰과 연동하여 상품 카탈로그를 자동 동기화하고, 광고 성과를 통합 분석하며, SNS에서 자사몰로의 구매 전환을 극대화할 수 있도록 지원한다.
 
 ### 1.2 타겟 셀러 시나리오
 
@@ -99,7 +99,7 @@ Step 3: 비즈니스 계정 확인
          ↓
 Step 4: 카탈로그 연동 설정
    기존 Meta 카탈로그 있음 → 연결 선택
-   기존 카탈로그 없음 → 누리메이트가 자동 생성
+   기존 카탈로그 없음 → 셀메이트CM가 자동 생성
          ↓
 Step 5: 초기 동기화 실행
    전체 상품 카탈로그 Meta Commerce Manager로 전송
@@ -135,7 +135,7 @@ Step 6: 완료
 
 ### 3.1 동기화 대상 데이터
 
-| 필드 | 누리메이트 | Meta 카탈로그 | TikTok 카탈로그 |
+| 필드 | 셀메이트CM | Meta 카탈로그 | TikTok 카탈로그 |
 |------|------------|--------------|----------------|
 | 상품명 | product.name | title | product_name |
 | 설명 | product.description | description | description |
@@ -185,7 +185,7 @@ Meta Catalog API 호출
 #### 카탈로그 필드 매핑 예시
 
 ```json
-// 누리메이트 상품 → Meta 카탈로그 변환
+// 셀메이트CM 상품 → Meta 카탈로그 변환
 {
   "id": "NM-SKU-1234",
   "title": "시어서커 루즈핏 블라우스",
@@ -194,11 +194,11 @@ Meta Catalog API 호출
   "condition": "new",
   "price": "29000 KRW",
   "sale_price": "29000 KRW",
-  "link": "https://myfashion.nurymate.com/products/1234",
-  "image_link": "https://cdn.nurymate.com/products/1234/main.webp",
+  "link": "https://myfashion.sellmatecm.com/products/1234",
+  "image_link": "https://cdn.sellmatecm.com/products/1234/main.webp",
   "brand": "MyFashion",
   "google_product_category": "1604",
-  "additional_image_link": "https://cdn.nurymate.com/.../2.webp"
+  "additional_image_link": "https://cdn.sellmatecm.com/.../2.webp"
 }
 ```
 
@@ -307,7 +307,7 @@ Meta Catalog API 호출
 
 셀러 어드민에서 Facebook 연결 시:
 1. Meta Pixel 자동 생성 (또는 기존 Pixel 연동)
-2. 누리메이트 스토어 테마에 Pixel 코드 자동 삽입
+2. 셀메이트CM 스토어 테마에 Pixel 코드 자동 삽입
 3. 표준 이벤트 자동 트래킹:
    - `PageView`: 모든 페이지 방문
    - `ViewContent`: 상품 상세 페이지
@@ -353,7 +353,7 @@ Meta Catalog API 호출
 **동작 원리**:
 1. Instagram Graph API로 셀러 계정의 최신 미디어 목록 수집
 2. 각 게시물 이미지를 Vision AI로 분석 → 이미지 내 상품 인식
-3. 인식된 상품과 누리메이트 등록 상품 매핑 (이미지 유사도 기반)
+3. 인식된 상품과 셀메이트CM 등록 상품 매핑 (이미지 유사도 기반)
 4. 신뢰도 80% 이상인 경우 자동 태그 추천 알림 발송
 5. 셀러 승인 후 Instagram API로 상품 태그 삽입
 
@@ -476,7 +476,7 @@ class SnsProductSync(SQLModel, table=True):
 | AI 쇼핑 태그 자동 추천 | 이미지 인식 기반 자동 태그 |
 | Pinterest 연동 | 카탈로그 + 광고 API |
 | YouTube Shopping 연동 | 영상 상품 태그 |
-| 통합 광고 관리 (누리메이트 내) | 광고 소재 생성·발행·최적화 |
+| 통합 광고 관리 (셀메이트CM 내) | 광고 소재 생성·발행·최적화 |
 | LINE 쇼핑 (일본) | 일본 LINE Shopping 연동 |
 
 ---
@@ -485,7 +485,7 @@ class SnsProductSync(SQLModel, table=True):
 
 ### 8.1 Shopify와의 비교
 
-| 기능 | Shopify | 누리메이트 |
+| 기능 | Shopify | 셀메이트CM |
 |------|---------|-----------|
 | Meta 카탈로그 동기화 | ✅ (앱 설치 필요) | ✅ (기본 내장) |
 | TikTok Shop 연동 | ✅ (앱 설치 필요) | ✅ (기본 내장) |
@@ -496,7 +496,7 @@ class SnsProductSync(SQLModel, table=True):
 
 ### 8.2 카페24와의 비교
 
-| 기능 | 카페24 | 누리메이트 |
+| 기능 | 카페24 | 셀메이트CM |
 |------|--------|-----------|
 | Meta 카탈로그 동기화 | ✅ (파트너 앱) | ✅ (기본 내장) |
 | TikTok Shop 연동 | 제한적 | ✅ |
@@ -504,7 +504,7 @@ class SnsProductSync(SQLModel, table=True):
 | AI 쇼핑 태그 추천 | ❌ | ✅ (고도화 단계) |
 | 글로벌 광고 성과 통합 | 제한적 | ✅ |
 
-### 8.3 누리메이트만의 차별화 포인트
+### 8.3 셀메이트CM만의 차별화 포인트
 
 1. **기본 내장**: 별도 앱 설치·비용 없이 모든 SNS 연동 기능 기본 제공
 2. **한국·일본 동시 최적화**: 카탈로그를 한국어/일본어로 동시에 운영, 통화도 원화/엔화 자동 분리
@@ -530,7 +530,7 @@ class SnsProductSync(SQLModel, table=True):
 
 ## 10. 인스타그램 데이터 연동 분석
 
-> **배경**: AI 인사이트가 "금요일 인스타그램 포스팅 이후 트래픽이 집중됐다"는 분석을 제공하려면 인스타그램 포스팅 시각·도달수 등의 데이터를 누리메이트 트래픽/매출 데이터와 연결해야 한다. 이 섹션은 해당 연동의 데이터 범위, 인증 방식, 분석 로직, 미연동 대응을 정리한다.
+> **배경**: AI 인사이트가 "금요일 인스타그램 포스팅 이후 트래픽이 집중됐다"는 분석을 제공하려면 인스타그램 포스팅 시각·도달수 등의 데이터를 셀메이트CM 트래픽/매출 데이터와 연결해야 한다. 이 섹션은 해당 연동의 데이터 범위, 인증 방식, 분석 로직, 미연동 대응을 정리한다.
 
 ### 10.1 Instagram Graph API 데이터 범위
 
@@ -578,7 +578,7 @@ class SnsProductSync(SQLModel, table=True):
 ```
 [셀러 어드민] "인스타그램 인사이트 연동" 클릭
       ↓
-[누리메이트 백엔드] Meta OAuth 2.0 인증 URL 생성
+[셀메이트CM 백엔드] Meta OAuth 2.0 인증 URL 생성
       scope: instagram_basic, instagram_manage_insights,
              pages_read_engagement, pages_show_list
       ↓
@@ -586,18 +586,18 @@ class SnsProductSync(SQLModel, table=True):
       ↓
 [권한 동의 화면] 요청 권한 목록 표시 → 셀러 승인
       ↓
-[Facebook] Authorization Code → 누리메이트 redirect_uri 전달
+[Facebook] Authorization Code → 셀메이트CM redirect_uri 전달
       ↓
-[누리메이트 백엔드] Authorization Code → Short-lived User Token 교환
+[셀메이트CM 백엔드] Authorization Code → Short-lived User Token 교환
       (POST https://graph.facebook.com/oauth/access_token)
       ↓
-[누리메이트 백엔드] Short-lived → Long-lived User Token 교환 (60일)
+[셀메이트CM 백엔드] Short-lived → Long-lived User Token 교환 (60일)
       (GET /oauth/access_token?grant_type=fb_exchange_token)
       ↓
-[누리메이트 백엔드] Long-lived User Token → Page Access Token 교환
+[셀메이트CM 백엔드] Long-lived User Token → Page Access Token 교환
       (GET /{page-id}?fields=access_token)
       ↓
-[누리메이트 백엔드] Page Access Token으로 연결된 Instagram Business Account ID 조회
+[셀메이트CM 백엔드] Page Access Token으로 연결된 Instagram Business Account ID 조회
       (GET /{page-id}?fields=instagram_business_account)
       ↓
 [DB 저장] ig_user_id, long_lived_token, token_expires_at (60일 후)
@@ -654,7 +654,7 @@ class SnsProductSync(SQLModel, table=True):
 #### 데이터 수집 아키텍처
 
 ```
-[Instagram Graph API]           [누리메이트 내부 데이터]
+[Instagram Graph API]           [셀메이트CM 내부 데이터]
   - 포스팅 timestamp               - 스토어 페이지뷰 (시간대별)
   - reach, impressions             - 상품 상세 조회수 (시간대별)
   - link_clicks                    - 장바구니 담기 이벤트
@@ -750,15 +750,15 @@ best_slot = weekday_avg.idxmax()  # "금요일"
 **셀러가 직접 UTM 링크를 만들어 인스타그램 바이오·게시물에 삽입하는 방식.**
 
 ```
-누리메이트 스토어 URL + UTM 파라미터
-예: https://myfashion.nurymate.com
+셀메이트CM 스토어 URL + UTM 파라미터
+예: https://myfashion.sellmatecm.com
     ?utm_source=instagram
     &utm_medium=bio_link
     &utm_campaign=spring2026
     &utm_content=friday_post
 ```
 
-**누리메이트 어드민 내 UTM 링크 생성기 제공**:
+**셀메이트CM 어드민 내 UTM 링크 생성기 제공**:
 
 ```
 +============================================================+
@@ -770,7 +770,7 @@ best_slot = weekday_avg.idxmax()  # "금요일"
 |  콘텐츠:       [friday_post      ]                         |
 |                                                            |
 |  생성된 링크:                                               |
-|  https://myfashion.nurymate.com?utm_source=instagram&...  |
+|  https://myfashion.sellmatecm.com?utm_source=instagram&...  |
 |  [복사]  [단축 URL 생성]                                    |
 +============================================================+
 ```
@@ -800,7 +800,7 @@ best_slot = weekday_avg.idxmax()  # "금요일"
 
 #### 미연동 셀러를 위한 수동 포스팅 기록 기능 (검토 중)
 
-셀러가 직접 "오늘 오후 6시에 인스타그램 포스팅했어요" 라고 누리메이트에 기록하면, UTM 트래픽 데이터와 결합하여 포스팅 효과를 분석하는 반자동 방식. API 연동 없이 동작하지만 셀러 입력 부담이 있어 UX 검토 후 구현 여부 결정.
+셀러가 직접 "오늘 오후 6시에 인스타그램 포스팅했어요" 라고 셀메이트CM에 기록하면, UTM 트래픽 데이터와 결합하여 포스팅 효과를 분석하는 반자동 방식. API 연동 없이 동작하지만 셀러 입력 부담이 있어 UX 검토 후 구현 여부 결정.
 
 ---
 
